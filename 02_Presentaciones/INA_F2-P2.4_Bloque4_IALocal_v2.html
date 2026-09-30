@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Presentación HTML del Bloque 4 del taller Team Up 2 Level Up del INA">
+  <title>Bloque 4 · IA local · INA 2026</title>
+  <link rel="stylesheet" href="presentaciones.css">
+</head>
+<body data-deck="bloque4">
+  <main class="deck-app" aria-label="Presentación Bloque 4"><div class="deck-stage" id="deck-stage"></div></main>
+  <nav class="deck-controls" aria-label="Controles de la presentación">
+    <button id="btn-prev" type="button" aria-label="Lámina anterior">←</button><span class="deck-counter" id="deck-counter">1 / 10</span><button id="btn-next" type="button" aria-label="Lámina siguiente">→</button>
+    <button id="btn-overview" type="button" aria-label="Ver todas las láminas" title="Vista general (O)">▦</button><button id="btn-notes" type="button" aria-label="Ver notas del facilitador" title="Notas (N)">N</button><button id="btn-sources" type="button" aria-label="Ver fuentes" title="Fuentes (S)">S</button><button id="btn-fullscreen" type="button" aria-label="Pantalla completa" title="Pantalla completa (F)">⛶</button>
+  </nav>
+  <aside class="drawer" id="notes-drawer" hidden aria-label="Notas del facilitador"><div class="drawer-header"><h2>Notas del facilitador</h2><button class="drawer-close" type="button" aria-label="Cerrar">×</button></div><div class="drawer-content" id="notes-content"></div></aside>
+  <aside class="drawer" id="sources-drawer" hidden aria-label="Fuentes de la lámina"><div class="drawer-header"><h2>Fuentes y límites</h2><button class="drawer-close" type="button" aria-label="Cerrar">×</button></div><div class="drawer-content" id="sources-content"></div></aside>
+  <aside class="drawer" id="help-drawer" hidden aria-label="Ayuda de navegación"><div class="drawer-header"><h2>Navegación</h2><button class="drawer-close" type="button" aria-label="Cerrar">×</button></div><div class="drawer-content help-grid"><kbd>→ / espacio</kbd><span>Siguiente</span><kbd>←</kbd><span>Anterior</span><kbd>N</kbd><span>Notas</span><kbd>S</kbd><span>Fuentes</span><kbd>O</kbd><span>Vista general</span><kbd>F</kbd><span>Pantalla completa</span></div></aside>
+  <div class="overview" id="overview" hidden aria-label="Vista general de las láminas"></div><p class="sr-only" id="live-status" aria-live="polite"></p>
+  <script src="presentaciones-datos.js"></script><script src="presentaciones.js"></script>
+</body>
+</html>

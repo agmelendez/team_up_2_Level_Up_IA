@@ -1,0 +1,96 @@
+{
+  "pipeline": "CIOdD-UCR PDF Intelligence Pipeline",
+  "version": "5.1",
+  "edition": "Research & RAG",
+  "generated_at": "2026-09-28T20:49:23.769717+00:00",
+  "library": {
+    "pymupdf": "1.28.2"
+  },
+  "configuration": {
+    "max_documents": 50,
+    "ocr_enabled": true,
+    "ocr_language": "spa+eng",
+    "chunk_target_words": 550,
+    "chunk_max_words": 800,
+    "generate_embeddings": true,
+    "embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+  },
+  "counts": {
+    "documents": 41,
+    "pages": 2271,
+    "sections": 3772,
+    "chunks": 3027,
+    "tables": 2057,
+    "errors": 0
+  },
+  "outputs": [
+    {
+      "filename": "chunks.jsonl",
+      "size_bytes": 6702806
+    },
+    {
+      "filename": "chunks.parquet",
+      "size_bytes": 2900218
+    },
+    {
+      "filename": "corpus.duckdb",
+      "size_bytes": 104345600
+    },
+    {
+      "filename": "documents.jsonl",
+      "size_bytes": 27456
+    },
+    {
+      "filename": "documents.parquet",
+      "size_bytes": 23757
+    },
+    {
+      "filename": "embeddings.npy",
+      "size_bytes": 4649600
+    },
+    {
+      "filename": "errors.jsonl",
+      "size_bytes": 0
+    },
+    {
+      "filename": "faiss.index",
+      "size_bytes": 4649517
+    },
+    {
+      "filename": "faiss_mapping.jsonl",
+      "size_bytes": 803051
+    },
+    {
+      "filename": "pages.jsonl",
+      "size_bytes": 50500902
+    },
+    {
+      "filename": "pages.parquet",
+      "size_bytes": 15780052
+    },
+    {
+      "filename": "processing_log.jsonl",
+      "size_bytes": 10440
+    },
+    {
+      "filename": "quality_report.json",
+      "size_bytes": 13790
+    },
+    {
+      "filename": "sections.jsonl",
+      "size_bytes": 12838038
+    },
+    {
+      "filename": "sections.parquet",
+      "size_bytes": 5813399
+    },
+    {
+      "filename": "tables.jsonl",
+      "size_bytes": 19858049
+    },
+    {
+      "filename": "tables.parquet",
+      "size_bytes": 7900127
+    }
+  ]
+}

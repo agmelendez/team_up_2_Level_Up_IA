@@ -1,0 +1,176 @@
+P[000]: INSTITUTO NACIONAL DE APRENDIZAJE
+P[001]: Núcleo Comercio y Servicios · Subsector de Idiomas
+P[002]: Capacitación Docente “Team Up 2 Level Up”
+P[003]: Inteligencia artificial aplicada a la enseñanza de idiomas
+P[004]: Diseño metodológico del taller · Documento de trabajo v2.0 · 28 de agosto de 2026
+TBL[005]:
+  Row 0: Elemento | Detalle
+  Row 1: Actividad | Jornada de capacitación docente, Subsector de Idiomas, Núcleo Comercio y Servicios
+  Row 2: Fecha y hora | Martes 6 de octubre de 2026, de 8:00 a. m. a 3:00 p. m. (hora de Costa Rica)
+  Row 3: Recesos | Receso de 8:30 a 9:00 a. m. · Almuerzo de 12:00 m. d. a 1:00 p. m.
+  Row 4: Modalidad | Virtual, mediante Microsoft Teams. Seminario en línea con práctica simultánea
+  Row 5: Población | 254 personas docentes: 246 de inglés, 4 de LESCO, 2 de portugués y 2 de francés, de las 9 Unidades Regionales
+  Row 6: Facilitación | Hannia León Fuentes (Universidad de Costa Rica, PROTEA) · Agustín Gómez Meléndez (UNED, Vicerrectoría de Investigación – OMiPYME; UCR – CIOdD)
+  Row 7: Nota | La profesora León participa en la jornada de la mañana y se retira a las 12:00 m. d.
+P[006]: 1. Presentación y justificación
+P[007]: La incorporación de inteligencia artificial generativa en la enseñanza de lenguas dejó de ser una cuestión prospectiva: el estudiantado ya la utiliza y el profesorado la enfrenta sin criterios compartidos sobre cuándo aporta, cuándo degrada el aprendizaje y qué información no debe entregarle. Esta jornada responde a esa condición con un enfoque deliberadamente práctico y crítico: no se trata de exhibir herramientas, sino de que cada docente ejecute, verifique y adapte materiales propios durante la sesión.
+P[008]: El diseño atiende dos restricciones operativas centrales. La primera es la escala: con 254 participantes en línea y dos facilitadores, la interacción entre pares en salas simultáneas no es gestionable, de modo que la transferencia se organiza mediante demostraciones breves y ventanas de práctica individual cronometradas. La segunda es la heterogeneidad de condiciones técnicas entre las nueve Unidades Regionales, que se aborda incorporando salidas pregeneradas de respaldo y una práctica guiada de selección, descarga, ejecución, comparación y administración de modelos que operan localmente en dispositivos compatibles.
+P[009]: 2. Objetivos
+P[010]: 2.1 Objetivo general
+P[011]: Desarrollar en el personal docente del Subsector de Idiomas la capacidad de utilizar inteligencia artificial generativa —en modalidad de texto, de voz y de ejecución local en el dispositivo— con criterio pedagógico, salvaguardas de protección de datos y verificación crítica de resultados, de modo que cada participante concluya la jornada con materiales propios listos para su aula.
+P[012]: 2.2 Objetivos específicos
+P[013]: Distinguir con evidencia qué tareas docentes la IA generativa automatiza con solvencia, cuáles degrada y cuáles no debe asumir, en el contexto específico de la enseñanza de lenguas.
+P[014]: Operar un ciclo de trabajo replicable —encargo, instrucción, salida, verificación y adaptación al aula— mediante siete prácticas de complejidad creciente a lo largo de la jornada.
+P[015]: Emplear el modo de voz de asistentes conversacionales (ChatGPT, Claude y Gemini) como recurso para la práctica oral, la retroalimentación fonética y la simulación de situaciones comunicativas del ámbito ocupacional.
+P[016]: Seleccionar, descargar, ejecutar, comparar, conservar y eliminar modelos de lenguaje locales en un teléfono compatible, valorando sus requisitos, límites y pertinencia frente a servicios en la nube.
+P[017]: Diseñar chatbots personalizados y bancos de retroalimentación que permitan la delegación estratégica de tareas no cognitivas sin ceder el juicio pedagógico.
+P[018]: Aplicar salvaguardas de protección de datos personales, integridad académica, propiedad intelectual y sesgo lingüístico en toda producción asistida por IA.
+P[019]: 2.3 Productos esperados por participante
+P[020]: Al término de la jornada, cada docente debe contar con los siguientes artefactos, elaborados por sí mismo durante las ventanas de práctica:
+P[021]: Una instrucción completa y reutilizable, con sus cinco componentes obligatorios.
+P[022]: Un banco de retroalimentación diferenciada por tipo de error recurrente.
+P[023]: Un conjunto de micro-remedios anticipatorios para los errores más probables de un grupo determinado.
+P[024]: El bloque de instrucciones de un chatbot personalizado para práctica escrita.
+P[025]: Una secuencia didáctica de veinte minutos y su rúbrica analítica.
+P[026]: Un registro breve de práctica oral con modo de voz, incluida la auditoría de sus límites y de la retroalimentación recibida.
+P[027]: Una ficha de gestión de un modelo local: compatibilidad, modelo seleccionado, espacio ocupado, prueba realizada y decisión de conservarlo o eliminarlo.
+P[028]: Un compromiso escrito de aplicación en el aula a treinta días.
+P[029]: 3. Enfoque metodológico
+P[030]: La jornada se desarrolla como seminario en línea con práctica simultánea. No se emplean salas de trabajo. Los bloques 1 a 3 alternan demostraciones conducidas y seis ventanas individuales con un ciclo estándar de 25 minutos; el bloque 4 cierra con una séptima práctica guiada, compacta y centrada en la gestión de modelos locales. Ninguna actividad depende de que un grupo se organice por su cuenta y el control del tiempo permanece siempre en la facilitación.
+P[031]: 3.1 Estructura del ciclo estándar de práctica (25 minutos)
+TBL[032]:
+  Row 0: Minutos | Momento | Descripción
+  Row 1: 0–8 | Demostración | La persona facilitadora ejecuta la tarea completa en pantalla, razonando en voz alta y mostrando también los resultados defectuosos y su corrección.
+  Row 2: 8–20 | Ventana de práctica | Cada participante ejecuta la misma tarea con un objetivo real de su propia clase. Temporizador visible, consigna fijada por escrito en el chat, micrófonos cerrados. La facilitación solo anuncia el tiempo restante.
+  Row 3: 20–23 | Micro-entregable | Cada participante deposita su resultado en el formulario único de la jornada, con una sección por ciclo.
+  Row 4: 23–25 | Devolución | La facilitación abre las respuestas recibidas, lee dos o tres y comenta la calidad de la instrucción, nunca el desempeño de la persona.
+P[033]: 
+P[034]: 3.2 Condiciones que sostienen el diseño
+P[035]: Toda consigna se enuncia oralmente y se fija por escrito en el chat, además de entregarse en el kit del participante 72 horas antes.
+P[036]: El kit incluye salidas pregeneradas de cada ciclo: quien no logre acceso a la herramienta trabaja igualmente los pasos de verificación y adaptación, que concentran el aprendizaje crítico.
+P[037]: Cada ventana incluye una tarea base y una extensión opcional, para absorber la desigualdad de ritmos entre docentes con y sin experiencia previa.
+P[038]: El micro-entregable se solicita expresamente en voz alta en cada ciclo; es el principal mecanismo contra la pasividad en un formato de cámaras cerradas.
+P[039]: 4. Agenda de la jornada
+TBL[040]:
+  Row 0: Hora (CR) | Bloque | Responsable | Formato
+  Row 1: 7:40 – 8:00 | Sala abierta. Verificación técnica y pantalla de normas y requisitos | INA | Sin interacción
+  Row 2: 8:00 – 8:30 | Apertura institucional, presentación de la facilitación, rompehielos digital y encuadre de la mecánica de práctica | INA · HL · AGM | Sondeos y cascada de chat
+  Row 3: 8:30 – 9:00 | Receso. Ventana técnica: abrir la herramienta, iniciar sesión y dejar dos ventanas listas | INA | Instrucciones fijadas
+  Row 4: 9:00 – 10:00 | Bloque 1. Panorama y método: qué automatiza bien la IA, qué degrada y qué no debe tocar. Demostración del modo de voz aplicado a la enseñanza de lenguas | AGM | Demostración + 1 ventana de práctica
+  Row 5: 10:00 – 11:30 | Bloque 2. Usos no convencionales de la IA en la enseñanza de inglés | HL | Demostración + 3 ventanas de práctica
+  Row 6: 11:30 – 12:00 | Preguntas y respuestas de la mañana, curadas del Q&A moderado | HL · AGM | Q&A moderado
+  Row 7: 12:00 – 1:00 | Almuerzo. La profesora León se retira | — | —
+  Row 8: 1:00 – 2:00 | Bloque 3. ChatGPT y Claude en modalidad educativa: secuencia con rúbrica sometida a prueba de esfuerzo y práctica oral con modo de voz | AGM | Demostración + 2 ventanas de práctica
+  Row 9: 2:00 – 2:30 | Bloque 4. Gestión de modelos de inteligencia artificial local en el teléfono | AGM | Demostración + práctica guiada PR-07
+  Row 10: 2:30 – 3:00 | Preguntas y respuestas de la tarde, encuesta de salida, compromiso a treinta días y cierre | AGM · INA | Q&A + formulario
+P[041]: 5. Contenidos por bloque
+P[042]: 5.1 Bloque 1 — Panorama y método (9:00 a 10:00)
+P[043]: Responsable: Agustín Gómez Meléndez.
+P[044]: Qué hace y qué no hace un modelo de lenguaje: por qué inventa información, por qué tiende a complacer y por qué se equivoca de nivel.
+P[045]: Evidencia disponible sobre IA y aprendizaje de lenguas: dónde hay ganancia documentada —volumen de práctica, retroalimentación inmediata, diferenciación— y dónde hay riesgo de sustitución de la producción del estudiante.
+P[046]: Demostración del modo de voz de ChatGPT, Claude y Gemini con tres usos didácticos contrastados: conversación guiada por nivel, retroalimentación de pronunciación y simulación de una situación ocupacional propia de la oferta formativa del INA.
+P[047]: Gobernanza mínima para el aula: datos personales, integridad académica, declaración de uso y propiedad de los materiales.
+P[048]: Ciclo de práctica 1: redacción de la primera instrucción completa sobre un objetivo real de clase.
+P[049]: 5.2 Bloque 2 — Usos no convencionales de la IA en la enseñanza de inglés (10:00 a 11:30)
+P[050]: Responsable: Hannia León Fuentes. Taller práctico que plantea un uso crítico y estratégico de la inteligencia artificial con criterio pedagógico, orientado al fortalecimiento del rol docente y a la delegación estratégica de tareas no cognitivas.
+TBL[051]:
+  Row 0: Ventana | Contenido | Práctica
+  Row 1: 2.1  ·  10:08 – 10:33 | Seguimiento y retroalimentación al aprendizaje | Construcción de un banco de retroalimentación diferenciada por tipo de error recurrente, a partir de una muestra sintética de producción escrita, con ajuste de registro para niveles A2 y B1.
+  Row 2: 2.2  ·  10:33 – 10:58 | Apoyo anticipatorio ante errores frecuentes del estudiantado y desafíos habituales de la docencia | Pre-mortem didáctico: anticipar los cinco errores más probables en una tarea determinada y generar un micro-remedio para cada uno antes de que ocurran.
+  Row 3: 2.3  ·  10:58 – 11:23 | Construcción de chatbots personalizados para práctica escrita y como material didáctico | Ventana de práctica escrita: redacción del bloque de instrucciones de un asistente de nivel fijo —rol, nivel, política de corrección, límites y prohibiciones— y prueba con dos turnos escritos.
+  Row 4: 11:23 – 11:30 | Cierre | Síntesis: qué se delega y qué no puede delegarse.
+P[052]: 
+P[053]: 5.3 Bloque 3 — ChatGPT y Claude en modalidad educativa (1:00 a 2:00)
+P[054]: Responsable: Agustín Gómez Meléndez.
+P[055]: Ciclo 3.1: diseño de una secuencia didáctica de veinte minutos, lista para usar y calibrada al MCER, junto con una rúbrica analítica sometida a prueba de esfuerzo con dos producciones sintéticas contrastantes.
+P[056]: Ciclo 3.2: práctica oral con modo de voz desde el teléfono, en dos configuraciones —el asistente como interlocutor y como fuente de retroalimentación formativa—, seguida de una auditoría de reconocimiento de acentos, latencia, complacencia y riesgo de sustituir la producción del estudiantado.
+P[057]: Diferencias prácticas entre herramientas, manejo de proyectos y archivos, y límites de las versiones gratuitas.
+P[058]: 5.4 Bloque 4 — Inteligencia artificial local en el dispositivo (2:00 a 2:30)
+P[059]: Responsable: Agustín Gómez Meléndez.
+P[060]: Demostración en vivo, con pantalla del teléfono compartida, del flujo completo para administrar modelos locales: comprobar compatibilidad, identificar una fuente confiable, descargar por wifi, ejecutar sin conexión cuando la aplicación lo permita, revisar el espacio ocupado y eliminar el modelo de forma controlada.
+P[061]: Práctica guiada para quienes hayan completado la preinstalación: inventariar los modelos disponibles, seleccionar uno según dispositivo y tarea, ejecutar una consigna docente breve, comparar su respuesta con una salida de respaldo o de nube y decidir con evidencia si conviene conservarlo o eliminarlo.
+P[062]: Cuándo puede convenir un modelo local: conectividad intermitente, necesidad de reducir el envío de contenido a servicios externos, autonomía de uso y ausencia de cargos por consulta después de la descarga. La privacidad depende de que la aplicación y el modelo mantengan realmente el procesamiento en el dispositivo.
+P[063]: Cuándo no conviene: dispositivos incompatibles o con memoria y almacenamiento insuficientes, tareas de razonamiento extenso, materiales largos, precisión lingüística alta o modelos sin procedencia y licencia claras.
+P[064]: Criterios de selección y administración: compatibilidad del dispositivo, memoria y almacenamiento, tamaño y procedencia del archivo, licencia, idiomas declarados, calidad observada, consumo de batería, posibilidad de borrar el modelo y comparación documentada frente a otra opción.
+P[065]: Adaptación a LESCO, portugués y francés: qué se traslada directamente, qué exige ajuste y en qué puntos el modelo es notoriamente más débil, con ejemplos propios y no traducidos del inglés.
+P[066]: 6. Herramientas de la jornada
+P[067]: La selección combina servicios en la nube para la demostración y el trabajo intensivo, y aplicaciones de ejecución local para la experimentación con privacidad y sin conexión. Las condiciones técnicas deben verificarse nuevamente en la primera semana de septiembre, dado el ritmo de cambio de estas plataformas.
+TBL[068]:
+  Row 0: Herramienta | Uso en el taller | Requisito para el participante | Advertencia
+  Row 1: ChatGPT · modo de voz | Demostración (bloque 1) y práctica oral (ciclo 3.2) | Cuenta gratuita creada antes del 3 de octubre; aplicación móvil instalada | El modo de voz avanzado tiene límites de uso diario en la versión gratuita
+  Row 2: Claude · modo de voz | Demostración comparativa y práctica oral | Cuenta gratuita; aplicación móvil instalada | Disponible en la aplicación móvil; verificar disponibilidad de idiomas
+  Row 3: Gemini · modo de voz | Demostración comparativa | Cuenta de Google; aplicación móvil instalada | Integración variable según dispositivo y país
+  Row 4: ChatGPT y Claude · texto | Ciclos 3.1 y 3.2 y ventanas de práctica de la mañana | Sesión abierta en el navegador de la computadora | Límites de mensajes en versiones gratuitas; planificar el ritmo
+  Row 5: AI Edge Gallery | Demostración y práctica guiada de gestión de modelos locales (bloque 4) | Instalación previa, dispositivo compatible y descarga por wifi de un modelo pequeño | Verificar compatibilidad, permisos, procesamiento local, licencia y espacio disponible antes del taller
+  Row 6: Liquid Apollo | Demostración y práctica guiada de gestión de modelos locales (bloque 4) | Instalación previa y descarga por wifi de un modelo compatible | Disponibilidad, compatibilidad y funciones deben verificarse nuevamente antes del taller
+  Row 7: Microsoft Forms | Sondeos, formulario único de la jornada y encuestas de entrada y salida | Ninguno adicional | Configurar respuestas múltiples y sección por ciclo
+P[069]: 7. Protocolo de interacción
+P[070]: Micrófonos y cámaras de las personas participantes permanecen deshabilitados durante toda la jornada. Solo la organización y la facilitación comparten pantalla.
+P[071]: El Q&A de Microsoft Teams se activa con moderación y constituye el canal oficial de preguntas, con opción de anonimato. Una persona del INA cura las intervenciones en tiempo real, agrupa duplicados y entrega un máximo de ocho a diez preguntas por sesión de respuestas.
+P[072]: El chat queda habilitado para consignas breves, cascadas de respuesta y enlaces. Las preguntas de fondo se redirigen al Q&A.
+P[073]: Se aplican sondeos en vivo al inicio y al cierre de cada bloque para mantener el pulso del grupo y ajustar los ejemplos siguientes.
+P[074]: Se invita a dos o tres personas voluntarias por bloque, identificadas previamente en el chat, a compartir pantalla durante noventa segundos. Es la única apertura de micrófono prevista.
+P[075]: Una persona de soporte técnico del INA atiende por chat privado a quien no logre acceso, sin interrumpir la plenaria.
+P[076]: La jornada se graba, con aviso expreso al inicio.
+P[077]: Accesibilidad: subtítulos en vivo activados, intérprete de LESCO fijado en pantalla, materiales en texto accesible y no en imágenes de texto, entregados con 72 horas de antelación.
+P[078]: 8. Salvaguardas éticas y de protección de datos
+P[079]: Regla general, enunciada al inicio de cada ciclo y escrita en cada consigna: no se ingresan nombres, números de cédula, calificaciones ni ningún dato identificable de personas estudiantes en herramientas de IA. Las muestras de trabajo utilizadas en la jornada son sintéticas.
+P[080]: Las grabaciones de voz de personas estudiantes no se cargan en servicios en la nube sin consentimiento informado y sin una finalidad pedagógica explícita; el modo de voz se practica con la propia voz del docente.
+P[081]: Los modelos de ejecución local se presentan como una alternativa que puede reducir la exposición de información cuando el procesamiento permanece en el dispositivo. Antes de usarla con contenido sensible, se debe verificar el comportamiento real de la aplicación, sus permisos, su política de datos y cualquier función de sincronización o telemetría.
+P[082]: Se aborda la declaración de uso de IA en materiales didácticos y en instrumentos de evaluación, así como la titularidad de los materiales producidos.
+P[083]: Se trabaja explícitamente el sesgo lingüístico: variedades del inglés, interferencia del español, representación cultural en los ejemplos generados y limitaciones para lenguas con corpus reducido, en particular LESCO.
+P[084]: Referencias de encuadre: Ley 8968 de protección de la persona frente al tratamiento de sus datos personales, marco de competencias en IA para docentes de UNESCO y Estrategia Nacional de Inteligencia Artificial de Costa Rica.
+P[085]: 9. Requisitos previos
+P[086]: 9.1 Para las personas participantes
+P[087]: Crear la cuenta gratuita de las herramientas indicadas antes del 3 de octubre. Durante la sesión no se crearán cuentas.
+P[088]: Instalar en el teléfono las aplicaciones móviles de los asistentes conversacionales que se usarán en modo de voz, así como AI Edge Gallery y Apollo, y descargar por wifi al menos un modelo pequeño antes de la jornada. La descarga de modelos durante la sesión es inviable con 254 conexiones simultáneas.
+P[089]: Conectarse desde una computadora, no desde el teléfono, con dos ventanas disponibles: Teams y navegador. El teléfono se reserva para las prácticas de voz y de modelos locales.
+P[090]: Disponer de audífonos con micrófono para las prácticas de voz.
+P[091]: Llevar preparado un objetivo real de clase: nivel, destreza y perfil del grupo. Sin ese insumo, las ventanas de práctica se desaprovechan.
+P[092]: Descargar el kit del participante, que incluye la guía, las plantillas de instrucción, las consignas de cada ventana y las salidas pregeneradas de respaldo.
+P[093]: 9.2 Para la organización
+TBL[094]:
+  Row 0: Fecha | Tarea
+  Row 1: 8 de septiembre | Confirmación de la agenda, del formato de seminario en línea y del protocolo de interacción
+  Row 2: 22 de septiembre | Envío de la encuesta diagnóstica al total de participantes
+  Row 3: 29 de septiembre | Recordatorio de la encuesta y envío del kit del participante, con la guía de instalación de las aplicaciones móviles
+  Row 4: 29 de septiembre | Prueba de acceso a las herramientas desde un equipo de la red institucional, a cargo de la unidad de tecnología
+  Row 5: 2 de octubre | Cierre de la encuesta. Ensayo técnico de sesenta minutos con la facilitación: Q&A moderado, sondeos, compartir pantalla de teléfono y temporizador. Confirmación de intérprete de LESCO
+  Row 6: 6 de octubre | Ejecución. Tres roles dedicados durante toda la jornada: anfitrión, moderación del Q&A y soporte técnico por chat privado
+  Row 7: 13 de octubre | Entrega al INA del catálogo de materiales producidos y del informe de resultados de la jornada
+P[095]: 10. Evaluación y evidencia
+P[096]: Productos: número de respuestas recibidas por ciclo en el formulario único de la jornada, con una meta de participación de al menos el cuarenta por ciento en un ciclo o más, y catálogo de materiales devuelto al INA en formato editable dentro de los cinco días hábiles siguientes.
+P[097]: Cambio autopercibido: comparación de entrada y de salida sobre los cuatro reactivos de autoeficacia del anexo A.
+P[098]: Hallazgos críticos: consolidación de los errores y sesgos detectados por las personas participantes durante las verificaciones, como insumo para el material de seguimiento y para una nota de investigación sobre alfabetización crítica en IA en la formación docente técnica.
+P[099]: Seguimiento: propuesta de una sesión de cuarenta y cinco minutos a treinta días para revisar aplicaciones reales en el aula, sujeta a valoración del INA.
+P[100]: 11. Facilitación
+P[101]: 11.1 Agustín Gómez Meléndez
+P[102]: Agustín Gómez Meléndez (MSc., MSI.) es investigador de la Vicerrectoría de Investigación de la Universidad Estatal a Distancia, adscrito al Observatorio de MIPYMES, e investigador del Centro de Investigación Observatorio del Desarrollo de la Universidad de Costa Rica. Su trabajo articula ciencia de datos, tecnologías educativas, gobernanza de la inteligencia artificial y análisis de políticas públicas. Docente de métodos de investigación en programas de posgrado de la Universidad de Costa Rica, participa en iniciativas de cooperación internacional en ética e inteligencia artificial, entre ellas el proyecto Erasmus+ EthicalAI (n.º 101179117) y la red FAIR Costa Rica. Ha acompañado a instituciones públicas costarricenses en el diseño de marcos de uso responsable de IA y en procesos de capacitación técnica y docente.
+P[103]: 11.2 Hannia León Fuentes
+P[104]: Hannia León Fuentes es magíster en Ciencias de la Educación con énfasis en Administración Educativa por la Universidad de Costa Rica y magíster en Ciencias de la Educación con énfasis en Desarrollo Cognitivo por el Tecnológico de Monterrey, México. Es licenciada en Docencia por la Universidad Estatal a Distancia y bachiller en Enseñanza del Inglés por la Universidad de Costa Rica. Actualmente cursa una diplomatura en Inteligencia Artificial en Educación Superior en la Universidad de Buenos Aires, Argentina. Se desempeña como coordinadora del Programa de Tecnologías Educativas para el Aprendizaje (PROTEA) en la Facultad de Educación, Sede Rodrigo Facio, y como coordinadora de la Licenciatura en Formación en Ambientes de Aprendizaje Mediados con Tecnologías en el Recinto de Paraíso, Sede del Atlántico, de la Universidad de Costa Rica. Es responsable de proyectos para la promoción de recursos educativos abiertos y el desarrollo de habilidades digitales para el uso de IA generativa, y colaboradora del proyecto sobre Inteligencia Artificial en el aula del Centro de Investigación Observatorio del Desarrollo de la UCR. Además, es tutora de la Cátedra de Investigación Educativa de la Universidad Estatal a Distancia desde 2025. Laboró para el Ministerio de Educación Pública de 2003 a 2016. En la Universidad de Costa Rica, donde labora desde 2006, fue parte de la comisión redactora de los programas de inglés de Liceos Bilingües y ha coordinado proyectos de acción social, Trabajo Comunal Universitario y la Comisión de Internacionalización. Entre 2022 y 2024 se desempeñó como asesora de evaluación de carreras en el Centro de Evaluación Académica de la Vicerrectoría de Docencia. Cuenta con publicaciones y ponencias en reflexión docente, innovación, gestión educativa e inteligencia artificial.
+P[105]: 
+P[106]: Anexo A. Encuesta diagnóstica previa
+P[107]: Instrumento para Microsoft Forms. Duración estimada: seis minutos. Ventana de aplicación: envío el 22 de septiembre, recordatorio el 29 y cierre el 2 de octubre al mediodía. Su función es calibrar el punto de partida, seleccionar los casos de las demostraciones, ajustar los ejemplos por idioma y establecer la línea base para la comparación de entrada y salida.
+P[108]: Texto introductorio: esta encuesta toma unos seis minutos y sirve para ajustar el taller del 6 de octubre a su experiencia real. No hay respuestas correctas ni incorrectas y los resultados se analizarán de forma agregada.
+P[109]: Unidad Regional a la que pertenece. (Selección única entre las nueve unidades.)
+P[110]: Idioma que imparte. (Inglés, LESCO, portugués o francés.)
+P[111]: Años de experiencia docente. (De 0 a 2, de 3 a 5, de 6 a 10, de 11 a 20, más de 20.)
+P[112]: ¿Con qué frecuencia utiliza herramientas de inteligencia artificial generativa en su trabajo docente? (Nunca; la he probado pero no la uso; algunas veces al mes; semanalmente; a diario.)
+P[113]: ¿Cuáles ha utilizado? (Selección múltiple: ChatGPT, Copilot, Gemini, Claude, Canva con IA, herramientas específicas para docentes, traductores neuronales, correctores de escritura, ninguna, otra.)
+P[114]: Grado de acuerdo, de 1 a 5: (a) puedo formular instrucciones que produzcan resultados útiles para mi clase; (b) puedo evaluar críticamente si lo que la herramienta produce es lingüísticamente correcto y adecuado al nivel; (c) puedo detectar sesgos, errores o información inventada en esas respuestas; (d) sé qué información no debo ingresar en estas herramientas.
+P[115]: ¿En qué tareas le sería más útil el apoyo de IA? (Hasta tres: planificación de clases, elaboración de materiales, diseño de evaluaciones y rúbricas, retroalimentación al estudiantado, diferenciación por niveles, práctica de comprensión y expresión oral, tareas administrativas.)
+P[116]: Principales preocupaciones. (Hasta tres: integridad académica, protección de datos, calidad lingüística de las salidas, dependencia del estudiantado, propiedad intelectual, desigualdad de acceso, tiempo de aprendizaje, ninguna.)
+P[117]: Condiciones técnicas para el 6 de octubre: (a) ¿tiene cuenta activa en alguna herramienta de IA?; (b) ¿podrá conectarse desde una computadora con dos ventanas abiertas?; (c) ¿dispone de un teléfono en el que pueda instalar aplicaciones y descargar archivos de gran tamaño?; (d) ¿ha tenido bloqueos de acceso a estos sitios desde la red institucional?
+P[118]: Describa en una o dos frases una tarea concreta de su práctica que le gustaría resolver ese día. (Respuesta abierta, 300 caracteres.)
+P[119]: ¿Autoriza el uso de sus respuestas, de forma anónima y agregada, para evaluar y mejorar esta capacitación? (Sí o no.)
+P[120]: Encuesta de salida (2:30 p. m., tres minutos): se repiten los cuatro reactivos del punto 6 para la comparación de entrada y salida, se consulta la utilidad percibida por bloque y la intención de aplicación a treinta días, y se incluye una pregunta abierta sobre qué haría falta para poder aplicar lo aprendido.
+P[121]: Anexo B. Consigna de las ventanas de práctica
+P[122]: Texto que se fija por escrito en el chat al inicio de cada ventana y que se incluye en el kit del participante.
+P[123]: Ventana de práctica — 12 minutos
+P[124]: Trabaje con un objetivo real de su clase: nivel del Marco Común Europeo, destreza y perfil del grupo.
+P[125]: Su instrucción debe incluir: rol y objetivo; nivel y destreza; contexto ocupacional del estudiantado del INA; formato de salida exacto; y restricciones de extensión, vocabulario y tiempo.
+P[126]: Lea la salida y marque con un signo de admiración todo lo que esté mal: nivel inadecuado, vocabulario impreciso, contenido sesgado, instrucciones ambiguas o datos inventados.
+P[127]: Deposite el resultado y su hallazgo principal en el formulario de la jornada.
+P[128]: Regla de protección de datos: no ingrese nombres, números de cédula, calificaciones ni datos de personas estudiantes en ninguna herramienta.
+P[129]: 
+P[130]: Nota final. Este documento consolida el protocolo de siete prácticas y las biografías de la facilitación. El contenido definitivo del bloque 2 queda sujeto a la adaptación de Hannia León Fuentes; también se mantienen pendientes la verificación técnica de las aplicaciones móviles en la primera semana de septiembre y la validación final de la agenda por la coordinación del INA.

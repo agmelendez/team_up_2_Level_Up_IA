@@ -1,0 +1,258 @@
+INSTITUTO NACIONAL DE APRENDIZAJE
+Núcleo Comercio y Servicios · Subsector de Idiomas
+Capacitación Docente “Team Up 2 Level Up”
+Inteligencia artificial aplicada a la enseñanza de idiomas
+Diseño metodológico del taller · Documento de trabajo v1.0 · 27 de agosto de 2026
+Elemento
+Detalle
+Actividad
+Jornada de capacitación docente, Subsector de Idiomas, Núcleo Comercio y Servicios
+Fecha y hora
+Martes 6 de octubre de 2026, de 8:00 a. m. a 3:00 p. m. (hora de Costa Rica)
+Recesos
+Receso de 8:30 a 9:00 a. m. · Almuerzo de 12:00 m. d. a 1:00 p. m.
+Modalidad
+Virtual, mediante Microsoft Teams. Seminario en línea con práctica simultánea
+Población
+254 personas docentes: 246 de inglés, 4 de LESCO, 2 de portugués y 2 de francés, de las 9 Unidades Regionales
+Facilitación
+Hannia León (Universidad de Costa Rica, PROTEA) · Agustín Gómez Meléndez (UNED, Vicerrectoría de Investigación – OMiPYME; UCR – CIOdD)
+Nota
+La profesora León participa en la jornada de la mañana y se retira a las 12:00 m. d.
+1. Presentación y justificación
+La incorporación de inteligencia artificial generativa en la enseñanza de lenguas dejó de ser una cuestión prospectiva: el estudiantado ya la utiliza y el profesorado la enfrenta sin criterios compartidos sobre cuándo aporta, cuándo degrada el aprendizaje y qué información no debe entregarle. Esta jornada responde a esa condición con un enfoque deliberadamente práctico y crítico: no se trata de exhibir herramientas, sino de que cada docente ejecute, verifique y adapte materiales propios durante la sesión.
+El diseño atiende dos restricciones operativas centrales. La primera es la escala: con 254 participantes en línea y dos facilitadores, la interacción entre pares en salas simultáneas no es gestionable, de modo que la transferencia se organiza mediante ciclos cortos de demostración seguidos de ventanas de práctica individual cronometradas. La segunda es la heterogeneidad de condiciones técnicas entre las nueve Unidades Regionales, que se aborda incorporando de manera explícita el trabajo con modelos que se ejecutan en el propio dispositivo, sin conexión permanente y sin envío de datos a terceros.
+2. Objetivos
+2.1 Objetivo general
+Desarrollar en el personal docente del Subsector de Idiomas la capacidad de utilizar inteligencia artificial generativa —en modalidad de texto, de voz y de ejecución local en el dispositivo— con criterio pedagógico, salvaguardas de protección de datos y verificación crítica de resultados, de modo que cada participante concluya la jornada con materiales propios listos para su aula.
+2.2 Objetivos específicos
+Distinguir con evidencia qué tareas docentes la IA generativa automatiza con solvencia, cuáles degrada y cuáles no debe asumir, en el contexto específico de la enseñanza de lenguas.
+Operar un ciclo de trabajo replicable —encargo, instrucción, salida, verificación y adaptación al aula— aplicándolo cinco veces a lo largo de la jornada con complejidad creciente.
+Emplear el modo de voz de asistentes conversacionales (ChatGPT, Claude y Gemini) como recurso para la práctica oral, la retroalimentación fonética y la simulación de situaciones comunicativas del ámbito ocupacional.
+Experimentar con modelos de lenguaje ejecutados localmente en el teléfono (AI Edge Gallery y Apollo) y valorar su pertinencia en escenarios de conectividad limitada, confidencialidad de datos y costo cero.
+Diseñar chatbots personalizados y bancos de retroalimentación que permitan la delegación estratégica de tareas no cognitivas sin ceder el juicio pedagógico.
+Aplicar salvaguardas de protección de datos personales, integridad académica, propiedad intelectual y sesgo lingüístico en toda producción asistida por IA.
+2.3 Productos esperados por participante
+Al término de la jornada, cada docente debe contar con los siguientes artefactos, elaborados por sí mismo durante las ventanas de práctica:
+Una instrucción completa y reutilizable, con sus cinco componentes obligatorios.
+Un banco de retroalimentación diferenciada por tipo de error recurrente.
+Un conjunto de micro-remedios anticipatorios para los errores más probables de un grupo determinado.
+El bloque de instrucciones de un chatbot personalizado de práctica conversacional.
+Una secuencia didáctica de veinte minutos y su rúbrica analítica.
+Un compromiso escrito de aplicación en el aula a treinta días.
+3. Enfoque metodológico
+La jornada se desarrolla como seminario en línea con práctica simultánea. No se emplean salas de trabajo: cada bloque se organiza en ciclos idénticos que alternan demostración conducida y ejecución individual, de modo que ninguna actividad dependa de que un grupo se organice por su cuenta y el control del tiempo permanezca siempre en la facilitación.
+3.1 Estructura del ciclo de práctica (25 minutos)
+Minutos
+Momento
+Descripción
+0–8
+Demostración
+La persona facilitadora ejecuta la tarea completa en pantalla, razonando en voz alta y mostrando también los resultados defectuosos y su corrección.
+8–20
+Ventana de práctica
+Cada participante ejecuta la misma tarea con un objetivo real de su propia clase. Temporizador visible, consigna fijada por escrito en el chat, micrófonos cerrados. La facilitación solo anuncia el tiempo restante.
+20–23
+Micro-entregable
+Cada participante deposita su resultado en el formulario único de la jornada, con una sección por ciclo.
+23–25
+Devolución
+La facilitación abre las respuestas recibidas, lee dos o tres y comenta la calidad de la instrucción, nunca el desempeño de la persona.
+3.2 Condiciones que sostienen el diseño
+Toda consigna se enuncia oralmente y se fija por escrito en el chat, además de entregarse en el kit del participante 72 horas antes.
+El kit incluye salidas pregeneradas de cada ciclo: quien no logre acceso a la herramienta trabaja igualmente los pasos de verificación y adaptación, que concentran el aprendizaje crítico.
+Cada ventana incluye una tarea base y una extensión opcional, para absorber la desigualdad de ritmos entre docentes con y sin experiencia previa.
+El micro-entregable se solicita expresamente en voz alta en cada ciclo; es el principal mecanismo contra la pasividad en un formato de cámaras cerradas.
+4. Agenda de la jornada
+Hora (CR)
+Bloque
+Responsable
+Formato
+7:40 – 8:00
+Sala abierta. Verificación técnica y pantalla de normas y requisitos
+INA
+Sin interacción
+8:00 – 8:30
+Apertura institucional, presentación de la facilitación, rompehielos digital y encuadre de la mecánica de práctica
+INA · HL · AGM
+Sondeos y cascada de chat
+8:30 – 9:00
+Receso. Ventana técnica: abrir la herramienta, iniciar sesión y dejar dos ventanas listas
+INA
+Instrucciones fijadas
+9:00 – 10:00
+Bloque 1. Panorama y método: qué automatiza bien la IA, qué degrada y qué no debe tocar. Demostración del modo de voz aplicado a la enseñanza de lenguas
+AGM
+Demostración + 1 ventana de práctica
+10:00 – 11:30
+Bloque 2. Usos no convencionales de la IA en la enseñanza de inglés
+HL
+Demostración + 3 ventanas de práctica
+11:30 – 12:00
+Preguntas y respuestas de la mañana, curadas del Q&A moderado
+HL · AGM
+Q&A moderado
+12:00 – 1:00
+Almuerzo. La profesora León se retira
+—
+—
+1:00 – 2:00
+Bloque 3. ChatGPT y Claude en modalidad educativa: secuencia, rúbrica y práctica oral con modo de voz
+AGM
+Demostración + 3 ventanas de práctica
+2:00 – 2:30
+Bloque 4. Inteligencia artificial local en el dispositivo y criterios de selección de herramientas
+AGM
+Demostración + práctica guiada
+2:30 – 3:00
+Preguntas y respuestas de la tarde, encuesta de salida, compromiso a treinta días y cierre
+AGM · INA
+Q&A + formulario
+5. Contenidos por bloque
+5.1 Bloque 1 — Panorama y método (9:00 a 10:00)
+Responsable: Agustín Gómez Meléndez.
+Qué hace y qué no hace un modelo de lenguaje: por qué inventa información, por qué tiende a complacer y por qué se equivoca de nivel.
+Evidencia disponible sobre IA y aprendizaje de lenguas: dónde hay ganancia documentada —volumen de práctica, retroalimentación inmediata, diferenciación— y dónde hay riesgo de sustitución de la producción del estudiante.
+Demostración del modo de voz de ChatGPT, Claude y Gemini con tres usos didácticos contrastados: conversación guiada por nivel, retroalimentación de pronunciación y simulación de una situación ocupacional propia de la oferta formativa del INA.
+Gobernanza mínima para el aula: datos personales, integridad académica, declaración de uso y propiedad de los materiales.
+Ciclo de práctica 1: redacción de la primera instrucción completa sobre un objetivo real de clase.
+5.2 Bloque 2 — Usos no convencionales de la IA en la enseñanza de inglés (10:00 a 11:30)
+Responsable: Hannia León. Taller práctico que plantea un uso crítico y estratégico de la inteligencia artificial con criterio pedagógico, orientado al fortalecimiento del rol docente y a la delegación estratégica de tareas no cognitivas.
+Ciclo
+Contenido
+Práctica
+2.1  ·  10:08 – 10:33
+Seguimiento y retroalimentación al aprendizaje
+Construcción de un banco de retroalimentación diferenciada por tipo de error recurrente, a partir de una muestra sintética de producción escrita, con ajuste de registro para niveles A2 y B1.
+2.2  ·  10:33 – 10:58
+Apoyo anticipatorio ante errores frecuentes del estudiantado y desafíos habituales de la docencia
+Pre-mortem didáctico: anticipar los cinco errores más probables en una tarea determinada y generar un micro-remedio para cada uno antes de que ocurran.
+2.3  ·  10:58 – 11:23
+Construcción de chatbots personalizados como herramienta de práctica y como material didáctico
+Redacción del bloque de instrucciones de un asistente conversacional de nivel fijo —rol, nivel, política de corrección, límites y prohibiciones— y prueba con dos turnos de conversación.
+11:23 – 11:30
+Cierre
+Síntesis: qué se delega y qué no puede delegarse.
+5.3 Bloque 3 — ChatGPT y Claude en modalidad educativa (1:00 a 2:00)
+Responsable: Agustín Gómez Meléndez.
+Ciclo 3.1: secuencia didáctica de veinte minutos, lista para usar, con calibración explícita del nivel MCER.
+Ciclo 3.2: rúbrica analítica y su prueba de esfuerzo, aplicándola a dos producciones distintas para verificar que efectivamente discrimina.
+Ciclo 3.3: práctica oral con modo de voz desde el teléfono, en dos configuraciones —el asistente como interlocutor del estudiante y el asistente como evaluador formativo de una muestra oral—, con análisis de sus límites: reconocimiento de acentos, latencia, exceso de complacencia y riesgo de sustituir la producción oral del estudiantado.
+Diferencias prácticas entre herramientas, manejo de proyectos y archivos, y límites de las versiones gratuitas.
+5.4 Bloque 4 — Inteligencia artificial local en el dispositivo (2:00 a 2:30)
+Responsable: Agustín Gómez Meléndez.
+Demostración en vivo, con pantalla del teléfono compartida, de AI Edge Gallery y de Apollo ejecutando un modelo pequeño sin conexión a internet.
+Práctica guiada para quienes hayan completado la preinstalación: una consigna docente sencilla resuelta en modo avión, con comparación directa frente a la misma consigna en un servicio en la nube.
+Cuándo tiene sentido un modelo local: conectividad limitada en Unidades Regionales, confidencialidad de la información, costo cero de uso continuado y ausencia de cuentas.
+Cuándo no lo tiene: tareas de razonamiento extenso, generación de materiales largos, requerimientos de precisión lingüística alta y dispositivos con memoria insuficiente.
+Criterios de selección de herramientas: costo, privacidad, calidad lingüística, dependencia inducida y curva de aprendizaje.
+Adaptación a LESCO, portugués y francés: qué se traslada directamente, qué exige ajuste y en qué puntos el modelo es notoriamente más débil, con ejemplos propios y no traducidos del inglés.
+6. Herramientas de la jornada
+La selección combina servicios en la nube para la demostración y el trabajo intensivo, y aplicaciones de ejecución local para la experimentación con privacidad y sin conexión. Las condiciones técnicas deben verificarse nuevamente en la primera semana de septiembre, dado el ritmo de cambio de estas plataformas.
+Herramienta
+Uso en el taller
+Requisito para el participante
+Advertencia
+ChatGPT · modo de voz
+Demostración (bloque 1) y práctica oral (ciclo 3.3)
+Cuenta gratuita creada antes del 3 de octubre; aplicación móvil instalada
+El modo de voz avanzado tiene límites de uso diario en la versión gratuita
+Claude · modo de voz
+Demostración comparativa y práctica oral
+Cuenta gratuita; aplicación móvil instalada
+Disponible en la aplicación móvil; verificar disponibilidad de idiomas
+Gemini · modo de voz
+Demostración comparativa
+Cuenta de Google; aplicación móvil instalada
+Integración variable según dispositivo y país
+ChatGPT y Claude · texto
+Ciclos 3.1 y 3.2 y ventanas de práctica de la mañana
+Sesión abierta en el navegador de la computadora
+Límites de mensajes en versiones gratuitas; planificar el ritmo
+AI Edge Gallery
+Demostración y práctica de modelos locales (bloque 4)
+Instalación y descarga previa de un modelo pequeño mediante wifi
+Aplicación experimental; requiere dispositivo con memoria suficiente; la descarga del modelo no debe hacerse durante la sesión
+Apollo
+Demostración y práctica de modelos locales (bloque 4)
+Instalación desde la tienda de aplicaciones y descarga previa de un modelo
+Disponible para iOS y Android; el rendimiento depende del modelo y del equipo
+Microsoft Forms
+Sondeos, formulario único de la jornada y encuestas de entrada y salida
+Ninguno adicional
+Configurar respuestas múltiples y sección por ciclo
+7. Protocolo de interacción
+Micrófonos y cámaras de las personas participantes permanecen deshabilitados durante toda la jornada. Solo la organización y la facilitación comparten pantalla.
+El Q&A de Microsoft Teams se activa con moderación y constituye el canal oficial de preguntas, con opción de anonimato. Una persona del INA cura las intervenciones en tiempo real, agrupa duplicados y entrega un máximo de ocho a diez preguntas por sesión de respuestas.
+El chat queda habilitado para consignas breves, cascadas de respuesta y enlaces. Las preguntas de fondo se redirigen al Q&A.
+Se aplican sondeos en vivo al inicio y al cierre de cada bloque para mantener el pulso del grupo y ajustar los ejemplos siguientes.
+Se invita a dos o tres personas voluntarias por bloque, identificadas previamente en el chat, a compartir pantalla durante noventa segundos. Es la única apertura de micrófono prevista.
+Una persona de soporte técnico del INA atiende por chat privado a quien no logre acceso, sin interrumpir la plenaria.
+La jornada se graba, con aviso expreso al inicio.
+Accesibilidad: subtítulos en vivo activados, intérprete de LESCO fijado en pantalla, materiales en texto accesible y no en imágenes de texto, entregados con 72 horas de antelación.
+8. Salvaguardas éticas y de protección de datos
+Regla general, enunciada al inicio de cada ciclo y escrita en cada consigna: no se ingresan nombres, números de cédula, calificaciones ni ningún dato identificable de personas estudiantes en herramientas de IA. Las muestras de trabajo utilizadas en la jornada son sintéticas.
+Las grabaciones de voz de personas estudiantes no se cargan en servicios en la nube sin consentimiento informado y sin una finalidad pedagógica explícita; el modo de voz se practica con la propia voz del docente.
+Los modelos de ejecución local se presentan precisamente como la alternativa técnica cuando la confidencialidad de la información lo exige, ya que el procesamiento no sale del dispositivo.
+Se aborda la declaración de uso de IA en materiales didácticos y en instrumentos de evaluación, así como la titularidad de los materiales producidos.
+Se trabaja explícitamente el sesgo lingüístico: variedades del inglés, interferencia del español, representación cultural en los ejemplos generados y limitaciones para lenguas con corpus reducido, en particular LESCO.
+Referencias de encuadre: Ley 8968 de protección de la persona frente al tratamiento de sus datos personales, marco de competencias en IA para docentes de UNESCO y Estrategia Nacional de Inteligencia Artificial de Costa Rica.
+9. Requisitos previos
+9.1 Para las personas participantes
+Crear la cuenta gratuita de las herramientas indicadas antes del 3 de octubre. Durante la sesión no se crearán cuentas.
+Instalar en el teléfono las aplicaciones móviles de los asistentes conversacionales que se usarán en modo de voz, así como AI Edge Gallery y Apollo, y descargar por wifi al menos un modelo pequeño antes de la jornada. La descarga de modelos durante la sesión es inviable con 254 conexiones simultáneas.
+Conectarse desde una computadora, no desde el teléfono, con dos ventanas disponibles: Teams y navegador. El teléfono se reserva para las prácticas de voz y de modelos locales.
+Disponer de audífonos con micrófono para las prácticas de voz.
+Llevar preparado un objetivo real de clase: nivel, destreza y perfil del grupo. Sin ese insumo, las ventanas de práctica se desaprovechan.
+Descargar el kit del participante, que incluye la guía, las plantillas de instrucción, las consignas de cada ventana y las salidas pregeneradas de respaldo.
+9.2 Para la organización
+Fecha
+Tarea
+8 de septiembre
+Confirmación de la agenda, del formato de seminario en línea y del protocolo de interacción
+22 de septiembre
+Envío de la encuesta diagnóstica al total de participantes
+29 de septiembre
+Recordatorio de la encuesta y envío del kit del participante, con la guía de instalación de las aplicaciones móviles
+29 de septiembre
+Prueba de acceso a las herramientas desde un equipo de la red institucional, a cargo de la unidad de tecnología
+2 de octubre
+Cierre de la encuesta. Ensayo técnico de sesenta minutos con la facilitación: Q&A moderado, sondeos, compartir pantalla de teléfono y temporizador. Confirmación de intérprete de LESCO
+6 de octubre
+Ejecución. Tres roles dedicados durante toda la jornada: anfitrión, moderación del Q&A y soporte técnico por chat privado
+13 de octubre
+Entrega al INA del catálogo de materiales producidos y del informe de resultados de la jornada
+10. Evaluación y evidencia
+Productos: número de respuestas recibidas por ciclo en el formulario único de la jornada, con una meta de participación de al menos el cuarenta por ciento en un ciclo o más, y catálogo de materiales devuelto al INA en formato editable dentro de los cinco días hábiles siguientes.
+Cambio autopercibido: comparación de entrada y de salida sobre los cuatro reactivos de autoeficacia del anexo A.
+Hallazgos críticos: consolidación de los errores y sesgos detectados por las personas participantes durante las verificaciones, como insumo para el material de seguimiento y para una nota de investigación sobre alfabetización crítica en IA en la formación docente técnica.
+Seguimiento: propuesta de una sesión de cuarenta y cinco minutos a treinta días para revisar aplicaciones reales en el aula, sujeta a valoración del INA.
+11. Facilitación
+11.1 Agustín Gómez Meléndez
+Agustín Gómez Meléndez (MSc., MSI.) es investigador de la Vicerrectoría de Investigación de la Universidad Estatal a Distancia, adscrito al Observatorio de MIPYMES, e investigador del Centro de Investigación Observatorio del Desarrollo de la Universidad de Costa Rica. Su trabajo articula ciencia de datos, tecnologías educativas, gobernanza de la inteligencia artificial y análisis de políticas públicas. Docente de métodos de investigación en programas de posgrado de la Universidad de Costa Rica, participa en iniciativas de cooperación internacional en ética e inteligencia artificial, entre ellas el proyecto Erasmus+ EthicalAI (n.º 101179117) y la red FAIR Costa Rica. Ha acompañado a instituciones públicas costarricenses en el diseño de marcos de uso responsable de IA y en procesos de capacitación técnica y docente.
+11.2 Hannia León Fuentes
+Hannia León Fuentes es magíster en Ciencias de la Educación con énfasis en Administración Educativa por la Universidad de Costa Rica y magíster en Ciencias de la Educación con énfasis en Desarrollo Cognitivo por el Tecnológico de Monterrey, México. Es licenciada en Docencia por la Universidad Estatal a Distancia y bachiller en Enseñanza del Inglés por la Universidad de Costa Rica. Actualmente cursa una diplomatura en Inteligencia Artificial en Educación Superior en la Universidad de Buenos Aires, Argentina. Se desempeña como coordinadora del Programa de Tecnologías Educativas para el Aprendizaje (PROTEA) en la Facultad de Educación, Sede Rodrigo Facio, y como coordinadora de la Licenciatura en Formación en Ambientes de Aprendizaje Mediados con Tecnologías en el Recinto de Paraíso, Sede del Atlántico, de la Universidad de Costa Rica. Es responsable de proyectos para la promoción de recursos educativos abiertos y el desarrollo de habilidades digitales para el uso de IA generativa, y colaboradora del proyecto sobre Inteligencia Artificial en el aula del Centro de Investigación Observatorio del Desarrollo de la UCR. Además, es tutora de la Cátedra de Investigación Educativa de la Universidad Estatal a Distancia desde 2025. Laboró para el Ministerio de Educación Pública de 2003 a 2016. En la Universidad de Costa Rica, donde labora desde 2006, fue parte de la comisión redactora de los programas de inglés de Liceos Bilingües y ha coordinado proyectos de acción social, Trabajo Comunal Universitario y la Comisión de Internacionalización. Entre 2022 y 2024 se desempeñó como asesora de evaluación de carreras en el Centro de Evaluación Académica de la Vicerrectoría de Docencia. Cuenta con publicaciones y ponencias en reflexión docente, innovación, gestión educativa e inteligencia artificial.
+Anexo A. Encuesta diagnóstica previa
+Instrumento para Microsoft Forms. Duración estimada: seis minutos. Ventana de aplicación: envío el 22 de septiembre, recordatorio el 29 y cierre el 2 de octubre al mediodía. Su función es calibrar el punto de partida, seleccionar los casos de las demostraciones, ajustar los ejemplos por idioma y establecer la línea base para la comparación de entrada y salida.
+Texto introductorio: esta encuesta toma unos seis minutos y sirve para ajustar el taller del 6 de octubre a su experiencia real. No hay respuestas correctas ni incorrectas y los resultados se analizarán de forma agregada.
+Unidad Regional a la que pertenece. (Selección única entre las nueve unidades.)
+Idioma que imparte. (Inglés, LESCO, portugués o francés.)
+Años de experiencia docente. (De 0 a 2, de 3 a 5, de 6 a 10, de 11 a 20, más de 20.)
+¿Con qué frecuencia utiliza herramientas de inteligencia artificial generativa en su trabajo docente? (Nunca; la he probado pero no la uso; algunas veces al mes; semanalmente; a diario.)
+¿Cuáles ha utilizado? (Selección múltiple: ChatGPT, Copilot, Gemini, Claude, Canva con IA, herramientas específicas para docentes, traductores neuronales, correctores de escritura, ninguna, otra.)
+Grado de acuerdo, de 1 a 5: (a) puedo formular instrucciones que produzcan resultados útiles para mi clase; (b) puedo evaluar críticamente si lo que la herramienta produce es lingüísticamente correcto y adecuado al nivel; (c) puedo detectar sesgos, errores o información inventada en esas respuestas; (d) sé qué información no debo ingresar en estas herramientas.
+¿En qué tareas le sería más útil el apoyo de IA? (Hasta tres: planificación de clases, elaboración de materiales, diseño de evaluaciones y rúbricas, retroalimentación al estudiantado, diferenciación por niveles, práctica de comprensión y expresión oral, tareas administrativas.)
+Principales preocupaciones. (Hasta tres: integridad académica, protección de datos, calidad lingüística de las salidas, dependencia del estudiantado, propiedad intelectual, desigualdad de acceso, tiempo de aprendizaje, ninguna.)
+Condiciones técnicas para el 6 de octubre: (a) ¿tiene cuenta activa en alguna herramienta de IA?; (b) ¿podrá conectarse desde una computadora con dos ventanas abiertas?; (c) ¿dispone de un teléfono en el que pueda instalar aplicaciones y descargar archivos de gran tamaño?; (d) ¿ha tenido bloqueos de acceso a estos sitios desde la red institucional?
+Describa en una o dos frases una tarea concreta de su práctica que le gustaría resolver ese día. (Respuesta abierta, 300 caracteres.)
+¿Autoriza el uso de sus respuestas, de forma anónima y agregada, para evaluar y mejorar esta capacitación? (Sí o no.)
+Encuesta de salida (2:30 p. m., tres minutos): se repiten los cuatro reactivos del punto 6 para la comparación de entrada y salida, se consulta la utilidad percibida por bloque y la intención de aplicación a treinta días, y se incluye una pregunta abierta sobre qué haría falta para poder aplicar lo aprendido.
+Anexo B. Consigna de las ventanas de práctica
+Texto que se fija por escrito en el chat al inicio de cada ventana y que se incluye en el kit del participante.
+Ventana de práctica — 12 minutos
+Trabaje con un objetivo real de su clase: nivel del Marco Común Europeo, destreza y perfil del grupo.
+Su instrucción debe incluir: rol y objetivo; nivel y destreza; contexto ocupacional del estudiantado del INA; formato de salida exacto; y restricciones de extensión, vocabulario y tiempo.
+Lea la salida y marque con un signo de admiración todo lo que esté mal: nivel inadecuado, vocabulario impreciso, contenido sesgado, instrucciones ambiguas o datos inventados.
+Deposite el resultado y su hallazgo principal en el formulario de la jornada.
+Regla de protección de datos: no ingrese nombres, números de cédula, calificaciones ni datos de personas estudiantes en ninguna herramienta.
+Nota final. Este documento consolida el protocolo de siete prácticas y las biografías de la facilitación. El contenido definitivo del bloque 2 queda sujeto a la adaptación de Hannia León Fuentes; también se mantienen pendientes la verificación técnica de las aplicaciones móviles en la primera semana de septiembre y la validación final de la agenda por la coordinación del INA.

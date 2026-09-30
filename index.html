@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Up 2 Level Up · IA en la Enseñanza del Inglés Técnico · INA 2026</title>
+  <meta name="description" content="Portal interactivo oficial del Taller Técnico: Inteligencia Artificial en la Enseñanza del Inglés Técnico. Núcleo Comercio y Servicios, Subsector de Idiomas, INA Costa Rica.">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/tutor-mode.css">
+  <link rel="stylesheet" href="css/modern-portal.css">
+  <link rel="stylesheet" href="css/a11y-responsive.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+
+  <!-- Metadatos de Licencia Creative Commons (CC-BY 4.0) -->
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+  <meta name="dct:title" content="Team Up 2 Level Up: IA en la Enseñanza del Inglés Técnico">
+  <meta name="dct:creator" content="Agustín Gómez Meléndez y Hannia León Fuentes">
+  <meta name="dct:rights" content="Creative Commons Atribución 4.0 Internacional (CC BY 4.0)">
+</head>
+<body>
+  <a class="skip-link" href="#seccion-practica">Saltar al contenido principal</a>
+
+  <!-- Cabecera Moderna Unificada (MagicSchool Style) -->
+  <header class="modern-navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="brand-link notranslate" translate="no" aria-label="Portal INA Team Up 2 Level Up">
+        <span class="brand-logo-badge" translate="no">INA CR</span>
+        <div class="brand-texts">
+          <h1 class="brand-title" translate="no">Team Up 2 Level Up</h1>
+          <span class="brand-subtitle">IA en la Enseñanza del Inglés Técnico</span>
+        </div>
+      </a>
+
+      <nav class="navbar-links" aria-label="Navegación principal">
+        <a href="index.html" class="nav-pill-link active">
+          <span>🎯</span> Inicio & Taller
+        </a>
+        <a href="#seccion-cronograma" class="nav-pill-link">
+          <span>🗺️</span> Cronograma
+        </a>
+        <a href="herramientas.html" class="nav-pill-link">
+          <span>⚡</span> Herramientas IA <span class="nav-pill-badge">4</span>
+        </a>
+        <a href="biblioteca.html" class="nav-pill-link">
+          <span>📚</span> Biblioteca & RAG <span class="nav-pill-badge">41</span>
+        </a>
+        <a href="simulador.html" class="nav-pill-link">
+          <span>💬</span> Simulador
+        </a>
+        <a href="glosario.html" class="nav-pill-link">
+          <span>📖</span> Glosario
+        </a>
+      </nav>
+
+      <div class="navbar-actions">
+        <div class="mode-toggle" aria-label="Seleccionar vista">
+          <button id="btn-mode-student" class="mode-btn active" type="button" title="Vista para participantes">Participante</button>
+          <button id="btn-mode-tutor" class="mode-btn tutor-mode" type="button" title="Panel de facilitación">Facilitación</button>
+        </div>
+        <!-- Enlace a la Práctica Activa (Desktop) -->
+        <a href="#seccion-practica" class="btn-navbar-cta" title="Ir a la Práctica Activa en Vivo">
+          <span class="cta-icon" aria-hidden="true">🚀</span>
+          <span class="cta-text">Práctica en Vivo</span>
+        </a>
+
+        <!-- Botón Hamburguesa Móvil -->
+        <button id="btn-mobile-menu" class="btn-mobile-menu" type="button" aria-label="Abrir menú de navegación" aria-expanded="false">
+          <span class="hamburger-icon" aria-hidden="true">☰</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Fondo y Menú Desplegable Móvil -->
+  <div id="mobile-nav-backdrop" class="mobile-nav-backdrop" aria-hidden="true"></div>
+  <nav id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="Menú móvil">
+    <div class="mobile-drawer-header">
+      <div class="mobile-drawer-title notranslate" translate="no">Team Up 2 Level Up · INA</div>
+      <button id="mobile-drawer-close" class="mobile-drawer-close" aria-label="Cerrar menú">&times;</button>
+    </div>
+    <div class="mobile-drawer-body">
+      <a href="index.html" class="mobile-nav-link active">🎯 Inicio & Taller</a>
+      <a href="index.html#seccion-cronograma" class="mobile-nav-link">🗺️ Cronograma</a>
+      <a href="herramientas.html" class="mobile-nav-link">⚡ Herramientas de IA (4)</a>
+      <a href="biblioteca.html" class="mobile-nav-link">📚 Biblioteca & RAG (41)</a>
+      <a href="simulador.html" class="mobile-nav-link">💬 Simulador de Chat</a>
+      <a href="glosario.html" class="mobile-nav-link">📖 Glosario Docente</a>
+      <a href="tutorial.html" class="mobile-nav-link">🧭 Tutorial de Uso</a>
+      <div class="mobile-drawer-tools-row">
+        <a href="index.html#seccion-practica" class="btn-hero-primary" style="justify-content:center;text-decoration:none;margin-bottom:0.75rem;">
+          🚀 Ir a la Práctica Activa
+        </a>
+        <div style="display:flex;gap:0.5rem;">
+          <button class="btn-lang-toggle notranslate" type="button" style="flex:1;justify-content:center;" translate="no">
+            <span class="lang-icon" aria-hidden="true">🌐</span> <span class="lang-text">English</span>
+          </button>
+          <button class="btn-a11y-toggle" type="button" style="flex:1;justify-content:center;">
+            <span class="a11y-icon" aria-hidden="true">♿</span> <span class="a11y-text">Accesibilidad</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Fondo y Modal de Accesibilidad (A11y Panel) -->
+  <div id="a11y-modal-backdrop" class="a11y-modal-backdrop" aria-hidden="true"></div>
+  <div id="a11y-panel" class="a11y-panel" role="dialog" aria-modal="true" aria-label="Panel de Configuración de Accesibilidad" hidden>
+    <div class="a11y-panel-header">
+      <h3><span>♿</span> Accesibilidad & Visualización</h3>
+      <button class="a11y-close-btn" aria-label="Cerrar panel de accesibilidad">&times;</button>
+    </div>
+    <div class="a11y-panel-body">
+      <!-- 1. Contraste Visual -->
+      <div>
+        <div class="a11y-section-title">Contraste y Color</div>
+        <div class="a11y-options-grid">
+          <button type="button" class="a11y-btn active" data-a11y-contrast="normal">Normal</button>
+          <button type="button" class="a11y-btn" data-a11y-contrast="high-contrast">Alto Contraste</button>
+          <button type="button" class="a11y-btn" data-a11y-contrast="dark-mode">Modo Oscuro</button>
+          <button type="button" class="a11y-btn" data-a11y-contrast="grayscale">Monocromo</button>
+        </div>
+      </div>
+
+      <!-- 2. Tamaño de Fuente -->
+      <div>
+        <div class="a11y-section-title">Tamaño de Texto</div>
+        <div class="a11y-options-grid">
+          <button type="button" class="a11y-btn" data-a11y-size="small">A- (90%)</button>
+          <button type="button" class="a11y-btn active" data-a11y-size="normal">A (100%)</button>
+          <button type="button" class="a11y-btn" data-a11y-size="large">A+ (118%)</button>
+          <button type="button" class="a11y-btn" data-a11y-size="xlarge">A++ (130%)</button>
+        </div>
+      </div>
+
+      <!-- 3. Tipografía y Lectura -->
+      <div>
+        <div class="a11y-section-title">Legibilidad y Navegación</div>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;">
+          <div class="a11y-toggle-row">
+            <span class="a11y-toggle-label">📖 Fuente Accesible (Dislexia)</span>
+            <button type="button" class="a11y-switch-btn" data-a11y-toggle="dyslexicFont" role="switch" aria-checked="false" aria-label="Activar fuente para dislexia"></button>
+          </div>
+          <div class="a11y-toggle-row">
+            <span class="a11y-toggle-label">🔗 Resaltar Enlaces</span>
+            <button type="button" class="a11y-switch-btn" data-a11y-toggle="highlightLinks" role="switch" aria-checked="false" aria-label="Resaltar todos los enlaces"></button>
+          </div>
+          <div class="a11y-toggle-row">
+            <span class="a11y-toggle-label">🏷️ Resaltar Títulos</span>
+            <button type="button" class="a11y-switch-btn" data-a11y-toggle="highlightHeadings" role="switch" aria-checked="false" aria-label="Resaltar títulos"></button>
+          </div>
+          <div class="a11y-toggle-row">
+            <span class="a11y-toggle-label">🖱️ Cursor Grande</span>
+            <button type="button" class="a11y-switch-btn" data-a11y-toggle="bigCursor" role="switch" aria-checked="false" aria-label="Activar cursor grande"></button>
+          </div>
+          <div class="a11y-toggle-row">
+            <span class="a11y-toggle-label">🛑 Pausar Animaciones</span>
+            <button type="button" class="a11y-switch-btn" data-a11y-toggle="reduceMotion" role="switch" aria-checked="false" aria-label="Pausar animaciones"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="a11y-panel-footer">
+      <button type="button" id="btn-a11y-reset-all" class="btn-a11y-reset">🔄 Restablecer Todo</button>
+      <button type="button" class="a11y-btn a11y-close-btn" style="width:auto;padding:0.55rem 1.25rem;">Listo</button>
+    </div>
+  </div>
+
+  <!-- Notificación de Protección de Datos (Ley 8968) -->
+  <div class="data-protection-bar">
+    <div class="data-protection-content">
+      <strong>🔒 Regla de Privacidad (Ley 8968):</strong>
+      <span>No ingrese nombres, números de cédula ni trabajos reales de estudiantes en herramientas de IA. Utilice siempre las muestras sintéticas provistas en este portal.</span>
+    </div>
+  </div>
+
+  <!-- HERO SECTION COHORTE MODERNA (Lovable Style) -->
+  <section class="hero-cohort-section">
+    <div class="hero-cohort-container">
+      <div class="hero-pill-badge">
+        <span>✨ Taller Oficial INA · 6 de Octubre de 2026 · Subsector de Idiomas</span>
+      </div>
+
+      <h2 class="hero-headline">
+        Team Up 2 Level Up:<br>
+        <span class="text-gradient">IA en la Enseñanza del Inglés Técnico</span>
+      </h2>
+
+      <p class="hero-description">
+        Espacio interactivo de alta productividad diseñado para el cuerpo docente del INA. Calibre prompts pedagógicos de 5 componentes, audite producciones orales y escritas con rúbricas analíticas y aplique IA de forma segura bajo el marco de la Ley 8968.
+      </p>
+
+      <div class="hero-ctas-row">
+        <a href="#seccion-practica" class="btn-hero-primary">
+          🚀 Iniciar Práctica en Vivo (PR-01 a PR-07)
+        </a>
+        <a href="#seccion-cronograma" class="btn-hero-secondary">
+          🗺️ Ver Cronograma Visual
+        </a>
+        <a href="herramientas.html" class="btn-hero-secondary">
+          ⚡ Suite de Herramientas
+        </a>
+        <a href="herramientas.html#slides" class="btn-hero-secondary">
+          🖥️ Presentaciones HTML
+        </a>
+        <a href="biblioteca.html" class="btn-hero-secondary">
+          📚 Biblioteca RAG (41 Docs)
+        </a>
+      </div>
+
+      <!-- Cuadrícula de Métricas de Alto Impacto -->
+      <div class="hero-stats-cards-grid">
+        <div class="hero-stat-box">
+          <span class="hero-stat-number">254</span>
+          <span class="hero-stat-label">Docentes Participantes</span>
+        </div>
+        <div class="hero-stat-box">
+          <span class="hero-stat-number">41</span>
+          <span class="hero-stat-label">Documentos RAG Indexados</span>
+        </div>
+        <div class="hero-stat-box">
+          <span class="hero-stat-number">7</span>
+          <span class="hero-stat-label">Prácticas Guiadas en Vivo</span>
+        </div>
+        <div class="hero-stat-box">
+          <span class="hero-stat-number">100%</span>
+          <span class="hero-stat-label">Cumplimiento Ley 8968</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIRECTORIO DE HERRAMIENTAS Y MÓDULOS (MagicSchool Style) -->
+  <section class="tools-directory-section">
+    <div class="tools-directory-container">
+      <div class="section-header-centered">
+        <span class="sub-badge">⚡ Ecosistema de Módulos & Herramientas</span>
+        <h3>Herramientas Especializadas para la Docencia</h3>
+        <p>Acceda directamente a las herramientas de productividad sin sobrecargar su pantalla.</p>
+      </div>
+
+      <div class="tools-cards-grid">
+        <!-- Herramienta 1: Asistente de Prompts -->
+        <a href="herramientas.html#builder" class="magic-tool-card">
+          <div class="tool-icon-circle amber">⚡</div>
+          <div class="tool-card-body">
+            <div class="tool-pill-tag amber">Pedagogía Activa</div>
+            <h4>Constructor de Prompts</h4>
+            <p>Estructure instrucciones profesionales con los 5 componentes: Rol, Tarea, Contexto Ocupacional, Restricciones y Formato.</p>
+            <div class="tool-card-action">Abrir Asistente ↗</div>
+          </div>
+        </a>
+
+        <!-- Herramienta 2: Probador de Rúbricas -->
+        <a href="herramientas.html#rubric" class="magic-tool-card">
+          <div class="tool-icon-circle blue">📋</div>
+          <div class="tool-card-body">
+            <div class="tool-pill-tag blue">Evaluación 0-16 pts</div>
+            <h4>Probador de Rúbricas</h4>
+            <p>Audite muestras orales y escritas con criterios analíticos rigurosos: Cumplimiento de Tarea, Precisión, Léxico y Mecánica.</p>
+            <div class="tool-card-action">Auditar Muestra ↗</div>
+          </div>
+        </a>
+
+        <!-- Herramienta 3: Casos Ocupacionales -->
+        <a href="herramientas.html#cases" class="magic-tool-card">
+          <div class="tool-icon-circle green">💼</div>
+          <div class="tool-card-body">
+            <div class="tool-pill-tag green">8 Áreas Técnicas</div>
+            <h4>Casos Ocupacionales INA</h4>
+            <p>Banco de casos reales: Hotelería, Contact Centers, Mecánica, Gastronomía, Ciberseguridad, Logística, Turismo y Software.</p>
+            <div class="tool-card-action">Explorar Casos ↗</div>
+          </div>
+        </a>
+
+        <!-- Herramienta 4: Biblioteca RAG -->
+        <a href="biblioteca.html#documents" class="magic-tool-card">
+          <div class="tool-icon-circle indigo">📚</div>
+          <div class="tool-card-body">
+            <div class="tool-pill-tag indigo">Investigación 2024-2026</div>
+            <h4>Biblioteca RAG (41 PDFs)</h4>
+            <p>Búsqueda en tiempo real del corpus científico: Pedagogía, Evaluación, Gobernanza, Prompts e Inteligencia Artificial.</p>
+            <div class="tool-card-action">Consultar Corpus ↗</div>
+          </div>
+        </a>
+
+        <!-- Herramienta 5: Evidencia PISA & NYU -->
+        <a href="biblioteca.html#evidence" class="magic-tool-card">
+          <div class="tool-icon-circle cyan">📊</div>
+          <div class="tool-card-body">
+            <div class="tool-pill-tag cyan">Evidencia Empírica</div>
+            <h4>Estudios PISA & NYU Stern</h4>
+            <p>Diagnóstico comparativo del componente de inglés PISA 2025 Costa Rica y experimentos empíricos de productividad docente.</p>
+            <div class="tool-card-action">Ver Evidencia ↗</div>
+          </div>
+        </a>
+
+        <!-- Herramienta 6: Simulador Socrático -->
+        <a href="simulador.html" class="magic-tool-card">
+          <div class="tool-icon-circle violet">💬</div>
+          <div class="tool-card-body">
+            <div class="tool-pill-tag violet">Interacción en Vivo</div>
+            <h4>Simulador de Chatbot</h4>
+            <p>Simulador interactivo de práctica escrita y tutoría socrática para ensayar la interacción alumno-IA en entornos laborales.</p>
+            <div class="tool-card-action">Abrir Simulador ↗</div>
+          </div>
+        </a>
+
+        <!-- Herramienta 7: Presentaciones HTML -->
+        <a href="herramientas.html#slides" class="magic-tool-card presentation-directory-card">
+          <div class="tool-icon-circle green">🖥️</div>
+          <div class="tool-card-body">
+            <div class="tool-pill-tag green">46 láminas · HTML 16:9</div>
+            <h4>Presentaciones del Taller</h4>
+            <p>Proyecte los bloques 1, 3 y 4 desde el navegador, con navegación, notas del facilitador, fuentes y vista en pantalla completa.</p>
+            <div class="tool-card-action">Abrir Presentaciones ↗</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       SECCIÓN DE CRONOGRAMA & RUTA PEDAGÓGICA (DIAGRAMA SVG)
+       ==================================================================== -->
+  <section id="seccion-cronograma" class="roadmap-diagram-section" aria-label="Cronograma y Ruta Pedagógica del Taller">
+    <div class="roadmap-diagram-card">
+      <div class="roadmap-header-row">
+        <div class="roadmap-title-area">
+          <span class="sub-badge" style="background:#dbeafe;color:#1e40af;border:1px solid #bfdbfe;">🗺️ RUTA PEDAGÓGICA VISUAL</span>
+          <h3>Propuesta de Cronograma de la Jornada</h3>
+          <p>Consulte cada momento del taller (08:00 a 15:00), los facilitadores responsables, los bloques temáticos y las 7 prácticas activas.</p>
+        </div>
+        <div class="roadmap-actions-row">
+          <a href="#seccion-practica" class="btn-hero-primary" style="padding:0.5rem 1.15rem;font-size:0.85rem;">
+            🎯 Ir a la Práctica Activa
+          </a>
+          <a href="img/ruta-pedagogica-cronograma.svg" download="Cronograma_INA_IA_Ingles_2026.svg" class="btn-download-svg" title="Descargar diagrama en formato vectorial SVG">
+            📥 Descargar SVG
+          </a>
+        </div>
+      </div>
+
+      <!-- Indicador móvil de cronograma desplazable -->
+      <div class="mobile-scroll-hint">📱 En celular o tableta, deslice horizontalmente para ver el cronograma completo ↔️</div>
+
+      <!-- Lienzo SVG Responsivo Integrado -->
+      <div class="svg-diagram-scroll-wrapper" role="img" aria-label="Diagrama vectorial de la ruta pedagógica y propuesta de cronograma del taller INA">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" width="100%" style="height:auto;font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Filtros de sombra suave -->
+    <filter id="card-shadow" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.08" />
+    </filter>
+    <filter id="header-shadow" x="-2%" y="-5%" width="104%" height="120%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#002b49" flood-opacity="0.2" />
+    </filter>
+
+    <!-- Degradados Institucionales INA -->
+    <linearGradient id="ina-header-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#002035" />
+      <stop offset="50%" stop-color="#002B49" />
+      <stop offset="100%" stop-color="#003D66" />
+    </linearGradient>
+
+    <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="50%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#34d399" />
+    </linearGradient>
+
+    <linearGradient id="lunch-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f1f5f9" />
+      <stop offset="50%" stop-color="#e2e8f0" />
+      <stop offset="100%" stop-color="#f1f5f9" />
+    </linearGradient>
+  </defs>
+
+  <!-- Fondo General del Lienzo -->
+  <rect width="1200" height="820" rx="16" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2" />
+
+  <!-- ================= CABECERA DEL CRONOGRAMA ================= -->
+  <g transform="translate(25, 20)" filter="url(#header-shadow)">
+    <rect width="1150" height="95" rx="12" fill="url(#ina-header-grad)" />
+    <rect x="0" y="90" width="1150" height="5" rx="2" fill="url(#accent-grad)" />
+
+    <!-- Badges superiores -->
+    <rect x="25" y="16" width="160" height="20" rx="10" fill="rgba(255,255,255,0.15)" />
+    <text x="105" y="30" fill="#34d399" font-size="10.5" font-weight="800" text-anchor="middle" letter-spacing="0.05em">INA COSTA RICA · 2026</text>
+
+    <rect x="195" y="16" width="210" height="20" rx="10" fill="rgba(255,255,255,0.15)" />
+    <text x="300" y="30" fill="#fde68a" font-size="10.5" font-weight="800" text-anchor="middle">JORNADA TÉCNICA · 6 OCTUBRE</text>
+
+    <!-- Título Principal -->
+    <text x="25" y="64" fill="#ffffff" font-size="21" font-weight="800" letter-spacing="-0.02em">
+      Propuesta de Cronograma &amp; Ruta Pedagógica del Taller
+    </text>
+    <text x="25" y="82" fill="#cbd5e1" font-size="12.5" font-weight="500">
+      Team Up 2 Level Up: Inteligencia Artificial en la Enseñanza del Inglés Técnico · 08:00 a 15:00 (7 Horas)
+    </text>
+
+    <!-- Leyenda / Convenciones -->
+    <g transform="translate(740, 22)">
+      <rect width="385" height="55" rx="8" fill="rgba(0,0,0,0.25)" stroke="rgba(255,255,255,0.1)" />
+      <text x="15" y="18" fill="#94a3b8" font-size="9.5" font-weight="700" letter-spacing="0.05em">CONVENCIONES DEL TALLER:</text>
+      
+      <!-- Círculo AGM -->
+      <circle cx="22" cy="36" r="6" fill="#2563eb" />
+      <text x="34" y="40" fill="#ffffff" font-size="11" font-weight="600">Agustín Gómez (AGM)</text>
+
+      <!-- Círculo HL -->
+      <circle cx="170" cy="36" r="6" fill="#7c3aed" />
+      <text x="182" y="40" fill="#ffffff" font-size="11" font-weight="600">Hannia León (HL)</text>
+
+      <!-- Badge Práctica -->
+      <rect x="295" y="29" width="75" height="16" rx="8" fill="#059669" />
+      <text x="332" y="41" fill="#ffffff" font-size="9.5" font-weight="800" text-anchor="middle">PR-01 a 07</text>
+    </g>
+  </g>
+
+  <!-- ================= SECCIÓN MAÑANA (08:00 - 12:00) ================= -->
+  <!-- Kicker de la Mañana -->
+  <g transform="translate(25, 130)">
+    <rect width="1150" height="28" rx="6" fill="#e0f2fe" stroke="#bae6fd" />
+    <circle cx="18" cy="14" r="5" fill="#0284c7" />
+    <text x="32" y="19" fill="#0369a1" font-size="12" font-weight="800" letter-spacing="0.03em">
+      🌅 JORNADA DE LA MAÑANA · ENCUADRE, PANORAMA, MODO DE VOZ Y USOS NO CONVENCIONALES (08:00 – 12:00)
+    </text>
+  </g>
+
+  <!-- Línea conectora horizontal de la mañana -->
+  <line x1="130" y1="255" x2="1060" y2="255" stroke="#cbd5e1" stroke-width="3" stroke-dasharray="6,6" />
+
+  <!-- MOMENTO 1: Apertura & Encuadre (08:00 - 08:30) -->
+  <g transform="translate(25, 170)" filter="url(#card-shadow)">
+    <rect width="215" height="175" rx="10" fill="#ffffff" stroke="#93c5fd" stroke-width="1.5" />
+    <!-- Header Card -->
+    <path d="M0,10 Q0,0 10,0 L205,0 Q215,0 215,10 L215,36 L0,36 Z" fill="#eff6ff" />
+    <rect x="10" y="8" width="95" height="20" rx="10" fill="#1e40af" />
+    <text x="57" y="22" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">08:00 – 08:30</text>
+    <text x="205" y="22" fill="#64748b" font-size="10" font-weight="700" text-anchor="end">30 min</text>
+
+    <!-- Título y Facilitador -->
+    <text x="12" y="55" fill="#0f172a" font-size="13" font-weight="800">1. Apertura &amp; Encuadre</text>
+    <rect x="12" y="63" width="80" height="16" rx="8" fill="#dbeafe" />
+    <text x="52" y="75" fill="#1e40af" font-size="9" font-weight="800" text-anchor="middle">AGM &amp; HL</text>
+
+    <!-- Detalles -->
+    <text x="12" y="96" fill="#334155" font-size="10.5" font-weight="500">• Bienvenida institucional INA.</text>
+    <text x="12" y="112" fill="#334155" font-size="10.5" font-weight="500">• Sondeo de nivel de uso real.</text>
+    <text x="12" y="128" fill="#334155" font-size="10.5" font-weight="500">• Contrato de confidencialidad.</text>
+    <text x="12" y="144" fill="#b45309" font-size="10.5" font-weight="700">• Regla de oro Ley 8968.</text>
+
+    <!-- Badge inferior -->
+    <rect x="12" y="152" width="191" height="16" rx="4" fill="#f8fafc" stroke="#e2e8f0" />
+    <text x="107" y="164" fill="#475569" font-size="9" font-weight="700" text-anchor="middle">Sondeo inicial &amp; Metodología</text>
+  </g>
+
+  <!-- MOMENTO 2: Receso Técnico (08:30 - 09:00) -->
+  <g transform="translate(255, 170)" filter="url(#card-shadow)">
+    <rect width="215" height="175" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <path d="M0,10 Q0,0 10,0 L205,0 Q215,0 215,10 L215,36 L0,36 Z" fill="#f1f5f9" />
+    <rect x="10" y="8" width="95" height="20" rx="10" fill="#475569" />
+    <text x="57" y="22" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">08:30 – 09:00</text>
+    <text x="205" y="22" fill="#64748b" font-size="10" font-weight="700" text-anchor="end">30 min</text>
+
+    <text x="12" y="55" fill="#0f172a" font-size="13" font-weight="800">2. Receso &amp; Soporte</text>
+    <rect x="12" y="63" width="95" height="16" rx="8" fill="#f1f5f9" />
+    <text x="59" y="75" fill="#475569" font-size="9" font-weight="800" text-anchor="middle">Mesa de Apoyo</text>
+
+    <text x="12" y="96" fill="#334155" font-size="10.5" font-weight="500">• Café y pausa matutina.</text>
+    <text x="12" y="112" fill="#334155" font-size="10.5" font-weight="500">• Validación de conectividad.</text>
+    <text x="12" y="128" fill="#334155" font-size="10.5" font-weight="500">• Apertura de cuentas IA.</text>
+    <text x="12" y="144" fill="#15803d" font-size="10.5" font-weight="600">• Verificación Plan B listo.</text>
+
+    <rect x="12" y="152" width="191" height="16" rx="4" fill="#f8fafc" stroke="#e2e8f0" />
+    <text x="107" y="164" fill="#475569" font-size="9" font-weight="700" text-anchor="middle">Prueba técnica de cuentas</text>
+  </g>
+
+  <!-- MOMENTO 3: Bloque 1 - Panorama, Evidencia & Voz (09:00 - 10:00) -->
+  <g transform="translate(485, 170)" filter="url(#card-shadow)">
+    <rect width="225" height="175" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="2" />
+    <path d="M0,10 Q0,0 10,0 L215,0 Q225,0 225,10 L225,36 L0,36 Z" fill="#eff6ff" />
+    <rect x="10" y="8" width="95" height="20" rx="10" fill="#2563eb" />
+    <text x="57" y="22" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">09:00 – 10:00</text>
+    <text x="215" y="22" fill="#1e40af" font-size="10" font-weight="800" text-anchor="end">60 min</text>
+
+    <text x="12" y="55" fill="#0f172a" font-size="13" font-weight="800">3. Bloque 1: Panorama &amp; Voz</text>
+    <rect x="12" y="63" width="135" height="16" rx="8" fill="#dbeafe" />
+    <text x="79" y="75" fill="#1e40af" font-size="9" font-weight="800" text-anchor="middle">Agustín Gómez (AGM)</text>
+
+    <text x="12" y="96" fill="#334155" font-size="10.5" font-weight="500">• 3 fallas críticas de la IA en EFL.</text>
+    <text x="12" y="112" fill="#334155" font-size="10.5" font-weight="500">• Los 5 componentes obligatorios.</text>
+    <text x="12" y="128" fill="#334155" font-size="10.5" font-weight="500">• Demostración de Voz en vivo.</text>
+
+    <!-- Badge Práctica PR-01 -->
+    <rect x="12" y="146" width="201" height="22" rx="6" fill="#059669" />
+    <text x="112" y="161" fill="#ffffff" font-size="10.5" font-weight="800" text-anchor="middle">🎯 PR-01: Quejas Hotel A2 (12m)</text>
+  </g>
+
+  <!-- MOMENTO 4: Bloque 2 - Usos No Convencionales (10:00 - 11:30) -->
+  <g transform="translate(725, 170)" filter="url(#card-shadow)">
+    <rect width="240" height="175" rx="10" fill="#ffffff" stroke="#7c3aed" stroke-width="2" />
+    <path d="M0,10 Q0,0 10,0 L230,0 Q240,0 240,10 L240,36 L0,36 Z" fill="#f5f3ff" />
+    <rect x="10" y="8" width="100" height="20" rx="10" fill="#7c3aed" />
+    <text x="60" y="22" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">10:00 – 11:30</text>
+    <text x="230" y="22" fill="#6d28d9" font-size="10" font-weight="800" text-anchor="end">90 min</text>
+
+    <text x="12" y="55" fill="#0f172a" font-size="13" font-weight="800">4. Bloque 2: No Convencionales</text>
+    <rect x="12" y="63" width="145" height="16" rx="8" fill="#ede9fe" />
+    <text x="84" y="75" fill="#6d28d9" font-size="9" font-weight="800" text-anchor="middle">Hannia León Fuentes (HL)</text>
+
+    <text x="12" y="96" fill="#334155" font-size="10.5" font-weight="500">• Retroalimentación A2 vs B1.</text>
+    <text x="12" y="112" fill="#334155" font-size="10.5" font-weight="500">• Anticipación de errores de aula.</text>
+    <text x="12" y="128" fill="#334155" font-size="10.5" font-weight="500">• Chatbot tutor con límite estricto.</text>
+
+    <!-- Badge Prácticas PR-02, 03, 04 -->
+    <rect x="12" y="146" width="216" height="22" rx="6" fill="#059669" />
+    <text x="120" y="161" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">🎯 PR-02 + PR-03 + PR-04 (12m c/u)</text>
+  </g>
+
+  <!-- MOMENTO 5: Q&A y Síntesis Matutina (11:30 - 12:00) -->
+  <g transform="translate(980, 170)" filter="url(#card-shadow)">
+    <rect width="195" height="175" rx="10" fill="#ffffff" stroke="#93c5fd" stroke-width="1.5" />
+    <path d="M0,10 Q0,0 10,0 L185,0 Q195,0 195,10 L195,36 L0,36 Z" fill="#eff6ff" />
+    <rect x="10" y="8" width="95" height="20" rx="10" fill="#0284c7" />
+    <text x="57" y="22" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">11:30 – 12:00</text>
+    <text x="185" y="22" fill="#0369a1" font-size="10" font-weight="700" text-anchor="end">30 min</text>
+
+    <text x="12" y="55" fill="#0f172a" font-size="13" font-weight="800">5. Plenaria &amp; Q&amp;A</text>
+    <rect x="12" y="63" width="80" height="16" rx="8" fill="#e0f2fe" />
+    <text x="52" y="75" fill="#0369a1" font-size="9" font-weight="800" text-anchor="middle">AGM &amp; HL</text>
+
+    <text x="12" y="96" fill="#334155" font-size="10.5" font-weight="500">• Preguntas docentes en vivo.</text>
+    <text x="12" y="112" fill="#334155" font-size="10.5" font-weight="500">• Calibración en pantalla.</text>
+    <text x="12" y="128" fill="#334155" font-size="10.5" font-weight="500">• Revisión de microentregas.</text>
+    <text x="12" y="144" fill="#15803d" font-size="10.5" font-weight="600">• Balance de la mañana.</text>
+
+    <rect x="12" y="152" width="171" height="16" rx="4" fill="#f8fafc" stroke="#e2e8f0" />
+    <text x="97" y="164" fill="#475569" font-size="9" font-weight="700" text-anchor="middle">Síntesis y retroalimentación</text>
+  </g>
+
+  <!-- ================= PAUSA MERIDIANA: ALMUERZO ================= -->
+  <g transform="translate(25, 365)">
+    <rect width="1150" height="36" rx="8" fill="url(#lunch-grad)" stroke="#cbd5e1" stroke-width="1.5" />
+    <text x="575" y="23" fill="#334155" font-size="13" font-weight="800" text-anchor="middle" letter-spacing="0.04em">
+      🍽️ 12:00 – 13:00 · RECESO MERIDIANO: ALMUERZO Y PAUSA DE RECUPERACIÓN (60 MINUTOS)
+    </text>
+  </g>
+
+  <!-- ================= SECCIÓN TARDE (13:00 - 15:00) ================= -->
+  <!-- Kicker de la Tarde -->
+  <g transform="translate(25, 415)">
+    <rect width="1150" height="28" rx="6" fill="#fef3c7" stroke="#fde68a" />
+    <circle cx="18" cy="14" r="5" fill="#d97706" />
+    <text x="32" y="19" fill="#92400e" font-size="12" font-weight="800" letter-spacing="0.03em">
+      🌇 JORNADA DE LA TARDE · EVALUACIÓN, PRUEBA DE ESFUERZO, MODO VOZ, IA LOCAL Y COMPROMISO (13:00 – 15:00)
+    </text>
+  </g>
+
+  <!-- Línea conectora horizontal de la tarde -->
+  <line x1="160" y1="550" x2="1030" y2="550" stroke="#cbd5e1" stroke-width="3" stroke-dasharray="6,6" />
+
+  <!-- MOMENTO 6: Bloque 3 - Secuencias, Rúbricas & Voz (13:00 - 14:00) -->
+  <g transform="translate(25, 455)" filter="url(#card-shadow)">
+    <rect width="360" height="185" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="2" />
+    <path d="M0,10 Q0,0 10,0 L350,0 Q360,0 360,10 L360,36 L0,36 Z" fill="#eff6ff" />
+    <rect x="12" y="8" width="95" height="20" rx="10" fill="#2563eb" />
+    <text x="59" y="22" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">13:00 – 14:00</text>
+    <text x="348" y="22" fill="#1e40af" font-size="10" font-weight="800" text-anchor="end">60 min</text>
+
+    <text x="14" y="55" fill="#0f172a" font-size="14" font-weight="800">6. Bloque 3: Modalidad Educativa, Rúbricas &amp; Voz</text>
+    <rect x="14" y="63" width="145" height="16" rx="8" fill="#dbeafe" />
+    <text x="86" y="75" fill="#1e40af" font-size="9" font-weight="800" text-anchor="middle">Agustín Gómez Meléndez</text>
+
+    <text x="14" y="96" fill="#334155" font-size="11" font-weight="500">• ChatGPT y Claude en modalidad educativa (sin resolver por el alumno).</text>
+    <text x="14" y="114" fill="#334155" font-size="11" font-weight="500">• Prueba de esfuerzo sobre rúbrica de 4 criterios (0-16 pts).</text>
+    <text x="14" y="132" fill="#334155" font-size="11" font-weight="500">• Interacción oral por Voz: regla 70/30 de habla para el aprendiz.</text>
+
+    <!-- Badges PR-05 y PR-06 -->
+    <g transform="translate(14, 146)">
+      <rect width="160" height="24" rx="6" fill="#059669" />
+      <text x="80" y="16" fill="#ffffff" font-size="10.5" font-weight="800" text-anchor="middle">🎯 PR-05: Rúbrica (12m)</text>
+      
+      <rect x="170" y="0" width="162" height="24" rx="6" fill="#059669" />
+      <text x="251" y="16" fill="#ffffff" font-size="10.5" font-weight="800" text-anchor="middle">🎙️ PR-06: Modo Voz (12m)</text>
+    </g>
+  </g>
+
+  <!-- MOMENTO 7: Bloque 4 - Gestión de IA Local (14:00 - 14:30) -->
+  <g transform="translate(415, 455)" filter="url(#card-shadow)">
+    <rect width="360" height="185" rx="10" fill="#ffffff" stroke="#059669" stroke-width="2" />
+    <path d="M0,10 Q0,0 10,0 L350,0 Q360,0 360,10 L360,36 L0,36 Z" fill="#ecfdf5" />
+    <rect x="12" y="8" width="95" height="20" rx="10" fill="#059669" />
+    <text x="59" y="22" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">14:00 – 14:30</text>
+    <text x="348" y="22" fill="#065f46" font-size="10" font-weight="800" text-anchor="end">30 min</text>
+
+    <text x="14" y="55" fill="#0f172a" font-size="14" font-weight="800">7. Bloque 4: Gestión &amp; Despliegue de IA Local</text>
+    <rect x="14" y="63" width="145" height="16" rx="8" fill="#d1fae5" />
+    <text x="86" y="75" fill="#065f46" font-size="9" font-weight="800" text-anchor="middle">Agustín Gómez Meléndez</text>
+
+    <text x="14" y="96" fill="#334155" font-size="11" font-weight="500">• Ejecución autónoma en Modo Avión (Ollama / LM Studio / Msty).</text>
+    <text x="14" y="114" fill="#334155" font-size="11" font-weight="500">• Protección de registros de estudiantes bajo Ley 8968.</text>
+    <text x="14" y="132" fill="#334155" font-size="11" font-weight="500">• Adaptaciones lingüísticas para LESCO, Portugués y Francés.</text>
+
+    <!-- Badge PR-07 -->
+    <rect x="14" y="146" width="332" height="24" rx="6" fill="#059669" />
+    <text x="180" y="162" fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle">🔒 PR-07: Ficha Técnica &amp; IA Local (12 min)</text>
+  </g>
+
+  <!-- MOMENTO 8: Cierre, Evaluación & Compromiso a 30 Días (14:30 - 15:00) -->
+  <g transform="translate(805, 455)" filter="url(#card-shadow)">
+    <rect width="370" height="185" rx="10" fill="#ffffff" stroke="#d97706" stroke-width="2" />
+    <path d="M0,10 Q0,0 10,0 L360,0 Q370,0 370,10 L370,36 L0,36 Z" fill="#fffbeb" />
+    <rect x="12" y="8" width="95" height="20" rx="10" fill="#d97706" />
+    <text x="59" y="22" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">14:30 – 15:00</text>
+    <text x="358" y="22" fill="#92400e" font-size="10" font-weight="800" text-anchor="end">30 min</text>
+
+    <text x="14" y="55" fill="#0f172a" font-size="14" font-weight="800">8. Cierre Oficial &amp; Compromiso a 30 Días</text>
+    <rect x="14" y="63" width="155" height="16" rx="8" fill="#fef3c7" />
+    <text x="91" y="75" fill="#92400e" font-size="9" font-weight="800" text-anchor="middle">Agustín Gómez &amp; Hannia León</text>
+
+    <text x="14" y="96" fill="#334155" font-size="11" font-weight="500">• Guardado en el cuaderno local del taller.</text>
+    <text x="14" y="114" fill="#334155" font-size="11" font-weight="500">• Definición del Compromiso Docente a 30 días de aula.</text>
+    <text x="14" y="132" fill="#334155" font-size="11" font-weight="500">• Encuesta de satisfacción y entrega de constancias INA.</text>
+
+    <!-- Badge Compromiso -->
+    <rect x="14" y="146" width="342" height="24" rx="6" fill="#d97706" />
+    <text x="185" y="162" fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle">💾 Cuaderno local &amp; compromiso docente</text>
+  </g>
+
+  <!-- ================= BARRA INFERIOR: CICLO METODOLÓGICO DE 25 MIN ================= -->
+  <g transform="translate(25, 660)">
+    <rect width="1150" height="135" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#card-shadow)" />
+    
+    <!-- Título de la Metodología -->
+    <rect x="20" y="14" width="280" height="22" rx="11" fill="#ede9fe" />
+    <text x="160" y="29" fill="#6d28d9" font-size="11" font-weight="800" text-anchor="middle">🔄 MÉTODO CONDUCTOR: CICLO DE 25 MINUTOS</text>
+
+    <text x="320" y="30" fill="#64748b" font-size="11" font-weight="500">
+      Estructura estandarizada repetida en cada una de las 7 prácticas activas del taller:
+    </text>
+
+    <!-- Las 4 Fases del Ciclo de 25 min -->
+    <!-- Fase 1: Demo (8 min) -->
+    <g transform="translate(20, 50)">
+      <rect width="260" height="65" rx="8" fill="#f8fafc" stroke="#93c5fd" stroke-width="1.5" />
+      <circle cx="24" cy="22" r="12" fill="#dbeafe" />
+      <text x="24" y="26" fill="#1e40af" font-size="11" font-weight="800" text-anchor="middle">1</text>
+      <text x="46" y="20" fill="#0f172a" font-size="12" font-weight="800">Demo Conducida</text>
+      <rect x="46" y="28" width="55" height="15" rx="4" fill="#1e40af" />
+      <text x="73" y="39" fill="#ffffff" font-size="9" font-weight="800" text-anchor="middle">8 MIN</text>
+      <text x="12" y="54" fill="#475569" font-size="10">El facilitador proyecta el caso y las reglas.</text>
+    </g>
+
+    <!-- Flecha 1 -->
+    <path d="M290,82 L305,82" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)" />
+
+    <!-- Fase 2: Práctica en IA (12 min) -->
+    <g transform="translate(315, 50)">
+      <rect width="260" height="65" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="2" />
+      <circle cx="24" cy="22" r="12" fill="#dcfce7" />
+      <text x="24" y="26" fill="#166534" font-size="11" font-weight="800" text-anchor="middle">2</text>
+      <text x="46" y="20" fill="#14532d" font-size="12" font-weight="800">Práctica Individual</text>
+      <rect x="46" y="28" width="65" height="15" rx="4" fill="#15803d" />
+      <text x="78" y="39" fill="#ffffff" font-size="9" font-weight="800" text-anchor="middle">12 MIN</text>
+      <text x="12" y="54" fill="#166534" font-size="10">Trabajo individual en ChatGPT, Claude o Gemini.</text>
+    </g>
+
+    <!-- Flecha 2 -->
+    <path d="M585,82 L600,82" stroke="#94a3b8" stroke-width="2" />
+
+    <!-- Fase 3: Microentregable (3 min) -->
+    <g transform="translate(610, 50)">
+      <rect width="245" height="65" rx="8" fill="#fffbeb" stroke="#fde68a" stroke-width="1.5" />
+      <circle cx="24" cy="22" r="12" fill="#fef3c7" />
+      <text x="24" y="26" fill="#92400e" font-size="11" font-weight="800" text-anchor="middle">3</text>
+      <text x="46" y="20" fill="#78350f" font-size="12" font-weight="800">Microentregable</text>
+      <rect x="46" y="28" width="55" height="15" rx="4" fill="#b45309" />
+      <text x="73" y="39" fill="#ffffff" font-size="9" font-weight="800" text-anchor="middle">3 MIN</text>
+      <text x="12" y="54" fill="#92400e" font-size="10">Guardado en el cuaderno local del taller.</text>
+    </g>
+
+    <!-- Flecha 3 -->
+    <path d="M865,82 L880,82" stroke="#94a3b8" stroke-width="2" />
+
+    <!-- Fase 4: Devolución Pública (2 min) -->
+    <g transform="translate(890, 50)">
+      <rect width="240" height="65" rx="8" fill="#fdf4ff" stroke="#f5d0fe" stroke-width="1.5" />
+      <circle cx="24" cy="22" r="12" fill="#fae8ff" />
+      <text x="24" y="26" fill="#86198f" font-size="11" font-weight="800" text-anchor="middle">4</text>
+      <text x="46" y="20" fill="#701a75" font-size="12" font-weight="800">Devolución Pública</text>
+      <rect x="46" y="28" width="55" height="15" rx="4" fill="#a21caf" />
+      <text x="73" y="39" fill="#ffffff" font-size="9" font-weight="800" text-anchor="middle">2 MIN</text>
+      <text x="12" y="54" fill="#86198f" font-size="10">Análisis de aciertos y errores en plenaria.</text>
+    </g>
+  </g>
+</svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       SECCIÓN CENTRAL: TALLER EN VIVO (PRÁCTICAS ACTIVAS CONDUCIDAS)
+       ==================================================================== -->
+  <main id="seccion-practica" class="live-workshop-section">
+    <div class="live-workshop-container">
+      
+      <div class="section-header-centered" style="margin-bottom:2rem;">
+        <span class="sub-badge" style="background:#fee2e2;color:#991b1b;border:1px solid #fecaca;">🔴 EN VIVO · PRÁCTICA ACTIVA GUIADA</span>
+        <h3 style="font-size:2rem;color:var(--ina-blue-900);margin:0.5rem 0;">Taller Práctico: Enfoque 1 Actividad a la Vez</h3>
+        <p style="color:var(--text-muted);max-width:680px;margin:0 auto;">
+          Seleccione la práctica en curso en el selector horizontal. Cada práctica despliega su prompt oficial copiable en 1 clic, muestra técnica de prueba, criterio de verificación y rúbrica evaluativa.
+        </p>
+      </div>
+
+      <!-- Cockpit del Facilitador (Visible solo en Modo Tutor) -->
+      <section class="tutor-control-panel" aria-label="Panel de facilitación">
+          <div class="cockpit-grid">
+            <!-- Gestor del Ciclo de 25 Minutos -->
+            <div class="cycle-manager-box">
+              <div style="display:flex;justify-content:space-between;align-items:center;">
+                <h4 style="color:#4f46e5;margin:0;font-size:1.1rem;">⏱️ Gestor de Ciclo Estándar (25 min)</h4>
+                <span id="cycle-stage-title" style="font-size:0.85rem;font-weight:700;color:var(--ina-blue-900);">Demostración Conducida (8 min)</span>
+              </div>
+
+              <div class="cycle-stages-track">
+                <div class="cycle-stage-pill active" data-stage="0">
+                  <div class="stage-pill-time">8 min</div>
+                  <div class="stage-pill-label">1. Demo</div>
+                </div>
+                <div class="cycle-stage-pill" data-stage="1">
+                  <div class="stage-pill-time">12 min</div>
+                  <div class="stage-pill-label">2. Práctica</div>
+                </div>
+                <div class="cycle-stage-pill" data-stage="2">
+                  <div class="stage-pill-time">3 min</div>
+                  <div class="stage-pill-label">3. Guardado</div>
+                </div>
+                <div class="cycle-stage-pill" data-stage="3">
+                  <div class="stage-pill-time">2 min</div>
+                  <div class="stage-pill-label">4. Devolución</div>
+                </div>
+              </div>
+
+              <div style="display:flex;align-items:center;justify-content:space-between;background:#ffffff;padding:0.75rem 1rem;border-radius:8px;border:1px solid var(--border-medium);">
+                <div id="cycle-timer-display" role="timer" aria-live="polite" style="font-family:var(--font-mono);font-size:1.75rem;font-weight:800;color:#6d28d9;">08:00</div>
+                <div style="display:flex;gap:0.5rem;">
+                  <button id="btn-cycle-start" class="btn-primary" style="background:#4f46e5;padding:0.4rem 0.85rem;">Iniciar Etapa</button>
+                  <button id="btn-cycle-pause" class="btn-secondary" style="display:none;padding:0.4rem 0.85rem;">Pausar</button>
+                  <button id="btn-cycle-reset" class="btn-secondary" style="padding:0.4rem 0.85rem;">Reiniciar</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Avisos Copiables para Teams -->
+            <div class="teams-chat-broadcast-box">
+              <div style="display:flex;justify-content:space-between;align-items:center;">
+                <h4 style="color:var(--ina-blue-900);margin:0;font-size:1.05rem;">💬 Avisos Rápidos para el Chat de Teams</h4>
+                <span style="font-size:0.75rem;color:var(--text-light);">Copia en 1 clic</span>
+              </div>
+              <div id="teams-broadcast-list" style="display:flex;flex-direction:column;gap:0.5rem;max-height:210px;overflow-y:auto;">
+                <!-- Renderizado dinámico desde tutor-mode.js -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+      <!-- Contenido Vivo de las 7 Prácticas (Completamente Preservado) -->
+      <div id="tab-live" class="live-practice-content active">
+
+      <!-- Banner de Enfoque Activo en Vivo (Contexto directo de la práctica) -->
+      <div id="live-focus-banner" class="live-focus-banner" aria-label="Práctica activa del taller">
+        <div class="live-focus-info">
+          <div class="pulse-live-badge">
+            <span class="pulse-dot"></span>
+            <span>EN VIVO AHORA</span>
+          </div>
+          <div class="live-focus-text">
+            <strong id="live-focus-label">Bloque 1 (AGM) · Práctica 1: Recepción de quejas en hotel (A2 Oral)</strong>
+            <span id="live-focus-sub">Facilitador: Agustín Gómez Meléndez · Tiempo de práctica: 12 min</span>
+          </div>
+        </div>
+        <button id="btn-jump-live-practice" class="btn-focus-action">Ir a mi práctica ahora ➔</button>
+      </div>
+
+      <!-- Tarjetas de Ayuda y Principios Pedagógicos Clave -->
+      <section class="welcome-guide-grid" aria-label="Principios pedagógicos">
+        <div class="welcome-card">
+          <div class="welcome-card-icon">🎯</div>
+          <h4>El Docente Decide</h4>
+          <p>La IA propone ideas y borradores, pero usted como docente conserva el control pedagógico y la decisión final.</p>
+        </div>
+        <div class="welcome-card">
+          <div class="welcome-card-icon">⚡</div>
+          <h4>5 Componentes Clave</h4>
+          <p>Toda buena instrucción incluye: Rol, <span class="interactive-term" data-tooltip="Marco Común Europeo de Referencia para las Lenguas: La escala oficial internacional de niveles de idioma (A1 Principiante, A2 Básico, B1 Intermedio, B2 Avanzado).">Nivel de Idioma (A1, A2, B1...)</span>, Contexto laboral INA, Formato y Restricciones de tiempo.</p>
+        </div>
+        <div class="welcome-card">
+          <div class="welcome-card-icon">🛡️</div>
+          <h4>Plan B Garantizado</h4>
+          <p>Si alguna herramienta no le abre o falla el internet, cada práctica incluye un botón naranja de salida de respaldo.</p>
+        </div>
+      </section>
+
+      <!-- Selector Desplegable (Droplist) de las 7 Prácticas Activas -->
+      <div class="practice-droplist-wrapper" role="region" aria-label="Selector de Práctica Activa">
+        <div class="stepper-header-row">
+          <div>
+            <h3 style="font-size:1.22rem;color:var(--ina-blue-900);margin:0 0 0.35rem 0;font-weight:800;display:flex;align-items:center;gap:0.5rem;">
+              <span>🎯 Paso a Paso del Taller: 7 Prácticas Activas</span>
+            </h3>
+            <p style="font-size:0.9rem;color:var(--text-muted);margin:0;">
+              Seleccione la práctica en curso mediante la lista desplegable para visualizar de forma limpia y directa sus consignas, prompt y Plan B:
+            </p>
+          </div>
+          <span class="meta-pill highlight">1 Práctica en Pantalla</span>
+        </div>
+
+        <div class="practice-droplist-control-row">
+          <div class="practice-select-box">
+            <span class="select-icon-prefix" aria-hidden="true">📋</span>
+            <select id="practice-select-dropdown" class="practice-select-dropdown" onchange="App.selectPractice(this.value)" aria-label="Seleccionar práctica activa del taller">
+              <option value="PR-01">PR-01 · Recepción de Quejas en Hotel (Oral A2) — Bloque 1 (AGM) · 12 min</option>
+              <option value="PR-02">PR-02 · Retroalimentación Diferenciada A2 vs B1 (Escrita) — Bloque 2 (HL) · 12 min</option>
+              <option value="PR-03">PR-03 · Anticipar Errores y Diseñar Microrremedios — Bloque 2 (HL) · 12 min</option>
+              <option value="PR-04">PR-04 · Chatbot Tutor Escrito con Límites — Bloque 2 (HL) · 12 min</option>
+              <option value="PR-05">PR-05 · Rúbrica de 4 Criterios y Prueba de Esfuerzo — Bloque 3 (AGM) · 12 min</option>
+              <option value="PR-06">PR-06 · Secuencia Didáctica de 45 min y Modo Voz — Bloque 3 (AGM) · 12 min</option>
+              <option value="PR-07">PR-07 · Gestión y Despliegue de IA Local (Modo Avión) — Bloque 4 (AGM) · 12 min</option>
+            </select>
+          </div>
+
+          <div class="practice-droplist-nav-buttons">
+            <button type="button" id="btn-prev-practice" class="btn-droplist-nav" onclick="App.navigatePractice(-1)" title="Ir a la práctica anterior">
+              ◀ Anterior
+            </button>
+            <button type="button" id="btn-next-practice" class="btn-droplist-nav" onclick="App.navigatePractice(1)" title="Ir a la práctica siguiente">
+              Siguiente ▶
+            </button>
+          </div>
+        </div>
+
+        <!-- Barra Informativa de la Práctica Activa -->
+        <div class="practice-active-summary-bar">
+          <div class="active-badge-pill" id="practice-badge-display">
+            <span class="badge-dot"></span>
+            <span id="practice-badge-text">Práctica 1 de 7 Activa (PR-01)</span>
+          </div>
+          <div class="active-details-text" id="practice-details-summary">
+            Bloque 1 · Facilitador: Agustín Gómez Meléndez · Recepción de quejas en hotel (Oral A2)
+          </div>
+        </div>
+      </div>
+
+      <!-- Cronómetro Interactivo Individual -->
+      <div class="timer-widget">
+        <div class="timer-info">
+          <h4>⏱️ Cronómetro de Práctica Individual</h4>
+          <p>Utilice este cronómetro durante los 12 minutos de trabajo individual en ChatGPT, Claude o Gemini.</p>
+        </div>
+        <div class="timer-display-group">
+          <div id="practice-timer-display" class="timer-display" role="timer" aria-live="polite">12:00</div>
+          <div class="timer-controls">
+            <button id="btn-practice-start" class="btn-timer btn-timer-start">▶ Iniciar 12 min</button>
+            <button id="btn-practice-pause" class="btn-timer btn-timer-pause" style="display:none;">⏸ Pausar</button>
+            <button id="btn-practice-reset" class="btn-timer btn-timer-reset">↺ Reiniciar</button>
+          </div>
+        </div>
+      </div>
+
+      <section class="participant-notebook" id="participant-notebook" aria-labelledby="participant-notebook-title">
+        <div class="notebook-heading">
+          <div>
+            <span class="notebook-kicker">💾 TRABAJO PERSONAL · SIN ENVÍOS</span>
+            <h3 id="participant-notebook-title">Mi cuaderno local del taller</h3>
+            <p>Sus notas quedan en este navegador y dispositivo. No se suben a ninguna plataforma. Descargue una copia antes de cerrar o cambiar de computadora.</p>
+          </div>
+          <span id="notebook-practice-label" class="notebook-practice-label">PR-01 · registro personal</span>
+        </div>
+        <label for="notebook-entry" class="notebook-label">Producto y reflexión de la práctica activa</label>
+        <textarea id="notebook-entry" class="notebook-entry" rows="13" spellcheck="true"></textarea>
+        <div class="notebook-actions">
+          <span id="notebook-save-status" class="notebook-status" aria-live="polite">Listo para escribir.</span>
+          <div class="notebook-buttons">
+            <button id="btn-notebook-save" class="btn-secondary" type="button">Guardar ahora</button>
+            <button id="btn-notebook-download" class="btn-primary" type="button">Descargar cuaderno (.md)</button>
+            <button id="btn-notebook-clear" class="btn-secondary notebook-clear" type="button">Borrar esta práctica</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contenedor de Prácticas -->
+      <div class="practices-grid" style="display:block;">
+        <!-- PR-01 -->
+        <article class="practice-card" data-practice-code="PR-01" style="display: block;">
+          <div class="practice-card-header">
+            <div class="practice-title-group">
+              <span class="practice-code-badge">Bloque 1 · AGM</span>
+              <h3>PR-01 · Instrucción pedagógica completa</h3>
+            </div>
+            <span class="practice-duration-pill">⏱️ 12 min</span>
+          </div>
+          <!-- 3 Pasos de Acción Inmediata (Claridad Cognitiva) -->
+          <div class="action-steps-grid">
+            <div class="action-step-card step-copy">
+              <span class="step-card-badge">Paso 1 · Copiar</span>
+              <h4>Orden Pedagógica</h4>
+              <p>Instrucción calibrada y lista con los 5 componentes para pegar en su IA:</p>
+              <div class="prompt-box-preview"><code>Actúa como evaluador pedagógico de inglés para el INA. Diseña un ejercicio de diálogo oral nivel MCER A2 para un recepcionista de hotel en Costa Rica atendiendo a un turista extranjero con una queja de habitación. Proporciona: 1) Guion de 4 turnos, 2) Lista de 5 frases clave formales, 3) Criterio de logro observable.</code></div>
+              <button class="btn-step-action btn-copy-prompt-direct" data-prompt="Actúa como evaluador pedagógico de inglés para el INA. Diseña un ejercicio de diálogo oral nivel MCER A2 para un recepcionista de hotel en Costa Rica atendiendo a un turista extranjero con una queja de habitación. Proporciona: 1) Guion de 4 turnos, 2) Lista de 5 frases clave formales, 3) Criterio de logro observable.">📋 Copiar Orden Lista</button>
+            </div>
+            <div class="action-step-card step-open">
+              <span class="step-card-badge">Paso 2 · Abrir IA</span>
+              <h4>Ejecutar en Asistente</h4>
+              <p>Abra su herramienta preferida en una pestaña nueva y pegue la orden:</p>
+              <div class="ai-launcher-btns">
+                <a href="https://chatgpt.com" target="_blank" rel="noopener" class="btn-ai-link">ChatGPT ↗</a>
+                <a href="https://claude.ai" target="_blank" rel="noopener" class="btn-ai-link">Claude ↗</a>
+                <a href="https://gemini.google.com" target="_blank" rel="noopener" class="btn-ai-link">Gemini ↗</a>
+              </div>
+            </div>
+            <div class="action-step-card step-planb">
+              <span class="step-card-badge">Paso 3 · Plan B</span>
+              <h4>¿Falla la red o la IA?</h4>
+              <p>Use la salida pregenerada de respaldo para continuar sin atrasarse:</p>
+              <button class="btn-step-action btn-plan-b" data-practice="PR-01">🛡️ Ver Salida Plan B</button>
+            </div>
+          </div>
+          <!-- Acordeón Desplegable con Consigna Completa y Microentregable -->
+          <details class="friendly-disclosure">
+            <summary>🔍 Ver detalles pedagógicos, pasos completos y microentregable</summary>
+            <div style="margin-top:0.75rem;">
+<div class="practice-card-body">
+            <ol class="practice-steps-list">
+              <li><span class="step-num">1</span> Elija un objetivo real e indique <span class="interactive-term" data-tooltip="Marco Común Europeo de Referencia para las Lenguas (Escala internacional: A1, A2, B1, B2)">nivel de idioma (A1 a B2)</span>, destreza y contexto ocupacional del INA.</li>
+              <li><span class="step-num">2</span> Asigne a la IA un rol pedagógico y un producto concreto de salida.</li>
+              <li><span class="step-num">3</span> Defina formato, extensión, vocabulario permitido y tiempo disponible.</li>
+              <li><span class="step-num">4</span> Genere la salida, marque un defecto crítico y mejore la instrucción.</li>
+            </ol>
+            <div class="deliverable-box">
+              <strong>📦 Microentregable a depositar:</strong>
+              <p>Instrucción final calibrada, fragmento corregido y hallazgo crítico principal.</p>
+            </div>
+            <div class="privacy-notice-badge">
+              🔒 No ingrese nombres ni datos reales de estudiantes.
+            </div>
+            <div class="bonus-tip-box">
+              💡 <strong>Si termina antes:</strong> Solicite una segunda versión y compare cuál respeta mejor el <span class="interactive-term" data-tooltip="Marco Común Europeo de Referencia para las Lenguas (Escala: A1, A2, B1, B2)">nivel de idioma</span>.
+            </div>
+          </div>
+          <div class="practice-card-footer">
+            <button class="btn-primary btn-copy-consigna" data-practice="PR-01">📋 Copiar Consigna</button>
+            <button class="btn-outline-amber btn-plan-b" data-practice="PR-01">⚠️ Plan B / Respaldo</button>
+          </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- PR-02 -->
+        <article class="practice-card" data-practice-code="PR-02" style="display: none;">
+          <div class="practice-card-header">
+            <div class="practice-title-group">
+              <span class="practice-code-badge" style="background:#ede9fe;color:#6d28d9;">Bloque 2 · HL</span>
+              <h3>PR-02 · Retroalimentación formativa y diferenciada</h3>
+            </div>
+            <span class="practice-duration-pill">⏱️ 12 min</span>
+          </div>
+          <!-- 3 Pasos de Acción Inmediata (Claridad Cognitiva) -->
+          <div class="action-steps-grid">
+            <div class="action-step-card step-copy">
+              <span class="step-card-badge">Paso 1 · Copiar</span>
+              <h4>Orden Pedagógica</h4>
+              <p>Instrucción calibrada y lista con los 5 componentes para pegar en su IA:</p>
+              <div class="prompt-box-preview"><code>Analiza el siguiente correo sintético de servicio al cliente de un estudiante: 'Dear sir, I write to complain because room dirty and shower no work. Need fix now.' Proporciona retroalimentación formativa diferenciada para nivel A2 y B1 por separado, destacando únicamente 2 errores prioritarios, una frase modelo correcta y un microrremedio de 5 minutos. No incluyas elogios vacíos ni felicitaciones genéricas.</code></div>
+              <button class="btn-step-action btn-copy-prompt-direct" data-prompt="Analiza el siguiente correo sintético de servicio al cliente de un estudiante: 'Dear sir, I write to complain because room dirty and shower no work. Need fix now.' Proporciona retroalimentación formativa diferenciada para nivel A2 y B1 por separado, destacando únicamente 2 errores prioritarios, una frase modelo correcta y un microrremedio de 5 minutos. No incluyas elogios vacíos ni felicitaciones genéricas.">📋 Copiar Orden Lista</button>
+            </div>
+            <div class="action-step-card step-open">
+              <span class="step-card-badge">Paso 2 · Abrir IA</span>
+              <h4>Ejecutar en Asistente</h4>
+              <p>Abra su herramienta preferida en una pestaña nueva y pegue la orden:</p>
+              <div class="ai-launcher-btns">
+                <a href="https://chatgpt.com" target="_blank" rel="noopener" class="btn-ai-link">ChatGPT ↗</a>
+                <a href="https://claude.ai" target="_blank" rel="noopener" class="btn-ai-link">Claude ↗</a>
+                <a href="https://gemini.google.com" target="_blank" rel="noopener" class="btn-ai-link">Gemini ↗</a>
+              </div>
+            </div>
+            <div class="action-step-card step-planb">
+              <span class="step-card-badge">Paso 3 · Plan B</span>
+              <h4>¿Falla la red o la IA?</h4>
+              <p>Use la salida pregenerada de respaldo para continuar sin atrasarse:</p>
+              <button class="btn-step-action btn-plan-b" data-practice="PR-02">🛡️ Ver Salida Plan B</button>
+            </div>
+          </div>
+          <!-- Acordeón Desplegable con Consigna Completa y Microentregable -->
+          <details class="friendly-disclosure">
+            <summary>🔍 Ver detalles pedagógicos, pasos completos y microentregable</summary>
+            <div style="margin-top:0.75rem;">
+<div class="practice-card-body">
+            <ol class="practice-steps-list">
+              <li><span class="step-num">1</span> Pegue la muestra sintética MS-01 (correo de servicio al cliente).</li>
+              <li><span class="step-num">2</span> Solicite retroalimentación para nivel A2 y nivel B1 por separado.</li>
+              <li><span class="step-num">3</span> Exija 2 errores prioritarios, frase modelo y microrremedio de 5 min.</li>
+              <li><span class="step-num">4</span> Elimine todo elogio vacío y verifique que la corrección sea comprensible.</li>
+            </ol>
+            <div class="deliverable-box">
+              <strong>📦 Microentregable a depositar:</strong>
+              <p>Dos comentarios diferenciados, frase modelo y el elogio vacío que eliminó.</p>
+            </div>
+            <div class="privacy-notice-badge">
+              🔒 Use únicamente la muestra sintética. No suba trabajos de estudiantes.
+            </div>
+            <div class="bonus-tip-box">
+              💡 <strong>Si termina antes:</strong> Compruebe si la microrremediación de 5 minutos es realizable en clase.
+            </div>
+          </div>
+          <div class="practice-card-footer">
+            <button class="btn-primary btn-copy-consigna" data-practice="PR-02">📋 Copiar Consigna</button>
+            <button class="btn-outline-amber btn-plan-b" data-practice="PR-02">⚠️ Plan B / Respaldo</button>
+          </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- PR-03 -->
+        <article class="practice-card" data-practice-code="PR-03" style="display: none;">
+          <div class="practice-card-header">
+            <div class="practice-title-group">
+              <span class="practice-code-badge" style="background:#ede9fe;color:#6d28d9;">Bloque 2 · HL</span>
+              <h3>PR-03 · Anticipe errores y prepare microrremedios</h3>
+            </div>
+            <span class="practice-duration-pill">⏱️ 12 min</span>
+          </div>
+          <!-- 3 Pasos de Acción Inmediata (Claridad Cognitiva) -->
+          <div class="action-steps-grid">
+            <div class="action-step-card step-copy">
+              <span class="step-card-badge">Paso 1 · Copiar</span>
+              <h4>Orden Pedagógica</h4>
+              <p>Instrucción calibrada y lista con los 5 componentes para pegar en su IA:</p>
+              <div class="prompt-box-preview"><code>Para una clase de inglés laboral del INA en servicio al cliente (Nivel MCER A2), anticipa los 5 errores comunicativos más probables que cometerán los estudiantes al atender una queja telefónica. Para cada error incluye: 1) Frase errónea esperada, 2) Causa lingüística u ocupacional, y 3) Un microrremedio pedagógico de 3 minutos aplicable antes de la práctica.</code></div>
+              <button class="btn-step-action btn-copy-prompt-direct" data-prompt="Para una clase de inglés laboral del INA en servicio al cliente (Nivel MCER A2), anticipa los 5 errores comunicativos más probables que cometerán los estudiantes al atender una queja telefónica. Para cada error incluye: 1) Frase errónea esperada, 2) Causa lingüística u ocupacional, y 3) Un microrremedio pedagógico de 3 minutos aplicable antes de la práctica.">📋 Copiar Orden Lista</button>
+            </div>
+            <div class="action-step-card step-open">
+              <span class="step-card-badge">Paso 2 · Abrir IA</span>
+              <h4>Ejecutar en Asistente</h4>
+              <p>Abra su herramienta preferida en una pestaña nueva y pegue la orden:</p>
+              <div class="ai-launcher-btns">
+                <a href="https://chatgpt.com" target="_blank" rel="noopener" class="btn-ai-link">ChatGPT ↗</a>
+                <a href="https://claude.ai" target="_blank" rel="noopener" class="btn-ai-link">Claude ↗</a>
+                <a href="https://gemini.google.com" target="_blank" rel="noopener" class="btn-ai-link">Gemini ↗</a>
+              </div>
+            </div>
+            <div class="action-step-card step-planb">
+              <span class="step-card-badge">Paso 3 · Plan B</span>
+              <h4>¿Falla la red o la IA?</h4>
+              <p>Use la salida pregenerada de respaldo para continuar sin atrasarse:</p>
+              <button class="btn-step-action btn-plan-b" data-practice="PR-03">🛡️ Ver Salida Plan B</button>
+            </div>
+          </div>
+          <!-- Acordeón Desplegable con Consigna Completa y Microentregable -->
+          <details class="friendly-disclosure">
+            <summary>🔍 Ver detalles pedagógicos, pasos completos y microentregable</summary>
+            <div style="margin-top:0.75rem;">
+<div class="practice-card-body">
+            <ol class="practice-steps-list">
+              <li><span class="step-num">1</span> Describa una tarea, su <span class="interactive-term" data-tooltip="Marco Común Europeo de Referencia para las Lenguas (Escala internacional: A1, A2, B1, B2)">nivel de idioma (A1, A2 o B1)</span> y el contexto general del grupo.</li>
+              <li><span class="step-num">2</span> Solicite los 5 errores más probables antes de impartir la clase.</li>
+              <li><span class="step-num">3</span> Exija evidencia observable y un microrremedio por cada error.</li>
+              <li><span class="step-num">4</span> Elimine una suposición injustificada de la IA y adapte un remedio.</li>
+            </ol>
+            <div class="deliverable-box">
+              <strong>📦 Microentregable a depositar:</strong>
+              <p>Cinco errores anticipados, cinco microrremedios y la suposición que corrigió.</p>
+            </div>
+            <div class="privacy-notice-badge">
+              🔒 Describa grupos de forma general sin perfiles identificables.
+            </div>
+            <div class="bonus-tip-box">
+              💡 <strong>Si termina antes:</strong> Ordene los errores por impacto comunicativo y facilidad de prevención.
+            </div>
+          </div>
+          <div class="practice-card-footer">
+            <button class="btn-primary btn-copy-consigna" data-practice="PR-03">📋 Copiar Consigna</button>
+            <a href="herramientas.html#cases" class="btn-secondary" style="display:inline-flex;align-items:center;text-decoration:none;">💼 Ver Casos Ocupacionales ↗</a>
+          </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- PR-04 -->
+        <article class="practice-card" data-practice-code="PR-04" style="display: none;">
+          <div class="practice-card-header">
+            <div class="practice-title-group">
+              <span class="practice-code-badge" style="background:#ede9fe;color:#6d28d9;">Ventana 2.3 · Bloque 2 · HL</span>
+              <h3>PR-04 · Configure un chatbot de práctica escrita</h3>
+            </div>
+            <span class="practice-duration-pill">⏱️ 12 min</span>
+          </div>
+          <!-- 3 Pasos de Acción Inmediata (Claridad Cognitiva) -->
+          <div class="action-steps-grid">
+            <div class="action-step-card step-copy">
+              <span class="step-card-badge">Paso 1 · Copiar</span>
+              <h4>Orden Pedagógica</h4>
+              <p>Instrucción calibrada y lista con los 5 componentes para pegar en su IA:</p>
+              <div class="prompt-box-preview"><code>Eres un tutor socrático de inglés para recepcionistas de hotel del INA (nivel A2). Tu objetivo es practicar cómo tomar una reserva por mensaje escrito. Reglas: 1) Haz solo UNA pregunta breve por turno, 2) Si el estudiante comete un error grave de gramática o cortesía, indícale amablemente cómo mejorarlo antes de continuar, 3) Si escribe en español, recuérdale con calidez responder en inglés, 4) Mantén un tono profesional y realista.</code></div>
+              <button class="btn-step-action btn-copy-prompt-direct" data-prompt="Eres un tutor socrático de inglés para recepcionistas de hotel del INA (nivel A2). Tu objetivo es practicar cómo tomar una reserva por mensaje escrito. Reglas: 1) Haz solo UNA pregunta breve por turno, 2) Si el estudiante comete un error grave de gramática o cortesía, indícale amablemente cómo mejorarlo antes de continuar, 3) Si escribe en español, recuérdale con calidez responder en inglés, 4) Mantén un tono profesional y realista.">📋 Copiar Orden Lista</button>
+            </div>
+            <div class="action-step-card step-open">
+              <span class="step-card-badge">Paso 2 · Abrir IA</span>
+              <h4>Ejecutar en Asistente</h4>
+              <p>Abra su herramienta preferida en una pestaña nueva y pegue la orden:</p>
+              <div class="ai-launcher-btns">
+                <a href="https://chatgpt.com" target="_blank" rel="noopener" class="btn-ai-link">ChatGPT ↗</a>
+                <a href="https://claude.ai" target="_blank" rel="noopener" class="btn-ai-link">Claude ↗</a>
+                <a href="https://gemini.google.com" target="_blank" rel="noopener" class="btn-ai-link">Gemini ↗</a>
+              </div>
+            </div>
+            <div class="action-step-card step-planb">
+              <span class="step-card-badge">Paso 3 · Plan B</span>
+              <h4>¿Falla la red o la IA?</h4>
+              <p>Use la salida pregenerada de respaldo para continuar sin atrasarse:</p>
+              <button class="btn-step-action btn-plan-b" data-practice="PR-04">🛡️ Ver Salida Plan B</button>
+            </div>
+          </div>
+          <!-- Acordeón Desplegable con Consigna Completa y Microentregable -->
+          <details class="friendly-disclosure">
+            <summary>🔍 Ver detalles pedagógicos, pasos completos y microentregable</summary>
+            <div style="margin-top:0.75rem;">
+<div class="practice-card-body">
+            <ol class="practice-steps-list">
+              <li><span class="step-num">1</span> Defina rol, nivel, situación ocupacional y extensión máxima de turnos.</li>
+              <li><span class="step-num">2</span> Establezca cuándo corregir, cómo corregir y cuándo dejar continuar.</li>
+              <li><span class="step-num">3</span> Añada límites estrictos y respuesta ante mensajes en español.</li>
+              <li><span class="step-num">4</span> Pruebe dos turnos escritos usted mismo y ajuste una regla que el asistente incumpla.</li>
+            </ol>
+            <div class="deliverable-box">
+              <strong>📦 Microentregable a depositar:</strong>
+              <p>Bloque de instrucciones, dos turnos escritos de prueba, incumplimiento y ajuste realizado.</p>
+            </div>
+            <div class="privacy-notice-badge">
+              🔒 Haga la prueba usted mismo en el simulador o en ChatGPT.
+            </div>
+            <div class="bonus-tip-box">
+              💡 <strong>Ensayar en vivo:</strong> <a href="simulador.html" style="font-weight:700;text-decoration:underline;">Abrir el Simulador de Chat</a>
+            </div>
+          </div>
+          <div class="practice-card-footer">
+            <button class="btn-primary btn-copy-consigna" data-practice="PR-04">📋 Copiar Consigna</button>
+            <a href="simulador.html" class="btn-secondary">💬 Probar en Simulador</a>
+          </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- PR-05 -->
+        <article class="practice-card" data-practice-code="PR-05" style="display: none;">
+          <div class="practice-card-header">
+            <div class="practice-title-group">
+              <span class="practice-code-badge">Bloque 3 · AGM</span>
+              <h3>PR-05 · Secuencia didáctica, rúbrica y prueba</h3>
+            </div>
+            <span class="practice-duration-pill">⏱️ 12 min</span>
+          </div>
+          <!-- 3 Pasos de Acción Inmediata (Claridad Cognitiva) -->
+          <div class="action-steps-grid">
+            <div class="action-step-card step-copy">
+              <span class="step-card-badge">Paso 1 · Copiar</span>
+              <h4>Orden Pedagógica</h4>
+              <p>Instrucción calibrada y lista con los 5 componentes para pegar en su IA:</p>
+              <div class="prompt-box-preview"><code>Genera una rúbrica analítica de evaluación de desempeño oral para inglés técnico en hotelería (nivel MCER A2). Debe contener exactamente 4 criterios: Precisión Léxica, Fluidez y Turnos, Cortesía Profesional y Resolución del Problema. Cada criterio debe tener descriptores observables en 4 niveles de logro (1=Inicial, 2=En Desarrollo, 3=Competente, 4=Avanzado).</code></div>
+              <button class="btn-step-action btn-copy-prompt-direct" data-prompt="Genera una rúbrica analítica de evaluación de desempeño oral para inglés técnico en hotelería (nivel MCER A2). Debe contener exactamente 4 criterios: Precisión Léxica, Fluidez y Turnos, Cortesía Profesional y Resolución del Problema. Cada criterio debe tener descriptores observables en 4 niveles de logro (1=Inicial, 2=En Desarrollo, 3=Competente, 4=Avanzado).">📋 Copiar Orden Lista</button>
+            </div>
+            <div class="action-step-card step-open">
+              <span class="step-card-badge">Paso 2 · Abrir IA</span>
+              <h4>Ejecutar en Asistente</h4>
+              <p>Abra su herramienta preferida en una pestaña nueva y pegue la orden:</p>
+              <div class="ai-launcher-btns">
+                <a href="https://chatgpt.com" target="_blank" rel="noopener" class="btn-ai-link">ChatGPT ↗</a>
+                <a href="https://claude.ai" target="_blank" rel="noopener" class="btn-ai-link">Claude ↗</a>
+                <a href="https://gemini.google.com" target="_blank" rel="noopener" class="btn-ai-link">Gemini ↗</a>
+              </div>
+            </div>
+            <div class="action-step-card step-planb">
+              <span class="step-card-badge">Paso 3 · Plan B</span>
+              <h4>¿Falla la red o la IA?</h4>
+              <p>Use la salida pregenerada de respaldo para continuar sin atrasarse:</p>
+              <button class="btn-step-action btn-plan-b" data-practice="PR-05">🛡️ Ver Salida Plan B</button>
+            </div>
+          </div>
+          <!-- Acordeón Desplegable con Consigna Completa y Microentregable -->
+          <details class="friendly-disclosure">
+            <summary>🔍 Ver detalles pedagógicos, pasos completos y microentregable</summary>
+            <div style="margin-top:0.75rem;">
+<div class="practice-card-body">
+            <ol class="practice-steps-list">
+              <li><span class="step-num">1</span> Defina objetivo, <span class="interactive-term" data-tooltip="Marco Común Europeo de Referencia para las Lenguas (Escala internacional: A1, A2, B1, B2)">nivel de idioma</span>, contexto y duración de 20 minutos.</li>
+              <li><span class="step-num">2</span> Solicite una secuencia con inicio, práctica, verificación y cierre.</li>
+              <li><span class="step-num">3</span> Pida una rúbrica de 4 criterios con descriptores observables (1-4 pts).</li>
+              <li><span class="step-num">4</span> Aplique la rúbrica a dos muestras sintéticas y corrija un criterio vago.</li>
+            </ol>
+            <div class="deliverable-box">
+              <strong>📦 Microentregable a depositar:</strong>
+              <p>Secuencia didáctica, rúbrica, dos puntuaciones obtenidas y criterio corregido.</p>
+            </div>
+            <div class="privacy-notice-badge">
+              🔒 Use únicamente muestras sintéticas.
+            </div>
+            <div class="bonus-tip-box">
+              💡 <strong>Si termina antes:</strong> Compruebe si dos niveles contiguos reciben puntuaciones distintas.
+            </div>
+          </div>
+          <div class="practice-card-footer">
+            <button class="btn-primary btn-copy-consigna" data-practice="PR-05">📋 Copiar Consigna</button>
+            <a href="herramientas.html#rubric" class="btn-secondary" style="display:inline-flex;align-items:center;text-decoration:none;">📋 Ir al Probador de Rúbricas ↗</a>
+          </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- PR-06 -->
+        <article class="practice-card" data-practice-code="PR-06" style="display: none;">
+          <div class="practice-card-header">
+            <div class="practice-title-group">
+              <span class="practice-code-badge">Bloque 3 · AGM</span>
+              <h3>PR-06 · Práctica oral y auditoría de límites</h3>
+            </div>
+            <span class="practice-duration-pill">⏱️ 12 min</span>
+          </div>
+          <!-- 3 Pasos de Acción Inmediata (Claridad Cognitiva) -->
+          <div class="action-steps-grid">
+            <div class="action-step-card step-copy">
+              <span class="step-card-badge">Paso 1 · Copiar</span>
+              <h4>Orden Pedagógica</h4>
+              <p>Instrucción calibrada y lista con los 5 componentes para pegar en su IA:</p>
+              <div class="prompt-box-preview"><code>Modo de voz activo: Actúa como un turista estadounidense en un hotel boutique en Guanacaste solicitando asistencia en recepción para cambiar una reserva de tour. Espera mi respuesta, habla a velocidad pausada pero natural en nivel A2/B1. Limita tus respuestas a un máximo de 2 oraciones por turno para permitir que yo hable el 70% del tiempo.</code></div>
+              <button class="btn-step-action btn-copy-prompt-direct" data-prompt="Modo de voz activo: Actúa como un turista estadounidense en un hotel boutique en Guanacaste solicitando asistencia en recepción para cambiar una reserva de tour. Espera mi respuesta, habla a velocidad pausada pero natural en nivel A2/B1. Limita tus respuestas a un máximo de 2 oraciones por turno para permitir que yo hable el 70% del tiempo.">📋 Copiar Orden Lista</button>
+            </div>
+            <div class="action-step-card step-open">
+              <span class="step-card-badge">Paso 2 · Abrir IA</span>
+              <h4>Ejecutar en Asistente</h4>
+              <p>Abra su herramienta preferida en una pestaña nueva y pegue la orden:</p>
+              <div class="ai-launcher-btns">
+                <a href="https://chatgpt.com" target="_blank" rel="noopener" class="btn-ai-link">ChatGPT ↗</a>
+                <a href="https://claude.ai" target="_blank" rel="noopener" class="btn-ai-link">Claude ↗</a>
+                <a href="https://gemini.google.com" target="_blank" rel="noopener" class="btn-ai-link">Gemini ↗</a>
+              </div>
+            </div>
+            <div class="action-step-card step-planb">
+              <span class="step-card-badge">Paso 3 · Plan B</span>
+              <h4>¿Falla la red o la IA?</h4>
+              <p>Use la salida pregenerada de respaldo para continuar sin atrasarse:</p>
+              <button class="btn-step-action btn-plan-b" data-practice="PR-06">🛡️ Ver Salida Plan B</button>
+            </div>
+          </div>
+          <!-- Acordeón Desplegable con Consigna Completa y Microentregable -->
+          <details class="friendly-disclosure">
+            <summary>🔍 Ver detalles pedagógicos, pasos completos y microentregable</summary>
+            <div style="margin-top:0.75rem;">
+<div class="practice-card-body">
+            <ol class="practice-steps-list">
+              <li><span class="step-num">1</span> Active el modo de voz y describa nivel, rol y situación ocupacional.</li>
+              <li><span class="step-num">2</span> Converse 3 minutos con el asistente como interlocutor de práctica.</li>
+              <li><span class="step-num">3</span> Registre si la IA esperó sus pausas, respetó el nivel y permitió que usted hablara la mayor parte del tiempo.</li>
+              <li><span class="step-num">4</span> Solicite una prioridad de mejora y compruebe si se apoya en evidencia audible o transcrita.</li>
+            </ol>
+            <div class="deliverable-box">
+              <strong>📦 Microentregable a depositar:</strong>
+              <p>Instrucción utilizada, observaciones sobre participación, turnos, nivel y retroalimentación, más un ajuste propuesto.</p>
+            </div>
+            <div class="privacy-notice-badge">
+              🔒 Use su propia voz. No cargue grabaciones de estudiantes.
+            </div>
+            <div class="bonus-tip-box">
+              💡 <strong>Si termina antes:</strong> Pida una sola prioridad de mejora y verifique si resulta observable.
+            </div>
+          </div>
+          <div class="practice-card-footer">
+            <button class="btn-primary btn-copy-consigna" data-practice="PR-06">📋 Copiar Consigna</button>
+            <button class="btn-outline-amber btn-plan-b" data-practice="PR-06">⚠️ Plan B / Respaldo</button>
+          </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- PR-07 -->
+        <article class="practice-card" data-practice-code="PR-07" style="display: none;">
+          <div class="practice-card-header">
+            <div class="practice-title-group">
+              <span class="practice-code-badge">Bloque 4 · AGM</span>
+              <h3>PR-07 · Gestione y compare un modelo local</h3>
+            </div>
+            <span class="practice-duration-pill">⏱️ 12 min</span>
+          </div>
+          <!-- 3 Pasos de Acción Inmediata (Claridad Cognitiva) -->
+          <div class="action-steps-grid">
+            <div class="action-step-card step-copy">
+              <span class="step-card-badge">Paso 1 · Copiar</span>
+              <h4>Orden Pedagógica</h4>
+              <p>Instrucción calibrada y lista con los 5 componentes para pegar en su IA:</p>
+              <div class="prompt-box-preview"><code>Genera un protocolo de 4 pasos para verificar si un modelo de IA local (instalado en la computadora o dispositivo móvil del docente) cumple con la Ley de Protección de la Persona frente al Tratamiento de sus Datos Personales (Ley 8968 de Costa Rica), evaluando permisos de almacenamiento, telemetría y sincronización en la nube.</code></div>
+              <button class="btn-step-action btn-copy-prompt-direct" data-prompt="Genera un protocolo de 4 pasos para verificar si un modelo de IA local (instalado en la computadora o dispositivo móvil del docente) cumple con la Ley de Protección de la Persona frente al Tratamiento de sus Datos Personales (Ley 8968 de Costa Rica), evaluando permisos de almacenamiento, telemetría y sincronización en la nube.">📋 Copiar Orden Lista</button>
+            </div>
+            <div class="action-step-card step-open">
+              <span class="step-card-badge">Paso 2 · Abrir IA</span>
+              <h4>Ejecutar en Asistente</h4>
+              <p>Abra su herramienta preferida en una pestaña nueva y pegue la orden:</p>
+              <div class="ai-launcher-btns">
+                <a href="https://chatgpt.com" target="_blank" rel="noopener" class="btn-ai-link">ChatGPT ↗</a>
+                <a href="https://claude.ai" target="_blank" rel="noopener" class="btn-ai-link">Claude ↗</a>
+                <a href="https://gemini.google.com" target="_blank" rel="noopener" class="btn-ai-link">Gemini ↗</a>
+              </div>
+            </div>
+            <div class="action-step-card step-planb">
+              <span class="step-card-badge">Paso 3 · Plan B</span>
+              <h4>¿Falla la red o la IA?</h4>
+              <p>Use la salida pregenerada de respaldo para continuar sin atrasarse:</p>
+              <button class="btn-step-action btn-plan-b" data-practice="PR-07">🛡️ Ver Salida Plan B</button>
+            </div>
+          </div>
+          <!-- Acordeón Desplegable con Consigna Completa y Microentregable -->
+          <details class="friendly-disclosure">
+            <summary>🔍 Ver detalles pedagógicos, pasos completos y microentregable</summary>
+            <div style="margin-top:0.75rem;">
+<div class="practice-card-body">
+            <ol class="practice-steps-list">
+              <li><span class="step-num">1</span> Identifique nombre, versión y tamaño del modelo descargado (AI Edge / Apollo).</li>
+              <li><span class="step-num">2</span> Active el modo avión, ejecute la consigna y conserve la salida completa.</li>
+              <li><span class="step-num">3</span> Restablezca la conexión y ejecute la misma consigna en la nube.</li>
+              <li><span class="step-num">4</span> Compare resultados y decida si conserva, sustituye o descarta el modelo local.</li>
+            </ol>
+            <div class="deliverable-box">
+              <strong>📦 Microentregable a depositar:</strong>
+              <p>Ficha del modelo, ambas salidas, diferencia principal y decisión docente.</p>
+            </div>
+            <div class="privacy-notice-badge">
+              🔒 Use la consigna sintética. Verifique permisos y telemetría: ejecutar en modo avión no demuestra privacidad total.
+            </div>
+            <div class="bonus-tip-box">
+              💡 <strong>Si termina antes:</strong> Reduzca la consigna y compruebe si mejora la velocidad del modelo local.
+            </div>
+          </div>
+          <div class="practice-card-footer">
+            <button class="btn-primary btn-copy-consigna" data-practice="PR-07">📋 Copiar Consigna</button>
+            <button class="btn-outline-amber btn-plan-b" data-practice="PR-07">⚠️ Plan B / Respaldo</button>
+          </div>
+            </div>
+          </details>
+        </article>
+      </div>
+
+    </div>
+    
+
+    </div>
+  </main>
+
+  <!-- Modal de Plan B / Salidas de Respaldo -->
+  <div id="modal-planb" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-planb-title">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="modal-planb-title">⚠️ Salida de Respaldo (Plan B)</h3>
+        <button class="modal-close-btn" aria-label="Cerrar modal">&times;</button>
+      </div>
+      <div id="modal-planb-body" class="modal-body">
+        <!-- Contenido dinámico desde app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenedor de Toast Notifications -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Footer Moderno Institucional -->
+  <footer class="modern-footer">
+    <div class="footer-container-box">
+      <div class="footer-top-row">
+        <div class="footer-brand-info">
+          <h4>Instituto Nacional de Aprendizaje (INA)</h4>
+          <p>Núcleo Comercio y Servicios · Subsector de Idiomas<br>Taller Técnico: <em>Team Up 2 Level Up</em> · 6 de octubre de 2026</p>
+        </div>
+        <div class="footer-links-group">
+          <div class="footer-col">
+            <h5>Navegación</h5>
+            <ul>
+              <li><a href="index.html">Inicio & Taller en Vivo</a></li>
+              <li><a href="herramientas.html">Suite de Herramientas</a></li>
+              <li><a href="biblioteca.html">Biblioteca RAG (41 PDFs)</a></li>
+              <li><a href="simulador.html">Simulador de Chat</a></li>
+              <li><a href="glosario.html">Glosario Docente</a></li>
+              <li><a href="tutorial.html">Tutorial de Uso</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Facilitación</h5>
+            <ul>
+              <li><a href="https://orcid.org/0000-0002-7886-0740" target="_blank" rel="noopener">Agustín Gómez Meléndez (UNED/UCR)</a></li>
+              <li><span>Hannia León Fuentes (UCR/PROTEA)</span></li>
+              <li><a href="Bibliografia/MANUAL_USO_LLM_CORPUS_PDF_V5.md" target="_blank">Manual de Inteligencia PDF V5.1</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nota de Transparencia y Uso Ético de Inteligencia Artificial -->
+      <div class="ai-usage-disclosure-card">
+        <div class="ai-disclosure-header">
+          <span class="ai-disclosure-icon" aria-hidden="true">🤖</span>
+          <strong>Nota sobre el Uso de Inteligencia Artificial en el Desarrollo del Sitio y Contenidos</strong>
+        </div>
+        <p>
+          Este entorno web interactivo, su arquitectura técnica, el diseño instruccional de la ruta pedagógica y la estructuración de las 7 prácticas y materiales de apoyo fueron desarrollados mediante <strong>co-diseño y asistencia de modelos avanzados de Inteligencia Artificial generativa</strong>, bajo la dirección, autoría intelectual, validación metodológica y curaduría crítica continua de los facilitadores <strong>Agustín Gómez Meléndez</strong> y <strong>Hannia León Fuentes</strong>. Todos los casos, consignas y datos pedagógicos cumplen estrictamente con la normativa costarricense de gobernanza y protección de datos personales (Ley N° 8968).
+        </p>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <span>© 2026 INA · Licencia Abierta Creative Commons Atribución 4.0 Internacional (CC BY 4.0)</span>
+        <span>Protección de Datos Garantizada · Cumplimiento estricto Ley 8968</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Muelle Flotante de Accesibilidad e Idioma (Lateral Derecho) -->
+  <aside class="floating-access-dock" aria-label="Accesibilidad e idioma">
+    <a href="tutorial.html" class="floating-dock-btn floating-tutorial-link" aria-label="Abrir Tutorial de Uso" title="Abrir Tutorial de Uso">
+      <span class="dock-btn-icon" aria-hidden="true">🧭</span>
+      <span class="dock-btn-label">Tutorial</span>
+    </a>
+    <button id="floating-btn-lang" class="floating-dock-btn btn-lang-toggle notranslate" type="button" aria-label="Traducir a inglés" title="Traducir automáticamente a inglés / Switch to English" translate="no">
+      <span class="dock-btn-icon lang-icon" aria-hidden="true">🌐</span>
+      <span class="dock-btn-label lang-text">English</span>
+    </button>
+    <button id="floating-btn-a11y" class="floating-dock-btn btn-a11y-toggle" type="button" aria-label="Opciones de accesibilidad" aria-expanded="false" title="Abrir panel de accesibilidad">
+      <span class="dock-btn-icon a11y-icon" aria-hidden="true">♿</span>
+      <span class="dock-btn-label a11y-text">Accesibilidad</span>
+    </button>
+  </aside>
+
+  <!-- Scripts JavaScript -->
+  <script src="js/timer.js"></script>
+  <script src="js/tutor-mode.js"></script>
+  <script src="js/local-notebook.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/a11y-translate.js"></script>
+</body>
+</html>

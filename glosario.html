@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Glosario Docente Amigable: Términos de Inteligencia Artificial explicados en lenguaje sencillo para docentes del INA.">
+  <title>Glosario Amigable de IA · Taller INA</title>
+  
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/modern-portal.css">
+  <link rel="stylesheet" href="css/a11y-responsive.css">
+
+  <!-- Metadatos de Licencia Creative Commons (CC-BY 4.0) -->
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+  <meta name="dct:title" content="Glosario Docente Amigable de IA · Taller INA">
+  <meta name="dct:creator" content="Agustín Gómez Meléndez y Hannia León Fuentes">
+  <meta name="dct:rights" content="Creative Commons Atribución 4.0 Internacional (CC BY 4.0)">
+  <style>
+    .glossary-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .search-bar-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-lg);
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .search-bar-box input {
+      flex: 1;
+      font-size: 1rem;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: var(--text-main);
+    }
+    .glossary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .glossary-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: all var(--transition-normal);
+      border-top: 4px solid var(--ina-blue-500);
+    }
+    .glossary-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+      border-top-color: var(--ina-green-500);
+    }
+    .term-title {
+      font-size: 1.25rem;
+      color: var(--ina-blue-900);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0;
+    }
+    .term-simple-def {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--ina-green-700);
+      background-color: var(--ina-green-50);
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 0.25rem;
+    }
+    .term-analogy {
+      background-color: var(--bg-surface-subtle);
+      border-left: 3px solid var(--ina-amber-500);
+      padding: 0.65rem 0.85rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .term-analogy strong {
+      color: #92400e;
+    }
+    .faq-item {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+    .faq-item h4 {
+      color: var(--ina-blue-900);
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
+  <!-- Barra Superior -->
+  <!-- Cabecera Moderna Unificada (MagicSchool Style) -->
+  <header class="modern-navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="brand-link notranslate" translate="no" aria-label="Portal INA Team Up 2 Level Up">
+        <span class="brand-logo-badge" translate="no">INA CR</span>
+        <div class="brand-texts">
+          <h1 class="brand-title" translate="no">Team Up 2 Level Up</h1>
+          <span class="brand-subtitle">IA en la Enseñanza del Inglés Técnico</span>
+        </div>
+      </a>
+
+      <nav class="navbar-links" aria-label="Navegación principal">
+        <a href="index.html" class="nav-pill-link">
+          <span>🎯</span> Inicio & Taller
+        </a>
+        <a href="index.html#seccion-cronograma" class="nav-pill-link">
+          <span>🗺️</span> Cronograma
+        </a>
+        <a href="herramientas.html" class="nav-pill-link">
+          <span>⚡</span> Herramientas IA <span class="nav-pill-badge">4</span>
+        </a>
+        <a href="biblioteca.html" class="nav-pill-link">
+          <span>📚</span> Biblioteca & RAG <span class="nav-pill-badge">41</span>
+        </a>
+        <a href="simulador.html" class="nav-pill-link">
+          <span>💬</span> Simulador
+        </a>
+        <a href="glosario.html" class="nav-pill-link active">
+          <span>📖</span> Glosario
+        </a>
+      </nav>
+
+      <div class="navbar-actions">
+        <!-- Enlace a la Práctica Activa (Desktop) -->
+        <a href="index.html#seccion-practica" class="btn-navbar-cta" title="Ir a la Práctica Activa en Vivo">
+          <span class="cta-icon" aria-hidden="true">🚀</span>
+          <span class="cta-text">Práctica en Vivo</span>
+        </a>
+
+        <!-- Botón Hamburguesa Móvil -->
+        <button id="btn-mobile-menu" class="btn-mobile-menu" type="button" aria-label="Abrir menú de navegación" aria-expanded="false">
+          <span class="hamburger-icon" aria-hidden="true">☰</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Fondo y Menú Desplegable Móvil -->
+  <div id="mobile-nav-backdrop" class="mobile-nav-backdrop" aria-hidden="true"></div>
+  <nav id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="Menú móvil">
+    <div class="mobile-drawer-header">
+      <div class="mobile-drawer-title notranslate" translate="no">Team Up 2 Level Up · INA</div>
+      <button id="mobile-drawer-close" class="mobile-drawer-close" aria-label="Cerrar menú">&times;</button>
+    </div>
+    <div class="mobile-drawer-body">
+      <a href="index.html" class="mobile-nav-link">🎯 Inicio & Taller</a>
+      <a href="index.html#seccion-cronograma" class="mobile-nav-link">🗺️ Cronograma</a>
+      <a href="herramientas.html" class="mobile-nav-link">⚡ Herramientas de IA (4)</a>
+      <a href="biblioteca.html" class="mobile-nav-link">📚 Biblioteca & RAG (41)</a>
+      <a href="simulador.html" class="mobile-nav-link">💬 Simulador de Chat</a>
+      <a href="glosario.html" class="mobile-nav-link active">📖 Glosario Docente</a>
+      <a href="tutorial.html" class="mobile-nav-link">🧭 Tutorial de Uso</a>
+      <div class="mobile-drawer-tools-row">
+        <a href="index.html#seccion-practica" class="btn-hero-primary" style="justify-content:center;text-decoration:none;margin-bottom:0.75rem;">
+          🚀 Ir a la Práctica Activa
+        </a>
+        <div style="display:flex;gap:0.5rem;">
+          <button class="btn-lang-toggle notranslate" type="button" style="flex:1;justify-content:center;" translate="no">
+            <span class="lang-icon" aria-hidden="true">🌐</span> <span class="lang-text">English</span>
+          </button>
+          <button class="btn-a11y-toggle" type="button" style="flex:1;justify-content:center;">
+            <span class="a11y-icon" aria-hidden="true">♿</span> <span class="a11y-text">Accesibilidad</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Fondo y Modal de Accesibilidad (A11y Panel) -->
+  <div id="a11y-modal-backdrop" class="a11y-modal-backdrop" aria-hidden="true"></div>
+  <div id="a11y-panel" class="a11y-panel" role="dialog" aria-modal="true" aria-label="Panel de Configuración de Accesibilidad" hidden>
+    <div class="a11y-panel-header">
+      <h3><span>♿</span> Accesibilidad & Visualización</h3>
+      <button class="a11y-close-btn" aria-label="Cerrar panel de accesibilidad">&times;</button>
+    </div>
+    <div class="a11y-panel-body">
+      <div>
+        <div class="a11y-section-title">Contraste y Color</div>
+        <div class="a11y-options-grid">
+          <button type="button" class="a11y-btn active" data-a11y-contrast="normal">Normal</button>
+          <button type="button" class="a11y-btn" data-a11y-contrast="high-contrast">Alto Contraste</button>
+          <button type="button" class="a11y-btn" data-a11y-contrast="dark-mode">Modo Oscuro</button>
+          <button type="button" class="a11y-btn" data-a11y-contrast="grayscale">Monocromo</button>
+        </div>
+      </div>
+      <div>
+        <div class="a11y-section-title">Tamaño de Texto</div>
+        <div class="a11y-options-grid">
+          <button type="button" class="a11y-btn" data-a11y-size="small">A- (90%)</button>
+          <button type="button" class="a11y-btn active" data-a11y-size="normal">A (100%)</button>
+          <button type="button" class="a11y-btn" data-a11y-size="large">A+ (118%)</button>
+          <button type="button" class="a11y-btn" data-a11y-size="xlarge">A++ (130%)</button>
+        </div>
+      </div>
+      <div>
+        <div class="a11y-section-title">Legibilidad y Navegación</div>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;">
+          <div class="a11y-toggle-row">
+            <span class="a11y-toggle-label">📖 Fuente Accesible (Dislexia)</span>
+            <button type="button" class="a11y-switch-btn" data-a11y-toggle="dyslexicFont" role="switch" aria-checked="false" aria-label="Activar fuente para dislexia"></button>
+          </div>
+          <div class="a11y-toggle-row">
+            <span class="a11y-toggle-label">🔗 Resaltar Enlaces</span>
+            <button type="button" class="a11y-switch-btn" data-a11y-toggle="highlightLinks" role="switch" aria-checked="false" aria-label="Resaltar todos los enlaces"></button>
+          </div>
+          <div class="a11y-toggle-row">
+            <span class="a11y-toggle-label">🏷️ Resaltar Títulos</span>
+            <button type="button" class="a11y-switch-btn" data-a11y-toggle="highlightHeadings" role="switch" aria-checked="false" aria-label="Resaltar títulos"></button>
+          </div>
+          <div class="a11y-toggle-row">
+            <span class="a11y-toggle-label">🖱️ Cursor Grande</span>
+            <button type="button" class="a11y-switch-btn" data-a11y-toggle="bigCursor" role="switch" aria-checked="false" aria-label="Activar cursor grande"></button>
+          </div>
+          <div class="a11y-toggle-row">
+            <span class="a11y-toggle-label">🛑 Pausar Animaciones</span>
+            <button type="button" class="a11y-switch-btn" data-a11y-toggle="reduceMotion" role="switch" aria-checked="false" aria-label="Pausar animaciones"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="a11y-panel-footer">
+      <button type="button" id="btn-a11y-reset-all" class="btn-a11y-reset">🔄 Restablecer Todo</button>
+      <button type="button" class="a11y-btn a11y-close-btn" style="width:auto;padding:0.55rem 1.25rem;">Listo</button>
+    </div>
+  </div>
+
+  <!-- Banner -->
+  <section class="hero-banner" style="padding: 1.75rem 1.5rem;">
+    <div class="hero-content">
+      <div class="hero-text">
+        <span class="meta-pill highlight">📖 Guía de Conceptos Básicos</span>
+        <h2>¿Qué significan estos términos y cómo me ayudan en clase?</h2>
+        <p>
+          No necesita ser un experto en computación para aprovechar la Inteligencia Artificial. 
+          Aquí le explicamos los términos más importantes con palabras sencillas y ejemplos de la vida real.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contenedor Principal -->
+  <main id="main-content" class="main-layout">
+    <div class="glossary-container">
+
+      <!-- Buscador Rápido -->
+      <div class="search-bar-box">
+        <span style="font-size:1.25rem;">🔍</span>
+        <label class="visually-hidden" for="glossary-search">Buscar en el glosario</label>
+        <input type="search" id="glossary-search" aria-label="Buscar en el glosario" placeholder="Escriba un término (ej: prompt, alucinación, voz, local, muestra)...">
+      </div>
+
+      <!-- Cuadrícula de Tarjetas de Glosario -->
+      <div class="glossary-grid" id="glossary-cards">
+
+        <!-- 1. Prompt -->
+        <article class="glossary-card" data-term="prompt instruccion orden mensaje">
+          <h3 class="term-title">💬 Prompt (Instrucción)</h3>
+          <div class="term-simple-def">Es el mensaje o instrucción clara que usted le da a la IA.</div>
+          <p>
+            No se trata de "adivinar palabras mágicas", sino de darle a la herramienta un rol, un objetivo y los límites exactos de lo que debe hacer (como asignarle una tarea a un asistente nuevo).
+          </p>
+          <div class="term-analogy">
+            💡 <strong>Ejemplo cotidiano:</strong> En lugar de pedirle solo <em>"deme una actividad"</em>, usted le indica: <em>"Actúe como profesor de inglés A2 y cree un ejercicio de 12 minutos para practicar reservaciones de hotel"</em>.
+          </div>
+        </article>
+
+        <!-- 2. Alucinación -->
+        <article class="glossary-card" data-term="alucinacion error inventar falsedad">
+          <h3 class="term-title">🎭 Alucinación (Cuando la IA inventa)</h3>
+          <div class="term-simple-def">Ocurre cuando la IA inventa datos falsos con total seguridad.</div>
+          <p>
+            La IA no "sabe" la verdad; genera palabras que suenan lógicas. Si usted le pide un artículo que no existe o una ley ficticia, la IA puede inventarla sonando muy convincente.
+          </p>
+          <div class="term-analogy">
+            💡 <strong>Regla de oro:</strong> Nunca acepte datos técnicos, leyes o cifras de la IA sin verificar la fuente original con su criterio docente.
+          </div>
+        </article>
+
+        <!-- 3. Muestra Sintética -->
+        <article class="glossary-card" data-term="muestra sintetica datos proteccion privacidad">
+          <h3 class="term-title">🔒 Muestra Sintética</h3>
+          <div class="term-simple-def">Es un texto o ejemplo 100% inventado para practicar en el taller.</div>
+          <p>
+            Para proteger la privacidad de las personas estudiantes (según la Ley 8968 de Costa Rica), nunca subimos exámenes reales ni nombres de alumnos. Usamos textos ficticios con errores simulados.
+          </p>
+          <div class="term-analogy">
+            💡 <strong>Beneficio:</strong> Podemos ensayar correcciones y rúbricas sin poner en riesgo ningún dato personal.
+          </div>
+        </article>
+
+        <!-- 4. Nivel de Idioma (A1, A2, B1...) -->
+        <article class="glossary-card" data-term="nivel idioma mcer niveles a1 a2 b1 b2 marco europeo">
+          <h3 class="term-title">📏 Nivel de Dominio del Idioma (A1, A2, B1, B2)</h3>
+          <div class="term-simple-def">Conocido técnicamente como <strong>MCER</strong> (Marco Común Europeo de Referencia para las Lenguas).</div>
+          <p>
+            Es el termómetro estándar internacional que mide lo que una persona es capaz de hacer en un idioma: desde saludos y frases elementales (A1/A2) hasta desenvolverse con soltura en puestos laborales de turismo o servicio (B1/B2).
+          </p>
+          <div class="term-analogy">
+            💡 <strong>En el prompt:</strong> Decirle el nivel exacto (ej: <em>Inglés A2</em>) a la IA evita que use vocabulario universitario con estudiantes que apenas inician.
+          </div>
+        </article>
+
+        <!-- 5. Modo de Voz -->
+        <article class="glossary-card" data-term="modo voz audio conversacion hablar pronunciacion">
+          <h3 class="term-title">🎙️ Modo de Voz</h3>
+          <div class="term-simple-def">Conversar con la IA hablando por micrófono en lugar de escribir.</div>
+          <p>
+            Permite que la herramienta hable con acento natural y escuche las respuestas del estudiante en tiempo real, actuando como un turista o cliente de prueba para perder el miedo a hablar.
+          </p>
+          <div class="term-analogy">
+            💡 <strong>Cuidado:</strong> La IA tiende a felicitar demasiado. Es vital pedirle que señale errores específicos observables.
+          </div>
+        </article>
+
+        <!-- 6. IA Local -->
+        <article class="glossary-card" data-term="ia local sin internet modo avion privacidad dispositivo">
+          <h3 class="term-title">💻 IA Local (Sin Internet)</h3>
+          <div class="term-simple-def">Programas de IA que corren dentro de su computadora o celular.</div>
+          <p>
+            Herramientas como Google AI Edge o Liquid Apollo funcionan incluso en "modo avión", sin gastar datos y sin enviar nada a servidores externos.
+          </p>
+          <div class="term-analogy">
+            💡 <strong>Ideal para el INA:</strong> Permite realizar actividades en aulas o centros donde la señal de internet sea inestable.
+          </div>
+        </article>
+
+        <!-- 7. Los 5 Componentes -->
+        <article class="glossary-card" data-term="cinco componentes estructura rol objetivo restricciones">
+          <h3 class="term-title">⭐ Los 5 Componentes de la Instrucción</h3>
+          <div class="term-simple-def">La receta obligatoria para una buena instrucción docente.</div>
+          <p>
+            1. <strong>Rol:</strong> ¿Quién es la IA?<br>
+            2. <strong>Nivel de Idioma:</strong> ¿Para qué nivel enseña (A1, A2, B1)?<br>
+            3. <strong>Contexto:</strong> ¿En qué trabajo se usa?<br>
+            4. <strong>Formato:</strong> ¿Cómo debe entregarlo?<br>
+            5. <strong>Restricciones:</strong> ¿Qué límites tiene de tiempo y palabras?
+          </p>
+          <div class="term-analogy">
+            💡 <strong>Resultado:</strong> Materiales que puede usar directamente en clase sin tener que reescribirlos.
+          </div>
+        </article>
+
+        <!-- 8. Prueba de Esfuerzo de una Rúbrica -->
+        <article class="glossary-card" data-term="prueba esfuerzo rubrica evaluacion criterios">
+          <h3 class="term-title">🧪 Prueba de Esfuerzo de Rúbricas</h3>
+          <div class="term-simple-def">Probar una rúbrica con un trabajo bueno y uno malo para ver si sirve.</div>
+          <p>
+            Si la rúbrica le da la misma nota a un estudiante excelente y a uno que no cumplió, la rúbrica está fallando. La prueba de esfuerzo asegura que los criterios sean justos y claros.
+          </p>
+          <div class="term-analogy">
+            💡 <strong>En el taller:</strong> Evaluaremos las Muestras A, B y C para calibrar nuestra escala de 1 a 16 puntos.
+          </div>
+        </article>
+
+        <!-- 9. AI Literacy Docente -->
+        <article class="glossary-card" data-term="ai literacy alfabetizacion competencias docentes marco unesco pas 2500">
+          <h3 class="term-title">🧭 AI Literacy Docente (Alfabetización en IA)</h3>
+          <div class="term-simple-def">Saber cuándo, cómo y por qué usar (o no usar) la IA en el aula técnica.</div>
+          <p>
+            No significa aprender programación, sino desarrollar tres capacidades: entender qué hace la herramienta, guiar al estudiantado en su uso ético y saber evaluar si el resultado tiene valor pedagógico o es una respuesta hueca (según el estándar británico DS:PAS 2500-4 2026).
+          </p>
+          <div class="term-analogy">
+            💡 <strong>En el INA:</strong> Ayuda a que el docente lidere la tecnología en vez de que la tecnología imponga las actividades.
+          </div>
+        </article>
+
+        <!-- 10. Sycophancy (Complacencia Acrítica) -->
+        <article class="glossary-card" data-term="sycophancy complacencia adulacion falso elogio sesgo error">
+          <h3 class="term-title">🍯 Complacencia Acrítica (Sycophancy)</h3>
+          <div class="term-simple-def">Cuando la IA adula al estudiante ("¡Excelente!") ignorando sus errores.</div>
+          <p>
+            Los modelos comerciales están programados para ser amables. Si un estudiante escribe inglés quebrado o desalineado del puesto de trabajo, la IA a menudo le dice: <em>"Great job! Your English is amazing!"</em>. Esto es peligroso porque fosiliza el error.
+          </p>
+          <div class="term-analogy">
+            💡 <strong>Cómo frenarlo:</strong> En el prompt se debe exigir: <em>"Prohibido el elogio genérico vacío. Toda observación debe señalar la evidencia y ofrecer un modelo corregido."</em>
+          </div>
+        </article>
+
+        <!-- 11. Capa de Autenticidad Continua -->
+        <article class="glossary-card" data-term="capa autenticidad oral voz evaluacion trampa nyu stern 2026">
+          <h3 class="term-title">🎙️ Capa de Autenticidad Continua</h3>
+          <div class="term-simple-def">Micro-entrevistas orales con IA de voz para defender lo aprendido.</div>
+          <p>
+            Estudios de 2026 (NYU Stern) demostraron que los ensayos escritos para el hogar ya no miden aprendizaje auténtico porque la IA redacta textos impecables. La solución en idiomas es la evaluación oral en tiempo real: 3 minutos donde el estudiante dialoga con la IA de voz sobre lo que redactó.
+          </p>
+          <div class="term-analogy">
+            💡 <strong>Ventaja pedagógica:</strong> Elimina la cacería de brujas con detectores de plagio y pone el foco en lo que el estudiante realmente sabe comunicar.
+          </div>
+        </article>
+
+        <!-- 12. Human-in-the-Loop -->
+        <article class="glossary-card" data-term="human in the loop docente bucle juicio decision evaluador">
+          <h3 class="term-title">👤 Docente en el Bucle (Human-in-the-Loop)</h3>
+          <div class="term-simple-def">La IA transcribe y sugiere; la persona docente valida y decide.</div>
+          <p>
+            Ninguna calificación ni sanción puede delegarse ciegamente a un algoritmo. La IA puede generar borradores de rúbricas o pre-evaluar turnos orales, pero el criterio profesional del formador del INA es quien otorga validez oficial.
+          </p>
+          <div class="term-analogy">
+            💡 <strong>El lema del taller:</strong> <em>"La Inteligencia Artificial propone, usted decide."</em>
+          </div>
+        </article>
+
+        <!-- 13. Modelos de Voz Full-Duplex -->
+        <article class="glossary-card" data-term="full duplex voz latencia conversacion pausada turn taking">
+          <h3 class="term-title">🗣️ Voz Full-Duplex y Pausas de Pensamiento</h3>
+          <div class="term-simple-def">Hablar con la IA de manera fluida, pudiendo interrumpir y tomar pausas.</div>
+          <p>
+            Los modelos de voz avanzados (como GPT-4o Voice y Gemini Live) no esperan que usted termine de hablar como un walkie-talkie. Pueden manejar silencios de 3 a 5 segundos mientras el estudiante piensa la palabra en inglés, sin cortar la llamada.
+          </p>
+          <div class="term-analogy">
+            💡 <strong>En la práctica:</strong> Reduce la ansiedad del estudiante que está en niveles A1 o A2 y necesita segundos para formular su turno.
+          </div>
+        </article>
+
+        <!-- 14. Inteligencia Artificial Explicable (XAI) -->
+        <article class="glossary-card" data-term="xai explicable retroalimentacion evidencia transparencia">
+          <h3 class="term-title">🔍 IA Explicable en Educación (XAI)</h3>
+          <div class="term-simple-def">Correcciones transparentes que explican el "porqué" de cada observación.</div>
+          <p>
+            No basta con que la herramienta señale: <em>"Esto está mal, cámbielo por X"</em>. El enfoque explicable exige que la IA detalle la causa gramatical o comunicativa del error y su impacto en la atención al cliente, facilitando un aprendizaje reflexivo.
+          </p>
+          <div class="term-analogy">
+            💡 <strong>En el aula:</strong> Transforma la corrección mecánica en una micro-lección pedagógica de 2 minutos.
+          </div>
+        </article>
+
+        <!-- 15. Andamiaje Socrático -->
+        <article class="glossary-card" data-term="andamiaje socratico preguntas guia tutoria hannia leon">
+          <h3 class="term-title">🪜 Andamiaje Socrático (Scaffolding)</h3>
+          <div class="term-simple-def">Hacer preguntas guía para que el estudiante descubra la respuesta.</div>
+          <p>
+            Técnica fundamental del Bloque 2 (Hannia León Fuentes). En vez de pedirle a la IA que traduzca o redacte una tarea, se le instruye para que actúe como tutor socrático que hace preguntas orientadoras paso a paso, acompañando el proceso cognitivo del estudiante.
+          </p>
+          <div class="term-analogy">
+            💡 <strong>Ejemplo:</strong> La IA pregunta: <em>"¿Cómo saludarías formalmente a un huésped antes de las 12:00 m.d.?"</em>, esperando que el estudiante responda <em>"Good morning"</em>.
+          </div>
+        </article>
+
+        <!-- 16. Soberanía de Datos y Ley 8968 -->
+        <article class="glossary-card" data-term="soberania datos ley 8968 costa rica privacidad proteccion">
+          <h3 class="term-title">🛡️ Soberanía de Datos y Ley 8968</h3>
+          <div class="term-simple-def">Cuidado legal absoluto de la información confidencial de estudiantes y del INA.</div>
+          <p>
+            En cumplimiento de la Ley N° 8968 de Costa Rica, está terminantemente prohibido ingresar nombres completos, cédulas, expedientes o notas reales en plataformas de IA comerciales abiertas en la nube, ya que esas empresas pueden usar esos datos para entrenar sus modelos.
+          </p>
+          <div class="term-analogy">
+            💡 <strong>Solución técnica:</strong> Usar muestras sintéticas en la nube o modelos de IA locales (offline) para datos institucionales.
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Preguntas Frecuentes Sencillas -->
+      <section style="margin-top:2rem;">
+        <h3 style="color:var(--ina-blue-900);margin-bottom:1rem;">❓ Preguntas Frecuentes de Docentes</h3>
+
+        <div class="faq-item">
+          <h4>¿La Inteligencia Artificial va a reemplazar al docente de idiomas? <span>▼</span></h4>
+          <p style="color:var(--text-muted);font-size:0.9rem;margin-top:0.5rem;">
+            <strong>No.</strong> La IA es un generador de propuestas. Quien conoce a las personas estudiantes, decide los objetivos pedagógicos, adapta las actividades y realiza la evaluación con empatía y criterio ético es siempre la persona docente.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h4>¿Tengo que pagar por estas herramientas para aprovecharlas? <span>▼</span></h4>
+          <p style="color:var(--text-muted);font-size:0.9rem;margin-top:0.5rem;">
+            <strong>No.</strong> Todas las prácticas del taller están diseñadas para funcionar en las versiones gratuitas de ChatGPT, Claude, Gemini o con modelos locales libres sin costo.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h4>¿Qué pasa si en medio del taller se me cae el internet o una herramienta no abre? <span>▼</span></h4>
+          <p style="color:var(--text-muted);font-size:0.9rem;margin-top:0.5rem;">
+            <strong>No hay ningún problema.</strong> En cada tarjeta de práctica tiene un botón naranja de <strong>"Plan B / Salida de Respaldo"</strong> con ejemplos ya generados para que pueda continuar su análisis sin interrupciones.
+          </p>
+        </div>
+      </section>
+
+      <!-- Botón de Acción -->
+      <div style="text-align:center;padding:1.5rem 0;">
+        <a href="index.html" class="btn-primary" style="padding:0.75rem 1.5rem;font-size:1rem;display:inline-flex;">
+          🚀 Ir a las Prácticas del Taller en el Portal
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer Moderno Institucional -->
+  <footer class="modern-footer">
+    <div class="footer-container-box">
+      <div class="footer-top-row">
+        <div class="footer-brand-info">
+          <h4>Instituto Nacional de Aprendizaje (INA)</h4>
+          <p>Núcleo Comercio y Servicios · Subsector de Idiomas<br>Taller Técnico: <em>Team Up 2 Level Up</em> · 6 de octubre de 2026</p>
+        </div>
+        <div class="footer-links-group">
+          <div class="footer-col">
+            <h5>Navegación</h5>
+            <ul>
+              <li><a href="index.html">Inicio & Taller en Vivo</a></li>
+              <li><a href="herramientas.html">Suite de Herramientas</a></li>
+              <li><a href="biblioteca.html">Biblioteca RAG (41 PDFs)</a></li>
+              <li><a href="simulador.html">Simulador de Chat</a></li>
+              <li><a href="glosario.html">Glosario Docente</a></li>
+              <li><a href="tutorial.html">Tutorial de Uso</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Facilitación</h5>
+            <ul>
+              <li><a href="https://orcid.org/0000-0002-7886-0740" target="_blank" rel="noopener">Agustín Gómez Meléndez (UNED/UCR)</a></li>
+              <li><span>Hannia León Fuentes (UCR/PROTEA)</span></li>
+              <li><a href="Bibliografia/MANUAL_USO_LLM_CORPUS_PDF_V5.md" target="_blank">Manual de Inteligencia PDF V5.1</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nota de Transparencia y Uso Ético de Inteligencia Artificial -->
+      <div class="ai-usage-disclosure-card">
+        <div class="ai-disclosure-header">
+          <span class="ai-disclosure-icon" aria-hidden="true">🤖</span>
+          <strong>Nota sobre el Uso de Inteligencia Artificial en el Desarrollo del Sitio y Contenidos</strong>
+        </div>
+        <p>
+          Este entorno web interactivo, su arquitectura técnica, el diseño instruccional de la ruta pedagógica y la estructuración de las 7 prácticas y materiales de apoyo fueron desarrollados mediante <strong>co-diseño y asistencia de modelos avanzados de Inteligencia Artificial generativa</strong>, bajo la dirección, autoría intelectual, validación metodológica y curaduría crítica continua de los facilitadores <strong>Agustín Gómez Meléndez</strong> y <strong>Hannia León Fuentes</strong>. Todos los casos, consignas y datos pedagógicos cumplen estrictamente con la normativa costarricense de gobernanza y protección de datos personales (Ley N° 8968).
+        </p>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <span>© 2026 INA · Licencia Abierta Creative Commons Atribución 4.0 Internacional (CC BY 4.0)</span>
+        <span>Protección de Datos Garantizada · Cumplimiento estricto Ley 8968</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Muelle Flotante de Accesibilidad e Idioma (Lateral Derecho) -->
+  <aside class="floating-access-dock" aria-label="Accesibilidad e idioma">
+    <a href="tutorial.html" class="floating-dock-btn floating-tutorial-link" aria-label="Abrir Tutorial de Uso" title="Abrir Tutorial de Uso">
+      <span class="dock-btn-icon" aria-hidden="true">🧭</span>
+      <span class="dock-btn-label">Tutorial</span>
+    </a>
+    <button id="floating-btn-lang" class="floating-dock-btn btn-lang-toggle notranslate" type="button" aria-label="Traducir a inglés" title="Traducir automáticamente a inglés / Switch to English" translate="no">
+      <span class="dock-btn-icon lang-icon" aria-hidden="true">🌐</span>
+      <span class="dock-btn-label lang-text">English</span>
+    </button>
+    <button id="floating-btn-a11y" class="floating-dock-btn btn-a11y-toggle" type="button" aria-label="Opciones de accesibilidad" aria-expanded="false" title="Abrir panel de accesibilidad">
+      <span class="dock-btn-icon a11y-icon" aria-hidden="true">♿</span>
+      <span class="dock-btn-label a11y-text">Accesibilidad</span>
+    </button>
+  </aside>
+
+  <script>
+    // Buscador en tiempo real de términos
+    document.getElementById('glossary-search')?.addEventListener('input', (e) => {
+      const q = e.target.value.toLowerCase().trim();
+      document.querySelectorAll('.glossary-card').forEach(card => {
+        const text = card.dataset.term + ' ' + card.innerText.toLowerCase();
+        if (text.includes(q)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  </script>
+  <script src="js/a11y-translate.js"></script>
+</body>
+</html>

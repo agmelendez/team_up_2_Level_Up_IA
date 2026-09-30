@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portal Web Interactivo del Taller INA: Inteligencia Artificial en la Enseñanza de Idiomas - Team Up 2 Level Up. Facilitado por Agustín Gómez Meléndez y Hannia León Fuentes.">
+  <title>Taller INA · IA en la Enseñanza de Idiomas · Portal Interactivo</title>
+  
+  <!-- Hojas de estilo del portal -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/tutor-mode.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+
+  <!-- Metadatos de Licencia Creative Commons (CC-BY 4.0) -->
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+  <meta name="dct:title" content="Taller INA: IA en la Enseñanza de Idiomas · Team Up 2 Level Up">
+  <meta name="dct:creator" content="Agustín Gómez Meléndez y Hannia León Fuentes">
+  <meta name="dct:rights" content="Creative Commons Atribución 4.0 Internacional (CC BY 4.0)">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Taller INA: Inteligencia Artificial en la Enseñanza de Idiomas",
+    "description": "Portal interactivo de recursos abiertos, plantillas de instrucción pedagógica, simulador conversacional y rúbricas de evaluación formativa.",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "Agustín Gómez Meléndez",
+        "affiliation": "UNED / UCR"
+      },
+      {
+        "@type": "Person",
+        "name": "Hannia León Fuentes",
+        "affiliation": "UCR / PROTEA"
+      }
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Instituto Nacional de Aprendizaje (INA) de Costa Rica"
+    },
+    "license": "https://creativecommons.org/licenses/by/4.0/"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Barra Superior de Navegación & Control de Modo -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand-section">
+        <span class="ina-badge">INA Costa Rica</span>
+        <div class="brand-titles">
+          <h1>Team Up 2 Level Up · IA en Idiomas</h1>
+          <span class="sub-title">Núcleo Comercio y Servicios · Subsector de Idiomas</span>
+        </div>
+      </div>
+
+      <nav class="header-nav" aria-label="Navegación principal">
+        <a href="#tab-practices" class="nav-link-btn active" data-target-tab="practices" onclick="App.switchTab('practices', true); return false;">🎯 7 Prácticas</a>
+        <a href="#tab-builder" class="nav-link-btn" data-target-tab="builder" onclick="App.switchTab('builder', true); return false;">⚡ Asistente Prompts</a>
+        <a href="#tab-slides" class="nav-link-btn" data-target-tab="slides" onclick="App.switchTab('slides', true); return false;">📊 Presentaciones</a>
+        <a href="#tab-evidence" class="nav-link-btn" data-target-tab="evidence" onclick="App.switchTab('evidence', true); return false;">🔎 Evidencia PISA</a>
+        <a href="#tab-library" class="nav-link-btn" data-target-tab="library" onclick="App.switchTab('library', true); return false;">📚 Biblioteca 2026</a>
+        <a href="#tab-rubric" class="nav-link-btn" data-target-tab="rubric" onclick="App.switchTab('rubric', true); return false;">📋 Rúbricas</a>
+        <a href="#tab-cases" class="nav-link-btn" data-target-tab="cases" onclick="App.switchTab('cases', true); return false;">💼 Casos Ocupacionales</a>
+        <a href="simulador.html" class="nav-link-btn" style="background:rgba(5,150,105,0.25);color:#a7f3d0;border:1px solid rgba(5,150,105,0.4);">💬 Simulador Chat</a>
+        <a href="glosario.html" class="nav-link-btn" style="background:rgba(217,119,6,0.25);color:#fde68a;border:1px solid rgba(217,119,6,0.4);">📖 Glosario</a>
+      </nav>
+
+      <div class="header-controls">
+        <div class="mode-toggle-group" role="group" aria-label="Selector de Vista">
+          <button id="btn-mode-student" class="mode-btn active" onclick="TutorModule.toggleTutorMode(false);" title="Vista estándar para docentes participantes">
+            👤 Participante
+          </button>
+          <button id="btn-mode-tutor" class="mode-btn tutor-mode" onclick="TutorModule.toggleTutorMode(true);" title="Cockpit de facilitación para Agustín y Hannia">
+            🟣 Modo Tutor
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Barra de Cockpit del Tutor (Visible en Modo Tutor) -->
+  <div class="tutor-cockpit-bar">
+    <div class="tutor-cockpit-content">
+      <div class="tutor-badge-title">
+        <span class="tutor-badge-icon">Cockpit</span>
+        <span>Panel de Facilitación Activa</span>
+      </div>
+      <div class="tutor-facilitator-selector">
+        <span style="font-size:0.75rem;opacity:0.9;">Facilitador actual:</span>
+        <button class="facilitator-switch-btn active" data-facilitator="agm">Agustín Gómez (AGM)</button>
+        <button class="facilitator-switch-btn" data-facilitator="hl">Hannia León Fuentes (HL)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Banner de Contexto de la Jornada -->
+  <section class="hero-banner">
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-meta">
+          <span class="meta-pill highlight">📅 6 de octubre de 2026</span>
+          <span class="meta-pill">⏰ 8:00 a. m. – 3:00 p. m.</span>
+          <span class="meta-pill">📍 Virtual por MS Teams</span>
+          <span class="meta-pill">👥 254+ Docentes del INA</span>
+        </div>
+        <h2>Portal Pedagógico e Interactivo del Taller</h2>
+        <p>
+          Bienvenidas y bienvenidos. Este portal está diseñado para guiar su aprendizaje paso a paso de forma práctica y sin complicaciones técnicas.
+          <strong>Facilitación:</strong> Agustín Gómez Meléndez (UNED/UCR) y Hannia León Fuentes (UCR/PROTEA).
+        </p>
+      </div>
+
+      <div class="hero-actions">
+        <a href="glosario.html" class="hero-stat-card" style="display:block;text-decoration:none;transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+          <div class="hero-stat-number" style="font-size:1.25rem;color:#fde68a;">📖 Glosario Amigable</div>
+          <div class="hero-stat-label" style="color:#ffffff;">Conceptos de IA en lenguaje sencillo</div>
+        </a>
+        <a href="simulador.html" class="hero-stat-card" style="display:block;text-decoration:none;transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+          <div class="hero-stat-number" style="font-size:1.25rem;color:#a7f3d0;">💬 Simulador de Chat</div>
+          <div class="hero-stat-label" style="color:#ffffff;">Ensayar interacción con un cliente</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aviso de Protección de Datos (Ley 8968 Costa Rica) -->
+  <div class="data-protection-bar">
+    <div class="data-protection-content">
+      <strong>🔒 Regla de Privacidad (Ley 8968):</strong>
+      <span>No ingrese nombres, números de cédula ni trabajos reales de estudiantes en herramientas de IA. Utilice siempre las muestras sintéticas provistas en este portal.</span>
+    </div>
+  </div>
+
+  <!-- Contenedor Principal con Menú Lateral -->
+  <main class="main-layout">
+    <div class="portal-body-wrapper">
+
+      <!-- Menú Lateral Izquierdo de la Ruta Pedagógica -->
+      <aside id="app-sidebar" class="app-sidebar" aria-label="Menú lateral de la ruta pedagógica">
+        <div class="sidebar-header">
+          <div class="sidebar-brand-title">
+            <span style="font-size:1.1rem;">🧭</span>
+            <h3>Ruta del Taller</h3>
+          </div>
+          <button id="btn-toggle-sidebar" class="sidebar-toggle-btn" title="Minimizar / Expandir menú" aria-label="Minimizar menú lateral">
+            ◀
+          </button>
+        </div>
+
+        <div class="sidebar-scrollable-content">
+          <!-- Grupo 1: Flujo de la Jornada -->
+          <div class="sidebar-group">
+            <div class="sidebar-group-title">Ruta Pedagógica</div>
+            <button class="sidebar-nav-item active" data-sidebar-action="scroll-timeline">
+              <span class="nav-icon">🗺️</span>
+              <span class="nav-label">Línea de Tiempo</span>
+              <span class="sidebar-badge">8h-3h</span>
+            </button>
+            <button class="sidebar-nav-item" data-sidebar-action="scroll-workflow">
+              <span class="nav-icon">🔄</span>
+              <span class="nav-label">Ciclo de Trabajo</span>
+              <span class="sidebar-badge">25 min</span>
+            </button>
+          </div>
+
+          <!-- Grupo 2: Herramientas de Práctica -->
+          <div class="sidebar-group">
+            <div class="sidebar-group-title">Herramientas & Prácticas</div>
+            <button class="sidebar-nav-item" data-sidebar-tab="practices">
+              <span class="nav-icon">🎯</span>
+              <span class="nav-label">7 Prácticas Activas</span>
+              <span class="sidebar-badge">PR 1-7</span>
+            </button>
+            <button class="sidebar-nav-item" data-sidebar-tab="builder">
+              <span class="nav-icon">⚡</span>
+              <span class="nav-label">Asistente Prompts</span>
+              <span class="sidebar-badge">5 Pasos</span>
+            </button>
+            <button class="sidebar-nav-item" data-sidebar-tab="slides">
+              <span class="nav-icon">📊</span>
+              <span class="nav-label">Presentaciones</span>
+              <span class="sidebar-badge">4 Bloques</span>
+            </button>
+            <button class="sidebar-nav-item" data-sidebar-tab="evidence">
+              <span class="nav-icon">🔎</span>
+              <span class="nav-label">Evidencia PISA 2025</span>
+              <span class="sidebar-badge">Bloque 1</span>
+            </button>
+            <button class="sidebar-nav-item" data-sidebar-tab="library">
+              <span class="nav-icon">📚</span>
+              <span class="nav-label">Biblioteca de Evidencia</span>
+              <span class="sidebar-badge">41 Docs</span>
+            </button>
+            <button class="sidebar-nav-item" data-sidebar-tab="rubric">
+              <span class="nav-icon">📋</span>
+              <span class="nav-label">Probador Rúbricas</span>
+              <span class="sidebar-badge">0-16 pts</span>
+            </button>
+            <button class="sidebar-nav-item" data-sidebar-tab="cases">
+              <span class="nav-icon">💼</span>
+              <span class="nav-label">Casos Ocupacionales</span>
+              <span class="sidebar-badge">8 Casos</span>
+            </button>
+            <button class="sidebar-nav-item" data-sidebar-tab="closing">
+              <span class="nav-icon">⚖️</span>
+              <span class="nav-label">Gobernanza & Cierre</span>
+              <span class="sidebar-badge">Ley 8968</span>
+            </button>
+          </div>
+
+          <!-- Grupo 3: Módulos de Apoyo -->
+          <div class="sidebar-group">
+            <div class="sidebar-group-title">Módulos de Apoyo</div>
+            <a href="simulador.html" class="sidebar-nav-item">
+              <span class="nav-icon">💬</span>
+              <span class="nav-label">Simulador de Chat</span>
+            </a>
+            <a href="glosario.html" class="sidebar-nav-item">
+              <span class="nav-icon">📖</span>
+              <span class="nav-label">Glosario Amigable</span>
+            </a>
+          </div>
+
+          <!-- Grupo 4: Tarjeta de Estado y Licencia -->
+          <div class="sidebar-footer-card">
+            <div class="sidebar-status-pill">
+              <span class="status-dot"></span>
+              <span>300+ Participantes</span>
+            </div>
+            <div class="sidebar-cc-badge">
+              <span>Licencia CC BY 4.0</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Panel de Contenido Principal -->
+      <div class="portal-content-area">
+
+        <!-- Tarjetas de Bienvenida y Ayuda Rápida -->
+        <section class="welcome-guide-grid" aria-label="Primeros pasos">
+          <div class="welcome-card">
+            <div class="welcome-card-icon">🎯</div>
+            <h4>El Docente Decide</h4>
+            <p>La IA propone ideas y borradores, pero usted como docente conserva el control pedagógico y la decisión final.</p>
+          </div>
+          <div class="welcome-card">
+            <div class="welcome-card-icon">⚡</div>
+            <h4>5 Componentes Clave</h4>
+            <p>Toda buena instrucción incluye: Rol, <span class="interactive-term" data-tooltip="Marco Común Europeo de Referencia para las Lenguas: La escala oficial internacional de niveles de idioma (A1 Principiante, A2 Básico, B1 Intermedio, B2 Avanzado).">Nivel de Idioma (A1, A2, B1...)</span>, Contexto laboral INA, Formato y Restricciones de tiempo.</p>
+          </div>
+          <div class="welcome-card">
+            <div class="welcome-card-icon">🛡️</div>
+            <h4>Plan B Garantizado</h4>
+            <p>Si alguna herramienta no le abre o falla el internet, cada práctica incluye un botón naranja de salida de respaldo.</p>
+          </div>
+        </section>
+
+        <!-- Panel del Cockpit del Facilitador (Visible en Modo Tutor) -->
+        <section class="tutor-control-panel">
+          <div class="cockpit-grid">
+            <!-- Gestor del Ciclo de 25 Minutos -->
+            <div class="cycle-manager-box">
+              <div style="display:flex;justify-content:space-between;align-items:center;">
+                <h4 style="color:#4f46e5;margin:0;font-size:1.1rem;">⏱️ Gestor de Ciclo Estándar (25 min)</h4>
+                <span id="cycle-stage-title" style="font-size:0.85rem;font-weight:700;color:var(--ina-blue-900);">Demostración Conducida (8 min)</span>
+              </div>
+
+              <div class="cycle-stages-track">
+                <div class="cycle-stage-pill active" data-stage="0">
+                  <div class="stage-pill-time">8 min</div>
+                  <div class="stage-pill-label">1. Demo</div>
+                </div>
+                <div class="cycle-stage-pill" data-stage="1">
+                  <div class="stage-pill-time">12 min</div>
+                  <div class="stage-pill-label">2. Práctica</div>
+                </div>
+                <div class="cycle-stage-pill" data-stage="2">
+                  <div class="stage-pill-time">3 min</div>
+                  <div class="stage-pill-label">3. Entrega</div>
+                </div>
+                <div class="cycle-stage-pill" data-stage="3">
+                  <div class="stage-pill-time">2 min</div>
+                  <div class="stage-pill-label">4. Devolución</div>
+                </div>
+              </div>
+
+              <div style="display:flex;align-items:center;justify-content:space-between;background:#ffffff;padding:0.75rem 1rem;border-radius:8px;border:1px solid var(--border-medium);">
+                <div id="cycle-timer-display" style="font-family:var(--font-mono);font-size:1.75rem;font-weight:800;color:#6d28d9;">08:00</div>
+                <div style="display:flex;gap:0.5rem;">
+                  <button id="btn-cycle-start" class="btn-primary" style="background:#4f46e5;padding:0.4rem 0.85rem;">Iniciar Etapa</button>
+                  <button id="btn-cycle-pause" class="btn-secondary" style="display:none;padding:0.4rem 0.85rem;">Pausar</button>
+                  <button id="btn-cycle-reset" class="btn-secondary" style="padding:0.4rem 0.85rem;">Reiniciar</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Avisos Copiables para Teams -->
+            <div class="teams-chat-broadcast-box">
+              <div style="display:flex;justify-content:space-between;align-items:center;">
+                <h4 style="color:var(--ina-blue-900);margin:0;font-size:1.05rem;">💬 Avisos Rápidos para el Chat de Teams</h4>
+                <span style="font-size:0.75rem;color:var(--text-light);">Copia en 1 clic</span>
+              </div>
+              <div id="teams-broadcast-list" style="display:flex;flex-direction:column;gap:0.5rem;max-height:210px;overflow-y:auto;">
+                <!-- Renderizado dinámico desde tutor-mode.js -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Ruta Pedagógica Central (Timeline Interactivo) -->
+        <section id="section-timeline" class="pedagogical-roadmap-section" aria-label="Línea de tiempo de la jornada">
+          <div class="section-header-row">
+            <div class="section-title-group">
+              <h2>🗺️ Ruta Pedagógica de la Jornada</h2>
+              <div class="section-subtitle">Haga clic en cualquier momento del día para acceder a sus materiales</div>
+            </div>
+            <span class="meta-pill">7 Prácticas Activas de 12 min</span>
+          </div>
+
+          <div class="timeline-track">
+            <!-- 8:00 Apertura -->
+            <div class="timeline-step-card agm-lead" data-jump-tab="slides" data-jump-deck="block1">
+              <div class="step-time-badge">8:00 – 8:30</div>
+              <div class="step-title">Apertura & Encuadre</div>
+              <div class="step-footer">
+                <span class="facilitator-tag tag-agm">AGM / HL</span>
+                <span class="step-practices-count">Sondeo</span>
+              </div>
+            </div>
+
+            <!-- 8:30 Receso -->
+            <div class="timeline-step-card break-step" data-jump-tab="practices">
+              <div class="step-time-badge">8:30 – 9:00</div>
+              <div class="step-title">Receso & Ventana Técnica</div>
+              <div class="step-footer">
+                <span class="facilitator-tag tag-break">Receso</span>
+                <span class="step-practices-count">Prueba cuentas</span>
+              </div>
+            </div>
+
+            <!-- 9:00 Bloque 1 -->
+            <div class="timeline-step-card agm-lead active" data-jump-tab="practices" data-jump-deck="block1">
+              <div class="step-time-badge">9:00 – 10:00</div>
+              <div class="step-title">Bloque 1: Panorama, evidencia & voz</div>
+              <div class="step-footer">
+                <span class="facilitator-tag tag-agm">Agustín Gómez</span>
+                <span class="step-practices-count">PR-01</span>
+              </div>
+            </div>
+
+            <!-- 10:00 Bloque 2 -->
+            <div class="timeline-step-card hl-lead" data-jump-tab="practices" data-jump-deck="block2">
+              <div class="step-time-badge">10:00 – 11:30</div>
+              <div class="step-title">Bloque 2: Usos No Convencionales</div>
+              <div class="step-footer">
+                <span class="facilitator-tag tag-hl">Hannia León Fuentes</span>
+                <span class="step-practices-count">PR-02, 03, 04</span>
+              </div>
+            </div>
+
+            <!-- 11:30 Q&A -->
+            <div class="timeline-step-card" data-jump-tab="practices">
+              <div class="step-time-badge">11:30 – 12:00</div>
+              <div class="step-title">Preguntas & Respuestas</div>
+              <div class="step-footer">
+                <span class="facilitator-tag tag-agm">AGM / HL</span>
+                <span class="step-practices-count">Q&A</span>
+              </div>
+            </div>
+
+            <!-- 12:00 Almuerzo -->
+            <div class="timeline-step-card break-step" data-jump-tab="practices">
+              <div class="step-time-badge">12:00 – 1:00</div>
+              <div class="step-title">Almuerzo & Pausa</div>
+              <div class="step-footer">
+                <span class="facilitator-tag tag-break">Almuerzo</span>
+                <span class="step-practices-count">60 min</span>
+              </div>
+            </div>
+
+            <!-- 1:00 Bloque 3 -->
+            <div class="timeline-step-card agm-lead" data-jump-tab="practices" data-jump-deck="block3">
+              <div class="step-time-badge">1:00 – 2:00</div>
+              <div class="step-title">Bloque 3: Secuencias & Rúbricas</div>
+              <div class="step-footer">
+                <span class="facilitator-tag tag-agm">AGM</span>
+                <span class="step-practices-count">PR-05, PR-06</span>
+              </div>
+            </div>
+
+            <!-- 2:00 Bloque 4 -->
+            <div class="timeline-step-card agm-lead" data-jump-tab="practices" data-jump-deck="block4">
+              <div class="step-time-badge">2:00 – 2:30</div>
+              <div class="step-title">Bloque 4: Gestión de IA Local</div>
+              <div class="step-footer">
+                <span class="facilitator-tag tag-agm">AGM</span>
+                <span class="step-practices-count">PR-07</span>
+              </div>
+            </div>
+
+            <!-- 2:30 Cierre -->
+            <div class="timeline-step-card agm-lead" data-jump-tab="closing">
+              <div class="step-time-badge">2:30 – 3:00</div>
+              <div class="step-title">Cierre & Compromiso</div>
+              <div class="step-footer">
+                <span class="facilitator-tag tag-agm">AGM</span>
+                <span class="step-practices-count">Evaluación</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Diagrama del Flujo Pedagógico (Ciclo de 25 Minutos por Práctica) -->
+        <section id="section-workflow" class="pedagogical-workflow-section" aria-label="Diagrama del flujo de trabajo pedagógico">
+          <div class="section-header-row">
+            <div class="section-title-group">
+              <h2>🔄 Flujo de Trabajo Pedagógico: Ciclo de 25 Minutos</h2>
+              <div class="section-subtitle">Estructura estándar y predecible que se repite en cada una de las 7 prácticas activas de la jornada:</div>
+            </div>
+            <span class="meta-pill highlight">Método INA · Agustín & Hannia</span>
+          </div>
+
+          <div class="workflow-diagram-track">
+            <!-- Fase 1: Demostración -->
+            <div class="workflow-card phase-demo" onclick="App.switchTab('slides', true)" title="Clic para ver diapositivas del bloque">
+              <div class="workflow-phase-badge">
+                <span>1. Encuadre (5-8 min)</span>
+              </div>
+              <h3 class="workflow-card-title">Demostración Conducida</h3>
+              <p class="workflow-card-desc">
+                Los facilitadores presentan el caso ocupacional real y modelan en vivo la formulación de la instrucción con los 5 componentes.
+              </p>
+              <div class="workflow-card-footer">
+                <span>🎙️ Facilitadores</span>
+                <span>Ver Láminas ↗</span>
+              </div>
+              <div class="workflow-arrow-connector">➔</div>
+            </div>
+
+            <!-- Fase 2: Práctica Individual -->
+            <div class="workflow-card phase-practice" onclick="App.switchTab('practices', true)" title="Clic para ir a las 7 Prácticas">
+              <div class="workflow-phase-badge">
+                <span>2. Práctica (12 min)</span>
+              </div>
+              <h3 class="workflow-card-title">Ejecución Individual</h3>
+              <p class="workflow-card-desc">
+                Cada docente trabaja de forma autónoma con su IA (o con el Plan B de respaldo) cronometrando 12 minutos exactos.
+              </p>
+              <div class="workflow-card-footer">
+                <span>⏱️ 12 Minutos</span>
+                <span>Ver Prácticas ↗</span>
+              </div>
+              <div class="workflow-arrow-connector">➔</div>
+            </div>
+
+            <!-- Fase 3: Auditoría Docente -->
+            <div class="workflow-card phase-audit" onclick="App.switchTab('builder', true)" title="Clic para abrir Asistente de Prompts">
+              <div class="workflow-phase-badge">
+                <span>3. Auditoría (2 min)</span>
+              </div>
+              <h3 class="workflow-card-title">Verificación Crítica</h3>
+              <p class="workflow-card-desc">
+                El docente audita la salida: comprueba calibración al nivel de idioma, detecta alucinaciones y ajusta con su juicio pedagógico.
+              </p>
+              <div class="workflow-card-footer">
+                <span>🔍 Juicio Docente</span>
+                <span>Asistente ↗</span>
+              </div>
+              <div class="workflow-arrow-connector">➔</div>
+            </div>
+
+            <!-- Fase 4: Entrega -->
+            <div class="workflow-card phase-delivery" onclick="App.switchTab('closing', true)" title="Clic para ver sección de compromiso">
+              <div class="workflow-phase-badge">
+                <span>4. Depósito (3 min)</span>
+              </div>
+              <h3 class="workflow-card-title">Microentregable</h3>
+              <p class="workflow-card-desc">
+                Se deposita en el formulario único: (a) instrucción final calibrada, (b) fragmento corregido y (c) hallazgo crítico de aprendizaje.
+              </p>
+              <div class="workflow-card-footer">
+                <span>📋 Formulario Único</span>
+                <span>Compromiso ↗</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Pestañas de Navegación de Contenidos -->
+        <nav id="content-tabs-nav-bar" class="content-tabs-nav" aria-label="Secciones del taller">
+          <button class="tab-btn active" data-tab="practices">
+        🎯 7 Prácticas Activas
+        <span class="tab-badge">PR-01 a PR-07</span>
+      </button>
+      <button class="tab-btn" data-tab="builder">
+        ⚡ Asistente de Prompts
+        <span class="tab-badge">Paso a Paso</span>
+      </button>
+      <button class="tab-btn" data-tab="slides">
+        📊 Presentaciones Explicadas
+        <span class="tab-badge">4 Bloques</span>
+      </button>
+      <button class="tab-btn" data-tab="evidence">
+        🔎 Evidencia PISA 2025
+        <span class="tab-badge">Bloque 1</span>
+      </button>
+      <button class="tab-btn" data-tab="library">
+        📚 Biblioteca de Evidencia 2026
+        <span class="tab-badge">41 PDFs</span>
+      </button>
+      <button class="tab-btn" data-tab="rubric">
+        📋 Probador de Rúbricas
+        <span class="tab-badge">Interactivo</span>
+      </button>
+      <button class="tab-btn" data-tab="cases">
+        💼 Casos Ocupacionales
+        <span class="tab-badge">8 Casos INA</span>
+      </button>
+      <button class="tab-btn" data-tab="closing">
+        📜 Gobernanza & Cierre
+        <span class="tab-badge">30 Días</span>
+      </button>
+    </nav>
+
+    <!-- ====================================================================
+         PESTAÑA 1: 7 Prácticas Activas (PR-01 a PR-07)
+         ==================================================================== -->
+    <div id="tab-practices" class="tab-pane active">
+      
+      <!-- Cronómetro Interactivo Individual -->
+      <div class="timer-widget">
+        <div class="timer-info">
+          <h4>⏱️ Cronómetro de Práctica Individual</h4>
+          <p>Utilice este cronómetro durante los 12 minutos de trabajo individual en ChatGPT, Claude o Gemini.</p>
+        </div>
+        <div class="timer-display-group">
+          <div id="practice-timer-display" class="timer-display">12:00</div>
+          <div class="timer-controls">
+            <button id="btn-practice-start" class="btn-timer btn-timer-start">▶ Iniciar 12 min</button>
+            <button id="btn-practice-pause" class="btn-timer btn-timer-pause" style="display:none;">⏸ Pausar</button>
+            <button id="btn-practice-reset" class="btn-timer btn-timer-reset">↺ Reiniciar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cuadrícula de las 7 Tarjetas de Práctica -->
+      <div class="practices-grid">
+
+        <!-- PR-01 -->
+        <article class="practice-card">
+          <div class="practice-card-header">
+            <div class="practice-title-group">
+              <span class="practice-code-badge">Bloque 1 · AGM</span>
+              <h3>PR-01 · Instrucción pedagógica completa</h3>
+            </div>
+            <span class="practice-duration-pill">⏱️ 12 min</span>
+          </div>
+          <div class="practice-card-body">
+            <ol class="practice-steps-list">
+              <li><span class="step-num">1</span> Elija un objetivo real e indique <span class="interactive-term" data-tooltip="Marco Común Europeo de Referencia para las Lenguas (Escala internacional: A1, A2, B1, B2)">nivel de idioma (A1 a B2)</span>, destreza y contexto ocupacional del INA.</li>
+              <li><span class="step-num">2</span> Asigne a la IA un rol pedagógico y un producto concreto de salida.</li>
+              <li><span class="step-num">3</span> Defina formato, extensión, vocabulario permitido y tiempo disponible.</li>
+              <li><span class="step-num">4</span> Genere la salida, marque un defecto crítico y mejore la instrucción.</li>
+            </ol>
+            <div class="deliverable-box">
+              <strong>📦 Microentregable a depositar:</strong>
+              <p>Instrucción final calibrada, fragmento corregido y hallazgo crítico principal.</p>
+            </div>
+            <div class="privacy-notice-badge">
+              🔒 No ingrese nombres ni datos reales de estudiantes.
+            </div>
+            <div class="bonus-tip-box">
+              💡 <strong>Si termina antes:</strong> Solicite una segunda versión y compare cuál respeta mejor el <span class="interactive-term" data-tooltip="Marco Común Europeo de Referencia para las Lenguas (Escala: A1, A2, B1, B2)">nivel de idioma</span>.
+            </div>
+          </div>
+          <div class="practice-card-footer">
+            <button class="btn-primary btn-copy-consigna" data-practice="PR-01">📋 Copiar Consigna</button>
+            <button class="btn-outline-amber btn-plan-b" data-practice="PR-01">⚠️ Plan B / Respaldo</button>
+          </div>
+        </article>
+
+        <!-- PR-02 -->
+        <article class="practice-card">
+          <div class="practice-card-header">
+            <div class="practice-title-group">
+              <span class="practice-code-badge" style="background:#ede9fe;color:#6d28d9;">Bloque 2 · HL</span>
+              <h3>PR-02 · Retroalimentación formativa y diferenciada</h3>
+            </div>
+            <span class="practice-duration-pill">⏱️ 12 min</span>
+          </div>
+          <div class="practice-card-body">
+            <ol class="practice-steps-list">
+              <li><span class="step-num">1</span> Pegue la muestra sintética MS-01 (correo de servicio al cliente).</li>
+              <li><span class="step-num">2</span> Solicite retroalimentación para nivel A2 y nivel B1 por separado.</li>
+              <li><span class="step-num">3</span> Exija 2 errores prioritarios, frase modelo y microrremedio de 5 min.</li>
+              <li><span class="step-num">4</span> Elimine todo elogio vacío y verifique que la corrección sea comprensible.</li>
+            </ol>
+            <div class="deliverable-box">
+              <strong>📦 Microentregable a depositar:</strong>
+              <p>Dos comentarios diferenciados, frase modelo y el elogio vacío que eliminó.</p>
+            </div>
+            <div class="privacy-notice-badge">
+              🔒 Use únicamente la muestra sintética. No suba trabajos de estudiantes.
+            </div>
+            <div class="bonus-tip-box">
+              💡 <strong>Si termina antes:</strong> Compruebe si la microrremediación de 5 minutos es realizable en clase.
+            </div>
+          </div>
+          <div class="practice-card-footer">
+            <button class="btn-primary btn-copy-consigna" data-practice="PR-02">📋 Copiar Consigna</button>
+            <button class="btn-outline-amber btn-plan-b" data-practice="PR-02">⚠️ Plan B / Respaldo</button>
+          </div>
+        </article>
+
+        <!-- PR-03 -->
+        <article class="practice-card">
+          <div class="practice-card-header">
+            <div class="practice-title-group">
+              <span class="practice-code-badge" style="background:#ede9fe;color:#6d28d9;">Bloque 2 · HL</span>
+              <h3>PR-03 · Anticipe errores y prepare microrremedios</h3>
+            </div>
+            <span class="practice-duration-pill">⏱️ 12 min</span>
+          </div>
+          <div class="practice-card-body">
+            <ol class="practice-steps-list">
+              <li><span class="step-num">1</span> Describa una tarea, su <span class="interactive-term" data-tooltip="Marco Común Europeo de Referencia para las Lenguas (Escala internacional: A1, A2, B1, B2)">nivel de idioma (A1, A2 o B1)</span> y el contexto general del grupo.</li>
+              <li><span class="step-num">2</span> Solicite los 5 errores más probables antes de impartir la clase.</li>
+              <li><span class="step-num">3</span> Exija evidencia observable y un microrremedio por cada error.</li>
+              <li><span class="step-num">4</span> Elimine una suposición injustificada de la IA y adapte un remedio.</li>
+            </ol>
+            <div class="deliverable-box">
+              <strong>📦 Microentregable a depositar:</strong>
+              <p>Cinco errores anticipados, cinco microrremedios y la suposición que corrigió.</p>
+            </div>
+            <div class="privacy-notice-badge">
+              🔒 Describa grupos de forma general sin perfiles identificables.
+            </div>
+            <div class="bonus-tip-box">
+              💡 <strong>Si termina antes:</strong> Ordene los errores por impacto comunicativo y facilidad de prevención.
+            </div>
+          </div>
+          <div class="practice-card-footer">
+            <button class="btn-primary btn-copy-consigna" data-practice="PR-03">📋 Copiar Consigna</button>
+            <button class="btn-secondary" onclick="App.switchTab('cases')">💼 Ver Casos Ocupacionales</button>
+          </div>
+        </article>
+
+        <!-- PR-04 -->
+        <article class="practice-card">
+          <div class="practice-card-header">
+            <div class="practice-title-group">
+              <span class="practice-code-badge" style="background:#ede9fe;color:#6d28d9;">Ventana 2.3 · Bloque 2 · HL</span>
+              <h3>PR-04 · Configure un chatbot de práctica escrita</h3>
+            </div>
+            <span class="practice-duration-pill">⏱️ 12 min</span>
+          </div>
+          <div class="practice-card-body">
+            <ol class="practice-steps-list">
+              <li><span class="step-num">1</span> Defina rol, nivel, situación ocupacional y extensión máxima de turnos.</li>
+              <li><span class="step-num">2</span> Establezca cuándo corregir, cómo corregir y cuándo dejar continuar.</li>
+              <li><span class="step-num">3</span> Añada límites estrictos y respuesta ante mensajes en español.</li>
+              <li><span class="step-num">4</span> Pruebe dos turnos escritos usted mismo y ajuste una regla que el asistente incumpla.</li>
+            </ol>
+            <div class="deliverable-box">
+              <strong>📦 Microentregable a depositar:</strong>
+              <p>Bloque de instrucciones, dos turnos escritos de prueba, incumplimiento y ajuste realizado.</p>
+            </div>
+            <div class="privacy-notice-badge">
+              🔒 Haga la prueba usted mismo en el simulador o en ChatGPT.
+            </div>
+            <div class="bonus-tip-box">
+              💡 <strong>Ensayar en vivo:</strong> <a href="simulador.html" style="font-weight:700;text-decoration:underline;">Abrir el Simulador de Chat</a>
+            </div>
+          </div>
+          <div class="practice-card-footer">
+            <button class="btn-primary btn-copy-consigna" data-practice="PR-04">📋 Copiar Consigna</button>
+            <a href="simulador.html" class="btn-secondary">💬 Probar en Simulador</a>
+          </div>
+        </article>
+
+        <!-- PR-05 -->
+        <article class="practice-card">
+          <div class="practice-card-header">
+            <div class="practice-title-group">
+              <span class="practice-code-badge">Bloque 3 · AGM</span>
+              <h3>PR-05 · Secuencia didáctica, rúbrica y prueba</h3>
+            </div>
+            <span class="practice-duration-pill">⏱️ 12 min</span>
+          </div>
+          <div class="practice-card-body">
+            <ol class="practice-steps-list">
+              <li><span class="step-num">1</span> Defina objetivo, <span class="interactive-term" data-tooltip="Marco Común Europeo de Referencia para las Lenguas (Escala internacional: A1, A2, B1, B2)">nivel de idioma</span>, contexto y duración de 20 minutos.</li>
+              <li><span class="step-num">2</span> Solicite una secuencia con inicio, práctica, verificación y cierre.</li>
+              <li><span class="step-num">3</span> Pida una rúbrica de 4 criterios con descriptores observables (1-4 pts).</li>
+              <li><span class="step-num">4</span> Aplique la rúbrica a dos muestras sintéticas y corrija un criterio vago.</li>
+            </ol>
+            <div class="deliverable-box">
+              <strong>📦 Microentregable a depositar:</strong>
+              <p>Secuencia didáctica, rúbrica, dos puntuaciones obtenidas y criterio corregido.</p>
+            </div>
+            <div class="privacy-notice-badge">
+              🔒 Use únicamente muestras sintéticas.
+            </div>
+            <div class="bonus-tip-box">
+              💡 <strong>Si termina antes:</strong> Compruebe si dos niveles contiguos reciben puntuaciones distintas.
+            </div>
+          </div>
+          <div class="practice-card-footer">
+            <button class="btn-primary btn-copy-consigna" data-practice="PR-05">📋 Copiar Consigna</button>
+            <button class="btn-secondary" onclick="App.switchTab('rubric')">📋 Ir al Probador de Rúbricas</button>
+          </div>
+        </article>
+
+        <!-- PR-06 -->
+        <article class="practice-card">
+          <div class="practice-card-header">
+            <div class="practice-title-group">
+              <span class="practice-code-badge">Bloque 3 · AGM</span>
+              <h3>PR-06 · Práctica oral y auditoría de límites</h3>
+            </div>
+            <span class="practice-duration-pill">⏱️ 12 min</span>
+          </div>
+          <div class="practice-card-body">
+            <ol class="practice-steps-list">
+              <li><span class="step-num">1</span> Active el modo de voz y describa nivel, rol y situación ocupacional.</li>
+              <li><span class="step-num">2</span> Converse 3 minutos con el asistente como interlocutor de práctica.</li>
+              <li><span class="step-num">3</span> Reinicie y solicite retroalimentación formativa sobre su interacción.</li>
+              <li><span class="step-num">4</span> Identifique exceso de elogio, error de reconocimiento, latencia o salida de nivel.</li>
+            </ol>
+            <div class="deliverable-box">
+              <strong>📦 Microentregable a depositar:</strong>
+              <p>Instrucción utilizada, límite observado en el modo de voz y ajuste propuesto.</p>
+            </div>
+            <div class="privacy-notice-badge">
+              🔒 Use su propia voz. No cargue grabaciones de estudiantes.
+            </div>
+            <div class="bonus-tip-box">
+              💡 <strong>Si termina antes:</strong> Pida una sola prioridad de mejora y verifique si resulta observable.
+            </div>
+          </div>
+          <div class="practice-card-footer">
+            <button class="btn-primary btn-copy-consigna" data-practice="PR-06">📋 Copiar Consigna</button>
+            <button class="btn-outline-amber btn-plan-b" data-practice="PR-06">⚠️ Plan B / Respaldo</button>
+          </div>
+        </article>
+
+        <!-- PR-07 -->
+        <article class="practice-card">
+          <div class="practice-card-header">
+            <div class="practice-title-group">
+              <span class="practice-code-badge">Bloque 4 · AGM</span>
+              <h3>PR-07 · Gestione y compare un modelo local</h3>
+            </div>
+            <span class="practice-duration-pill">⏱️ 12 min</span>
+          </div>
+          <div class="practice-card-body">
+            <ol class="practice-steps-list">
+              <li><span class="step-num">1</span> Identifique nombre, versión y tamaño del modelo descargado (AI Edge / Apollo).</li>
+              <li><span class="step-num">2</span> Active el modo avión, ejecute la consigna y conserve la salida completa.</li>
+              <li><span class="step-num">3</span> Restablezca la conexión y ejecute la misma consigna en la nube.</li>
+              <li><span class="step-num">4</span> Compare resultados y decida si conserva, sustituye o descarta el modelo local.</li>
+            </ol>
+            <div class="deliverable-box">
+              <strong>📦 Microentregable a depositar:</strong>
+              <p>Ficha del modelo, ambas salidas, diferencia principal y decisión docente.</p>
+            </div>
+            <div class="privacy-notice-badge">
+              🔒 Use la consigna sintética. Verifique permisos y telemetría: ejecutar en modo avión no demuestra privacidad total.
+            </div>
+            <div class="bonus-tip-box">
+              💡 <strong>Si termina antes:</strong> Reduzca la consigna y compruebe si mejora la velocidad del modelo local.
+            </div>
+          </div>
+          <div class="practice-card-footer">
+            <button class="btn-primary btn-copy-consigna" data-practice="PR-07">📋 Copiar Consigna</button>
+            <button class="btn-outline-amber btn-plan-b" data-practice="PR-07">⚠️ Plan B / Respaldo</button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         PESTAÑA 2: Asistente Guiado de Prompts (Paso a Paso con Chips)
+         ==================================================================== -->
+    <div id="tab-builder" class="tab-pane">
+      <div class="section-header-row">
+        <div class="section-title-group">
+          <h2>⚡ Asistente Guiado de Prompts (5 Pasos Sencillos)</h2>
+          <div class="section-subtitle">Haga clic en las opciones sugeridas o escriba las suyas. El sistema armará el prompt perfecto automáticamente.</div>
+        </div>
+      </div>
+
+      <div class="prompt-builder-container">
+        <!-- Formulario con Chips Rápidos -->
+        <div class="builder-form">
+          <div class="builder-preset-bar" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem;">
+            <div style="display:flex;align-items:center;gap:0.5rem;flex:1;min-width:260px;">
+              <label for="pb-preset-select">📂 Cargar Ejemplo:</label>
+              <select id="pb-preset-select" class="preset-select">
+                <option value="hotel_complaint">1. Recepción de quejas en hotel (A2 Oral)</option>
+                <option value="lesson_planning">2. Planificar clase de 45 minutos (A2 Atención)</option>
+                <option value="calibrated_reading">3. Lectura técnica calibrada (B1 Hospitalidad)</option>
+                <option value="diff_feedback">4. Retroalimentación diferenciada (Muestra escrita)</option>
+                <option value="custom_chatbot">5. Configurar Chatbot simulador (Recepción)</option>
+                <option value="voice_oral_simulation">6. [Bloques 1 y 3] Simulación Oral con IA de Voz (A2/B1)</option>
+                <option value="socratic_scaffolding">7. [Bloque 2 HL] Andamiaje Socrático sin dar la respuesta</option>
+                <option value="explainable_feedback">8. [Bloque 3 AGM] Retroalimentación Lingüística Explicable (XAI)</option>
+              </select>
+            </div>
+            <button id="btn-clear-prompt" class="btn-secondary" style="font-size:0.8rem;padding:0.4rem 0.8rem;" title="Borrar todo y redactar desde cero">
+              🧹 Empezar en Blanco
+            </button>
+          </div>
+
+          <!-- Paso 1: Rol -->
+          <div class="form-group">
+            <label for="pb-role">
+              <span>Paso 1: ¿Qué rol debe cumplir la IA?</span>
+              <span class="component-badge">1 / 5</span>
+            </label>
+            <div class="wizard-chips-group">
+              <button class="wizard-chip-btn active" data-target-input="pb-role" data-value="Actúe como diseñador de actividades de inglés para fines ocupacionales. Su objetivo es crear una práctica comunicativa para servicio al cliente.">🎯 Diseñador de Actividades</button>
+              <button class="wizard-chip-btn" data-target-input="pb-role" data-value="Actúe como un cliente extranjero que interactúa con un estudiante de recepción para practicar conversación.">💬 Cliente para Práctica</button>
+              <button class="wizard-chip-btn" data-target-input="pb-role" data-value="Actúe como especialista en evaluación formativa y corrección constructiva de errores en inglés técnico.">📝 Evaluador Formativo</button>
+              <button class="wizard-chip-btn" data-target-input="pb-role" data-value="Actúe como interlocutor angloparlante para una práctica oral conversacional en vivo por voz con un estudiante técnico de hotelería/servicios del INA.">🎙️ Interlocutor de Voz (NYU 2026)</button>
+              <button class="wizard-chip-btn" data-target-input="pb-role" data-value="Actúe como tutor pedagógico socrático de inglés ocupacional para formación técnica profesional.">🪜 Tutor Socrático (HL)</button>
+            </div>
+            <textarea id="pb-role" style="margin-top:0.35rem;"></textarea>
+          </div>
+
+          <!-- Paso 2: Nivel de Idioma -->
+          <div class="form-group">
+            <label for="pb-level">
+              <span>Paso 2: ¿Qué <span class="interactive-term" data-tooltip="Marco Común Europeo de Referencia para las Lenguas: La escala oficial internacional (A1 Principiante, A2 Básico, B1 Intermedio, B2 Avanzado).">nivel de idioma</span> y destreza tienen sus estudiantes?</span>
+              <span class="component-badge">2 / 5</span>
+            </label>
+            <div class="wizard-chips-group">
+              <button class="wizard-chip-btn active" data-target-input="pb-level" data-value="Inglés A2 · Interacción oral (listening & speaking)">A2 (Básico)</button>
+              <button class="wizard-chip-btn" data-target-input="pb-level" data-value="Inglés A1 · Expresiones elementales y saludos">A1 (Inicial)</button>
+              <button class="wizard-chip-btn" data-target-input="pb-level" data-value="Inglés B1 · Interacción laboral fluida">B1 (Intermedio)</button>
+              <button class="wizard-chip-btn" data-target-input="pb-level" data-value="LESCO A1 · Expresión visual-gestual y vocabulario básico">LESCO A1</button>
+              <button class="wizard-chip-btn" data-target-input="pb-level" data-value="Portugués A2 · Atención a visitantes">Portugués A2</button>
+              <button class="wizard-chip-btn" data-target-input="pb-level" data-value="Francés B1 · Orientación turística">Francés B1</button>
+            </div>
+            <input type="text" id="pb-level" style="margin-top:0.35rem;">
+          </div>
+
+          <!-- Paso 3: Contexto Ocupacional -->
+          <div class="form-group">
+            <label for="pb-context">
+              <span>Paso 3: ¿En qué área laboral o situación del INA se aplicará?</span>
+              <span class="component-badge">3 / 5</span>
+            </label>
+            <div class="wizard-chips-group">
+              <button class="wizard-chip-btn active" data-target-input="pb-context" data-value="Personas adultas del INA en formación para servicio al cliente en turismo y hotelería en Costa Rica.">🏨 Turismo y Hotelería</button>
+              <button class="wizard-chip-btn" data-target-input="pb-context" data-value="Grupo de personas adultas en formación para comercio, ventas y atención en tiendas.">🛍️ Comercio y Ventas</button>
+              <button class="wizard-chip-btn" data-target-input="pb-context" data-value="Estudiantes en entrenamiento para soporte y atención telefónica en centros de contacto bilingües.">🎧 Contact Centers</button>
+            </div>
+            <input type="text" id="pb-context" style="margin-top:0.35rem;">
+          </div>
+
+          <!-- Paso 4: Formato de Salida -->
+          <div class="form-group">
+            <label for="pb-format">
+              <span>Paso 4: ¿Qué formato exacto debe entregar la IA?</span>
+              <span class="component-badge">4 / 5</span>
+            </label>
+            <div class="wizard-chips-group">
+              <button class="wizard-chip-btn active" data-target-input="pb-format" data-value="Entregue exactamente: (1) objetivo observable, (2) preparación de 2 minutos, (3) guion incompleto de 4 turnos, (4) 5 expresiones útiles, (5) 2 preguntas de verificación.">Guion de 4 turnos + Frases</button>
+              <button class="wizard-chip-btn" data-target-input="pb-format" data-value="Hable con pronunciación clara y natural. Emita exactamente 1 o 2 oraciones por turno (máximo 16 palabras). Mantenga un diálogo de 4 turnos en total y luego entregue un cierre formativo breve en español.">🎙️ Diálogo Oral 4 Turnos</button>
+              <button class="wizard-chip-btn" data-target-input="pb-format" data-value="Entregue una tabla de 3 columnas: (1) Fragmento textual analizado, (2) Explicación transparente del error, (3) Opción mejorada contrastada con una micro-tarea de práctica de 2 minutos.">🔍 Tabla Explicable (XAI)</button>
+              <button class="wizard-chip-btn" data-target-input="pb-format" data-value="Entregue una rúbrica analítica de 4 criterios con descriptores observables y escala de 1 a 4 puntos.">Rúbrica de 4 criterios</button>
+            </div>
+            <textarea id="pb-format" style="margin-top:0.35rem;"></textarea>
+          </div>
+
+          <!-- Paso 5: Restricciones -->
+          <div class="form-group">
+            <label for="pb-restrictions">
+              <span>Paso 5: ¿Qué límites de tiempo y reglas debe respetar?</span>
+              <span class="component-badge">5 / 5</span>
+            </label>
+            <div class="wizard-chips-group">
+              <button class="wizard-chip-btn active" data-target-input="pb-restrictions" data-value="Actividad total de 12 minutos; oraciones de hasta 12 palabras; presente simple y pasado simple; no inventar políticas reales ni resolver las respuestas del estudiante.">12 min · Oraciones cortas</button>
+              <button class="wizard-chip-btn" data-target-input="pb-restrictions" data-value="Tolere pausas de pensamiento de hasta 5 segundos sin cortar. NO dé respuestas complacientes vacías ('Awesome!'). Al final, señale 1 acierto y 1 recomendación.">⏱️ Tolerar Pausas de Voz</button>
+              <button class="wizard-chip-btn" data-target-input="pb-restrictions" data-value="PROHIBIDO redactar el texto completo por el estudiante. Guíe con preguntas reflexivas paso a paso. Espere cada respuesta antes de avanzar.">🚫 Prohibido Dar la Respuesta</button>
+            </div>
+            <textarea id="pb-restrictions" style="margin-top:0.35rem;"></textarea>
+          </div>
+        </div>
+
+        <!-- Panel de Vista Previa y Calibración -->
+        <div class="builder-preview-panel">
+          <div class="preview-header">
+            <h4>📄 Su Prompt Armado Listo para Usar</h4>
+            <span id="pb-validation-indicator" class="validation-indicator complete">✓ 5/5 componentes completos</span>
+          </div>
+
+          <div id="pb-output-box" class="prompt-output-box" tabindex="0"></div>
+
+          <div style="display:flex;flex-direction:column;gap:0.5rem;margin-top:auto;">
+            <button id="btn-copy-prompt" class="btn-primary" style="justify-content:center;padding:0.75rem;">
+              📋 Copiar Prompt Completo para Pegar en ChatGPT / Claude
+            </button>
+            <span style="font-size:0.75rem;color:var(--text-light);text-align:center;">
+              Pegue este texto directamente en su herramienta de IA para obtener resultados precisos.
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         PESTAÑA 3: Visor Integrado de Presentaciones y Guiones
+         ==================================================================== -->
+    <div id="tab-slides" class="tab-pane">
+      <div class="slide-deck-viewer">
+        <div class="slide-deck-header">
+          <div class="block-deck-selector">
+            <button class="deck-select-btn active" data-deck="block1">Bloque 1: Panorama & Método (AGM)</button>
+            <button class="deck-select-btn" data-deck="block2">Bloque 2: Usos No Convencionales (HL)</button>
+            <button class="deck-select-btn" data-deck="block3">Bloque 3: Modalidad Educativa (AGM)</button>
+            <button class="deck-select-btn" data-deck="block4">Bloque 4: Gestión de IA Local (AGM)</button>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.75rem;">
+            <span id="deck-facilitator-name" class="meta-pill">Agustín Gómez Meléndez</span>
+            <button id="btn-slide-fullscreen" class="btn-secondary" title="Pantalla completa">⛶ Pantalla Completa</button>
+          </div>
+        </div>
+
+        <!-- Marco de Visualización de la Lámina -->
+        <div id="slide-display-frame" class="slide-display-frame">
+          <img id="main-slide-img" class="slide-image-element" src="02_Presentaciones/qa_block1/slide-01.png" alt="Diapositiva del Bloque">
+          <div id="placeholder-slide-box" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;"></div>
+          
+          <div class="slide-nav-overlay">
+            <button id="btn-slide-prev" class="slide-nav-btn" aria-label="Lámina anterior">‹</button>
+            <button id="btn-slide-next" class="slide-nav-btn" aria-label="Lámina siguiente">›</button>
+          </div>
+        </div>
+
+        <!-- Controles y Tira de Miniaturas -->
+        <div class="slide-controls-bar">
+          <span id="slide-counter-badge" class="slide-counter-badge">Lámina 1 de 18</span>
+          <span style="font-size:0.8rem;color:var(--text-light);">Navegación: Use las flechas del teclado (← / →) o los botones laterales</span>
+        </div>
+
+        <div id="slide-thumbnails-strip" class="slide-thumbnails-strip">
+          <!-- Miniaturas renderizadas dinámicamente -->
+        </div>
+
+        <!-- Notas del Orador (Se sincronizan automáticamente) -->
+        <div class="speaker-notes-drawer">
+          <div class="speaker-notes-header">
+            <span>🎙️ Notas Pedagógicas del Orador / Facilitador:</span>
+          </div>
+          <div id="speaker-notes-content" class="speaker-notes-text">
+            Dé la bienvenida y establezca el contrato del bloque: la IA propone, usted decide.
+          </div>
+        </div>
+
+        <!-- Tarjetas de Ideas Clave en 1 Minuto -->
+        <div class="slide-summary-card">
+          <div class="slide-summary-header">
+            <span>💡 Ideas Clave para Recordar de este Bloque:</span>
+          </div>
+          <div class="slide-summary-points">
+            <div class="summary-point-item">
+              <strong>1. Juicio Docente:</strong>
+              <span>Una salida que suena bonita no siempre es correcta. Verifique siempre el <span class="interactive-term" data-tooltip="Marco Común Europeo de Referencia para las Lenguas (Escala: A1, A2, B1, B2)">nivel de idioma</span> y los datos.</span>
+            </div>
+            <div class="summary-point-item">
+              <strong>2. Control de Tiempos:</strong>
+              <span>Cada práctica se estructura en 12 min de ejecución autónoma y 3 min para subir el microentregable.</span>
+            </div>
+            <div class="summary-point-item">
+              <strong>3. Privacidad Absoluta:</strong>
+              <span>Cumplimiento Ley 8968: solo se emplean casos y muestras sintéticas.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         PESTAÑA 4: Evidencia PISA 2025 y evaluación de inglés en Costa Rica
+         ==================================================================== -->
+    <div id="tab-evidence" class="tab-pane">
+      <div class="evidence-hero">
+        <div>
+          <span class="evidence-kicker">BLOQUE 1 · CONTEXTO PARA DECIDIR CON EVIDENCIA</span>
+          <h2>¿Qué nos dice PISA 2025 sobre inglés e IA en Costa Rica?</h2>
+          <p>Esta sección separa con claridad lo que está confirmado, lo que no se debe afirmar y lo que conviene verificar antes de usarlo en el aula.</p>
+        </div>
+        <a class="btn-secondary evidence-source-link" href="Informe_Componente_Ingles_PISA_IA2025_CostaRica.docx">Abrir informe de respaldo ↗</a>
+      </div>
+
+      <section class="evidence-alert evidence-alert-critical" aria-label="Precisión sobre PISA e inglés">
+        <div class="evidence-alert-icon" aria-hidden="true">!</div>
+        <div>
+          <h3>No presente puntajes PISA de inglés para Costa Rica</h3>
+          <p>El informe no identifica participación costarricense en la evaluación opcional de inglés (FLA) de PISA 2025. Esta conclusión es consistente con el comunicado del MEP, pero se apoya en evidencia indirecta; antes de convertirla en afirmación cerrada, corresponde confirmarla con la DGEC-MEP.</p>
+        </div>
+      </section>
+
+      <div class="evidence-metrics-grid" aria-label="Datos PISA 2025 confirmados para Costa Rica">
+        <article class="evidence-metric-card">
+          <span class="evidence-metric-label">Uso de IA para aprender</span>
+          <strong>50,06 %</strong>
+          <p>Costa Rica reportó uso semanal o diario, frente a 45,52 % en el promedio OCDE.</p>
+          <small>Comparación descriptiva: no se debe presentar como diferencia estadísticamente significativa.</small>
+        </article>
+        <article class="evidence-metric-card">
+          <span class="evidence-metric-label">Resolución computacional de problemas</span>
+          <strong>452 <span>vs. 500</span></strong>
+          <p>Resultado de Costa Rica frente al promedio OCDE en <em>Learning in the Digital World</em>.</p>
+          <small>No es una medición de inglés ni reemplaza los dominios principales de PISA.</small>
+        </article>
+        <article class="evidence-metric-card evidence-metric-card-neutral">
+          <span class="evidence-metric-label">Componente FLA de inglés</span>
+          <strong>Sin puntaje CR</strong>
+          <p>Los resultados internacionales de la evaluación de inglés se anunciarían en una entrega separada.</p>
+          <small>No invente datos ni use la ausencia de información como una conclusión causal.</small>
+        </article>
+      </div>
+
+      <section class="evidence-section">
+        <div class="section-header-row">
+          <div class="section-title-group">
+            <h2>Cómo usar la evidencia en la ruta pedagógica</h2>
+            <div class="section-subtitle">Una práctica breve de alfabetización crítica antes de pedirle resultados a una herramienta de IA.</div>
+          </div>
+        </div>
+        <ol class="evidence-steps">
+          <li><strong>Nombre el dato.</strong> Distinga el porcentaje de uso de IA, el resultado de resolución computacional y una medición de dominio del inglés.</li>
+          <li><strong>Revise el alcance.</strong> Pregunte: ¿quién fue evaluado?, ¿qué se midió?, ¿en qué año? No traslade un indicador digital a una conclusión sobre competencia lingüística.</li>
+          <li><strong>Verifique la fuente.</strong> Una salida de IA puede resumir PISA con seguridad y aun así atribuir a Costa Rica resultados de inglés inexistentes.</li>
+          <li><strong>Decida con juicio docente.</strong> Use los datos para abrir preguntas y planificar apoyos; no para etiquetar al estudiantado ni sustituir evaluación local.</li>
+        </ol>
+        <div class="evidence-prompt-box">
+          <h3>Consigna para modelar en el Bloque 1</h3>
+          <p>“Resume únicamente los datos confirmados de PISA 2025 para Costa Rica sobre uso de IA y resolución computacional de problemas. Indica qué dato no existe sobre inglés, diferencia evidencia descriptiva de causalidad y cita la fuente de cada afirmación.”</p>
+          <button class="btn-primary" onclick="App.copyToClipboard('Resume únicamente los datos confirmados de PISA 2025 para Costa Rica sobre uso de IA y resolución computacional de problemas. Indica qué dato no existe sobre inglés, diferencia evidencia descriptiva de causalidad y cita la fuente de cada afirmación.', 'Consigna de evidencia copiada');">📋 Copiar consigna</button>
+        </div>
+      </section>
+
+      <!-- Nueva sección: Evaluación Oral Auténtica con Modelos de Voz (NYU Stern Marzo 2026) -->
+      <section class="evidence-section">
+        <div class="section-header-row">
+          <div class="section-title-group">
+            <h2>🎙️ El Giro hacia la Oralidad Auténtica: Evidencia NYU Stern (Marzo 2026)</h2>
+            <div class="section-subtitle">Por qué en la era de los LLMs la redacción en casa debe sustituirse por micro-evaluaciones orales en vivo con IA de voz.</div>
+          </div>
+        </div>
+
+        <div class="voice-evidence-box">
+          <h3>🚨 La Crisis de la Evaluación Escrita Tradicional</h3>
+          <p>
+            El estudio insignia de la Universidad de Nueva York (NYU Stern, marzo 2026: <em>Scalable and Personalized Oral Assessments Using Voice AI</em>, arXiv:2603.18221v1) demostró un patrón generalizado: <strong>estudiantes que entregan tareas escritas impecables generadas por IA, pero al preguntarles oralmente en clase no logran explicar ni defender lo que entregaron</strong>.
+          </p>
+          <p>
+            La evidencia concluye: los detectores de plagio fallan y generan desconfianza. La solución pedagógica para idiomas no es prohibir, sino implementar la <strong>Capa de Autenticidad Continua (Continuous Authenticity Layer)</strong>: micro-entrevistas orales de 3 minutos donde el estudiante dialoga en inglés sobre su tarea con la IA de voz.
+          </p>
+
+          <div class="voice-phases-grid">
+            <div class="voice-phase-item">
+              <strong>1️⃣ Interacción Oral Tolerante</strong>
+              <span>Modelos de voz (ChatGPT Voice / Gemini Live) con latencia baja y tolerancia a pausas de pensamiento de hasta 5 segundos sin cortar al estudiante A2/B1.</span>
+            </div>
+            <div class="voice-phase-item">
+              <strong>2️⃣ Consejo Deliberativo (Council of LLMs)</strong>
+              <span>Tres familias de modelos analizan de forma independiente la transcripción del diálogo, alcanzando 86% de acuerdo antes de emitir sugerencias.</span>
+            </div>
+            <div class="voice-phase-item">
+              <strong>3️⃣ Docente en el Bucle (Human-in-the-Loop)</strong>
+              <span>La IA provee la evidencia transcrita y una precalificación formativa; <strong>el formador humano valida, corrige sesgos y decide la nota final</strong>.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="evidence-prompt-box" style="border-left-color: #16a34a; background: #f0fdf4;">
+          <h3 style="color: #14532d;">Consigna de Evaluación Oral con Voz para Bloques 1 y 3</h3>
+          <p style="color: #166534;">“Actúa como un cliente extranjero en la recepción de un hotel. Habla por voz en inglés A2 con oraciones cortas (máximo 14 palabras). Espera pacientemente las respuestas del estudiante (hasta 5 segundos de silencio). Mantén un diálogo de 4 turnos sobre una reservación y, al finalizar, resume en español un acierto observable y una oportunidad de mejora sin dar elogios complacientes vacíos.”</p>
+          <button class="btn-primary" style="background: #16a34a; border-color: #16a34a;" onclick="App.copyToClipboard('Actúa como un cliente extranjero en la recepción de un hotel. Habla por voz en inglés A2 con oraciones cortas (máximo 14 palabras). Espera pacientemente las respuestas del estudiante (hasta 5 segundos de silencio). Mantén un diálogo de 4 turnos sobre una reservación y, al finalizar, resume en español un acierto observable y una oportunidad de mejora sin dar elogios complacientes vacíos.', 'Consigna de evaluación oral copiada');">📋 Copiar consigna de voz</button>
+        </div>
+      </section>
+
+      <!-- Nueva sección: Protocolo de Privacidad y Salvaguarda Docente -->
+      <section class="evidence-section">
+        <div class="section-header-row">
+          <div class="section-title-group">
+            <h2>🛡️ Salvaguarda Docente y Protección de Datos (Ley 8968 Costa Rica)</h2>
+            <div class="section-subtitle">Normas obligatorias basadas en el estándar internacional Keeping Children Safe in Education 2026 y el AI Risk Management Toolkit.</div>
+          </div>
+        </div>
+
+        <div class="evidence-table-wrapper" role="region" aria-label="Protocolo de Privacidad y Ley 8968" tabindex="0">
+          <table class="evidence-table">
+            <thead><tr><th>Principio de Protección</th><th>Riesgo Evitado</th><th>Regla de Oro en el Aula INA</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><strong>Muestras 100% Sintéticas</strong></td>
+                <td>Filtración de expedientes o historiales de rendimiento de aprendices a servidores extranjeros.</td>
+                <td>Nunca suba nombres reales, fotos, correos o números de cédula. Use únicamente perfiles ficticios para ensayar prompts.</td>
+              </tr>
+              <tr>
+                <td><strong>Desactivación de Entrenamiento</strong></td>
+                <td>Reutilización comercial de las respuestas del estudiantado por proveedores de LLMs.</td>
+                <td>Configure las cuentas en "modo historial desactivado" o utilice APIs empresariales / modelos locales (Ollama/Liquid Apollo).</td>
+              </tr>
+              <tr>
+                <td><strong>Supervisión Humana Obligatoria (AI Act)</strong></td>
+                <td>Decisiones automatizadas arbitrarias en certificaciones técnicas ocupacionales.</td>
+                <td>Prohibido usar IA para emitir notas finales automáticas sin revisión minuciosa del docente técnico.</td>
+              </tr>
+              <tr>
+                <td><strong>Transparencia y Declaración Ética</strong></td>
+                <td>Percepción de "cacería de brujas" y quiebre de confianza pedagógica con el estudiante.</td>
+                <td>Defina desde el inicio cuándo se permite usar IA (lluvia de ideas, práctica de pronunciación) y cuándo se exige interacción humana directa.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="evidence-section">
+        <div class="section-header-row">
+          <div class="section-title-group">
+            <h2>La evidencia nacional que sí orienta la enseñanza de inglés</h2>
+            <div class="section-subtitle">Estos instrumentos no son PISA: responden a propósitos, poblaciones y destrezas propias del contexto costarricense.</div>
+          </div>
+        </div>
+        <div class="evidence-table-wrapper" role="region" aria-label="Ecosistema nacional de evaluación de inglés" tabindex="0">
+          <table class="evidence-table">
+            <thead><tr><th>Instrumento</th><th>Qué aporta</th><th>Uso pedagógico prudente</th></tr></thead>
+            <tbody>
+              <tr><td><strong>PNELE</strong></td><td>Comprensión de lectura y auditiva al finalizar secundaria.</td><td>Contextualizar la enseñanza con evidencia del sistema, sin reemplazar la evaluación del aula.</td></tr>
+              <tr><td><strong>PELEx</strong></td><td>Monitoreo y diagnóstico de competencias lingüísticas en primaria y secundaria.</td><td>Reconocer que el seguimiento requiere información granular y continuidad.</td></tr>
+              <tr><td><strong>TEYL</strong></td><td>Diagnóstico en primaria vinculado al currículo de inglés.</td><td>Planificar apoyos adecuados a la edad y al programa de estudio.</td></tr>
+              <tr><td><strong>AWA-UCR</strong></td><td>Escritura en inglés con corrección híbrida: IA más evaluadores humanos.</td><td>Modelar el principio central del taller: la IA apoya; el juicio humano verifica y decide.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="evidence-section evidence-sources">
+        <h2>Fuentes y límites</h2>
+        <p>Datos PISA: Tabla oficial I.B1.4.53 (uso de IA), <em>Learning in the Digital World</em> (resolución computacional) y marco PISA 2025 de la OCDE. Contexto nacional: MEP, UCR y PELEx. Evidencia de voz y evaluación oral: Panos Ipeirotis & Konstantinos Rizakos (NYU Stern, Marzo 2026, arXiv:2603.18221v1). Salvaguarda y privacidad: Ley 8968 (Costa Rica), Keeping Children Safe in Education 2026 y Guidance AI Risk Management Toolkit.</p>
+        <p><strong>Regla de uso:</strong> estos datos describen un contexto; no prueban que la IA cause mejores o peores resultados ni caracterizan a cada grupo o estudiante.</p>
+      </section>
+    </div>
+
+    <!-- ====================================================================
+         PESTAÑA 5: Biblioteca de Evidencia 2026 (41 Documentos RAG)
+         ==================================================================== -->
+    <div id="tab-library" class="tab-pane">
+      <div class="library-container">
+        <div class="library-hero">
+          <div class="library-hero-text">
+            <span class="library-pipeline-pill">🔬 CIOdD-UCR PDF Intelligence Pipeline V5.1 · Research & RAG</span>
+            <h2>📚 Biblioteca de Evidencia Científica y Pedagógica 2026</h2>
+            <p>
+              Acervo estructurado de <strong>41 documentos especializados</strong> (2.271 páginas, 3.772 secciones, 3.027 chunks y 2.057 tablas) procesados bajo el manual V5.x. Cada ficha incluye su hallazgo pedagógico para docentes del INA y una consigna copiable para el aula.
+            </p>
+          </div>
+          <a class="btn-secondary evidence-source-link" href="Bibliografia/MANUAL_USO_LLM_CORPUS_PDF_V5.md" target="_blank">
+            📖 Manual RAG V5.x ↗
+          </a>
+        </div>
+
+        <!-- Barra de Controles y Filtros -->
+        <div class="library-controls-bar">
+          <div class="library-search-box">
+            <span>🔍</span>
+            <input type="text" id="library-search-input" placeholder="Buscar por título, palabra clave (ej: voz, prompt, ética, evaluación, niños, rúbrica, MCER)...">
+          </div>
+          <div class="library-filter-chips">
+            <span style="font-size:0.8rem;font-weight:700;color:var(--text-muted);margin-right:0.25rem;">Filtrar por eje:</span>
+            <button class="library-filter-btn active" data-category="all">🌐 Todos (41)</button>
+            <button class="library-filter-btn" data-category="pedagogia">🎙️ Pedagogía & Voz (8)</button>
+            <button class="library-filter-btn" data-category="alfabetizacion">🧭 Alfabetización & Trabajo (10)</button>
+            <button class="library-filter-btn" data-category="evaluacion">📊 Evaluación & Evidencia (12)</button>
+            <button class="library-filter-btn" data-category="etica">🛡️ Ética & Privacidad (11)</button>
+          </div>
+          <div class="library-counter-row">
+            <span id="library-counter-badge">41 de 41 documentos</span>
+            <span>Base DuckDB y Faiss procesada localmente</span>
+          </div>
+        </div>
+
+        <!-- Cuadrícula Dinámica de Tarjetas de Documentos -->
+        <div class="library-cards-grid" id="library-cards-grid">
+          <!-- Renderizado reactivamente por App.renderLibraryCards() -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         PESTAÑA 6: Probador de Rúbricas y Muestras Sintéticas (P3.8)
+         ==================================================================== -->
+    <div id="tab-rubric" class="tab-pane">
+      <div class="section-header-row">
+        <div class="section-title-group">
+          <h2>📋 Probador de Rúbricas Analíticas (PR-05 / P3.8)</h2>
+          <div class="section-subtitle">Haga clic en las celdas para evaluar las muestras de estudiantes. Observe cómo la puntuación se calcula al instante.</div>
+        </div>
+      </div>
+
+      <div class="rubric-evaluator-container">
+        <!-- Banner de Instrucciones Paso a Paso -->
+        <div class="rubric-instructions-banner">
+          <h4>💡 ¿Cómo funciona esta prueba? (Guía en 3 Pasos)</h4>
+          <div class="rubric-steps-row">
+            <div class="rubric-step-item">
+              <strong>1️⃣ Paso 1: Elija y lea la muestra</strong>
+              <span>Seleccione Muestra A (sólida), Muestra B (defectuosa) o Muestra C (interacción oral con sesgo de IA).</span>
+            </div>
+            <div class="rubric-step-item">
+              <strong>2️⃣ Paso 2: Evalúe los 4 criterios</strong>
+              <span>Haga clic en la casilla de nivel que corresponda (1 a 4 pts) en cada una de las 4 filas.</span>
+            </div>
+            <div class="rubric-step-item">
+              <strong>3️⃣ Paso 3: Vea el resultado y compare</strong>
+              <span>Al completar las 4 filas, el sistema mostrará su calificación y la comparará con el dictamen de los facilitadores.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Alerta de Complacencia Acrítica (Sycophancy) -->
+        <div class="sycophancy-alert-box">
+          ⚠️ <strong>Alerta de Complacencia Acrítica (Sycophancy · Norma DS:PAS 2500-3):</strong>
+          Los modelos de lenguaje tienden por defecto a adular al estudiante (<em>"Your English is amazing and flawless!"</em>) aun cuando comete errores graves de gramática o protocolo de servicio. El criterio pedagógico docente es el único que puede frenar la fosilización de errores.
+        </div>
+
+        <!-- Selector de Muestra y Controles -->
+        <div class="rubric-samples-selector" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem;">
+          <div style="display:flex;gap:0.5rem;align-items:center;flex-wrap:wrap;">
+            <span style="font-weight:700;color:var(--ina-blue-900);">Muestra a calificar:</span>
+            <button class="sample-tab-btn active" data-sample="sampleA">Muestra A (Respuesta B1 Sólida)</button>
+            <button class="sample-tab-btn" data-sample="sampleB">Muestra B (Respuesta Defectuosa)</button>
+            <button class="sample-tab-btn" data-sample="sampleC">Muestra C (Interacción Oral + Complacencia IA)</button>
+          </div>
+          <div style="display:flex;gap:0.75rem;align-items:center;">
+            <span id="rubric-progress-text" style="font-size:0.85rem;font-weight:700;color:var(--ina-blue-700);">0 de 4 criterios evaluados</span>
+            <button id="btn-reset-rubric" class="btn-secondary" style="font-size:0.8rem;padding:0.35rem 0.75rem;">↺ Limpiar / Empezar en Blanco</button>
+          </div>
+        </div>
+
+        <!-- Visualizador del Texto de la Muestra -->
+        <div>
+          <span style="font-size:0.8rem;font-weight:700;color:var(--text-muted);display:block;margin-bottom:0.25rem;">📄 Correo enviado por el estudiante para evaluar:</span>
+          <div id="rubric-sample-text" class="sample-display-box"></div>
+        </div>
+
+        <!-- Tabla Interactiva de la Rúbrica -->
+        <table class="rubric-grid-table">
+          <thead>
+            <tr>
+              <th style="width:22%;">Criterio Pedagógico</th>
+              <th style="width:19.5%;">4 · Cumple con solidez (4 pts)</th>
+              <th style="width:19.5%;">3 · Cumple (3 pts)</th>
+              <th style="width:19.5%;">2 · Cumple parcialmente (2 pts)</th>
+              <th style="width:19.5%;">1 · No cumple (1 pt)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Criterio 1 -->
+            <tr>
+              <td>
+                <strong>1. Cumplimiento comunicativo</strong>
+                <span id="badge-crit-c1" class="criterion-status-badge pending">⚠️ Pendiente</span>
+              </td>
+              <td class="rubric-cell" data-criterion="c1" data-score="4">Reconoce el problema, propone solución clara y explica siguiente paso.</td>
+              <td class="rubric-cell" data-criterion="c1" data-score="3">Reconoce el problema y ofrece una solución comprensible.</td>
+              <td class="rubric-cell" data-criterion="c1" data-score="2">Reconoce parcialmente el problema o deja incompleta la solución.</td>
+              <td class="rubric-cell" data-criterion="c1" data-score="1">No responde al problema o no ofrece una acción viable.</td>
+            </tr>
+            <!-- Criterio 2 -->
+            <tr>
+              <td>
+                <strong>2. Organización y cohesión</strong>
+                <span id="badge-crit-c2" class="criterion-status-badge pending">⚠️ Pendiente</span>
+              </td>
+              <td class="rubric-cell" data-criterion="c2" data-score="4">Orden lógico; saludo, desarrollo y cierre; conectores precisos.</td>
+              <td class="rubric-cell" data-criterion="c2" data-score="3">Orden comprensible con saludo y cierre; conexiones claras.</td>
+              <td class="rubric-cell" data-criterion="c2" data-score="2">Ideas relacionadas pero orden o conexiones dificultan una parte.</td>
+              <td class="rubric-cell" data-criterion="c2" data-score="1">Ideas aisladas o desordenadas que impiden seguir el mensaje.</td>
+            </tr>
+            <!-- Criterio 3 -->
+            <tr>
+              <td>
+                <strong>3. Control lingüístico</strong>
+                <span id="badge-crit-c3" class="criterion-status-badge pending">⚠️ Pendiente</span>
+              </td>
+              <td class="rubric-cell" data-criterion="c3" data-score="4">Estructuras B1 frecuentes con errores menores que no afectan el sentido.</td>
+              <td class="rubric-cell" data-criterion="c3" data-score="3">Algunos errores pero el mensaje se comprende sin esfuerzo.</td>
+              <td class="rubric-cell" data-criterion="c3" data-score="2">Errores frecuentes obligan a releer, aunque se recupera la idea.</td>
+              <td class="rubric-cell" data-criterion="c3" data-score="1">Errores graves impiden comprender ideas esenciales.</td>
+            </tr>
+            <!-- Criterio 4 -->
+            <tr>
+              <td>
+                <strong>4. Adecuación profesional</strong>
+                <span id="badge-crit-c4" class="criterion-status-badge pending">⚠️ Pendiente</span>
+              </td>
+              <td class="rubric-cell" data-criterion="c4" data-score="4">Tono respetuoso, específico y apropiado para servicio al cliente.</td>
+              <td class="rubric-cell" data-criterion="c4" data-score="3">Tono apropiado, con alguna expresión poco natural.</td>
+              <td class="rubric-cell" data-criterion="c4" data-score="2">Alterna frases apropiadas con otras demasiado directas o imprecisas.</td>
+              <td class="rubric-cell" data-criterion="c4" data-score="1">Tono inapropiado o que puede agravar la situación.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Resumen de Puntuación -->
+        <div class="rubric-score-summary">
+          <div style="flex:1;">
+            <h4 style="color:white;margin:0;font-size:1.1rem;">Estado de la Evaluación:</h4>
+            <div id="rubric-expert-analysis" style="margin-top:0.35rem;">
+              <!-- Feedback dinámico -->
+            </div>
+          </div>
+          <div style="text-align:right;margin-left:1.5rem;">
+            <span style="font-size:0.75rem;color:#cbd5e1;text-transform:uppercase;display:block;margin-bottom:0.25rem;">Puntaje Acumulado:</span>
+            <div id="rubric-total-score" class="score-badge">0 / 16</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         PESTAÑA 5: Banco de Casos Ocupacionales & Muestras Sintéticas
+         ==================================================================== -->
+    <div id="tab-cases" class="tab-pane">
+      <div class="occupational-cases-section">
+        <div class="section-header-row">
+          <div class="section-title-group">
+            <h2>💼 Banco de Casos Ocupacionales del INA (P3.4)</h2>
+            <div class="section-subtitle">Situaciones auténticas de formación técnica para usar como insumos directos en las prácticas</div>
+          </div>
+        </div>
+
+        <!-- Filtros por Área Ocupacional -->
+        <div class="cases-filters-bar">
+          <span style="font-weight:700;font-size:0.85rem;color:var(--ina-blue-900);">Filtrar por Área:</span>
+          <button class="case-filter-btn active" data-area="all">Todos los Casos (8)</button>
+          <button class="case-filter-btn" data-area="turismo">Turismo & Hotelería</button>
+          <button class="case-filter-btn" data-area="comercio">Comercio & Ventas</button>
+          <button class="case-filter-btn" data-area="contact_center">Centros de Contacto</button>
+          <button class="case-filter-btn" data-area="inclusion">Inclusión / LESCO / Otros Idiomas</button>
+        </div>
+
+        <!-- Cuadrícula de Casos -->
+        <div id="cases-grid" class="cases-grid">
+          <!-- Renderizado dinámico desde app.js -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         PESTAÑA 6: Gobernanza, Ética y Compromiso a 30 Días
+         ==================================================================== -->
+    <div id="tab-closing" class="tab-pane">
+      <div class="section-header-row">
+        <div class="section-title-group">
+          <h2>📜 Gobernanza, Ética y Compromiso Docente a 30 Días</h2>
+          <div class="section-subtitle">Marco normativo institucional y transferencia del aprendizaje a la práctica de aula</div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem;">
+        <!-- Marco Legal y Ético -->
+        <div style="background:#ffffff;border:1px solid var(--border-subtle);border-radius:16px;padding:1.5rem;box-shadow:var(--shadow-sm);">
+          <h3 style="color:var(--ina-blue-900);font-size:1.2rem;margin-bottom:0.75rem;">⚖️ Marco de Gobernanza y Protección de Datos</h3>
+          <ul style="padding-left:1.25rem;font-size:0.9rem;color:var(--text-muted);display:flex;flex-direction:column;gap:0.5rem;">
+            <li><strong>Ley 8968 de Costa Rica:</strong> Prohibición estricta de ingresar datos identificables de estudiantes (nombres, cédulas, notas o grabaciones) en herramientas de IA comerciales.</li>
+            <li><strong>Marco UNESCO de Competencias en IA para Docentes (2024):</strong> Foco en la pedagogía centrada en lo humano, el juicio crítico y la no delegación de la evaluación.</li>
+            <li><strong>Estrategia Nacional de IA de Costa Rica:</strong> Fomento del uso ético, inclusivo y seguro de tecnologías emergentes en la formación técnica.</li>
+          </ul>
+        </div>
+
+        <!-- Compromiso a 30 Días -->
+        <div style="background:#ffffff;border:1px solid var(--border-subtle);border-radius:16px;padding:1.5rem;box-shadow:var(--shadow-sm);">
+          <h3 style="color:var(--ina-green-700);font-size:1.2rem;margin-bottom:0.75rem;">🎯 Compromiso de Aplicación Docente (30 Días)</h3>
+          <p style="font-size:0.9rem;color:var(--text-muted);">
+            Al concluir la jornada, cada docente asume el compromiso voluntario de aplicar al menos una instrucción calibrada en su labor real:
+          </p>
+          <ol style="padding-left:1.25rem;font-size:0.85rem;color:var(--text-main);display:flex;flex-direction:column;gap:0.35rem;">
+            <li>Diseñar una actividad con los 5 componentes obligatorios.</li>
+            <li>Auditar una salida y detectar al menos un sesgo o error de nivel.</li>
+            <li>Compartir la plantilla ajustada con sus colegas de Unidad Regional.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Licencia Creative Commons CC-BY 4.0 -->
+      <div class="cc-license-box">
+        <div class="cc-license-header">
+          <div style="display:flex;align-items:center;gap:0.75rem;">
+            <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener noreferrer" class="cc-badges-group" title="Creative Commons Atribución 4.0 Internacional">
+              <svg class="cc-badge-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2.5-6.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5c.42 0 .8.17 1.07.45l1.06-1.06C11.06 9.32 10.32 9 9.5 9 7.57 9 6 10.57 6 12.5S7.57 16 9.5 16c.82 0 1.56-.32 2.13-.89l-1.06-1.06c-.27.28-.65.45-1.07.45zm5 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5c.42 0 .8.17 1.07.45l1.06-1.06C16.06 9.32 15.32 9 14.5 9 12.57 9 11 10.57 11 12.5s1.57 3.5 3.5 3.5c.82 0 1.56-.32 2.13-.89l-1.06-1.06c-.27.28-.65.45-1.07.45z"/></svg>
+              <svg class="cc-badge-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-15c-1.38 0-2.5 1.12-2.5 2.5S10.62 10 12 10s2.5-1.12 2.5-2.5S13.38 5 12 5zm0 6c-2.33 0-4.26 1.46-5.11 3.5H17.11C16.26 12.46 14.33 11 12 11z"/></svg>
+              <span>CC BY 4.0</span>
+            </a>
+            <h3 style="color:var(--ina-blue-900);font-size:1.15rem;margin:0;">Licencia Creative Commons Atribución 4.0 Internacional (CC BY 4.0)</h3>
+          </div>
+          <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener noreferrer" class="btn-secondary" style="font-size:0.8rem;padding:0.35rem 0.75rem;">
+            Ver Términos de la Licencia ↗
+          </a>
+        </div>
+        <div class="cc-license-text">
+          Esta obra y los recursos didácticos de este portal están licenciados bajo <strong>Creative Commons Atribución 4.0 Internacional (CC BY 4.0)</strong>.<br>
+          • <strong>Usted es libre de:</strong> Compartir, copiar, distribuir y transmitir el material en cualquier medio o formato, así como remezclar, transformar y construir sobre él para cualquier propósito, incluso comercial.<br>
+          • <strong>Bajo la condición de Atribución (BY):</strong> Debe otorgar el crédito correspondiente a los creadores (<strong>Agustín Gómez Meléndez</strong> y <strong>Hannia León Fuentes</strong> / INA Costa Rica - UCR - UNED), brindar un enlace a la licencia e indicar si se han realizado modificaciones.
+        </div>
+      </div>
+
+      <section class="facilitators-section" aria-labelledby="facilitators-title">
+        <div class="section-header-row">
+          <div class="section-title-group">
+            <h2 id="facilitators-title">👥 Equipo de facilitación</h2>
+            <div class="section-subtitle">Trayectoria académica y profesional de las personas responsables del taller</div>
+          </div>
+        </div>
+        <div class="facilitator-profile-grid">
+          <article class="facilitator-profile-card">
+            <div class="facilitator-monogram" aria-hidden="true">AGM</div>
+            <div>
+              <h3>Agustín Gómez Meléndez</h3>
+              <p class="facilitator-role">Investigación, gobernanza de IA y tecnologías educativas · UNED / UCR</p>
+              <p>Agustín Gómez Meléndez (MSc., MSI.) es investigador de la Vicerrectoría de Investigación de la Universidad Estatal a Distancia, adscrito al Observatorio de MIPYMES, e investigador del Centro de Investigación Observatorio del Desarrollo de la Universidad de Costa Rica. Su trabajo articula ciencia de datos, tecnologías educativas, gobernanza de la inteligencia artificial y análisis de políticas públicas.</p>
+              <p>Es docente de métodos de investigación en programas de posgrado de la Universidad de Costa Rica y participa en iniciativas de cooperación internacional en ética e inteligencia artificial, entre ellas el proyecto Erasmus+ EthicalAI (n.º 101179117) y la red FAIR Costa Rica. Ha acompañado a instituciones públicas costarricenses en el diseño de marcos de uso responsable de IA y en procesos de capacitación técnica y docente.</p>
+            </div>
+          </article>
+          <article class="facilitator-profile-card">
+            <div class="facilitator-monogram facilitator-monogram-hl" aria-hidden="true">HL</div>
+            <div>
+              <h3>Hannia León Fuentes</h3>
+              <p class="facilitator-role">Tecnologías educativas, innovación y gestión educativa · UCR / PROTEA</p>
+              <p>Hannia León Fuentes es magíster en Ciencias de la Educación con énfasis en Administración Educativa por la Universidad de Costa Rica y magíster en Ciencias de la Educación con énfasis en Desarrollo Cognitivo por el Tecnológico de Monterrey, México. Es licenciada en Docencia por la Universidad Estatal a Distancia y bachiller en Enseñanza del Inglés por la Universidad de Costa Rica. Actualmente cursa una diplomatura en Inteligencia Artificial en Educación Superior en la Universidad de Buenos Aires, Argentina.</p>
+              <p>Coordina el Programa de Tecnologías Educativas para el Aprendizaje (PROTEA) en la Facultad de Educación, Sede Rodrigo Facio, y la Licenciatura en Formación en Ambientes de Aprendizaje Mediados con Tecnologías en el Recinto de Paraíso, Sede del Atlántico, de la UCR. Desarrolla proyectos de recursos educativos abiertos y habilidades digitales para el uso de IA generativa; colabora con el proyecto sobre IA en el aula del Centro de Investigación Observatorio del Desarrollo de la UCR y es tutora de la Cátedra de Investigación Educativa de la UNED desde 2025.</p>
+              <p>Laboró para el Ministerio de Educación Pública entre 2003 y 2016. En la UCR, donde trabaja desde 2006, ha coordinado proyectos de acción social, Trabajo Comunal Universitario y la Comisión de Internacionalización; entre 2022 y 2024 fue asesora de evaluación de carreras en el Centro de Evaluación Académica. Cuenta con publicaciones y ponencias en reflexión docente, innovación, gestión educativa e inteligencia artificial.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+      </div> <!-- Cierre de .portal-content-area -->
+    </div> <!-- Cierre de .portal-body-wrapper -->
+  </main>
+
+  <!-- Modal de Plan B / Salidas de Respaldo -->
+  <div id="modal-planb" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-planb-title">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="modal-planb-title">⚠️ Salida de Respaldo (Plan B)</h3>
+        <button class="modal-close-btn" aria-label="Cerrar modal">&times;</button>
+      </div>
+      <div id="modal-planb-body" class="modal-body">
+        <!-- Contenido dinámico desde app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenedor de Toast Notifications -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Pie de Página -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3>Instituto Nacional de Aprendizaje (INA)</h3>
+        <p>
+          Núcleo Comercio y Servicios · Subsector de Idiomas.<br>
+          Jornada "Team Up 2 Level Up" · 6 de octubre de 2026.<br>
+          Facilitado por <strong>Agustín Gómez Meléndez</strong> (UNED / UCR) y <strong>Hannia León Fuentes</strong> (UCR / PROTEA).
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Herramientas</h4>
+        <ul>
+          <li><a href="#tab-builder" onclick="App.switchTab('builder', true)">Asistente de Prompts</a></li>
+          <li><a href="simulador.html">Simulador de Chat en Vivo</a></li>
+          <li><a href="glosario.html">Glosario Amigable</a></li>
+          <li><a href="#tab-rubric" onclick="App.switchTab('rubric', true)">Probador de Rúbricas</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Normativa & Ética</h4>
+        <ul>
+          <li><a href="#tab-closing" onclick="App.switchTab('closing', true)">Ley 8968 Protección Datos</a></li>
+          <li><a href="#tab-closing" onclick="App.switchTab('closing', true)">Marco UNESCO Docente</a></li>
+          <li><a href="#tab-closing" onclick="App.switchTab('closing', true)">Compromiso a 30 Días</a></li>
+          <li><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener noreferrer">Licencia CC BY 4.0 ↗</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Fila de Licencia CC-BY en Footer -->
+    <div class="footer-container" style="padding-top:0;">
+      <div class="footer-license-row" style="width:100%;">
+        <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
+          <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener noreferrer" class="cc-badges-group" style="padding:0.25rem 0.6rem;font-size:0.8rem;">
+            <svg class="cc-badge-icon" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2.5-6.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5c.42 0 .8.17 1.07.45l1.06-1.06C11.06 9.32 10.32 9 9.5 9 7.57 9 6 10.57 6 12.5S7.57 16 9.5 16c.82 0 1.56-.32 2.13-.89l-1.06-1.06c-.27.28-.65.45-1.07.45zm5 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5c.42 0 .8.17 1.07.45l1.06-1.06C16.06 9.32 15.32 9 14.5 9 12.57 9 11 10.57 11 12.5s1.57 3.5 3.5 3.5c.82 0 1.56-.32 2.13-.89l-1.06-1.06c-.27.28-.65.45-1.07.45z"/></svg>
+            <svg class="cc-badge-icon" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-15c-1.38 0-2.5 1.12-2.5 2.5S10.62 10 12 10s2.5-1.12 2.5-2.5S13.38 5 12 5zm0 6c-2.33 0-4.26 1.46-5.11 3.5H17.11C16.26 12.46 14.33 11 12 11z"/></svg>
+            <span>CC BY 4.0</span>
+          </a>
+          <span>Obra bajo Licencia <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener noreferrer">Creative Commons Atribución 4.0 Internacional</a>. Atribución requerida: <strong>Agustín Gómez Meléndez & Hannia León Fuentes (INA - UCR)</strong>.</span>
+        </div>
+        <span>🟢 100% Recursos Abiertos & Funcional Offline</span>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 INA · Plataforma de Recursos Abiertos para la Formación Técnica</span>
+      <span>🟢 Optimizado para 300+ Conexiones Concurrentes</span>
+    </div>
+  </footer>
+
+  <!-- Scripts JavaScript -->
+  <script src="js/timer.js"></script>
+  <script src="js/prompt-builder.js"></script>
+  <script src="js/rubric-tester.js"></script>
+  <script src="js/slide-viewer.js"></script>
+  <script src="js/tutor-mode.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

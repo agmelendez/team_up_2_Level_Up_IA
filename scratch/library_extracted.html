@@ -1,0 +1,305 @@
+
+
+<!-- ====================================================================
+         PESTAÑA 5: Biblioteca de Evidencia 2026 (41 Documentos RAG)
+         ==================================================================== -->
+    <div id="subpane-documents" class="subtab-pane active" data-parent-zone="library-hub">
+      <div class="library-container">
+        <div class="library-hero">
+          <div class="library-hero-text">
+            <span class="library-pipeline-pill">🔬 CIOdD-UCR PDF Intelligence Pipeline V5.1 · Research & RAG</span>
+            <h2>📚 Biblioteca de Evidencia Científica y Pedagógica 2026</h2>
+            <p>
+              Acervo estructurado de <strong>41 documentos especializados</strong> (2.271 páginas, 3.772 secciones, 3.027 chunks y 2.057 tablas) procesados bajo el manual V5.x. Cada ficha incluye su hallazgo pedagógico para docentes del INA y una consigna copiable para el aula.
+            </p>
+          </div>
+          <a class="btn-secondary evidence-source-link" href="Bibliografia/MANUAL_USO_LLM_CORPUS_PDF_V5.md" target="_blank">
+            📖 Manual RAG V5.x ↗
+          </a>
+        </div>
+
+        <!-- Barra de Controles y Filtros -->
+        <div class="library-controls-bar">
+          <div class="library-search-box">
+            <span>🔍</span>
+            <input type="text" id="library-search-input" placeholder="Buscar por título, palabra clave (ej: voz, prompt, ética, evaluación, niños, rúbrica, MCER)...">
+          </div>
+          <div class="library-filter-chips">
+            <span style="font-size:0.8rem;font-weight:700;color:var(--text-muted);margin-right:0.25rem;">Filtrar por eje:</span>
+            <button class="library-filter-btn active" data-category="all">🌐 Todos (41)</button>
+            <button class="library-filter-btn" data-category="pedagogia">🎙️ Pedagogía & Voz (8)</button>
+            <button class="library-filter-btn" data-category="alfabetizacion">🧭 Alfabetización & Trabajo (10)</button>
+            <button class="library-filter-btn" data-category="evaluacion">📊 Evaluación & Evidencia (12)</button>
+            <button class="library-filter-btn" data-category="etica">🛡️ Ética & Privacidad (11)</button>
+          </div>
+          <div class="library-counter-row">
+            <span id="library-counter-badge">41 de 41 documentos</span>
+            <span>Base DuckDB y Faiss procesada localmente</span>
+          </div>
+        </div>
+
+        <!-- Cuadrícula Dinámica de Tarjetas de Documentos -->
+        <div class="library-cards-grid" id="library-cards-grid">
+          <!-- Renderizado reactivamente por App.renderLibraryCards() -->
+        </div>
+      </div>
+    </div>
+
+    
+<!-- ====================================================================
+         PESTAÑA 4: Evidencia PISA 2025 y evaluación de inglés en Costa Rica
+         ==================================================================== -->
+    <div id="subpane-evidence" class="subtab-pane" data-parent-zone="library-hub">
+      <div class="evidence-hero">
+        <div>
+          <span class="evidence-kicker">BLOQUE 1 · CONTEXTO PARA DECIDIR CON EVIDENCIA</span>
+          <h2>¿Qué nos dice PISA 2025 sobre inglés e IA en Costa Rica?</h2>
+          <p>Esta sección separa con claridad lo que está confirmado, lo que no se debe afirmar y lo que conviene verificar antes de usarlo en el aula.</p>
+        </div>
+        <a class="btn-secondary evidence-source-link" href="Informe_Componente_Ingles_PISA_IA2025_CostaRica.docx">Abrir informe de respaldo ↗</a>
+      </div>
+
+      <section class="evidence-alert evidence-alert-critical" aria-label="Precisión sobre PISA e inglés">
+        <div class="evidence-alert-icon" aria-hidden="true">!</div>
+        <div>
+          <h3>No presente puntajes PISA de inglés para Costa Rica</h3>
+          <p>El informe no identifica participación costarricense en la evaluación opcional de inglés (FLA) de PISA 2025. Esta conclusión es consistente con el comunicado del MEP, pero se apoya en evidencia indirecta; antes de convertirla en afirmación cerrada, corresponde confirmarla con la DGEC-MEP.</p>
+        </div>
+      </section>
+
+      <div class="evidence-metrics-grid" aria-label="Datos PISA 2025 confirmados para Costa Rica">
+        <article class="evidence-metric-card">
+          <span class="evidence-metric-label">Uso de IA para aprender</span>
+          <strong>50,06 %</strong>
+          <p>Costa Rica reportó uso semanal o diario, frente a 45,52 % en el promedio OCDE.</p>
+          <small>Comparación descriptiva: no se debe presentar como diferencia estadísticamente significativa.</small>
+        </article>
+        <article class="evidence-metric-card">
+          <span class="evidence-metric-label">Resolución computacional de problemas</span>
+          <strong>452 <span>vs. 500</span></strong>
+          <p>Resultado de Costa Rica frente al promedio OCDE en <em>Learning in the Digital World</em>.</p>
+          <small>No es una medición de inglés ni reemplaza los dominios principales de PISA.</small>
+        </article>
+        <article class="evidence-metric-card evidence-metric-card-neutral">
+          <span class="evidence-metric-label">Componente FLA de inglés</span>
+          <strong>Sin puntaje CR</strong>
+          <p>Los resultados internacionales de la evaluación de inglés se anunciarían en una entrega separada.</p>
+          <small>No invente datos ni use la ausencia de información como una conclusión causal.</small>
+        </article>
+      </div>
+
+      <section class="evidence-section">
+        <div class="section-header-row">
+          <div class="section-title-group">
+            <h2>Cómo usar la evidencia en la ruta pedagógica</h2>
+            <div class="section-subtitle">Una práctica breve de alfabetización crítica antes de pedirle resultados a una herramienta de IA.</div>
+          </div>
+        </div>
+        <ol class="evidence-steps">
+          <li><strong>Nombre el dato.</strong> Distinga el porcentaje de uso de IA, el resultado de resolución computacional y una medición de dominio del inglés.</li>
+          <li><strong>Revise el alcance.</strong> Pregunte: ¿quién fue evaluado?, ¿qué se midió?, ¿en qué año? No traslade un indicador digital a una conclusión sobre competencia lingüística.</li>
+          <li><strong>Verifique la fuente.</strong> Una salida de IA puede resumir PISA con seguridad y aun así atribuir a Costa Rica resultados de inglés inexistentes.</li>
+          <li><strong>Decida con juicio docente.</strong> Use los datos para abrir preguntas y planificar apoyos; no para etiquetar al estudiantado ni sustituir evaluación local.</li>
+        </ol>
+        <div class="evidence-prompt-box">
+          <h3>Consigna para modelar en el Bloque 1</h3>
+          <p>“Resume únicamente los datos confirmados de PISA 2025 para Costa Rica sobre uso de IA y resolución computacional de problemas. Indica qué dato no existe sobre inglés, diferencia evidencia descriptiva de causalidad y cita la fuente de cada afirmación.”</p>
+          <button class="btn-primary" onclick="App.copyToClipboard('Resume únicamente los datos confirmados de PISA 2025 para Costa Rica sobre uso de IA y resolución computacional de problemas. Indica qué dato no existe sobre inglés, diferencia evidencia descriptiva de causalidad y cita la fuente de cada afirmación.', 'Consigna de evidencia copiada');">📋 Copiar consigna</button>
+        </div>
+      </section>
+
+      <!-- Nueva sección: Evaluación Oral Auténtica con Modelos de Voz (NYU Stern Marzo 2026) -->
+      <section class="evidence-section">
+        <div class="section-header-row">
+          <div class="section-title-group">
+            <h2>🎙️ El Giro hacia la Oralidad Auténtica: Evidencia NYU Stern (Marzo 2026)</h2>
+            <div class="section-subtitle">Por qué en la era de los LLMs la redacción en casa debe sustituirse por micro-evaluaciones orales en vivo con IA de voz.</div>
+          </div>
+        </div>
+
+        <div class="voice-evidence-box">
+          <h3>🚨 La Crisis de la Evaluación Escrita Tradicional</h3>
+          <p>
+            El estudio insignia de la Universidad de Nueva York (NYU Stern, marzo 2026: <em>Scalable and Personalized Oral Assessments Using Voice AI</em>, arXiv:2603.18221v1) demostró un patrón generalizado: <strong>estudiantes que entregan tareas escritas impecables generadas por IA, pero al preguntarles oralmente en clase no logran explicar ni defender lo que entregaron</strong>.
+          </p>
+          <p>
+            La evidencia concluye: los detectores de plagio fallan y generan desconfianza. La solución pedagógica para idiomas no es prohibir, sino implementar la <strong>Capa de Autenticidad Continua (Continuous Authenticity Layer)</strong>: micro-entrevistas orales de 3 minutos donde el estudiante dialoga en inglés sobre su tarea con la IA de voz.
+          </p>
+
+          <div class="voice-phases-grid">
+            <div class="voice-phase-item">
+              <strong>1️⃣ Interacción Oral Tolerante</strong>
+              <span>Modelos de voz (ChatGPT Voice / Gemini Live) con latencia baja y tolerancia a pausas de pensamiento de hasta 5 segundos sin cortar al estudiante A2/B1.</span>
+            </div>
+            <div class="voice-phase-item">
+              <strong>2️⃣ Consejo Deliberativo (Council of LLMs)</strong>
+              <span>Tres familias de modelos analizan de forma independiente la transcripción del diálogo, alcanzando 86% de acuerdo antes de emitir sugerencias.</span>
+            </div>
+            <div class="voice-phase-item">
+              <strong>3️⃣ Docente en el Bucle (Human-in-the-Loop)</strong>
+              <span>La IA provee la evidencia transcrita y una precalificación formativa; <strong>el formador humano valida, corrige sesgos y decide la nota final</strong>.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="evidence-prompt-box" style="border-left-color: #16a34a; background: #f0fdf4;">
+          <h3 style="color: #14532d;">Consigna de Evaluación Oral con Voz para Bloques 1 y 3</h3>
+          <p style="color: #166534;">“Actúa como un cliente extranjero en la recepción de un hotel. Habla por voz en inglés A2 con oraciones cortas (máximo 14 palabras). Espera pacientemente las respuestas del estudiante (hasta 5 segundos de silencio). Mantén un diálogo de 4 turnos sobre una reservación y, al finalizar, resume en español un acierto observable y una oportunidad de mejora sin dar elogios complacientes vacíos.”</p>
+          <button class="btn-primary" style="background: #16a34a; border-color: #16a34a;" onclick="App.copyToClipboard('Actúa como un cliente extranjero en la recepción de un hotel. Habla por voz en inglés A2 con oraciones cortas (máximo 14 palabras). Espera pacientemente las respuestas del estudiante (hasta 5 segundos de silencio). Mantén un diálogo de 4 turnos sobre una reservación y, al finalizar, resume en español un acierto observable y una oportunidad de mejora sin dar elogios complacientes vacíos.', 'Consigna de evaluación oral copiada');">📋 Copiar consigna de voz</button>
+        </div>
+      </section>
+
+      <!-- Nueva sección: Protocolo de Privacidad y Salvaguarda Docente -->
+      <section class="evidence-section">
+        <div class="section-header-row">
+          <div class="section-title-group">
+            <h2>🛡️ Salvaguarda Docente y Protección de Datos (Ley 8968 Costa Rica)</h2>
+            <div class="section-subtitle">Normas obligatorias basadas en el estándar internacional Keeping Children Safe in Education 2026 y el AI Risk Management Toolkit.</div>
+          </div>
+        </div>
+
+        <div class="evidence-table-wrapper" role="region" aria-label="Protocolo de Privacidad y Ley 8968" tabindex="0">
+          <table class="evidence-table">
+            <thead><tr><th>Principio de Protección</th><th>Riesgo Evitado</th><th>Regla de Oro en el Aula INA</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><strong>Muestras 100% Sintéticas</strong></td>
+                <td>Filtración de expedientes o historiales de rendimiento de aprendices a servidores extranjeros.</td>
+                <td>Nunca suba nombres reales, fotos, correos o números de cédula. Use únicamente perfiles ficticios para ensayar prompts.</td>
+              </tr>
+              <tr>
+                <td><strong>Desactivación de Entrenamiento</strong></td>
+                <td>Reutilización comercial de las respuestas del estudiantado por proveedores de LLMs.</td>
+                <td>Configure las cuentas en "modo historial desactivado" o utilice APIs empresariales / modelos locales (Ollama/Liquid Apollo).</td>
+              </tr>
+              <tr>
+                <td><strong>Supervisión Humana Obligatoria (AI Act)</strong></td>
+                <td>Decisiones automatizadas arbitrarias en certificaciones técnicas ocupacionales.</td>
+                <td>Prohibido usar IA para emitir notas finales automáticas sin revisión minuciosa del docente técnico.</td>
+              </tr>
+              <tr>
+                <td><strong>Transparencia y Declaración Ética</strong></td>
+                <td>Percepción de "cacería de brujas" y quiebre de confianza pedagógica con el estudiante.</td>
+                <td>Defina desde el inicio cuándo se permite usar IA (lluvia de ideas, práctica de pronunciación) y cuándo se exige interacción humana directa.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="evidence-section">
+        <div class="section-header-row">
+          <div class="section-title-group">
+            <h2>La evidencia nacional que sí orienta la enseñanza de inglés</h2>
+            <div class="section-subtitle">Estos instrumentos no son PISA: responden a propósitos, poblaciones y destrezas propias del contexto costarricense.</div>
+          </div>
+        </div>
+        <div class="evidence-table-wrapper" role="region" aria-label="Ecosistema nacional de evaluación de inglés" tabindex="0">
+          <table class="evidence-table">
+            <thead><tr><th>Instrumento</th><th>Qué aporta</th><th>Uso pedagógico prudente</th></tr></thead>
+            <tbody>
+              <tr><td><strong>PNELE</strong></td><td>Comprensión de lectura y auditiva al finalizar secundaria.</td><td>Contextualizar la enseñanza con evidencia del sistema, sin reemplazar la evaluación del aula.</td></tr>
+              <tr><td><strong>PELEx</strong></td><td>Monitoreo y diagnóstico de competencias lingüísticas en primaria y secundaria.</td><td>Reconocer que el seguimiento requiere información granular y continuidad.</td></tr>
+              <tr><td><strong>TEYL</strong></td><td>Diagnóstico en primaria vinculado al currículo de inglés.</td><td>Planificar apoyos adecuados a la edad y al programa de estudio.</td></tr>
+              <tr><td><strong>AWA-UCR</strong></td><td>Escritura en inglés con corrección híbrida: IA más evaluadores humanos.</td><td>Modelar el principio central del taller: la IA apoya; el juicio humano verifica y decide.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="evidence-section evidence-sources">
+        <h2>Fuentes y límites</h2>
+        <p>Datos PISA: Tabla oficial I.B1.4.53 (uso de IA), <em>Learning in the Digital World</em> (resolución computacional) y marco PISA 2025 de la OCDE. Contexto nacional: MEP, UCR y PELEx. Evidencia de voz y evaluación oral: Panos Ipeirotis & Konstantinos Rizakos (NYU Stern, Marzo 2026, arXiv:2603.18221v1). Salvaguarda y privacidad: Ley 8968 (Costa Rica), Keeping Children Safe in Education 2026 y Guidance AI Risk Management Toolkit.</p>
+        <p><strong>Regla de uso:</strong> estos datos describen un contexto; no prueban que la IA cause mejores o peores resultados ni caracterizan a cada grupo o estudiante.</p>
+      </section>
+    </div>
+
+    
+<!-- ====================================================================
+         PESTAÑA 6: Gobernanza, Ética y Compromiso a 30 Días
+         ==================================================================== -->
+    <div id="subpane-closing" class="subtab-pane" data-parent-zone="library-hub">
+      <div class="section-header-row">
+        <div class="section-title-group">
+          <h2>📜 Gobernanza, Ética y Compromiso Docente a 30 Días</h2>
+          <div class="section-subtitle">Marco normativo institucional y transferencia del aprendizaje a la práctica de aula</div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem;">
+        <!-- Marco Legal y Ético -->
+        <div style="background:#ffffff;border:1px solid var(--border-subtle);border-radius:16px;padding:1.5rem;box-shadow:var(--shadow-sm);">
+          <h3 style="color:var(--ina-blue-900);font-size:1.2rem;margin-bottom:0.75rem;">⚖️ Marco de Gobernanza y Protección de Datos</h3>
+          <ul style="padding-left:1.25rem;font-size:0.9rem;color:var(--text-muted);display:flex;flex-direction:column;gap:0.5rem;">
+            <li><strong>Ley 8968 de Costa Rica:</strong> Prohibición estricta de ingresar datos identificables de estudiantes (nombres, cédulas, notas o grabaciones) en herramientas de IA comerciales.</li>
+            <li><strong>Marco UNESCO de Competencias en IA para Docentes (2024):</strong> Foco en la pedagogía centrada en lo humano, el juicio crítico y la no delegación de la evaluación.</li>
+            <li><strong>Estrategia Nacional de IA de Costa Rica:</strong> Fomento del uso ético, inclusivo y seguro de tecnologías emergentes en la formación técnica.</li>
+          </ul>
+        </div>
+
+        <!-- Compromiso a 30 Días -->
+        <div style="background:#ffffff;border:1px solid var(--border-subtle);border-radius:16px;padding:1.5rem;box-shadow:var(--shadow-sm);">
+          <h3 style="color:var(--ina-green-700);font-size:1.2rem;margin-bottom:0.75rem;">🎯 Compromiso de Aplicación Docente (30 Días)</h3>
+          <p style="font-size:0.9rem;color:var(--text-muted);">
+            Al concluir la jornada, cada docente asume el compromiso voluntario de aplicar al menos una instrucción calibrada en su labor real:
+          </p>
+          <ol style="padding-left:1.25rem;font-size:0.85rem;color:var(--text-main);display:flex;flex-direction:column;gap:0.35rem;">
+            <li>Diseñar una actividad con los 5 componentes obligatorios.</li>
+            <li>Auditar una salida y detectar al menos un sesgo o error de nivel.</li>
+            <li>Compartir la plantilla ajustada con sus colegas de Unidad Regional.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Licencia Creative Commons CC-BY 4.0 -->
+      <div class="cc-license-box">
+        <div class="cc-license-header">
+          <div style="display:flex;align-items:center;gap:0.75rem;">
+            <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener noreferrer" class="cc-badges-group" title="Creative Commons Atribución 4.0 Internacional">
+              <svg class="cc-badge-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2.5-6.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5c.42 0 .8.17 1.07.45l1.06-1.06C11.06 9.32 10.32 9 9.5 9 7.57 9 6 10.57 6 12.5S7.57 16 9.5 16c.82 0 1.56-.32 2.13-.89l-1.06-1.06c-.27.28-.65.45-1.07.45zm5 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5c.42 0 .8.17 1.07.45l1.06-1.06C16.06 9.32 15.32 9 14.5 9 12.57 9 11 10.57 11 12.5s1.57 3.5 3.5 3.5c.82 0 1.56-.32 2.13-.89l-1.06-1.06c-.27.28-.65.45-1.07.45z"/></svg>
+              <svg class="cc-badge-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-15c-1.38 0-2.5 1.12-2.5 2.5S10.62 10 12 10s2.5-1.12 2.5-2.5S13.38 5 12 5zm0 6c-2.33 0-4.26 1.46-5.11 3.5H17.11C16.26 12.46 14.33 11 12 11z"/></svg>
+              <span>CC BY 4.0</span>
+            </a>
+            <h3 style="color:var(--ina-blue-900);font-size:1.15rem;margin:0;">Licencia Creative Commons Atribución 4.0 Internacional (CC BY 4.0)</h3>
+          </div>
+          <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener noreferrer" class="btn-secondary" style="font-size:0.8rem;padding:0.35rem 0.75rem;">
+            Ver Términos de la Licencia ↗
+          </a>
+        </div>
+        <div class="cc-license-text">
+          Esta obra y los recursos didácticos de este portal están licenciados bajo <strong>Creative Commons Atribución 4.0 Internacional (CC BY 4.0)</strong>.<br>
+          • <strong>Usted es libre de:</strong> Compartir, copiar, distribuir y transmitir el material en cualquier medio o formato, así como remezclar, transformar y construir sobre él para cualquier propósito, incluso comercial.<br>
+          • <strong>Bajo la condición de Atribución (BY):</strong> Debe otorgar el crédito correspondiente a los creadores (<strong>Agustín Gómez Meléndez</strong> y <strong>Hannia León Fuentes</strong> / INA Costa Rica - UCR - UNED), brindar un enlace a la licencia e indicar si se han realizado modificaciones.
+        </div>
+      </div>
+
+      <section class="facilitators-section" aria-labelledby="facilitators-title">
+        <div class="section-header-row">
+          <div class="section-title-group">
+            <h2 id="facilitators-title">👥 Equipo de facilitación</h2>
+            <div class="section-subtitle">Trayectoria académica y profesional de las personas responsables del taller</div>
+          </div>
+        </div>
+        <div class="facilitator-profile-grid">
+          <article class="facilitator-profile-card">
+            <div class="facilitator-monogram" aria-hidden="true">AGM</div>
+            <div>
+              <h3>Agustín Gómez Meléndez</h3>
+              <p class="facilitator-role">Investigación, gobernanza de IA y tecnologías educativas · UNED / UCR</p>
+              <p>Agustín Gómez Meléndez (MSc., MSI.) es investigador de la Vicerrectoría de Investigación de la Universidad Estatal a Distancia, adscrito al Observatorio de MIPYMES, e investigador del Centro de Investigación Observatorio del Desarrollo de la Universidad de Costa Rica. Su trabajo articula ciencia de datos, tecnologías educativas, gobernanza de la inteligencia artificial y análisis de políticas públicas.</p>
+              <p>Es docente de métodos de investigación en programas de posgrado de la Universidad de Costa Rica y participa en iniciativas de cooperación internacional en ética e inteligencia artificial, entre ellas el proyecto Erasmus+ EthicalAI (n.º 101179117) y la red FAIR Costa Rica. Ha acompañado a instituciones públicas costarricenses en el diseño de marcos de uso responsable de IA y en procesos de capacitación técnica y docente.</p>
+            </div>
+          </article>
+          <article class="facilitator-profile-card">
+            <div class="facilitator-monogram facilitator-monogram-hl" aria-hidden="true">HL</div>
+            <div>
+              <h3>Hannia León Fuentes</h3>
+              <p class="facilitator-role">Tecnologías educativas, innovación y gestión educativa · UCR / PROTEA</p>
+              <p>Hannia León Fuentes es magíster en Ciencias de la Educación con énfasis en Administración Educativa por la Universidad de Costa Rica y magíster en Ciencias de la Educación con énfasis en Desarrollo Cognitivo por el Tecnológico de Monterrey, México. Es licenciada en Docencia por la Universidad Estatal a Distancia y bachiller en Enseñanza del Inglés por la Universidad de Costa Rica. Actualmente cursa una diplomatura en Inteligencia Artificial en Educación Superior en la Universidad de Buenos Aires, Argentina.</p>
+              <p>Coordina el Programa de Tecnologías Educativas para el Aprendizaje (PROTEA) en la Facultad de Educación, Sede Rodrigo Facio, y la Licenciatura en Formación en Ambientes de Aprendizaje Mediados con Tecnologías en el Recinto de Paraíso, Sede del Atlántico, de la UCR. Desarrolla proyectos de recursos educativos abiertos y habilidades digitales para el uso de IA generativa; colabora con el proyecto sobre IA en el aula del Centro de Investigación Observatorio del Desarrollo de la UCR y es tutora de la Cátedra de Investigación Educativa de la UNED desde 2025.</p>
+              <p>Laboró para el Ministerio de Educación Pública entre 2003 y 2016. En la UCR, donde trabaja desde 2006, ha coordinado proyectos de acción social, Trabajo Comunal Universitario y la Comisión de Internacionalización; entre 2022 y 2024 fue asesora de evaluación de carreras en el Centro de Evaluación Académica. Cuenta con publicaciones y ponencias en reflexión docente, innovación, gestión educativa e inteligencia artificial.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>

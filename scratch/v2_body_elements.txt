@@ -1,0 +1,132 @@
+000: <p> INSTITUTO NACIONAL DE APRENDIZAJE
+001: <p> Núcleo Comercio y Servicios · Subsector de Idiomas
+002: <p> Capacitación Docente “Team Up 2 Level Up”
+003: <p> Inteligencia artificial aplicada a la enseñanza de idiomas
+004: <p> Diseño metodológico del taller · Documento de trabajo v2.0 · 28 de agosto de 2026
+005: <tbl> Elemento Detalle Actividad Jornada de capacitación docente, Subsector de Idiomas, Núcleo Comercio y 
+006: <p> 1. Presentación y justificación
+007: <p> La incorporación de inteligencia artificial generativa en la enseñanza de lenguas dejó de ser una cu
+008: <p> El diseño atiende dos restricciones operativas centrales. La primera es la escala: con 254 participa
+009: <p> 2.  Objetivos
+010: <p> 2.1  Objetivo  general
+011: <p> Desarrollar en el personal docente del Subsector de Idiomas la capacidad de utilizar inteligencia ar
+012: <p> 2.2  Objetivos   específicos
+013: <p> Distinguir con evidencia qué tareas docentes la IA generativa automatiza con solvencia, cuáles degra
+014: <p> Operar un ciclo de trabajo replicable —encargo, instrucción, salida, verificación y adaptación al au
+015: <p> Emplear el modo de voz de asistentes conversacionales (ChatGPT, Claude y Gemini) como recurso para l
+016: <p> Seleccionar, descargar, ejecutar, comparar, conservar y eliminar modelos de lenguaje locales en un t
+017: <p> Diseñar chatbots personalizados y bancos de retroalimentación que permitan la delegación estratégica
+018: <p> Aplicar salvaguardas de protección de datos personales, integridad académica, propiedad intelectual 
+019: <p> 2.3 Productos esperados por participante
+020: <p> Al término de la jornada, cada docente debe contar con los siguientes artefactos, elaborados por sí 
+021: <p> Una instrucción completa y reutilizable, con sus cinco componentes obligatorios.
+022: <p> Un banco de retroalimentación diferenciada por tipo de error recurrente.
+023: <p> Un conjunto de micro-remedios anticipatorios para los errores más probables de un grupo determinado.
+024: <p> El bloque de instrucciones de un chatbot personalizado para práctica escrita.
+025: <p> Una secuencia didáctica de veinte minutos y su rúbrica analítica.
+026: <p> Un registro breve de práctica oral con modo de voz, incluida la auditoría de sus límites y de la ret
+027: <p> Una ficha de gestión de un modelo local: compatibilidad, modelo seleccionado, espacio ocupado, prueb
+028: <p> Un compromiso escrito de aplicación en el aula a treinta días.
+029: <p> 3. Enfoque metodológico
+030: <p> La jornada se desarrolla como seminario en línea con práctica simultánea. No se emplean salas de tra
+031: <p> 3.1 Estructura del ciclo estándar de práctica (25 minutos)
+032: <tbl> Minutos Momento Descripción 0–8 Demostración La persona facilitadora ejecuta la tarea completa en pa
+033: <p> 
+034: <p> 3.2  Condiciones   que   sostienen  el  diseño
+035: <p> Toda consigna se enuncia oralmente y se fija por escrito en el chat, además de entregarse en el kit 
+036: <p> El kit incluye salidas pregeneradas de cada ciclo: quien no logre acceso a la herramienta trabaja ig
+037: <p> Cada ventana incluye una tarea base y una extensión opcional, para absorber la desigualdad de ritmos
+038: <p> El micro-entregable se solicita expresamente en voz alta en cada ciclo; es el principal mecanismo co
+039: <p> 4. Agenda de la jornada
+040: <tbl> Hora (CR) Bloque Responsable Formato 7:40 – 8:00 Sala abierta. Verificación técnica y pantalla de no
+041: <p> 5.  Contenidos   por   bloque
+042: <p> 5.1 Bloque 1 — Panorama y método (9:00 a 10:00)
+043: <p> Responsable : Agustín Gómez Meléndez.
+044: <p> Qué hace y qué no hace un modelo de lenguaje: por qué inventa información, por qué tiende a complace
+045: <p> Evidencia disponible sobre IA y aprendizaje de lenguas: dónde hay ganancia documentada —volumen de p
+046: <p> Demostración del modo de voz de ChatGPT, Claude y Gemini con tres usos didácticos contrastados: conv
+047: <p> Gobernanza mínima para el aula: datos personales, integridad académica, declaración de uso y propied
+048: <p> Ciclo de práctica 1: redacción de la primera instrucción completa sobre un objetivo real de clase.
+049: <p> 5.2 Bloque 2 — Usos no convencionales de la IA en la enseñanza de inglés (10:00 a 11:30)
+050: <p> Responsable: Hannia León Fuentes. Taller práctico que plantea un uso crítico y estratégico de la int
+051: <tbl> Ventana Contenido Práctica 2.1  ·  10:08 – 10:33 Seguimiento y retroalimentación al aprendizaje Cons
+052: <p> 
+053: <p> 5.3 Bloque 3 — ChatGPT y Claude en modalidad educativa (1:00 a 2:00)
+054: <p> Responsable : Agustín Gómez Meléndez.
+055: <p> Ciclo 3.1: diseño de una secuencia didáctica de veinte minutos, lista para usar y calibrada al MCER,
+056: <p> Ciclo 3.2: práctica oral con modo de voz desde el teléfono, en dos configuraciones —el asistente com
+057: <p> Diferencias prácticas entre herramientas, manejo de proyectos y archivos, y límites de las versiones
+058: <p> 5.4 Bloque 4 — Inteligencia artificial local en el dispositivo (2:00 a 2:30)
+059: <p> Responsable : Agustín Gómez Meléndez.
+060: <p> Demostración en vivo, con pantalla del teléfono compartida, del flujo completo para administrar mode
+061: <p> Práctica guiada para quienes hayan completado la preinstalación: inventariar los modelos disponibles
+062: <p> Cuándo puede convenir un modelo local: conectividad intermitente, necesidad de reducir el envío de c
+063: <p> Cuándo no conviene: dispositivos incompatibles o con memoria y almacenamiento insuficientes, tareas 
+064: <p> Criterios de selección y administración: compatibilidad del dispositivo, memoria y almacenamiento, t
+065: <p> Adaptación a LESCO, portugués y francés: qué se traslada directamente, qué exige ajuste y en qué pun
+066: <p> 6. Herramientas de la jornada
+067: <p> La selección combina servicios en la nube para la demostración y el trabajo intensivo, y aplicacione
+068: <tbl> Herramienta Uso  en  el taller Requisito  para el  participante Advertencia ChatGPT · modo de  voz D
+069: <p> 7.  Protocolo  de  interacción
+070: <p> Micrófonos y cámaras de las personas participantes permanecen deshabilitados durante toda la jornada
+071: <p> El Q&A de Microsoft Teams se activa con moderación y constituye el canal oficial de preguntas, con o
+072: <p> El chat queda habilitado para consignas breves, cascadas de respuesta y enlaces.  Las  preguntas  de
+073: <p> Se aplican sondeos en vivo al inicio y al cierre de cada bloque para mantener el pulso del grupo y a
+074: <p> Se invita a dos o tres personas voluntarias por bloque, identificadas previamente en el chat, a comp
+075: <p> Una persona de soporte técnico del INA atiende por chat privado a quien no logre acceso, sin interru
+076: <p> La jornada se graba, con aviso expreso al inicio.
+077: <p> Accesibilidad: subtítulos en vivo activados, intérprete de LESCO fijado en pantalla, materiales en t
+078: <p> 8. Salvaguardas éticas y de protección de datos
+079: <p> Regla general, enunciada al inicio de cada ciclo y escrita en cada consigna: no se ingresan nombres,
+080: <p> Las grabaciones de voz de personas estudiantes no se cargan en servicios en la nube sin consentimien
+081: <p> Los modelos de ejecución local se presentan como una alternativa que puede reducir la exposición de 
+082: <p> Se aborda la declaración de uso de IA en materiales didácticos y en instrumentos de evaluación, así 
+083: <p> Se trabaja explícitamente el sesgo lingüístico: variedades del inglés, interferencia del español, re
+084: <p> Referencias de encuadre: Ley 8968 de protección de la persona frente al tratamiento de sus datos per
+085: <p> 9. Requisitos previos
+086: <p> 9.1 Para las personas participantes
+087: <p> Crear la cuenta gratuita de las herramientas indicadas antes del 3 de octubre.  Durante la  sesión  
+088: <p> Instalar en el teléfono las aplicaciones móviles de los asistentes conversacionales que se usarán en
+089: <p> Conectarse desde una computadora, no desde el teléfono, con dos ventanas disponibles: Teams y navega
+090: <p> Disponer de audífonos con micrófono para las prácticas de voz.
+091: <p> Llevar preparado un objetivo real de clase: nivel, destreza y perfil del grupo.  Sin ese  insumo , l
+092: <p> Descargar el kit del participante, que incluye la guía, las plantillas de instrucción, las consignas
+093: <p> 9.2 Para la  organización
+094: <tbl> Fecha Tarea 8 de  septiembre Confirmación de la agenda, del formato de seminario en línea y del prot
+095: <p> 10.  Evaluación  y  evidencia
+096: <p> Productos: número de respuestas recibidas por ciclo en el formulario único de la jornada, con una me
+097: <p> Cambio autopercibido: comparación de entrada y de salida sobre los cuatro reactivos de autoeficacia 
+098: <p> Hallazgos críticos: consolidación de los errores y sesgos detectados por las personas participantes 
+099: <p> Seguimiento: propuesta de una sesión de cuarenta y cinco minutos a treinta días para revisar aplicac
+100: <p> 11. Facilitación
+101: <p> 11.1 Agustín Gómez Meléndez
+102: <p> Agustín Gómez Meléndez (MSc., MSI.) es investigador de la Vicerrectoría de Investigación de la Unive
+103: <p> 11.2 Hannia León Fuentes
+104: <p> Hannia León Fuentes es magíster en Ciencias de la Educación con énfasis en Administración Educativa 
+105: <p> 
+106: <p> Anexo A. Encuesta diagnóstica previa
+107: <p> Instrumento para Microsoft Forms. Duración estimada: seis minutos. Ventana de aplicación: envío el 2
+108: <p> Texto introductorio: esta encuesta toma unos seis minutos y sirve para ajustar el taller del 6 de oc
+109: <p> Unidad Regional a la que pertenece. (Selección única entre las nueve unidades.)
+110: <p> Idioma que imparte. (Inglés, LESCO, portugués o francés.)
+111: <p> Años de experiencia docente. (De 0 a 2, de 3 a 5, de 6 a 10, de 11 a 20, más de 20.)
+112: <p> ¿Con qué frecuencia utiliza herramientas de inteligencia artificial generativa en su trabajo docente
+113: <p> ¿Cuáles ha utilizado? (Selección múltiple: ChatGPT, Copilot, Gemini, Claude, Canva con IA, herramien
+114: <p> Grado de acuerdo, de 1 a 5: (a) puedo formular instrucciones que produzcan resultados útiles para mi
+115: <p> ¿En qué tareas le sería más útil el apoyo de IA? (Hasta tres: planificación de clases, elaboración d
+116: <p> Principales preocupaciones. (Hasta tres: integridad académica, protección de datos, calidad lingüíst
+117: <p> Condiciones técnicas para el 6 de octubre: (a) ¿tiene cuenta activa en alguna herramienta de IA?; (b
+118: <p> Describa en una o dos frases una tarea concreta de su práctica que le gustaría resolver ese día.  (R
+119: <p> ¿Autoriza el uso de sus respuestas, de forma anónima y agregada, para evaluar y mejorar esta capacit
+120: <p> Encuesta de salida (2:30 p. m., tres minutos): se repiten los cuatro reactivos del punto 6 para la c
+121: <p> Anexo B. Consigna de las ventanas de práctica
+122: <p> Texto que se fija por escrito en el chat al inicio de cada ventana y que se incluye en el kit del pa
+123: <p> Ventana de  práctica  — 12  minutos
+124: <p> Trabaje con un objetivo real de su clase: nivel del Marco Común Europeo, destreza y perfil del grupo
+125: <p> Su instrucción debe incluir: rol y objetivo; nivel y destreza; contexto ocupacional del estudiantado
+126: <p> Lea la salida y marque con un signo de admiración todo lo que esté mal: nivel inadecuado, vocabulari
+127: <p> Deposite el resultado y su hallazgo principal en el formulario de la jornada.
+128: <p> Regla de protección de datos: no ingrese nombres, números de cédula, calificaciones ni datos de pers
+129: <p> 
+130: <p> Nota final. Este documento consolida el protocolo de siete prácticas y las biografías de la facilita
+131: <sectPr> 

@@ -1,0 +1,861 @@
+/* ==========================================================================
+   TALLER INA · "Team Up 2 Level Up" · 6 de octubre de 2026
+   Sistema de Diseño y Estilos Principales
+   Facilitadores: Agustín Gómez Meléndez & Hannia León Fuentes
+   ========================================================================== */
+
+:root {
+  /* Paleta Institucional INA y Acentos */
+  --ina-blue-900: #0a1f38;
+  --ina-blue-800: #0e2e54;
+  --ina-blue-700: #143e72;
+  --ina-blue-600: #1d5296;
+  --ina-blue-500: #2563eb;
+  --ina-blue-100: #e0edff;
+  --ina-blue-50: #f0f6ff;
+
+  --ina-green-700: #047857;
+  --ina-green-600: #059669;
+  --ina-green-500: #10b981;
+  --ina-green-100: #d1fae5;
+  --ina-green-50: #ecfdf5;
+
+  --ina-amber-600: #d97706;
+  --ina-amber-500: #f59e0b;
+  --ina-amber-100: #fef3c7;
+  --ina-amber-50: #fffbeb;
+
+  --ina-red-600: #dc2626;
+  --ina-red-500: #ef4444;
+  --ina-red-100: #fee2e2;
+
+  --ina-purple-700: #6d28d9;
+  --ina-purple-600: #7c3aed;
+  --ina-purple-100: #ede9fe;
+
+  /* Colores Neutros y Superficies */
+  --bg-body: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #ffffff;
+  --bg-surface-subtle: #f1f5f9;
+  --bg-card: #ffffff;
+
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-light: #64748b;
+  --text-inverse: #ffffff;
+
+  --border-subtle: #e2e8f0;
+  --border-medium: #cbd5e1;
+  --border-focus: #2563eb;
+
+  /* Sombras y Elevaciones */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  /* Bordes Redondeados */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Tipografía */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* Transiciones */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Layout */
+  --max-width: 1400px;
+  --header-height: 72px;
+}
+
+/* Modo Alto Contraste / Modo Oscuro Opcional */
+body.high-contrast {
+  --bg-body: #ffffff;
+  --bg-surface: #ffffff;
+  --text-main: #000000;
+  --text-muted: #111111;
+  --border-subtle: #000000;
+  --border-medium: #000000;
+}
+
+/* ==========================================================================
+   Reset y Base
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-main);
+  background-color: var(--bg-body);
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 1.5rem);
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Evitar superposición debajo de la cabecera fija al navegar */
+#content-tabs-nav-bar,
+.content-tabs-nav,
+.tab-pane,
+.subtab-pane,
+.practice-card,
+#section-timeline,
+#section-workflow,
+.pedagogical-roadmap-section,
+.pedagogical-workflow-section {
+  scroll-margin-top: calc(var(--header-height) + 1.5rem);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+/* Tipografía Base */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ina-blue-900);
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.35rem; }
+h4 { font-size: 1.15rem; }
+
+p {
+  margin-bottom: 1rem;
+  color: var(--text-muted);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--ina-blue-600);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--ina-blue-800);
+  text-decoration: underline;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ==========================================================================
+   Barra Superior de Navegación & Control de Vistas
+   ========================================================================== */
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--ina-blue-900);
+  color: var(--text-inverse);
+  box-shadow: var(--shadow-md);
+  border-bottom: 3px solid var(--ina-green-500);
+}
+
+.header-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ina-badge {
+  background: linear-gradient(135deg, var(--ina-green-600), var(--ina-green-500));
+  color: white;
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-sm);
+}
+
+.brand-titles h1 {
+  font-size: 1.15rem;
+  color: #ffffff;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.brand-titles .sub-title {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-link-btn {
+  color: #cbd5e1;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.nav-link-btn:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.nav-link-btn.active {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Selector de Modo Tutor / Participante */
+.mode-toggle-group {
+  display: inline-flex;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 3px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.mode-btn {
+  padding: 0.4rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  color: #94a3b8;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.mode-btn.active {
+  background-color: var(--ina-green-600);
+  color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.mode-btn.tutor-mode.active {
+  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+}
+
+/* ==========================================================================
+   Banner de Contexto Institucional y Seguridad de Datos
+   ========================================================================== */
+
+.hero-banner {
+  background: linear-gradient(135deg, var(--ina-blue-900) 0%, var(--ina-blue-800) 50%, var(--ina-blue-700) 100%);
+  color: #ffffff;
+  padding: 2.25rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 35%;
+  height: 100%;
+  background: radial-gradient(circle at 100% 50%, rgba(5, 150, 105, 0.15), transparent 70%);
+  pointer-events: none;
+}
+
+.hero-content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background-color: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(4px);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.meta-pill.highlight {
+  background-color: rgba(5, 150, 105, 0.3);
+  border-color: var(--ina-green-500);
+  color: #a7f3d0;
+  font-weight: 600;
+}
+
+.hero-text h2 {
+  color: #ffffff;
+  font-size: 1.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-text p {
+  color: #cbd5e1;
+  font-size: 1rem;
+  max-width: 800px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 260px;
+}
+
+.hero-stat-card {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1.15rem;
+  text-align: center;
+}
+
+.hero-stat-number {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--ina-green-500);
+  line-height: 1;
+}
+
+.hero-stat-label {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.25rem;
+}
+
+/* Alerta de Protección de Datos (Ley 8968) */
+.data-protection-bar {
+  background-color: var(--ina-amber-50);
+  border-bottom: 1px solid var(--ina-amber-100);
+  padding: 0.65rem 1.5rem;
+  font-size: 0.85rem;
+  color: #92400e;
+}
+
+.data-protection-content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.data-protection-content strong {
+  color: #78350f;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* ==========================================================================
+   Contenedor Principal & Layout
+   ========================================================================== */
+
+.main-layout {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.5rem;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ==========================================================================
+   Ruta Pedagógica Interactiva (Timeline de la Jornada)
+   ========================================================================== */
+
+.pedagogical-roadmap-section {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-subtle);
+}
+
+.section-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.section-title-group h2 {
+  font-size: 1.45rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section-subtitle {
+  font-size: 0.875rem;
+  color: var(--text-light);
+  margin-top: 0.15rem;
+}
+
+.timeline-track {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+  position: relative;
+}
+
+.timeline-step-card {
+  background-color: var(--bg-surface-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-step-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--border-medium);
+  transition: background-color var(--transition-fast);
+}
+
+.timeline-step-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  background-color: #ffffff;
+  border-color: var(--ina-blue-500);
+}
+
+.timeline-step-card.active {
+  background-color: #ffffff;
+  border-color: var(--ina-blue-600);
+  box-shadow: var(--shadow-md);
+}
+
+.timeline-step-card.active::before {
+  background-color: var(--ina-blue-600);
+}
+
+.timeline-step-card.break-step::before {
+  background-color: var(--ina-amber-500);
+}
+
+.timeline-step-card.agm-lead::before {
+  background-color: var(--ina-blue-600);
+}
+
+.timeline-step-card.hl-lead::before {
+  background-color: var(--ina-purple-600);
+}
+
+.step-time-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.step-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ina-blue-900);
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+.step-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.facilitator-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+}
+
+.tag-agm {
+  background-color: var(--ina-blue-100);
+  color: var(--ina-blue-800);
+}
+
+.tag-hl {
+  background-color: var(--ina-purple-100);
+  color: var(--ina-purple-700);
+}
+
+.tag-break {
+  background-color: var(--ina-amber-100);
+  color: var(--ina-amber-600);
+}
+
+.step-practices-count {
+  font-size: 0.7rem;
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Pestañas Principales de Navegación de Contenidos
+   ========================================================================== */
+
+.content-tabs-nav {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 2px solid var(--border-subtle);
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+.tab-btn {
+  padding: 0.75rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tab-btn:hover {
+  color: var(--ina-blue-700);
+  background-color: var(--bg-surface-subtle);
+}
+
+.tab-btn.active {
+  color: var(--ina-blue-700);
+  border-bottom-color: var(--ina-blue-600);
+  background-color: var(--bg-surface);
+}
+
+.tab-badge {
+  background-color: var(--ina-blue-100);
+  color: var(--ina-blue-700);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+}
+
+/* ==========================================================================
+   Secciones de Contenido (Tab Panes)
+   ========================================================================== */
+
+.tab-pane {
+  display: none;
+  animation: fadeIn 200ms ease;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   Pie de Página
+   ========================================================================== */
+
+.app-footer {
+  background-color: var(--ina-blue-900);
+  color: #94a3b8;
+  padding: 2.5rem 1.5rem 1.5rem;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-brand h3 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-brand p {
+  color: #94a3b8;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.footer-col h4 {
+  color: #ffffff;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col li {
+  margin-bottom: 0.4rem;
+  font-size: 0.85rem;
+}
+
+.footer-col a {
+  color: #cbd5e1;
+}
+
+.footer-col a:hover {
+  color: var(--ina-green-500);
+}
+
+.footer-bottom {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Perfiles de facilitación */
+.facilitators-section {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #eef6ff 100%);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+}
+
+.facilitator-profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.facilitator-profile-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: start;
+  padding: 1.25rem;
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  box-shadow: var(--shadow-sm);
+}
+
+.facilitator-monogram {
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  color: #ffffff;
+  background: var(--ina-blue-900);
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.facilitator-monogram-hl {
+  background: #7c3aed;
+}
+
+.facilitator-profile-card h3 {
+  margin: 0 0 0.2rem;
+  color: var(--ina-blue-900);
+  font-size: 1.15rem;
+}
+
+.facilitator-profile-card p {
+  margin: 0.55rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.facilitator-profile-card .facilitator-role {
+  margin-top: 0;
+  color: var(--ina-green-700);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* Toast Notifications */
+.toast-container {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  pointer-events: none;
+}
+
+.toast {
+  background-color: var(--ina-blue-900);
+  color: #ffffff;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xl);
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border-left: 4px solid var(--ina-green-500);
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: auto;
+}
+
+.toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+  }
+  .hero-actions {
+    flex-direction: row;
+  }
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .facilitator-profile-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .header-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .timeline-track {
+    grid-template-columns: 1fr;
+  }
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+  .facilitator-profile-card {
+    grid-template-columns: 1fr;
+  }
+}

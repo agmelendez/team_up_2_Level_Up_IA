@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Simulador de Chatbot Pedagógico: ensayo de práctica escrita con IA para docentes del INA.">
+  <title>Simulador de Chatbot · Taller INA</title>
+  
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/modern-portal.css">
+  <link rel="stylesheet" href="css/a11y-responsive.css">
+
+  <!-- Metadatos de Licencia Creative Commons (CC-BY 4.0) -->
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+  <meta name="dct:title" content="Simulador de Chatbot Pedagógico · Taller INA">
+  <meta name="dct:creator" content="Agustín Gómez Meléndez y Hannia León Fuentes">
+  <meta name="dct:rights" content="Creative Commons Atribución 4.0 Internacional (CC BY 4.0)">
+  <style>
+    .simulator-layout {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .chat-container {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+      height: 600px;
+      overflow: hidden;
+    }
+    .chat-header {
+      background: linear-gradient(135deg, var(--ina-blue-900), var(--ina-blue-800));
+      color: white;
+      padding: 1rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .chat-history-box {
+      flex: 1;
+      padding: 1.25rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      background-color: #f8fafc;
+    }
+    .chat-bubble {
+      max-width: 85%;
+      padding: 0.85rem 1.15rem;
+      border-radius: 16px;
+      font-size: 0.92rem;
+      line-height: 1.45;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .bot-bubble {
+      align-self: flex-start;
+      background-color: #ffffff;
+      border: 1px solid var(--border-medium);
+      border-bottom-left-radius: 4px;
+      box-shadow: var(--shadow-sm);
+    }
+    .user-bubble {
+      align-self: flex-end;
+      background-color: var(--ina-blue-600);
+      color: #ffffff;
+      border-bottom-right-radius: 4px;
+    }
+    .bubble-sender {
+      font-size: 0.75rem;
+      font-weight: 700;
+      opacity: 0.85;
+    }
+    .bubble-pedagogical-note {
+      background-color: var(--ina-amber-50);
+      border: 1px solid var(--ina-amber-100);
+      border-radius: var(--radius-sm);
+      padding: 0.4rem 0.65rem;
+      font-size: 0.78rem;
+      color: #92400e;
+      margin-top: 0.35rem;
+    }
+    .chat-input-bar {
+      padding: 1rem;
+      background: #ffffff;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      gap: 0.75rem;
+    }
+    .chat-input-bar input {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-medium);
+      font-size: 0.95rem;
+      outline: none;
+    }
+    .chat-input-bar input:focus {
+      border-color: var(--ina-blue-500);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+    .rules-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .quick-replies-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .quick-reply-btn {
+      background-color: var(--bg-surface-subtle);
+      border: 1px solid var(--border-medium);
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .quick-reply-btn:hover {
+      background-color: var(--ina-blue-100);
+      color: var(--ina-blue-800);
+      border-color: var(--ina-blue-500);
+    }
+    @media (max-width: 900px) {
+      .simulator-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
+  <!-- Barra Superior -->
+  <!-- Cabecera Moderna Unificada (MagicSchool Style) -->
+  <header class="modern-navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="brand-link notranslate" translate="no" aria-label="Portal INA Team Up 2 Level Up">
+        <span class="brand-logo-badge" translate="no">INA CR</span>
+        <div class="brand-texts">
+          <h1 class="brand-title" translate="no">Team Up 2 Level Up</h1>
+          <span class="brand-subtitle">IA en la Enseñanza del Inglés Técnico</span>
+        </div>
+      </a>
+
+      <nav class="navbar-links" aria-label="Navegación principal">
+        <a href="index.html" class="nav-pill-link">
+          <span>🎯</span> Inicio & Taller
+        </a>
+        <a href="index.html#seccion-cronograma" class="nav-pill-link">
+          <span>🗺️</span> Cronograma
+        </a>
+        <a href="herramientas.html" class="nav-pill-link">
+          <span>⚡</span> Herramientas IA <span class="nav-pill-badge">4</span>
+        </a>
+        <a href="biblioteca.html" class="nav-pill-link">
+          <span>📚</span> Biblioteca & RAG <span class="nav-pill-badge">41</span>
+        </a>
+        <a href="simulador.html" class="nav-pill-link active">
+          <span>💬</span> Simulador
+        </a>
+        <a href="glosario.html" class="nav-pill-link">
+          <span>📖</span> Glosario
+        </a>
+      </nav>
+
+      <div class="navbar-actions">
+        <!-- Enlace a la Práctica Activa (Desktop) -->
+        <a href="index.html#seccion-practica" class="btn-navbar-cta" title="Ir a la Práctica Activa en Vivo">
+          <span class="cta-icon" aria-hidden="true">🚀</span>
+          <span class="cta-text">Práctica en Vivo</span>
+        </a>
+
+        <!-- Botón Hamburguesa Móvil -->
+        <button id="btn-mobile-menu" class="btn-mobile-menu" type="button" aria-label="Abrir menú de navegación" aria-expanded="false">
+          <span class="hamburger-icon" aria-hidden="true">☰</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Fondo y Menú Desplegable Móvil -->
+  <div id="mobile-nav-backdrop" class="mobile-nav-backdrop" aria-hidden="true"></div>
+  <nav id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="Menú móvil">
+    <div class="mobile-drawer-header">
+      <div class="mobile-drawer-title notranslate" translate="no">Team Up 2 Level Up · INA</div>
+      <button id="mobile-drawer-close" class="mobile-drawer-close" aria-label="Cerrar menú">&times;</button>
+    </div>
+    <div class="mobile-drawer-body">
+      <a href="index.html" class="mobile-nav-link">🎯 Inicio & Taller</a>
+      <a href="index.html#seccion-cronograma" class="mobile-nav-link">🗺️ Cronograma</a>
+      <a href="herramientas.html" class="mobile-nav-link">⚡ Herramientas de IA (4)</a>
+      <a href="biblioteca.html" class="mobile-nav-link">📚 Biblioteca & RAG (41)</a>
+      <a href="simulador.html" class="mobile-nav-link active">💬 Simulador de Chat</a>
+      <a href="glosario.html" class="mobile-nav-link">📖 Glosario Docente</a>
+      <a href="tutorial.html" class="mobile-nav-link">🧭 Tutorial de Uso</a>
+      <div class="mobile-drawer-tools-row">
+        <a href="index.html#seccion-practica" class="btn-hero-primary" style="justify-content:center;text-decoration:none;margin-bottom:0.75rem;">
+          🚀 Ir a la Práctica Activa
+        </a>
+        <div style="display:flex;gap:0.5rem;">
+          <button class="btn-lang-toggle notranslate" type="button" style="flex:1;justify-content:center;" translate="no">
+            <span class="lang-icon" aria-hidden="true">🌐</span> <span class="lang-text">English</span>
+          </button>
+          <button class="btn-a11y-toggle" type="button" style="flex:1;justify-content:center;">
+            <span class="a11y-icon" aria-hidden="true">♿</span> <span class="a11y-text">Accesibilidad</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Fondo y Modal de Accesibilidad (A11y Panel) -->
+  <div id="a11y-modal-backdrop" class="a11y-modal-backdrop" aria-hidden="true"></div>
+  <div id="a11y-panel" class="a11y-panel" role="dialog" aria-modal="true" aria-label="Panel de Configuración de Accesibilidad" hidden>
+    <div class="a11y-panel-header">
+      <h3><span>♿</span> Accesibilidad & Visualización</h3>
+      <button class="a11y-close-btn" aria-label="Cerrar panel de accesibilidad">&times;</button>
+    </div>
+    <div class="a11y-panel-body">
+      <div>
+        <div class="a11y-section-title">Contraste y Color</div>
+        <div class="a11y-options-grid">
+          <button type="button" class="a11y-btn active" data-a11y-contrast="normal">Normal</button>
+          <button type="button" class="a11y-btn" data-a11y-contrast="high-contrast">Alto Contraste</button>
+          <button type="button" class="a11y-btn" data-a11y-contrast="dark-mode">Modo Oscuro</button>
+          <button type="button" class="a11y-btn" data-a11y-contrast="grayscale">Monocromo</button>
+        </div>
+      </div>
+      <div>
+        <div class="a11y-section-title">Tamaño de Texto</div>
+        <div class="a11y-options-grid">
+          <button type="button" class="a11y-btn" data-a11y-size="small">A- (90%)</button>
+          <button type="button" class="a11y-btn active" data-a11y-size="normal">A (100%)</button>
+          <button type="button" class="a11y-btn" data-a11y-size="large">A+ (118%)</button>
+          <button type="button" class="a11y-btn" data-a11y-size="xlarge">A++ (130%)</button>
+        </div>
+      </div>
+      <div>
+        <div class="a11y-section-title">Legibilidad y Navegación</div>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;">
+          <div class="a11y-toggle-row">
+            <span class="a11y-toggle-label">📖 Fuente Accesible (Dislexia)</span>
+            <button type="button" class="a11y-switch-btn" data-a11y-toggle="dyslexicFont" role="switch" aria-checked="false" aria-label="Activar fuente para dislexia"></button>
+          </div>
+          <div class="a11y-toggle-row">
+            <span class="a11y-toggle-label">🔗 Resaltar Enlaces</span>
+            <button type="button" class="a11y-switch-btn" data-a11y-toggle="highlightLinks" role="switch" aria-checked="false" aria-label="Resaltar todos los enlaces"></button>
+          </div>
+          <div class="a11y-toggle-row">
+            <span class="a11y-toggle-label">🏷️ Resaltar Títulos</span>
+            <button type="button" class="a11y-switch-btn" data-a11y-toggle="highlightHeadings" role="switch" aria-checked="false" aria-label="Resaltar títulos"></button>
+          </div>
+          <div class="a11y-toggle-row">
+            <span class="a11y-toggle-label">🖱️ Cursor Grande</span>
+            <button type="button" class="a11y-switch-btn" data-a11y-toggle="bigCursor" role="switch" aria-checked="false" aria-label="Activar cursor grande"></button>
+          </div>
+          <div class="a11y-toggle-row">
+            <span class="a11y-toggle-label">🛑 Pausar Animaciones</span>
+            <button type="button" class="a11y-switch-btn" data-a11y-toggle="reduceMotion" role="switch" aria-checked="false" aria-label="Pausar animaciones"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="a11y-panel-footer">
+      <button type="button" id="btn-a11y-reset-all" class="btn-a11y-reset">🔄 Restablecer Todo</button>
+      <button type="button" class="a11y-btn a11y-close-btn" style="width:auto;padding:0.55rem 1.25rem;">Listo</button>
+    </div>
+  </div>
+
+  <!-- Banner -->
+  <section class="hero-banner" style="padding: 1.75rem 1.5rem;">
+    <div class="hero-content">
+      <div class="hero-text">
+        <span class="meta-pill highlight">🏨 Caso: Atención en Recepción de Hotel</span>
+        <h2>Ensayemos cómo la IA actúa como un cliente con límites estrictos</h2>
+        <p>
+          Usted asumirá el rol del recepcionista del hotel. Responda por escrito al cliente (Mr. Davis) en inglés para practicar.
+          Observe cómo la IA sigue las reglas de nivel A2 y proporciona pistas sin resolver la tarea.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contenedor Principal -->
+  <main id="main-content" class="main-layout">
+    <div class="simulator-layout">
+
+      <!-- Ventana de Chat Interactivo -->
+      <div class="chat-container">
+        <div class="chat-header">
+          <div>
+            <strong style="font-size:1.05rem;">🏨 Mr. Robert Davis (Cliente Extranjero)</strong>
+            <div style="font-size:0.75rem;opacity:0.85;">Simulación activa · Nivel A2 · Máx 6 turnos</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.75rem;">
+            <span id="chat-turn-indicator" class="meta-pill" style="background:rgba(255,255,255,0.2);color:white;">Turno 0 de 6</span>
+            <button id="btn-start-chat" class="btn-secondary" style="font-size:0.75rem;padding:0.25rem 0.6rem;">↺ Reiniciar</button>
+          </div>
+        </div>
+
+        <div id="chat-history" class="chat-history-box">
+          <!-- Burbujas renderizadas por chat-simulator.js -->
+        </div>
+
+        <!-- Respuestas rápidas sugeridas -->
+        <div style="padding: 0.5rem 1rem; background: #f1f5f9; border-top: 1px solid var(--border-subtle);">
+          <span style="font-size:0.75rem;font-weight:700;color:var(--text-muted);">💬 Respuestas de apoyo sugeridas (o escriba la suya):</span>
+          <div class="quick-replies-list">
+            <button class="quick-reply-btn" onclick="document.getElementById('chat-user-input').value = 'Good morning Mr. Davis. I am sorry for the delay. The room will be ready in 30 minutes.';">
+              "Good morning Mr. Davis. I am sorry for the delay..."
+            </button>
+            <button class="quick-reply-btn" onclick="document.getElementById('chat-user-input').value = 'Yes, of course! You can wait in the cafeteria and drink free coffee.';">
+              "Yes! You can wait in the cafeteria..."
+            </button>
+            <button class="quick-reply-btn" onclick="document.getElementById('chat-user-input').value = 'Sure! Leave your luggage here. I will call you when the key is ready.';">
+              "Sure! Leave your luggage here..."
+            </button>
+            <button class="quick-reply-btn" style="background:#fee2e2;color:#991b1b;" onclick="document.getElementById('chat-user-input').value = 'Hola señor, espere en la cafetería por favor.';">
+              [Probar respuesta en español para ver la reacción de la IA]
+            </button>
+          </div>
+        </div>
+
+        <!-- Barra de Entrada -->
+        <div class="chat-input-bar">
+          <label class="visually-hidden" for="chat-user-input">Respuesta en inglés al cliente simulado</label>
+          <input type="text" id="chat-user-input" aria-label="Respuesta en inglés al cliente simulado" placeholder="Escriba su respuesta en inglés (ej: Good morning Mr. Davis, I will help you...)" autocomplete="off">
+          <button id="btn-send-chat" class="btn-primary" style="padding:0.6rem 1.25rem;border-radius:var(--radius-full);">
+            Enviar
+          </button>
+        </div>
+      </div>
+
+      <!-- Panel Lateral: Reglas Pedagógicas Aplicadas -->
+      <div class="rules-card">
+        <h3 style="color:var(--ina-blue-900);font-size:1.15rem;margin:0;">🎯 Reglas que gobiernan este Chatbot (PR-04)</h3>
+        
+        <div style="font-size:0.85rem;color:var(--text-muted);display:flex;flex-direction:column;gap:0.75rem;">
+          <div style="background:var(--ina-blue-50);padding:0.75rem;border-radius:8px;border-left:3px solid var(--ina-blue-600);">
+            <strong>1. Límite de longitud estricto:</strong> La IA escribe entre 1 y 3 oraciones cortas (máximo 14 palabras por frase). Esto evita que el bot escriba de más y opaque al estudiante.
+          </div>
+
+          <div style="background:var(--ina-green-50);padding:0.75rem;border-radius:8px;border-left:3px solid var(--ina-green-600);">
+            <strong>2. Política de corrección no invasiva:</strong> Si el mensaje se entiende, la IA continúa el intercambio escrito y solo corrige errores graves mediante pistas, sin entregar la respuesta completa.
+          </div>
+
+          <div style="background:var(--ina-amber-50);padding:0.75rem;border-radius:8px;border-left:3px solid var(--ina-amber-600);">
+            <strong>3. Andamiaje ante español:</strong> Si el participante escribe en español, el bot no se rompe ni traduce todo; anima con una frase modelo: <em>"Try it in English: Could you...?"</em>.
+          </div>
+
+          <div style="background:#ede9fe;padding:0.75rem;border-radius:8px;border-left:3px solid #7c3aed;">
+            <strong>4. Cierre pedagógico:</strong> Tras 6 turnos, el bot cierra la interacción entregando un resumen con 1 acierto y 1 prioridad observable.
+          </div>
+        </div>
+
+        <div style="margin-top:auto;padding-top:1rem;border-top:1px solid var(--border-subtle);display:flex;flex-direction:column;gap:0.75rem;">
+          <button class="btn-primary" style="width:100%;justify-content:center;" onclick="App.copyToClipboard(`ROL Y OBJETIVO\nActúe como cliente de un hotel que intercambia mensajes escritos con una persona estudiante de inglés A2. Su objetivo es practicar interacciones escritas breves de recepción sin resolver la tarea por la persona estudiante.\n\nSITUACIÓN\nUsted llega al mostrador porque su habitación todavía no está lista.\n\nNIVEL MÁXIMO\nUse vocabulario de nivel A2 y oraciones de hasta 14 palabras.\n\nPOLÍTICA DE CORRECCIÓN\nCorrija solo si impide el sentido mediante una pista entre corchetes.\n\nSI LA PERSONA USA ESPAÑOL\nResponda: 'Try it in English. You can use: Could you...?'\n\nCIERRE TRAS 6 TURNOS ESCRITOS\nEntregue 1 acierto y 2 prioridades observables.`, 'Prompt de chatbot escrito copiado para usar en ChatGPT o Claude');">
+            📋 Copiar Prompt para Chatbot Escrito
+          </button>
+
+          <!-- Variante de Modo de Voz (NYU Stern Marzo 2026) -->
+          <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:0.75rem;font-size:0.82rem;color:#14532d;">
+            <strong>🎙️ ¿Desea practicarlo por VOZ? (NYU Stern 2026)</strong>
+            <p style="margin:0.35rem 0;line-height:1.4;">
+              Active el icono de micrófono en ChatGPT o Gemini Live y pegue esta consigna para hablar directamente por audio en inglés A2 con pausas toleradas:
+            </p>
+            <button class="btn-secondary" style="width:100%;justify-content:center;font-size:0.78rem;background:#ffffff;color:#15803d;border-color:#86efac;" onclick="App.copyToClipboard(`Actúe como el cliente Mr. Robert Davis para una práctica oral conversacional por voz con un estudiante de hotelería del INA. Hable en inglés A2 pausado, con oraciones de hasta 14 palabras. Tolere pausas de pensamiento de hasta 5 segundos sin cortar. Mantenga 4 turnos orales sobre su reservación y al final entregue 1 acierto y 1 recomendación sin elogios complacientes.`, 'Prompt de práctica oral por voz copiado');">
+              🎙️ Copiar Prompt para Modo de Voz
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer Moderno Institucional -->
+    <!-- Contenedor de Toast Notifications -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <footer class="modern-footer">
+    <div class="footer-container-box">
+      <div class="footer-top-row">
+        <div class="footer-brand-info">
+          <h4>Instituto Nacional de Aprendizaje (INA)</h4>
+          <p>Núcleo Comercio y Servicios · Subsector de Idiomas<br>Taller Técnico: <em>Team Up 2 Level Up</em> · 6 de octubre de 2026</p>
+        </div>
+        <div class="footer-links-group">
+          <div class="footer-col">
+            <h5>Navegación</h5>
+            <ul>
+              <li><a href="index.html">Inicio & Taller en Vivo</a></li>
+              <li><a href="herramientas.html">Suite de Herramientas</a></li>
+              <li><a href="biblioteca.html">Biblioteca RAG (41 PDFs)</a></li>
+              <li><a href="simulador.html">Simulador de Chat</a></li>
+              <li><a href="glosario.html">Glosario Docente</a></li>
+              <li><a href="tutorial.html">Tutorial de Uso</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Facilitación</h5>
+            <ul>
+              <li><a href="https://orcid.org/0000-0002-7886-0740" target="_blank" rel="noopener">Agustín Gómez Meléndez (UNED/UCR)</a></li>
+              <li><span>Hannia León Fuentes (UCR/PROTEA)</span></li>
+              <li><a href="Bibliografia/MANUAL_USO_LLM_CORPUS_PDF_V5.md" target="_blank">Manual de Inteligencia PDF V5.1</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nota de Transparencia y Uso Ético de Inteligencia Artificial -->
+      <div class="ai-usage-disclosure-card">
+        <div class="ai-disclosure-header">
+          <span class="ai-disclosure-icon" aria-hidden="true">🤖</span>
+          <strong>Nota sobre el Uso de Inteligencia Artificial en el Desarrollo del Sitio y Contenidos</strong>
+        </div>
+        <p>
+          Este entorno web interactivo, su arquitectura técnica, el diseño instruccional de la ruta pedagógica y la estructuración de las 7 prácticas y materiales de apoyo fueron desarrollados mediante <strong>co-diseño y asistencia de modelos avanzados de Inteligencia Artificial generativa</strong>, bajo la dirección, autoría intelectual, validación metodológica y curaduría crítica continua de los facilitadores <strong>Agustín Gómez Meléndez</strong> y <strong>Hannia León Fuentes</strong>. Todos los casos, consignas y datos pedagógicos cumplen estrictamente con la normativa costarricense de gobernanza y protección de datos personales (Ley N° 8968).
+        </p>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <span>© 2026 INA · Licencia Abierta Creative Commons Atribución 4.0 Internacional (CC BY 4.0)</span>
+        <span>Protección de Datos Garantizada · Cumplimiento estricto Ley 8968</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Muelle Flotante de Accesibilidad e Idioma (Lateral Derecho) -->
+  <aside class="floating-access-dock" aria-label="Accesibilidad e idioma">
+    <a href="tutorial.html" class="floating-dock-btn floating-tutorial-link" aria-label="Abrir Tutorial de Uso" title="Abrir Tutorial de Uso">
+      <span class="dock-btn-icon" aria-hidden="true">🧭</span>
+      <span class="dock-btn-label">Tutorial</span>
+    </a>
+    <button id="floating-btn-lang" class="floating-dock-btn btn-lang-toggle notranslate" type="button" aria-label="Traducir a inglés" title="Traducir automáticamente a inglés / Switch to English" translate="no">
+      <span class="dock-btn-icon lang-icon" aria-hidden="true">🌐</span>
+      <span class="dock-btn-label lang-text">English</span>
+    </button>
+    <button id="floating-btn-a11y" class="floating-dock-btn btn-a11y-toggle" type="button" aria-label="Opciones de accesibilidad" aria-expanded="false" title="Abrir panel de accesibilidad">
+      <span class="dock-btn-icon a11y-icon" aria-hidden="true">♿</span>
+      <span class="dock-btn-label a11y-text">Accesibilidad</span>
+    </button>
+  </aside>
+
+  <script src="js/chat-simulator.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/a11y-translate.js"></script>
+</body>
+</html>

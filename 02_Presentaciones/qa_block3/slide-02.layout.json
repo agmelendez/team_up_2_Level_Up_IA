@@ -1,0 +1,409 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/jbkkxl",
+    "id": "jbkkxl",
+    "slide": 2,
+    "layoutId": "f1ac1e1c-e85e-49a8-a35b-333b8350cf5c",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "ccaf0c9b-6b14-4b90-89b2-29c4a80e1cd7",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#123047",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "f1ac1e1c-e85e-49a8-a35b-333b8350cf5c",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "ccaf0c9b-6b14-4b90-89b2-29c4a80e1cd7",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "ccaf0c9b-6b14-4b90-89b2-29c4a80e1cd7",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gzm1g365",
+      "id": "1",
+      "name": "section",
+      "bbox": [
+        76,
+        48,
+        280,
+        28
+      ],
+      "geometry": "rect",
+      "text": "BLOQUE 3 · 1:30",
+      "textPreview": "BLOQUE 3 · 1:30",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#6FB98F",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "BLOQUE 3 · 1:30"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "BLOQUE 3 · 1:30",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#6FB98F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "BLOQUE 3 · 1:30",
+              "fontSize": 16,
+              "color": "#6FB98F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vyd0ny5k",
+      "id": "2",
+      "name": "title",
+      "bbox": [
+        76,
+        105,
+        1120,
+        80
+      ],
+      "geometry": "rect",
+      "text": "ChatGPT y Claude: compare la tarea, no la marca",
+      "textPreview": "ChatGPT y Claude: compare la tarea, no la marca",
+      "resolvedFontSize": 39,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 39,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "ChatGPT y Claude: compare la tarea, no la marca"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "ChatGPT y Claude: compare la tarea, no la marca",
+          "resolvedTextStyle": {
+            "fontSize": 39,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "ChatGPT y Claude: compare la tarea, no la marca",
+              "fontSize": 39,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ux4zetoz",
+      "id": "3",
+      "bbox": [
+        76,
+        210,
+        150,
+        6
+      ],
+      "geometry": "rect",
+      "fillColor": "#6FB98F",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pofit8nm",
+      "id": "4",
+      "name": "body",
+      "bbox": [
+        76,
+        250,
+        1100,
+        300
+      ],
+      "geometry": "rect",
+      "text": "Archivos y contexto · extensión útil · voz móvil · límites variables · revisión siempre necesaria",
+      "textPreview": "Archivos y contexto · extensión útil · voz móvil · límites variables · revisión siempre necesaria",
+      "resolvedFontSize": 33,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 33,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Archivos y contexto · extensión útil · voz móvil · límites variables ·"
+          },
+          {
+            "index": 2,
+            "text": "revisión siempre necesaria"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Archivos y contexto · extensión útil · voz móvil · límites variables · revisión siempre necesaria",
+          "resolvedTextStyle": {
+            "fontSize": 33,
+            "color": "#FFFFFF",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Archivos y contexto · extensión útil · voz móvil · límites variables · revisión siempre necesaria",
+              "fontSize": 33,
+              "color": "#FFFFFF",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4n61k361",
+      "id": "5",
+      "name": "footer",
+      "bbox": [
+        76,
+        660,
+        1050,
+        24
+      ],
+      "geometry": "rect",
+      "text": "INA · Team Up 2 Level Up · 6 octubre 2026",
+      "textPreview": "INA · Team Up 2 Level Up · 6 octubre 2026",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 13,
+        "typeface": "+mn-lt",
+        "color": "#C8D4DA",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "INA · Team Up 2 Level Up · 6 octubre 2026"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "INA · Team Up 2 Level Up · 6 octubre 2026",
+          "resolvedTextStyle": {
+            "fontSize": 13,
+            "color": "#C8D4DA",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "INA · Team Up 2 Level Up · 6 octubre 2026",
+              "fontSize": 13,
+              "color": "#C8D4DA",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/32x0ry5g",
+      "id": "6",
+      "name": "number",
+      "bbox": [
+        1170,
+        655,
+        40,
+        28
+      ],
+      "geometry": "rect",
+      "text": "02",
+      "textPreview": "02",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "color": "#6FB98F",
+        "bold": true,
+        "alignment": "right",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "02"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "02",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "color": "#6FB98F",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "02",
+              "fontSize": 14,
+              "color": "#6FB98F",
+              "bold": true,
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

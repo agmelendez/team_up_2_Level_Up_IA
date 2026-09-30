@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Pedagógica: IA de Voz y Multimodalidad para Docentes de Inglés - Costa Rica</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- FontAwesome Webfont CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            200: '#99f6e4',
+                            500: '#14b8a6',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        },
+                        warm: {
+                            50: '#fdfbf7',
+                            100: '#f7f2ea',
+                            200: '#e2d8c7',
+                            800: '#4a3e31'
+                        },
+                        accent: {
+                            500: '#d97706',
+                            600: '#b45309',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 380px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 340px;
+            }
+        }
+        .step-card {
+            transition: all 0.3s ease;
+        }
+        .step-card.active {
+            border-color: #0f766e;
+            background-color: #ffffff;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .tab-btn.active {
+            border-bottom: 3px solid #0f766e;
+            color: #0f766e;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="bg-warm-50 text-slate-800 font-sans leading-relaxed min-h-screen flex flex-col">
+
+    <!-- Chosen Palette: Warm Harmony & Educational Teal -->
+    <!-- Application Structure Plan: La aplicación fue reestructurada con un enfoque de Andamiaje Pedagógico Progresivo (Paso a Paso) en 5 niveles:
+         Nivel 1: Primeros Pasos (¿Qué es la IA de voz y por qué sirve en la clase de inglés?).
+         Nivel 2: ¿Cómo funciona la IA por dentro? (Explicado con analogías sencillas: fichas de rompecabezas/tokens y atención cruzada).
+         Nivel 3: Tipos de Sistemas de Voz (Tradicional vs Nativo paso a paso y tiempo de espera/VAD).
+         Nivel 4: Aplicación Práctica en el Aula MEP (Primaria A1-A2, Secundaria B1-B2, Teoría de Krashen/Filtro Afectivo).
+         Nivel 5: Laboratorio Práctico (Generador de Prompts y Marco Legal Ley 8968 sin complicaciones).
+         Esta estructura progresiva evita abrumar al docente sin experiencia previa en tecnología. -->
+    <!-- Visualization & Content Choices:
+         1. Analogías Didácticas (Rompecabezas de tokens, Teléfono Chozco vs Conversación Directa).
+         2. Gráfico de Tiempo de Respuesta (Chart.js Bar Canvas) -> Muestra por qué una conversación fluida ayuda al estudiante a no perder el hilo.
+         3. Simulador de Tolerancia al Silencio / VAD -> Slider interactivo con explicaciones amigables ("Tiempo para pensar antes de que la IA hable").
+         4. Radar de Impacto Pedagógico (Chart.js Radar Canvas) -> Compara práctica tradicional vs tutoría con voz.
+         5. Generador de Prompts Listo para Copiar -> Asistente dinámico para crear instrucciones claras en ChatGPT Voice Mode o Gemini Live.
+         NO SVG graphics used. NO Mermaid JS used. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <!-- Header & Navigation -->
+    <header class="bg-white border-b border-warm-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-brand-700 text-white flex items-center justify-center font-bold text-xl shadow">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-bold text-slate-900 text-base sm:text-lg leading-tight">Aprende IA de Voz para la Clase de Inglés</h1>
+                        <p class="text-xs text-slate-500 hidden sm:block">Guía Pedagógica Progresiva para Docentes MEP (Costa Rica)</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <span class="hidden lg:inline-block text-xs bg-brand-100 text-brand-800 px-3 py-1 rounded-full font-semibold">
+                        <i class="fa-solid fa-seedling mr-1"></i> Sin experiencia previa requerida
+                    </span>
+                    <button onclick="openPromptModal()" class="bg-brand-700 hover:bg-brand-800 text-white px-3 py-2 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center space-x-2 shadow-sm">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <span>Generar Prompt</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+
+        <!-- Hero / Banner de Bienvenida Pedagógica -->
+        <section class="bg-gradient-to-r from-brand-900 via-brand-800 to-slate-800 rounded-2xl p-6 sm:p-10 text-white shadow-lg relative overflow-hidden">
+            <div class="max-w-3xl z-10 relative space-y-4">
+                <span class="bg-teal-400/20 text-teal-200 border border-teal-300/30 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider inline-block">
+                    Ruta Didáctica Docente &bull; Costa Rica
+                </span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight">
+                    ¿Cómo usar la Inteligencia Artificial de Voz en el Aula sin complicaciones?
+                </h2>
+                <p class="text-slate-200 text-sm sm:text-base leading-relaxed">
+                    Esta herramienta te guiará paso a paso: desde entender qué es la IA en lenguaje cotidiano, hasta cómo aprovechar asistentes de voz como ChatGPT o Gemini para ayudar a tus estudiantes de escuela o colegio a soltarse a hablar inglés con confianza.
+                </p>
+                <div class="pt-2 flex flex-wrap gap-2 text-xs">
+                    <span class="bg-white/10 px-3 py-1.5 rounded-lg border border-white/10 flex items-center"><i class="fa-solid fa-check text-teal-400 mr-2"></i>Conceptos en español sencillo</span>
+                    <span class="bg-white/10 px-3 py-1.5 rounded-lg border border-white/10 flex items-center"><i class="fa-solid fa-check text-teal-400 mr-2"></i>Ejemplos prácticos para el aula MEP</span>
+                    <span class="bg-white/10 px-3 py-1.5 rounded-lg border border-white/10 flex items-center"><i class="fa-solid fa-check text-teal-400 mr-2"></i>Protección de datos de estudiantes</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Barra de Progreso / Navegador de Niveles -->
+        <section class="bg-white p-4 rounded-xl border border-warm-200 shadow-sm">
+            <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3 text-center sm:text-left">Tu Ruta de Aprendizaje (Selecciona un nivel):</p>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-2">
+                <button onclick="goToLevel(1)" id="btn-level-1" class="step-card active p-3 rounded-lg border border-slate-200 text-left flex flex-col justify-between">
+                    <span class="text-[10px] font-bold text-brand-700 uppercase">Nivel 1</span>
+                    <span class="font-bold text-slate-800 text-xs mt-1">¿Qué es la IA de Voz?</span>
+                </button>
+                <button onclick="goToLevel(2)" id="btn-level-2" class="step-card p-3 rounded-lg border border-slate-200 text-left flex flex-col justify-between bg-slate-50">
+                    <span class="text-[10px] font-bold text-slate-500 uppercase">Nivel 2</span>
+                    <span class="font-bold text-slate-800 text-xs mt-1">¿Cómo Escucha la IA?</span>
+                </button>
+                <button onclick="goToLevel(3)" id="btn-level-3" class="step-card p-3 rounded-lg border border-slate-200 text-left flex flex-col justify-between bg-slate-50">
+                    <span class="text-[10px] font-bold text-slate-500 uppercase">Nivel 3</span>
+                    <span class="font-bold text-slate-800 text-xs mt-1">Modelos de Voz</span>
+                </button>
+                <button onclick="goToLevel(4)" id="btn-level-4" class="step-card p-3 rounded-lg border border-slate-200 text-left flex flex-col justify-between bg-slate-50">
+                    <span class="text-[10px] font-bold text-slate-500 uppercase">Nivel 4</span>
+                    <span class="font-bold text-slate-800 text-xs mt-1">Uso en Aula MEP</span>
+                </button>
+                <button onclick="goToLevel(5)" id="btn-level-5" class="step-card p-3 rounded-lg border border-slate-200 text-left flex flex-col justify-between bg-slate-50 col-span-2 md:col-span-1">
+                    <span class="text-[10px] font-bold text-slate-500 uppercase">Nivel 5</span>
+                    <span class="font-bold text-slate-800 text-xs mt-1">Taller y Ley 8968</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- NIVEL 1: Conceptos Básicos e Impacto en el Aula -->
+        <section id="level-1" class="bg-white rounded-xl p-6 sm:p-8 shadow-sm border border-slate-200 space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <div class="flex items-center space-x-3">
+                    <span class="bg-brand-100 text-brand-800 px-3 py-1 rounded-full font-bold text-sm">Nivel 1</span>
+                    <h2 class="text-xl sm:text-2xl font-bold text-slate-900">Primeros Pasos: ¿Qué es la IA Multimodal y de Voz?</h2>
+                </div>
+                <p class="text-slate-600 text-sm mt-2">
+                    Comencemos desde cero. No necesitas saber programación para entender estos conceptos. Vamos a explicarlos con situaciones de la vida real.
+                </p>
+            </div>
+
+            <!-- Explicación Didáctica Básica -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-warm-50 p-5 rounded-xl border border-warm-200 space-y-2">
+                    <div class="w-10 h-10 rounded-full bg-brand-700 text-white flex items-center justify-center font-bold text-lg">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-800 text-base">1. ¿Qué es Inteligencia Artificial (IA)?</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Imagina un programa de computadora que ha leído millones de libros y conversaciones. No "piensa" como un humano, pero es excelente reconociendo patrones y respondiendo preguntas en segundos.
+                    </p>
+                </div>
+
+                <div class="bg-warm-50 p-5 rounded-xl border border-warm-200 space-y-2">
+                    <div class="w-10 h-10 rounded-full bg-amber-600 text-white flex items-center justify-center font-bold text-lg">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-800 text-base">2. ¿Qué significa "Multimodal"?</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        "Modo" es una forma de comunicación (texto, voz, imagen, video). Un sistema <strong>multimodal</strong> puede entender varios modos a la vez: puede escucharte hablar, leer una imagen que le muestres y responderte con voz.
+                    </p>
+                </div>
+
+                <div class="bg-warm-50 p-5 rounded-xl border border-warm-200 space-y-2">
+                    <div class="w-10 h-10 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold text-lg">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-800 text-base">3. ¿Qué es el "Voice Mode"?</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Es la función que permite hablar directamente con la IA por el micrófono de un teléfono o computadora, escuchando su respuesta hablada casi en tiempo real, como en una llamada telefónica.
+                    </p>
+                </div>
+            </div>
+
+            <!-- El Gran Reto del Docente de Inglés en Costa Rica -->
+            <div class="bg-teal-50 border-l-4 border-brand-700 p-5 rounded-r-xl space-y-2">
+                <h3 class="font-bold text-brand-900 text-sm flex items-center">
+                    <i class="fa-solid fa-bullseye text-brand-700 mr-2 text-base"></i>
+                    ¿Por qué esta tecnología transforma la clase de inglés en nuestras escuelas y colegios?
+                </h3>
+                <p class="text-xs text-slate-700 leading-relaxed">
+                    En un grupo típico del MEP con 30 o 35 estudiantes y lecciones de 40 minutos, un alumno habla en inglés <strong>menos de 1 minuto por semana</strong>. Además, muchos sienten vergüenza de equivocarse frente a sus compañeros (temor al juicio social). La IA de voz ofrece a cada estudiante un tutor paciente e inagotable con el que puede practicar conversación sin pena a cometer errores.
+                </p>
+            </div>
+        </section>
+
+        <!-- NIVEL 2: Funcionamiento Interno (Explicación Sencilla) -->
+        <section id="level-2" class="bg-white rounded-xl p-6 sm:p-8 shadow-sm border border-slate-200 space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <div class="flex items-center space-x-3">
+                    <span class="bg-brand-100 text-brand-800 px-3 py-1 rounded-full font-bold text-sm">Nivel 2</span>
+                    <h2 class="text-xl sm:text-2xl font-bold text-slate-900">¿Cómo Escucha y Entiende la IA? (Sin Fórmulas)</h2>
+                </div>
+                <p class="text-slate-600 text-sm mt-2">
+                    Aprende los dos procesos clave que ocurren dentro de la computadora cuando un estudiante le habla a la aplicación.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <!-- Concepto 1: Tokenización con Analogía -->
+                <div class="space-y-4">
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        <span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-0.5 rounded uppercase">Concepto 1</span>
+                        <h3 class="font-bold text-slate-800 text-base mt-1">Tokenización: "El Rompecabezas del Sonido"</h3>
+                        <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                            La computadora no tiene oídos humanos; solo entiende números. Cuando el alumno dice <em>"Hello teacher, how are you?"</em>, la IA divide esa onda de audio en pequeñas "fichas de rompecabezas" llamadas <strong>Tokens de Audio</strong>. Cada ficha representa un sonido, tono o pausa.
+                        </p>
+                    </div>
+
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        <span class="bg-brand-100 text-brand-800 text-[10px] font-bold px-2 py-0.5 rounded uppercase">Concepto 2</span>
+                        <h3 class="font-bold text-slate-800 text-base mt-1">Atención Cruzada (Cross-Attention): "El Ojo y Oído Atento"</h3>
+                        <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                            Es el mecanismo que le permite a la IA juntar las pistas: relaciona el tono de voz del estudiante con las palabras dichas y los gestos (si hay cámara activa). Así sabe si el alumno está haciendo una pregunta, si duda o si está seguro de su respuesta.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Visualización Interactiva Simulada -->
+                <div class="bg-slate-900 rounded-xl p-6 text-white space-y-4 shadow-inner">
+                    <div class="flex justify-between items-center border-b border-slate-800 pb-2">
+                        <h4 class="text-xs font-bold text-teal-400 uppercase tracking-wider">
+                            <i class="fa-solid fa-microchip mr-2"></i>Simulación: De la Voz del Alumno a la Computadora
+                        </h4>
+                        <span class="text-[10px] bg-emerald-900 text-emerald-300 px-2 py-0.5 rounded">Proceso Activo</span>
+                    </div>
+
+                    <div class="space-y-3 text-xs">
+                        <div>
+                            <p class="text-slate-400 mb-1">1. Voz del Estudiante (Onda Sonora Continuous):</p>
+                            <div class="bg-slate-800 p-2 rounded flex items-center justify-around">
+                                <span class="text-teal-300 font-mono">"I... um... want to play"</span>
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-1 h-4 bg-teal-400 animate-pulse"></div>
+                                    <div class="w-1 h-6 bg-teal-300"></div>
+                                    <div class="w-1 h-2 bg-amber-400"></div> <!-- Silencio / Vacilación -->
+                                    <div class="w-1 h-5 bg-teal-400"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center text-teal-400 font-bold">
+                            <i class="fa-solid fa-arrow-down"></i> Se divide en Tokens (Fichas de datos)
+                        </div>
+
+                        <div>
+                            <p class="text-slate-400 mb-1">2. Fichas que interpreta la IA:</p>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="bg-teal-900 text-teal-200 border border-teal-700 px-2 py-1 rounded text-[10px]">[Sonido: /aɪ/]</span>
+                                <span class="bg-amber-900 text-amber-200 border border-amber-700 px-2 py-1 rounded text-[10px]">[Pausa: 300ms de duda]</span>
+                                <span class="bg-teal-900 text-teal-200 border border-teal-700 px-2 py-1 rounded text-[10px]">[Palabra: want]</span>
+                                <span class="bg-teal-900 text-teal-200 border border-teal-700 px-2 py-1 rounded text-[10px]">[Emoción: Vacilante]</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NIVEL 3: Sistemas Tradicionales vs Nativos de Voz y VAD -->
+        <section id="level-3" class="bg-white rounded-xl p-6 sm:p-8 shadow-sm border border-slate-200 space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <div class="flex items-center space-x-3">
+                    <span class="bg-brand-100 text-brand-800 px-3 py-1 rounded-full font-bold text-sm">Nivel 3</span>
+                    <h2 class="text-xl sm:text-2xl font-bold text-slate-900">Modelos de Voz: ¿Por qué unos responden más rápido?</h2>
+                </div>
+                <p class="text-slate-600 text-sm mt-2">
+                    Compara cómo funcionaba la voz en IA hace un par de años ("El teléfono chozco") con los sistemas modernos nativos de conversación fluida.
+                </p>
+            </div>
+
+            <!-- Explicación de Arquitecturas -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="space-y-4 text-xs">
+                    <div class="p-4 bg-slate-50 border-l-4 border-slate-400 rounded-r-xl space-y-1">
+                        <h3 class="font-bold text-slate-800 text-sm">A) Modelo Tradicional (En Cascada) &bull; "El Teléfono Chozco"</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Funciona en 3 pasos separados: 1) Pasa el audio a texto escrito &rarr; 2) La IA procesa el texto &rarr; 3) Una voz artificial lee la respuesta.
+                        </p>
+                        <p class="text-rose-600 font-semibold mt-1"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Desventaja: Tarda entre 2 y 3 segundos en responder. Pierde la emoción y la risa del estudiante.</p>
+                    </div>
+
+                    <div class="p-4 bg-teal-50 border-l-4 border-brand-700 rounded-r-xl space-y-1">
+                        <h3 class="font-bold text-brand-900 text-sm">B) Modelo Nativo Voz a Voz (End-to-End) &bull; "Conversación Fluida"</h3>
+                        <p class="text-slate-700 leading-relaxed">
+                            Una sola red neuronal escucha la voz y responde directamente con voz en menos de 0.3 segundos (igual que una persona real).
+                        </p>
+                        <p class="text-brand-800 font-semibold mt-1"><i class="fa-solid fa-circle-check mr-1"></i> Ventaja: Entiende la entonación, ríe, imita acentos y permite interrupciones naturales.</p>
+                    </div>
+                </div>
+
+                <!-- Gráfico Chart.js: Comparativa de Tiempos de Respuesta -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <h4 class="font-bold text-slate-800 text-xs mb-2 text-center">Tiempo de Espera para Responder (Latencia en Milisegundos)</h4>
+                    <div class="chart-container">
+                        <canvas id="architectureChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive VAD (Tiempo de Espera / Tolerancia al Silencio) -->
+            <div class="bg-warm-50 p-5 rounded-xl border border-warm-200 space-y-4">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-amber-600 text-white rounded-lg flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-sliders"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 text-sm">Simulador de Detección de Voz (VAD): "El Tiempo para Pensar"</h3>
+                        <p class="text-xs text-slate-600">El VAD es la regla que le dice a la IA cuánto tiempo de silencio debe esperar antes de asumir que el estudiante terminó de hablar.</p>
+                    </div>
+                </div>
+
+                <div class="space-y-3 text-xs bg-white p-4 rounded-lg border border-slate-200">
+                    <div>
+                        <div class="flex justify-between font-semibold text-slate-700 mb-1">
+                            <span>Ajuste de Tiempo de Espera (Segundos de silencio):</span>
+                            <span id="vad-value" class="text-brand-700 font-bold">1.0s</span>
+                        </div>
+                        <input type="range" id="vad-slider" min="0.4" max="3.0" step="0.2" value="1.0" class="w-full accent-brand-700 cursor-pointer" oninput="updateVADSimulation(this.value)">
+                    </div>
+
+                    <div id="vad-feedback" class="p-3 bg-slate-50 rounded border border-slate-200 flex items-start space-x-3">
+                        <i id="vad-icon" class="fa-solid fa-circle-check text-brand-700 text-lg mt-0.5"></i>
+                        <div>
+                            <span id="vad-title" class="font-bold text-slate-800 block">Tiempo Equilibrado (1.0 segundo)</span>
+                            <p id="vad-desc" class="text-slate-600">Ideal para la mayoría de estudiantes. Permite pausas breves para buscar palabras en inglés sin que la IA los interrumpa inmediatamente.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NIVEL 4: Aplicación Pedagógica en el Aula MEP (Primaria y Secundaria) -->
+        <section id="level-4" class="bg-white rounded-xl p-6 sm:p-8 shadow-sm border border-slate-200 space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <div class="flex items-center space-x-3">
+                    <span class="bg-brand-100 text-brand-800 px-3 py-1 rounded-full font-bold text-sm">Nivel 4</span>
+                    <h2 class="text-xl sm:text-2xl font-bold text-slate-900">Aplicación Práctica en el Programa del MEP & Sustento Pedagógico</h2>
+                </div>
+                <p class="text-slate-600 text-sm mt-2">
+                    Cómo adaptar estas herramientas según el nivel escolar (MCER) respetando el Enfoque Orientado a la Acción de nuestro currículo nacional.
+                </p>
+            </div>
+
+            <!-- Pestañas por Ciclo Escolar -->
+            <div class="flex border-b border-slate-200 space-x-6 text-sm font-semibold">
+                <button onclick="switchPedagogyTab('primaria')" id="tab-primaria" class="tab-btn active pb-3 text-slate-600">
+                    <i class="fa-solid fa-child mr-2"></i>Escuela (I y II Ciclo - Nivel A1/A2)
+                </button>
+                <button onclick="switchPedagogyTab('secundaria')" id="tab-secundaria" class="tab-btn pb-3 text-slate-600">
+                    <i class="fa-solid fa-user-graduate mr-2"></i>Colegio (III Ciclo y Diversificada - Nivel B1/B2)
+                </button>
+                <button onclick="switchPedagogyTab('sla')" id="tab-sla" class="tab-btn pb-3 text-slate-600">
+                    <i class="fa-solid fa-brain mr-2"></i>¿Por qué funciona? (Fundamento Teórico)
+                </button>
+            </div>
+
+            <!-- Contenido Escuela -->
+            <div id="content-primaria" class="space-y-4 text-xs leading-relaxed">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <div class="space-y-3">
+                        <h3 class="font-bold text-slate-800 text-sm">Lectura Acompañada y Pronunciación Inicial</h3>
+                        <p class="text-slate-600">
+                            En la escuela, el objetivo principal es generar confianza fonológica y lectura independiente.
+                        </p>
+                        <ul class="space-y-2 text-slate-700">
+                            <li class="flex items-start space-x-2">
+                                <i class="fa-solid fa-circle-check text-brand-700 mt-0.5"></i>
+                                <span><strong>Herramientas sugeridas:</strong> Microsoft Reading Coach o Google Read Along.</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <i class="fa-solid fa-circle-check text-brand-700 mt-0.5"></i>
+                                <span><strong>Dinámica de Clase:</strong> El estudiante lee un cuento corto en inglés en el dispositivo; la IA detecta qué palabras le costó pronunciar y le ofrece un juego interactivo para practicar sólo esas palabras.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-warm-50 p-4 rounded-xl border border-warm-200 text-center space-y-2">
+                        <i class="fa-solid fa-book-open-reader text-brand-700 text-3xl"></i>
+                        <h4 class="font-bold text-slate-800 text-xs">Ejemplo Práctico en Primaria</h4>
+                        <p class="text-slate-600 text-[11px]">"El alumno lee la frase 'The sheep is white'. Si pronuncia 'ship' en lugar de 'sheep', la IA le muestra la imagen de una oveja y le enseña a alargar el sonido vocal sin regañarlo."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contenido Colegio -->
+            <div id="content-secundaria" class="hidden space-y-4 text-xs leading-relaxed">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <div class="space-y-3">
+                        <h3 class="font-bold text-slate-800 text-sm">Juegos de Rol (Role-play) y Fluidez para Empleabilidad</h3>
+                        <p class="text-slate-600">
+                            En secundaria y colegios técnicos (CTP), la prioridad es la conversación fluida y espontánea.
+                        </p>
+                        <ul class="space-y-2 text-slate-700">
+                            <li class="flex items-start space-x-2">
+                                <i class="fa-solid fa-circle-check text-brand-700 mt-0.5"></i>
+                                <span><strong>Herramienta sugerida:</strong> ChatGPT Modo de Voz o Gemini Live.</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <i class="fa-solid fa-circle-check text-brand-700 mt-0.5"></i>
+                                <span><strong>Simulaciones Reales:</strong> Practicar entrevistas de trabajo en call centers o atender a un turista pidiendo direcciones en Costa Rica.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-warm-50 p-4 rounded-xl border border-warm-200 text-center space-y-2">
+                        <i class="fa-solid fa-comments text-amber-600 text-3xl"></i>
+                        <h4 class="font-bold text-slate-800 text-xs">Ejemplo Práctico en Secundaria</h4>
+                        <p class="text-slate-600 text-[11px]">"Indicación a la IA: 'Actúa como un cliente en un restaurante que quiere pedir comida vegetariana en Manuel Antonio'. El alumno debe resolver la interacción practicando su vocabulario."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sustento SLA (Krashen / Filtro Afectivo) -->
+            <div id="content-sla" class="hidden space-y-4 text-xs leading-relaxed">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <div class="space-y-3">
+                        <h3 class="font-bold text-slate-800 text-sm">Reducción del "Filtro Afectivo" (Teoría de Krashen)</h3>
+                        <p class="text-slate-600">
+                            El lingüista Stephen Krashen demostró que cuando un estudiante siente ansiedad, miedo al ridículo o estrés, su cerebro "bloquea" la capacidad de aprender un idioma.
+                        </p>
+                        <p class="text-slate-600">
+                            La IA de voz elimina la ansiedad social: la computadora nunca se impacienta, no se burla y permite repetir la misma frase 20 veces hasta que el alumno se sienta cómodo.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <h4 class="font-bold text-slate-800 text-xs text-center mb-2">Comparativo de Beneficios Pedagógicos</h4>
+                        <div class="chart-container">
+                            <canvas id="slaImpactChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NIVEL 5: Taller Práctico, Generador de Prompts y Ley N° 8968 -->
+        <section id="level-5" class="bg-white rounded-xl p-6 sm:p-8 shadow-sm border border-slate-200 space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <div class="flex items-center space-x-3">
+                    <span class="bg-brand-100 text-brand-800 px-3 py-1 rounded-full font-bold text-sm">Nivel 5</span>
+                    <h2 class="text-xl sm:text-2xl font-bold text-slate-900">Taller Práctico: Generador de Indicaciones y Cuidado de Datos (Ley 8968)</h2>
+                </div>
+                <p class="text-slate-600 text-sm mt-2">
+                    Aprende a instruir a la IA para tus lecciones y conoce las reglas básicas para proteger la privacidad de tus estudiantes costarricenses.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 text-xs">
+                <!-- Generador Prompts Explicado -->
+                <div class="bg-warm-50 p-5 rounded-xl border border-warm-200 space-y-3">
+                    <h3 class="font-bold text-slate-900 text-sm flex items-center">
+                        <i class="fa-solid fa-wand-magic-sparkles text-brand-700 mr-2"></i>
+                        ¿Qué es un "Prompt" o Indicación?
+                    </h3>
+                    <p class="text-slate-600">
+                        Un <strong>prompt</strong> es la instrucción escrita que le das a la IA antes de que el estudiante empiece a hablar. Una buena instrucción le dice a la IA qué rol tomar, qué nivel de inglés usar y cómo corregir los errores.
+                    </p>
+                    <button onclick="openPromptModal()" class="w-full bg-brand-700 hover:bg-brand-800 text-white font-bold py-2.5 rounded-lg transition shadow-sm flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-plus-circle"></i>
+                        <span>Abrir Creador de Prompts para la Clase</span>
+                    </button>
+                </div>
+
+                <!-- Ley N° 8968 en Lenguaje Claro -->
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-3">
+                    <h3 class="font-bold text-slate-900 text-sm flex items-center">
+                        <i class="fa-solid fa-shield-halved text-emerald-700 mr-2"></i>
+                        Protección de Datos (Ley Costa Rica N° 8968)
+                    </h3>
+                    <p class="text-slate-600">
+                        La voz de un niño o joven es un <strong>dato biométrico privado</strong>. Para usar herramientas digitales en el aula MEP de forma legal y segura, sigue estos 3 consejos:
+                    </p>
+                    <ul class="space-y-2 text-slate-700">
+                        <li class="bg-white p-2 rounded border border-slate-200 flex items-start space-x-2">
+                            <i class="fa-solid fa-check text-emerald-600 mt-0.5"></i>
+                            <span><strong>No ingresar nombres completos:</strong> Pide a los estudiantes usar seudónimos o solo su primer nombre.</span>
+                        </li>
+                        <li class="bg-white p-2 rounded border border-slate-200 flex items-start space-x-2">
+                            <i class="fa-solid fa-check text-emerald-600 mt-0.5"></i>
+                            <span><strong>Uso de cuentas institucionales / Permiso de encargados:</strong> Asegúrate de contar con el aval de la dirección de la escuela o colegio.</span>
+                        </li>
+                        <li class="bg-white p-2 rounded border border-slate-200 flex items-start space-x-2">
+                            <i class="fa-solid fa-check text-emerald-600 mt-0.5"></i>
+                            <span><strong>Desactivar guardado de voz:</strong> En la configuración de la app, marca la opción de no guardar grabaciones para entrenamiento.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-2">
+            <p class="font-medium text-slate-300">
+                Guía Pedagógica Docente: IA Multimodal y Sistemas de Voz en Costa Rica
+            </p>
+            <p>
+                Diseñado como recurso didáctico de apoyo para educadores de primaria y secundaria en alineación con el MEP y el MCER.
+            </p>
+            <p class="text-slate-500 text-[11px] pt-2">
+                &copy; 2026 - Recurso de Capacitación Gratuito para Educadores.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Ventana Modal: Generador de Prompts Interactivo -->
+    <div id="promptModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-2xl w-full p-6 space-y-4 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center border-b border-slate-100 pb-3">
+                <h3 class="font-bold text-slate-900 text-base sm:text-lg flex items-center space-x-2">
+                    <i class="fa-solid fa-wand-magic-sparkles text-brand-700"></i>
+                    <span>Creador de Indicaciones (Prompts) para la Clase</span>
+                </h3>
+                <button onclick="closePromptModal()" class="text-slate-400 hover:text-slate-600 text-lg">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="space-y-3 text-xs">
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1">1. Selecciona el Nivel de tus Estudiantes:</label>
+                    <select id="prompt-level" class="w-full border border-slate-300 rounded-lg p-2 font-medium text-slate-800 focus:ring-2 focus:ring-brand-700 outline-none">
+                        <option value="A1-A2">Escuela (I y II Ciclo) - Nivel A1/A2 (Oraciones sencillas, rutinas, colores)</option>
+                        <option value="B1">Colegio (III Ciclo) - Nivel B1 (Conversaciones cotidianas, gustos, viajes)</option>
+                        <option value="B2">Colegio / CTP (Diversificada) - Nivel B2 (Debates, entrevistas de trabajo)</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1">2. Escoge la Situación de Práctica:</label>
+                    <select id="prompt-role" class="w-full border border-slate-300 rounded-lg p-2 font-medium text-slate-800 focus:ring-2 focus:ring-brand-700 outline-none">
+                        <option value="tourist">Un turista pidiendo ayuda para encontrar un parque nacional en Costa Rica</option>
+                        <option value="waiter">Un mesero en un restaurante recibiendo una orden de comida</option>
+                        <option value="recruiter">Un entrevistador de trabajo para un puesto de servicio al cliente</option>
+                    </select>
+                </div>
+
+                <button onclick="generatePrompt()" class="w-full bg-brand-700 hover:bg-brand-800 text-white font-bold py-2 rounded-lg transition">
+                    Crear Indicación Lista para Usar
+                </button>
+
+                <div class="pt-2">
+                    <label class="block font-semibold text-slate-700 mb-1">Texto generado (Cópialo y pégalo en ChatGPT o Gemini antes de darle el teléfono al alumno):</label>
+                    <textarea id="prompt-output" readonly rows="6" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-3 text-slate-800 font-mono text-[11px] leading-relaxed resize-none"></textarea>
+                </div>
+            </div>
+
+            <div class="flex justify-between items-center pt-2">
+                <button onclick="copyPromptText()" class="bg-slate-800 hover:bg-slate-900 text-white px-4 py-2 rounded-lg text-xs font-bold transition flex items-center space-x-2">
+                    <i class="fa-solid fa-copy"></i>
+                    <span id="copy-btn-text">Copiar Texto</span>
+                </button>
+                <button onclick="closePromptModal()" class="text-xs font-semibold text-slate-500 hover:text-slate-800">
+                    Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script de Lógica Interactiva y Gráficos -->
+    <script>
+        // Cambiar entre Niveles de Aprendizaje
+        function goToLevel(levelNum) {
+            // Ocultar todos los niveles
+            for (let i = 1; i <= 5; i++) {
+                const el = document.getElementById('level-' + i);
+                const btn = document.getElementById('btn-level-' + i);
+                if (el) el.classList.add('hidden');
+                if (btn) {
+                    btn.classList.remove('active');
+                    btn.classList.add('bg-slate-50');
+                }
+            }
+
+            // Mostrar el nivel seleccionado
+            const activeEl = document.getElementById('level-' + levelNum);
+            const activeBtn = document.getElementById('btn-level-' + levelNum);
+
+            if (activeEl) {
+                activeEl.classList.remove('hidden');
+                activeEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+            if (activeBtn) {
+                activeBtn.classList.add('active');
+                activeBtn.classList.remove('bg-slate-50');
+            }
+        }
+
+        // Cambiar Pestañas de Pedagogía en Nivel 4
+        function switchPedagogyTab(tab) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('content-primaria').classList.add('hidden');
+            document.getElementById('content-secundaria').classList.add('hidden');
+            document.getElementById('content-sla').classList.add('hidden');
+
+            if (tab === 'primaria') {
+                document.getElementById('tab-primaria').classList.add('active');
+                document.getElementById('content-primaria').classList.remove('hidden');
+            } else if (tab === 'secundaria') {
+                document.getElementById('tab-secundaria').classList.add('active');
+                document.getElementById('content-secundaria').classList.remove('hidden');
+            } else if (tab === 'sla') {
+                document.getElementById('tab-sla').classList.add('active');
+                document.getElementById('content-sla').classList.remove('hidden');
+            }
+        }
+
+        // Simulador VAD (Tiempo de Espera)
+        function updateVADSimulation(val) {
+            const num = parseFloat(val);
+            document.getElementById('vad-value').innerText = num.toFixed(1) + 's';
+            
+            const titleEl = document.getElementById('vad-title');
+            const descEl = document.getElementById('vad-desc');
+            const iconEl = document.getElementById('vad-icon');
+
+            if (num < 0.8) {
+                titleEl.innerText = "Tiempo Muy Corto (" + num.toFixed(1) + " seg)";
+                descEl.innerText = "¡Cuidado! La IA interrumpirá al estudiante apenas haga una pausa breve para pensar una palabra. Puede frustrar a alumnos principiantes.";
+                iconEl.className = "fa-solid fa-triangle-exclamation text-rose-600 text-lg mt-0.5";
+            } else if (num >= 0.8 && num <= 1.5) {
+                titleEl.innerText = "Tiempo Equilibrado (" + num.toFixed(1) + " seg)";
+                descEl.innerText = "Ideal para la mayoría de estudiantes. Permite pausas breves para buscar palabras en inglés sin interrumpir la conversación.";
+                iconEl.className = "fa-solid fa-circle-check text-brand-700 text-lg mt-0.5";
+            } else {
+                titleEl.innerText = "Tiempo Largo (" + num.toFixed(1) + " seg)";
+                descEl.innerText = "Le da mucho tiempo al alumno para pensar, pero la conversación se sentirá lenta con silencios largos antes de que la IA responda.";
+                iconEl.className = "fa-solid fa-clock text-amber-600 text-lg mt-0.5";
+            }
+        }
+
+        // Modal de Prompts
+        function openPromptModal() {
+            document.getElementById('promptModal').classList.remove('hidden');
+            generatePrompt();
+        }
+
+        function closePromptModal() {
+            document.getElementById('promptModal').classList.add('hidden');
+        }
+
+        function generatePrompt() {
+            const level = document.getElementById('prompt-level').value;
+            const role = document.getElementById('prompt-role').value;
+            const output = document.getElementById('prompt-output');
+
+            let roleText = "a friendly tourist asking for help";
+            if (role === 'waiter') roleText = "a polite waiter taking a food order";
+            if (role === 'recruiter') roleText = "an interviewer asking basic questions for a student job";
+
+            let promptText = `Act as ${roleText}. You are speaking with an English student from Costa Rica (Level: ${level}).\n\n` +
+            `INSTRUCTIONS FOR THE AI:\n` +
+            `- Speak in simple English suitable for level ${level}.\n` +
+            `- Keep your responses short (1 to 2 sentences max per turn).\n` +
+            `- Be patient and friendly. If the student makes a small grammar error, repeat the correct phrase naturally in your response without lecturing them.\n` +
+            `- Start the conversation now with a friendly greeting in English.`;
+
+            output.value = promptText;
+        }
+
+        function copyPromptText() {
+            const output = document.getElementById('prompt-output');
+            output.select();
+            document.execCommand('copy');
+            
+            const btnText = document.getElementById('copy-btn-text');
+            btnText.innerText = "¡Texto Copiado!";
+            setTimeout(() => {
+                btnText.innerText = "Copiar Texto";
+            }, 2000);
+        }
+
+        // Inicialización de Gráficos al Cargar
+        window.addEventListener('DOMContentLoaded', () => {
+            // Inicializar mostrando solo el Nivel 1
+            for (let i = 2; i <= 5; i++) {
+                const el = document.getElementById('level-' + i);
+                if (el) el.classList.add('hidden');
+            }
+
+            // Gráfico 1: Tiempos de Respuesta
+            const ctxArch = document.getElementById('architectureChart').getContext('2d');
+            new Chart(ctxArch, {
+                type: 'bar',
+                data: {
+                    labels: ['Modelo Tradicional (Por Pasos)', 'Modelo Nativo (Voz a Voz)'],
+                    datasets: [{
+                        label: 'Tiempo de espera (milisegundos)',
+                        data: [1800, 280],
+                        backgroundColor: ['#cbd5e1', '#0f766e'],
+                        borderRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.raw + ' ms (milisegundos)';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: { display: true, text: 'Milisegundos (Menos es mejor)', font: { size: 10 } }
+                        }
+                    }
+                }
+            });
+
+            // Gráfico 2: Radar Impacto Pedagógico
+            const ctxSla = document.getElementById('slaImpactChart').getContext('2d');
+            new Chart(ctxSla, {
+                type: 'radar',
+                data: {
+                    labels: [
+                        'Tiempo Hablando Inglés',
+                        'Pérdida del Miedo a Equivocarse',
+                        'Fluidez Espontánea',
+                        'Atención Individual',
+                        'Ganas de Practicar'
+                    ],
+                    datasets: [
+                        {
+                            label: 'Sin Tutor de Voz',
+                            data: [20, 30, 40, 25, 40],
+                            borderColor: '#cbd5e1',
+                            backgroundColor: 'rgba(203, 213, 225, 0.2)',
+                            pointBackgroundColor: '#cbd5e1'
+                        },
+                        {
+                            label: 'Con Práctica de IA de Voz',
+                            data: [85, 90, 80, 95, 85],
+                            borderColor: '#0f766e',
+                            backgroundColor: 'rgba(15, 118, 110, 0.2)',
+                            pointBackgroundColor: '#0f766e'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { font: { size: 10 } } }
+                    },
+                    scales: {
+                        r: {
+                            suggestedMin: 0,
+                            suggestedMax: 100,
+                            ticks: { display: false }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

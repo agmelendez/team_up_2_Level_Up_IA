@@ -1,0 +1,428 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/we48zj",
+    "id": "we48zj",
+    "slide": 10,
+    "layoutId": "f1ac1e1c-e85e-49a8-a35b-333b8350cf5c",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "ccaf0c9b-6b14-4b90-89b2-29c4a80e1cd7",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F4F1EA",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "f1ac1e1c-e85e-49a8-a35b-333b8350cf5c",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "ccaf0c9b-6b14-4b90-89b2-29c4a80e1cd7",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "ccaf0c9b-6b14-4b90-89b2-29c4a80e1cd7",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/itgvupg7",
+      "id": "1",
+      "bbox": [
+        0,
+        0,
+        24,
+        720
+      ],
+      "geometry": "rect",
+      "fillColor": "#007F78",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5wre5kfy",
+      "id": "2",
+      "name": "section",
+      "bbox": [
+        76,
+        52,
+        240,
+        30
+      ],
+      "geometry": "rect",
+      "text": "BLOQUE 3 · 30:00",
+      "textPreview": "BLOQUE 3 · 30:00",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#007F78",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "BLOQUE 3 · 30:00"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "BLOQUE 3 · 30:00",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#007F78",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "BLOQUE 3 · 30:00",
+              "fontSize": 16,
+              "color": "#007F78",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kvydwfyd",
+      "id": "3",
+      "name": "title",
+      "bbox": [
+        76,
+        100,
+        1110,
+        90
+      ],
+      "geometry": "rect",
+      "text": "PR-06 tiene dos configuraciones diferentes",
+      "textPreview": "PR-06 tiene dos configuraciones diferentes",
+      "resolvedFontSize": 40,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 40,
+        "typeface": "+mn-lt",
+        "color": "#17242E",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "PR-06 tiene dos configuraciones diferentes"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "PR-06 tiene dos configuraciones diferentes",
+          "resolvedTextStyle": {
+            "fontSize": 40,
+            "color": "#17242E",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "PR-06 tiene dos configuraciones diferentes",
+              "fontSize": 40,
+              "color": "#17242E",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7i9w7uxo",
+      "id": "4",
+      "name": "body",
+      "bbox": [
+        76,
+        235,
+        1080,
+        330
+      ],
+      "geometry": "rect",
+      "text": "Interlocutor: sostiene la situación\nEvaluador formativo: prioriza una mejora",
+      "textPreview": "Interlocutor: sostiene la situación | Evaluador formativo: prioriza una mejora",
+      "resolvedFontSize": 32,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 32,
+        "typeface": "+mn-lt",
+        "color": "#17242E",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Interlocutor: sostiene la situación"
+          },
+          {
+            "index": 2,
+            "text": "Evaluador formativo: prioriza una mejora"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Interlocutor: sostiene la situación",
+          "resolvedTextStyle": {
+            "fontSize": 32,
+            "color": "#17242E",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Interlocutor: sostiene la situación",
+              "fontSize": 32,
+              "color": "#17242E",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "Evaluador formativo: prioriza una mejora",
+          "resolvedTextStyle": {
+            "fontSize": 32,
+            "color": "#17242E",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Evaluador formativo: prioriza una mejora",
+              "fontSize": 32,
+              "color": "#17242E",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6h0fypgj",
+      "id": "5",
+      "name": "footer",
+      "bbox": [
+        76,
+        660,
+        1050,
+        24
+      ],
+      "geometry": "rect",
+      "text": "INA · Team Up 2 Level Up · 6 octubre 2026",
+      "textPreview": "INA · Team Up 2 Level Up · 6 octubre 2026",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 13,
+        "typeface": "+mn-lt",
+        "color": "#5E6B73",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "INA · Team Up 2 Level Up · 6 octubre 2026"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "INA · Team Up 2 Level Up · 6 octubre 2026",
+          "resolvedTextStyle": {
+            "fontSize": 13,
+            "color": "#5E6B73",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "INA · Team Up 2 Level Up · 6 octubre 2026",
+              "fontSize": 13,
+              "color": "#5E6B73",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tkre94fu",
+      "id": "6",
+      "name": "number",
+      "bbox": [
+        1170,
+        655,
+        40,
+        28
+      ],
+      "geometry": "rect",
+      "text": "10",
+      "textPreview": "10",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "color": "#007F78",
+        "bold": true,
+        "alignment": "right",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "10"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "10",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "color": "#007F78",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "10",
+              "fontSize": 14,
+              "color": "#007F78",
+              "bold": true,
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

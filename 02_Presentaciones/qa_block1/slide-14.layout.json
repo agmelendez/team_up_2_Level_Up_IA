@@ -1,0 +1,409 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/gi93rv",
+    "id": "gi93rv",
+    "slide": 14,
+    "layoutId": "299ea837-30d1-4b60-bc8e-1112bce332d8",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "ba1a96ad-fd24-472f-8149-8abe4eda6adc",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#123047",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "299ea837-30d1-4b60-bc8e-1112bce332d8",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "ba1a96ad-fd24-472f-8149-8abe4eda6adc",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "ba1a96ad-fd24-472f-8149-8abe4eda6adc",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/e5c3mpkf",
+      "id": "1",
+      "name": "section",
+      "bbox": [
+        76,
+        48,
+        240,
+        28
+      ],
+      "geometry": "rect",
+      "text": "BLOQUE 1 · 33:00",
+      "textPreview": "BLOQUE 1 · 33:00",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#6FB98F",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "BLOQUE 1 · 33:00"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "BLOQUE 1 · 33:00",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#6FB98F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "BLOQUE 1 · 33:00",
+              "fontSize": 16,
+              "color": "#6FB98F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/183mxkj6",
+      "id": "2",
+      "name": "title",
+      "bbox": [
+        76,
+        105,
+        1120,
+        80
+      ],
+      "geometry": "rect",
+      "text": "Método: encargo, instrucción, salida, verificación, adaptación",
+      "textPreview": "Método: encargo, instrucción, salida, verificación, adaptación",
+      "resolvedFontSize": 39,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 39,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Método: encargo, instrucción, salida, verificación,"
+          },
+          {
+            "index": 2,
+            "text": "adaptación"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Método: encargo, instrucción, salida, verificación, adaptación",
+          "resolvedTextStyle": {
+            "fontSize": 39,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Método: encargo, instrucción, salida, verificación, adaptación",
+              "fontSize": 39,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/g7uloz2l",
+      "id": "3",
+      "bbox": [
+        76,
+        210,
+        150,
+        6
+      ],
+      "geometry": "rect",
+      "fillColor": "#6FB98F",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/r21kra1o",
+      "id": "4",
+      "name": "body",
+      "bbox": [
+        76,
+        250,
+        1100,
+        300
+      ],
+      "geometry": "rect",
+      "text": "1 Encargo · 2 Instrucción · 3 Salida · 4 Verificación · 5 Adaptación al aula",
+      "textPreview": "1 Encargo · 2 Instrucción · 3 Salida · 4 Verificación · 5 Adaptación al aula",
+      "resolvedFontSize": 33,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 33,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "1 Encargo · 2 Instrucción · 3 Salida · 4 Verificación · 5 Adaptación al aula"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "1 Encargo · 2 Instrucción · 3 Salida · 4 Verificación · 5 Adaptación al aula",
+          "resolvedTextStyle": {
+            "fontSize": 33,
+            "color": "#FFFFFF",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "1 Encargo · 2 Instrucción · 3 Salida · 4 Verificación · 5 Adaptación al aula",
+              "fontSize": 33,
+              "color": "#FFFFFF",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6hs3i5kj",
+      "id": "5",
+      "name": "footer",
+      "bbox": [
+        76,
+        660,
+        1050,
+        24
+      ],
+      "geometry": "rect",
+      "text": "INA · Team Up 2 Level Up · 6 octubre 2026",
+      "textPreview": "INA · Team Up 2 Level Up · 6 octubre 2026",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 13,
+        "typeface": "+mn-lt",
+        "color": "#C8D4DA",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "INA · Team Up 2 Level Up · 6 octubre 2026"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "INA · Team Up 2 Level Up · 6 octubre 2026",
+          "resolvedTextStyle": {
+            "fontSize": 13,
+            "color": "#C8D4DA",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "INA · Team Up 2 Level Up · 6 octubre 2026",
+              "fontSize": 13,
+              "color": "#C8D4DA",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/t432tkju",
+      "id": "6",
+      "name": "number",
+      "bbox": [
+        1170,
+        655,
+        40,
+        28
+      ],
+      "geometry": "rect",
+      "text": "14",
+      "textPreview": "14",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "color": "#6FB98F",
+        "bold": true,
+        "alignment": "right",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "14"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "14",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "color": "#6FB98F",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "14",
+              "fontSize": 14,
+              "color": "#6FB98F",
+              "bold": true,
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

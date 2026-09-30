@@ -1,0 +1,369 @@
+
+
+<!-- ====================================================================
+         PESTAÑA 2: Asistente Guiado de Prompts (Paso a Paso con Chips)
+         ==================================================================== -->
+    <div id="subpane-builder" class="subtab-pane active" data-parent-zone="tools">
+      <div class="section-header-row">
+        <div class="section-title-group">
+          <h2>⚡ Asistente Guiado de Prompts (5 Pasos Sencillos)</h2>
+          <div class="section-subtitle">Haga clic en las opciones sugeridas o escriba las suyas. El sistema armará el prompt perfecto automáticamente.</div>
+        </div>
+      </div>
+
+      <div class="prompt-builder-container">
+        <!-- Formulario con Chips Rápidos -->
+        <div class="builder-form">
+          <div class="builder-preset-bar" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem;">
+            <div style="display:flex;align-items:center;gap:0.5rem;flex:1;min-width:260px;">
+              <label for="pb-preset-select">📂 Cargar Ejemplo:</label>
+              <select id="pb-preset-select" class="preset-select">
+                <option value="hotel_complaint">1. Recepción de quejas en hotel (A2 Oral)</option>
+                <option value="lesson_planning">2. Planificar clase de 45 minutos (A2 Atención)</option>
+                <option value="calibrated_reading">3. Lectura técnica calibrada (B1 Hospitalidad)</option>
+                <option value="diff_feedback">4. Retroalimentación diferenciada (Muestra escrita)</option>
+                <option value="custom_chatbot">5. Configurar Chatbot simulador (Recepción)</option>
+                <option value="voice_oral_simulation">6. [Bloques 1 y 3] Simulación Oral con IA de Voz (A2/B1)</option>
+                <option value="socratic_scaffolding">7. [Bloque 2 HL] Andamiaje Socrático sin dar la respuesta</option>
+                <option value="explainable_feedback">8. [Bloque 3 AGM] Retroalimentación Lingüística Explicable (XAI)</option>
+              </select>
+            </div>
+            <button id="btn-clear-prompt" class="btn-secondary" style="font-size:0.8rem;padding:0.4rem 0.8rem;" title="Borrar todo y redactar desde cero">
+              🧹 Empezar en Blanco
+            </button>
+          </div>
+
+          <!-- Paso 1: Rol -->
+          <div class="form-group">
+            <label for="pb-role">
+              <span>Paso 1: ¿Qué rol debe cumplir la IA?</span>
+              <span class="component-badge">1 / 5</span>
+            </label>
+            <div class="wizard-chips-group">
+              <button class="wizard-chip-btn active" data-target-input="pb-role" data-value="Actúe como diseñador de actividades de inglés para fines ocupacionales. Su objetivo es crear una práctica comunicativa para servicio al cliente.">🎯 Diseñador de Actividades</button>
+              <button class="wizard-chip-btn" data-target-input="pb-role" data-value="Actúe como un cliente extranjero que interactúa con un estudiante de recepción para practicar conversación.">💬 Cliente para Práctica</button>
+              <button class="wizard-chip-btn" data-target-input="pb-role" data-value="Actúe como especialista en evaluación formativa y corrección constructiva de errores en inglés técnico.">📝 Evaluador Formativo</button>
+              <button class="wizard-chip-btn" data-target-input="pb-role" data-value="Actúe como interlocutor angloparlante para una práctica oral conversacional en vivo por voz con un estudiante técnico de hotelería/servicios del INA.">🎙️ Interlocutor de Voz (NYU 2026)</button>
+              <button class="wizard-chip-btn" data-target-input="pb-role" data-value="Actúe como tutor pedagógico socrático de inglés ocupacional para formación técnica profesional.">🪜 Tutor Socrático (HL)</button>
+            </div>
+            <textarea id="pb-role" style="margin-top:0.35rem;"></textarea>
+          </div>
+
+          <!-- Paso 2: Nivel de Idioma -->
+          <div class="form-group">
+            <label for="pb-level">
+              <span>Paso 2: ¿Qué <span class="interactive-term" data-tooltip="Marco Común Europeo de Referencia para las Lenguas: La escala oficial internacional (A1 Principiante, A2 Básico, B1 Intermedio, B2 Avanzado).">nivel de idioma</span> y destreza tienen sus estudiantes?</span>
+              <span class="component-badge">2 / 5</span>
+            </label>
+            <div class="wizard-chips-group">
+              <button class="wizard-chip-btn active" data-target-input="pb-level" data-value="Inglés A2 · Interacción oral (listening & speaking)">A2 (Básico)</button>
+              <button class="wizard-chip-btn" data-target-input="pb-level" data-value="Inglés A1 · Expresiones elementales y saludos">A1 (Inicial)</button>
+              <button class="wizard-chip-btn" data-target-input="pb-level" data-value="Inglés B1 · Interacción laboral fluida">B1 (Intermedio)</button>
+              <button class="wizard-chip-btn" data-target-input="pb-level" data-value="LESCO A1 · Expresión visual-gestual y vocabulario básico">LESCO A1</button>
+              <button class="wizard-chip-btn" data-target-input="pb-level" data-value="Portugués A2 · Atención a visitantes">Portugués A2</button>
+              <button class="wizard-chip-btn" data-target-input="pb-level" data-value="Francés B1 · Orientación turística">Francés B1</button>
+            </div>
+            <input type="text" id="pb-level" style="margin-top:0.35rem;">
+          </div>
+
+          <!-- Paso 3: Contexto Ocupacional -->
+          <div class="form-group">
+            <label for="pb-context">
+              <span>Paso 3: ¿En qué área laboral o situación del INA se aplicará?</span>
+              <span class="component-badge">3 / 5</span>
+            </label>
+            <div class="wizard-chips-group">
+              <button class="wizard-chip-btn active" data-target-input="pb-context" data-value="Personas adultas del INA en formación para servicio al cliente en turismo y hotelería en Costa Rica.">🏨 Turismo y Hotelería</button>
+              <button class="wizard-chip-btn" data-target-input="pb-context" data-value="Grupo de personas adultas en formación para comercio, ventas y atención en tiendas.">🛍️ Comercio y Ventas</button>
+              <button class="wizard-chip-btn" data-target-input="pb-context" data-value="Estudiantes en entrenamiento para soporte y atención telefónica en centros de contacto bilingües.">🎧 Contact Centers</button>
+            </div>
+            <input type="text" id="pb-context" style="margin-top:0.35rem;">
+          </div>
+
+          <!-- Paso 4: Formato de Salida -->
+          <div class="form-group">
+            <label for="pb-format">
+              <span>Paso 4: ¿Qué formato exacto debe entregar la IA?</span>
+              <span class="component-badge">4 / 5</span>
+            </label>
+            <div class="wizard-chips-group">
+              <button class="wizard-chip-btn active" data-target-input="pb-format" data-value="Entregue exactamente: (1) objetivo observable, (2) preparación de 2 minutos, (3) guion incompleto de 4 turnos, (4) 5 expresiones útiles, (5) 2 preguntas de verificación.">Guion de 4 turnos + Frases</button>
+              <button class="wizard-chip-btn" data-target-input="pb-format" data-value="Hable con pronunciación clara y natural. Emita exactamente 1 o 2 oraciones por turno (máximo 16 palabras). Mantenga un diálogo de 4 turnos en total y luego entregue un cierre formativo breve en español.">🎙️ Diálogo Oral 4 Turnos</button>
+              <button class="wizard-chip-btn" data-target-input="pb-format" data-value="Entregue una tabla de 3 columnas: (1) Fragmento textual analizado, (2) Explicación transparente del error, (3) Opción mejorada contrastada con una micro-tarea de práctica de 2 minutos.">🔍 Tabla Explicable (XAI)</button>
+              <button class="wizard-chip-btn" data-target-input="pb-format" data-value="Entregue una rúbrica analítica de 4 criterios con descriptores observables y escala de 1 a 4 puntos.">Rúbrica de 4 criterios</button>
+            </div>
+            <textarea id="pb-format" style="margin-top:0.35rem;"></textarea>
+          </div>
+
+          <!-- Paso 5: Restricciones -->
+          <div class="form-group">
+            <label for="pb-restrictions">
+              <span>Paso 5: ¿Qué límites de tiempo y reglas debe respetar?</span>
+              <span class="component-badge">5 / 5</span>
+            </label>
+            <div class="wizard-chips-group">
+              <button class="wizard-chip-btn active" data-target-input="pb-restrictions" data-value="Actividad total de 12 minutos; oraciones de hasta 12 palabras; presente simple y pasado simple; no inventar políticas reales ni resolver las respuestas del estudiante.">12 min · Oraciones cortas</button>
+              <button class="wizard-chip-btn" data-target-input="pb-restrictions" data-value="Tolere pausas de pensamiento de hasta 5 segundos sin cortar. NO dé respuestas complacientes vacías ('Awesome!'). Al final, señale 1 acierto y 1 recomendación.">⏱️ Tolerar Pausas de Voz</button>
+              <button class="wizard-chip-btn" data-target-input="pb-restrictions" data-value="PROHIBIDO redactar el texto completo por el estudiante. Guíe con preguntas reflexivas paso a paso. Espere cada respuesta antes de avanzar.">🚫 Prohibido Dar la Respuesta</button>
+            </div>
+            <textarea id="pb-restrictions" style="margin-top:0.35rem;"></textarea>
+          </div>
+        </div>
+
+        <!-- Panel de Vista Previa y Calibración -->
+        <div class="builder-preview-panel">
+          <div class="preview-header">
+            <h4>📄 Su Prompt Armado Listo para Usar</h4>
+            <span id="pb-validation-indicator" class="validation-indicator complete">✓ 5/5 componentes completos</span>
+          </div>
+
+          <div id="pb-output-box" class="prompt-output-box" tabindex="0"></div>
+
+          <div style="display:flex;flex-direction:column;gap:0.5rem;margin-top:auto;">
+            <button id="btn-copy-prompt" class="btn-primary" style="justify-content:center;padding:0.75rem;">
+              📋 Copiar Prompt Completo para Pegar en ChatGPT / Claude
+            </button>
+            <span style="font-size:0.75rem;color:var(--text-light);text-align:center;">
+              Pegue este texto directamente en su herramienta de IA para obtener resultados precisos.
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+<!-- ====================================================================
+         PESTAÑA 6: Probador de Rúbricas y Muestras Sintéticas (P3.8)
+         ==================================================================== -->
+    <div id="subpane-rubric" class="subtab-pane" data-parent-zone="tools">
+      <div class="section-header-row">
+        <div class="section-title-group">
+          <h2>📋 Probador de Rúbricas Analíticas (PR-05 / P3.8)</h2>
+          <div class="section-subtitle">Haga clic en las celdas para evaluar las muestras de estudiantes. Observe cómo la puntuación se calcula al instante.</div>
+        </div>
+      </div>
+
+      <div class="rubric-evaluator-container">
+        <!-- Banner de Instrucciones Paso a Paso -->
+        <div class="rubric-instructions-banner">
+          <h4>💡 ¿Cómo funciona esta prueba? (Guía en 3 Pasos)</h4>
+          <div class="rubric-steps-row">
+            <div class="rubric-step-item">
+              <strong>1️⃣ Paso 1: Elija y lea la muestra</strong>
+              <span>Seleccione Muestra A (sólida), Muestra B (defectuosa) o Muestra C (interacción oral con sesgo de IA).</span>
+            </div>
+            <div class="rubric-step-item">
+              <strong>2️⃣ Paso 2: Evalúe los 4 criterios</strong>
+              <span>Haga clic en la casilla de nivel que corresponda (1 a 4 pts) en cada una de las 4 filas.</span>
+            </div>
+            <div class="rubric-step-item">
+              <strong>3️⃣ Paso 3: Vea el resultado y compare</strong>
+              <span>Al completar las 4 filas, el sistema mostrará su calificación y la comparará con el dictamen de los facilitadores.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Alerta de Complacencia Acrítica (Sycophancy) -->
+        <div class="sycophancy-alert-box">
+          ⚠️ <strong>Alerta de Complacencia Acrítica (Sycophancy · Norma DS:PAS 2500-3):</strong>
+          Los modelos de lenguaje tienden por defecto a adular al estudiante (<em>"Your English is amazing and flawless!"</em>) aun cuando comete errores graves de gramática o protocolo de servicio. El criterio pedagógico docente es el único que puede frenar la fosilización de errores.
+        </div>
+
+        <!-- Selector de Muestra y Controles -->
+        <div class="rubric-samples-selector" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem;">
+          <div style="display:flex;gap:0.5rem;align-items:center;flex-wrap:wrap;">
+            <span style="font-weight:700;color:var(--ina-blue-900);">Muestra a calificar:</span>
+            <button class="sample-tab-btn active" data-sample="sampleA">Muestra A (Respuesta B1 Sólida)</button>
+            <button class="sample-tab-btn" data-sample="sampleB">Muestra B (Respuesta Defectuosa)</button>
+            <button class="sample-tab-btn" data-sample="sampleC">Muestra C (Interacción Oral + Complacencia IA)</button>
+          </div>
+          <div style="display:flex;gap:0.75rem;align-items:center;">
+            <span id="rubric-progress-text" style="font-size:0.85rem;font-weight:700;color:var(--ina-blue-700);">0 de 4 criterios evaluados</span>
+            <button id="btn-reset-rubric" class="btn-secondary" style="font-size:0.8rem;padding:0.35rem 0.75rem;">↺ Limpiar / Empezar en Blanco</button>
+          </div>
+        </div>
+
+        <!-- Visualizador del Texto de la Muestra -->
+        <div>
+          <span style="font-size:0.8rem;font-weight:700;color:var(--text-muted);display:block;margin-bottom:0.25rem;">📄 Correo enviado por el estudiante para evaluar:</span>
+          <div id="rubric-sample-text" class="sample-display-box"></div>
+        </div>
+
+        <!-- Tabla Interactiva de la Rúbrica -->
+        <table class="rubric-grid-table">
+          <thead>
+            <tr>
+              <th style="width:22%;">Criterio Pedagógico</th>
+              <th style="width:19.5%;">4 · Cumple con solidez (4 pts)</th>
+              <th style="width:19.5%;">3 · Cumple (3 pts)</th>
+              <th style="width:19.5%;">2 · Cumple parcialmente (2 pts)</th>
+              <th style="width:19.5%;">1 · No cumple (1 pt)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Criterio 1 -->
+            <tr>
+              <td>
+                <strong>1. Cumplimiento comunicativo</strong>
+                <span id="badge-crit-c1" class="criterion-status-badge pending">⚠️ Pendiente</span>
+              </td>
+              <td class="rubric-cell" data-criterion="c1" data-score="4">Reconoce el problema, propone solución clara y explica siguiente paso.</td>
+              <td class="rubric-cell" data-criterion="c1" data-score="3">Reconoce el problema y ofrece una solución comprensible.</td>
+              <td class="rubric-cell" data-criterion="c1" data-score="2">Reconoce parcialmente el problema o deja incompleta la solución.</td>
+              <td class="rubric-cell" data-criterion="c1" data-score="1">No responde al problema o no ofrece una acción viable.</td>
+            </tr>
+            <!-- Criterio 2 -->
+            <tr>
+              <td>
+                <strong>2. Organización y cohesión</strong>
+                <span id="badge-crit-c2" class="criterion-status-badge pending">⚠️ Pendiente</span>
+              </td>
+              <td class="rubric-cell" data-criterion="c2" data-score="4">Orden lógico; saludo, desarrollo y cierre; conectores precisos.</td>
+              <td class="rubric-cell" data-criterion="c2" data-score="3">Orden comprensible con saludo y cierre; conexiones claras.</td>
+              <td class="rubric-cell" data-criterion="c2" data-score="2">Ideas relacionadas pero orden o conexiones dificultan una parte.</td>
+              <td class="rubric-cell" data-criterion="c2" data-score="1">Ideas aisladas o desordenadas que impiden seguir el mensaje.</td>
+            </tr>
+            <!-- Criterio 3 -->
+            <tr>
+              <td>
+                <strong>3. Control lingüístico</strong>
+                <span id="badge-crit-c3" class="criterion-status-badge pending">⚠️ Pendiente</span>
+              </td>
+              <td class="rubric-cell" data-criterion="c3" data-score="4">Estructuras B1 frecuentes con errores menores que no afectan el sentido.</td>
+              <td class="rubric-cell" data-criterion="c3" data-score="3">Algunos errores pero el mensaje se comprende sin esfuerzo.</td>
+              <td class="rubric-cell" data-criterion="c3" data-score="2">Errores frecuentes obligan a releer, aunque se recupera la idea.</td>
+              <td class="rubric-cell" data-criterion="c3" data-score="1">Errores graves impiden comprender ideas esenciales.</td>
+            </tr>
+            <!-- Criterio 4 -->
+            <tr>
+              <td>
+                <strong>4. Adecuación profesional</strong>
+                <span id="badge-crit-c4" class="criterion-status-badge pending">⚠️ Pendiente</span>
+              </td>
+              <td class="rubric-cell" data-criterion="c4" data-score="4">Tono respetuoso, específico y apropiado para servicio al cliente.</td>
+              <td class="rubric-cell" data-criterion="c4" data-score="3">Tono apropiado, con alguna expresión poco natural.</td>
+              <td class="rubric-cell" data-criterion="c4" data-score="2">Alterna frases apropiadas con otras demasiado directas o imprecisas.</td>
+              <td class="rubric-cell" data-criterion="c4" data-score="1">Tono inapropiado o que puede agravar la situación.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Resumen de Puntuación -->
+        <div class="rubric-score-summary">
+          <div style="flex:1;">
+            <h4 style="color:white;margin:0;font-size:1.1rem;">Estado de la Evaluación:</h4>
+            <div id="rubric-expert-analysis" style="margin-top:0.35rem;">
+              <!-- Feedback dinámico -->
+            </div>
+          </div>
+          <div style="text-align:right;margin-left:1.5rem;">
+            <span style="font-size:0.75rem;color:#cbd5e1;text-transform:uppercase;display:block;margin-bottom:0.25rem;">Puntaje Acumulado:</span>
+            <div id="rubric-total-score" class="score-badge">0 / 16</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+<!-- ====================================================================
+         PESTAÑA 5: Banco de Casos Ocupacionales & Muestras Sintéticas
+         ==================================================================== -->
+    <div id="subpane-cases" class="subtab-pane" data-parent-zone="tools">
+      <div class="occupational-cases-section">
+        <div class="section-header-row">
+          <div class="section-title-group">
+            <h2>💼 Banco de Casos Ocupacionales del INA (P3.4)</h2>
+            <div class="section-subtitle">Situaciones auténticas de formación técnica para usar como insumos directos en las prácticas</div>
+          </div>
+        </div>
+
+        <!-- Filtros por Área Ocupacional -->
+        <div class="cases-filters-bar">
+          <span style="font-weight:700;font-size:0.85rem;color:var(--ina-blue-900);">Filtrar por Área:</span>
+          <button class="case-filter-btn active" data-area="all">Todos los Casos (8)</button>
+          <button class="case-filter-btn" data-area="turismo">Turismo & Hotelería</button>
+          <button class="case-filter-btn" data-area="comercio">Comercio & Ventas</button>
+          <button class="case-filter-btn" data-area="contact_center">Centros de Contacto</button>
+          <button class="case-filter-btn" data-area="inclusion">Inclusión / LESCO / Otros Idiomas</button>
+        </div>
+
+        <!-- Cuadrícula de Casos -->
+        <div id="cases-grid" class="cases-grid">
+          <!-- Renderizado dinámico desde app.js -->
+        </div>
+      </div>
+    </div>
+
+    
+<!-- ====================================================================
+         PESTAÑA 3: Visor Integrado de Presentaciones y Guiones
+         ==================================================================== -->
+    <div id="subpane-slides" class="subtab-pane" data-parent-zone="tools">
+      <div class="slide-deck-viewer">
+        <div class="slide-deck-header">
+          <div class="block-deck-selector">
+            <button class="deck-select-btn active" data-deck="block1">Bloque 1: Panorama & Método (AGM)</button>
+            <button class="deck-select-btn" data-deck="block2">Bloque 2: Usos No Convencionales (HL)</button>
+            <button class="deck-select-btn" data-deck="block3">Bloque 3: Modalidad Educativa (AGM)</button>
+            <button class="deck-select-btn" data-deck="block4">Bloque 4: Gestión de IA Local (AGM)</button>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.75rem;">
+            <span id="deck-facilitator-name" class="meta-pill">Agustín Gómez Meléndez</span>
+            <button id="btn-slide-fullscreen" class="btn-secondary" title="Pantalla completa">⛶ Pantalla Completa</button>
+          </div>
+        </div>
+
+        <!-- Marco de Visualización de la Lámina -->
+        <div id="slide-display-frame" class="slide-display-frame">
+          <img id="main-slide-img" class="slide-image-element" src="02_Presentaciones/qa_block1/slide-01.png" alt="Diapositiva del Bloque">
+          <div id="placeholder-slide-box" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;"></div>
+          
+          <div class="slide-nav-overlay">
+            <button id="btn-slide-prev" class="slide-nav-btn" aria-label="Lámina anterior">‹</button>
+            <button id="btn-slide-next" class="slide-nav-btn" aria-label="Lámina siguiente">›</button>
+          </div>
+        </div>
+
+        <!-- Controles y Tira de Miniaturas -->
+        <div class="slide-controls-bar">
+          <span id="slide-counter-badge" class="slide-counter-badge">Lámina 1 de 18</span>
+          <span style="font-size:0.8rem;color:var(--text-light);">Navegación: Use las flechas del teclado (← / →) o los botones laterales</span>
+        </div>
+
+        <div id="slide-thumbnails-strip" class="slide-thumbnails-strip">
+          <!-- Miniaturas renderizadas dinámicamente -->
+        </div>
+
+        <!-- Notas del Orador (Se sincronizan automáticamente) -->
+        <div class="speaker-notes-drawer">
+          <div class="speaker-notes-header">
+            <span>🎙️ Notas Pedagógicas del Orador / Facilitador:</span>
+          </div>
+          <div id="speaker-notes-content" class="speaker-notes-text">
+            Dé la bienvenida y establezca el contrato del bloque: la IA propone, usted decide.
+          </div>
+        </div>
+
+        <!-- Tarjetas de Ideas Clave en 1 Minuto -->
+        <div class="slide-summary-card">
+          <div class="slide-summary-header">
+            <span>💡 Ideas Clave para Recordar de este Bloque:</span>
+          </div>
+          <div class="slide-summary-points">
+            <div class="summary-point-item">
+              <strong>1. Juicio Docente:</strong>
+              <span>Una salida que suena bonita no siempre es correcta. Verifique siempre el <span class="interactive-term" data-tooltip="Marco Común Europeo de Referencia para las Lenguas (Escala: A1, A2, B1, B2)">nivel de idioma</span> y los datos.</span>
+            </div>
+            <div class="summary-point-item">
+              <strong>2. Control de Tiempos:</strong>
+              <span>Cada práctica se estructura en 12 min de ejecución autónoma y 3 min para subir el microentregable.</span>
+            </div>
+            <div class="summary-point-item">
+              <strong>3. Privacidad Absoluta:</strong>
+              <span>Cumplimiento Ley 8968: solo se emplean casos y muestras sintéticas.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>

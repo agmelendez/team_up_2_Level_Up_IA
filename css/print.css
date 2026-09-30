@@ -1,0 +1,73 @@
+/* ==========================================================================
+   TALLER INA · Estilos de Impresión / Fichas de Trabajo (print.css)
+   ========================================================================== */
+
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt !important;
+  }
+
+  .app-header,
+  .hero-actions,
+  .mode-toggle-group,
+  .timer-widget,
+  .slide-deck-viewer,
+  .tutor-cockpit-bar,
+  .tutor-control-panel,
+  .app-footer,
+  .toast-container,
+  .btn-primary,
+  .btn-secondary,
+  .btn-outline-amber,
+  .cases-filters-bar,
+  .content-tabs-nav {
+    display: none !important;
+  }
+
+  .tab-pane {
+    display: block !important;
+    page-break-before: always;
+  }
+
+  .hero-banner {
+    background: none !important;
+    color: #000000 !important;
+    border-bottom: 2px solid #000000 !important;
+    padding: 1rem 0 !important;
+  }
+
+  .hero-text h2 {
+    color: #000000 !important;
+    font-size: 1.5rem !important;
+  }
+
+  .hero-text p {
+    color: #333333 !important;
+  }
+
+  .practice-card {
+    border: 1px solid #666666 !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+    margin-bottom: 1.5rem;
+  }
+
+  .prompt-output-box,
+  .sample-display-box {
+    border: 1px solid #999999 !important;
+    background-color: #f9f9f9 !important;
+    color: #000000 !important;
+  }
+
+  .rubric-grid-table th {
+    background-color: #eeeeee !important;
+    color: #000000 !important;
+    border: 1px solid #000000 !important;
+  }
+
+  .rubric-grid-table td {
+    border: 1px solid #999999 !important;
+  }
+}

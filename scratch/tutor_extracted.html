@@ -1,0 +1,50 @@
+<section class="tutor-control-panel">
+          <div class="cockpit-grid">
+            <!-- Gestor del Ciclo de 25 Minutos -->
+            <div class="cycle-manager-box">
+              <div style="display:flex;justify-content:space-between;align-items:center;">
+                <h4 style="color:#4f46e5;margin:0;font-size:1.1rem;">⏱️ Gestor de Ciclo Estándar (25 min)</h4>
+                <span id="cycle-stage-title" style="font-size:0.85rem;font-weight:700;color:var(--ina-blue-900);">Demostración Conducida (8 min)</span>
+              </div>
+
+              <div class="cycle-stages-track">
+                <div class="cycle-stage-pill active" data-stage="0">
+                  <div class="stage-pill-time">8 min</div>
+                  <div class="stage-pill-label">1. Demo</div>
+                </div>
+                <div class="cycle-stage-pill" data-stage="1">
+                  <div class="stage-pill-time">12 min</div>
+                  <div class="stage-pill-label">2. Práctica</div>
+                </div>
+                <div class="cycle-stage-pill" data-stage="2">
+                  <div class="stage-pill-time">3 min</div>
+                  <div class="stage-pill-label">3. Entrega</div>
+                </div>
+                <div class="cycle-stage-pill" data-stage="3">
+                  <div class="stage-pill-time">2 min</div>
+                  <div class="stage-pill-label">4. Devolución</div>
+                </div>
+              </div>
+
+              <div style="display:flex;align-items:center;justify-content:space-between;background:#ffffff;padding:0.75rem 1rem;border-radius:8px;border:1px solid var(--border-medium);">
+                <div id="cycle-timer-display" style="font-family:var(--font-mono);font-size:1.75rem;font-weight:800;color:#6d28d9;">08:00</div>
+                <div style="display:flex;gap:0.5rem;">
+                  <button id="btn-cycle-start" class="btn-primary" style="background:#4f46e5;padding:0.4rem 0.85rem;">Iniciar Etapa</button>
+                  <button id="btn-cycle-pause" class="btn-secondary" style="display:none;padding:0.4rem 0.85rem;">Pausar</button>
+                  <button id="btn-cycle-reset" class="btn-secondary" style="padding:0.4rem 0.85rem;">Reiniciar</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Avisos Copiables para Teams -->
+            <div class="teams-chat-broadcast-box">
+              <div style="display:flex;justify-content:space-between;align-items:center;">
+                <h4 style="color:var(--ina-blue-900);margin:0;font-size:1.05rem;">💬 Avisos Rápidos para el Chat de Teams</h4>
+                <span style="font-size:0.75rem;color:var(--text-light);">Copia en 1 clic</span>
+              </div>
+              <div id="teams-broadcast-list" style="display:flex;flex-direction:column;gap:0.5rem;max-height:210px;overflow-y:auto;">
+                <!-- Renderizado dinámico desde tutor-mode.js -->
+              </div>
+            </div>
+          </div>
+        </section>

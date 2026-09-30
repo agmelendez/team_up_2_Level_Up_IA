@@ -1,0 +1,474 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/t9ms4l",
+    "id": "t9ms4l",
+    "slide": 8,
+    "layoutId": "299ea837-30d1-4b60-bc8e-1112bce332d8",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "ba1a96ad-fd24-472f-8149-8abe4eda6adc",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#123047",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "299ea837-30d1-4b60-bc8e-1112bce332d8",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "ba1a96ad-fd24-472f-8149-8abe4eda6adc",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "ba1a96ad-fd24-472f-8149-8abe4eda6adc",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fil8feps",
+      "id": "1",
+      "name": "section",
+      "bbox": [
+        76,
+        48,
+        240,
+        28
+      ],
+      "geometry": "rect",
+      "text": "BLOQUE 1 · 17:00",
+      "textPreview": "BLOQUE 1 · 17:00",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#6FB98F",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "BLOQUE 1 · 17:00"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "BLOQUE 1 · 17:00",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#6FB98F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "BLOQUE 1 · 17:00",
+              "fontSize": 16,
+              "color": "#6FB98F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0jup8j6d",
+      "id": "2",
+      "name": "title",
+      "bbox": [
+        76,
+        105,
+        1120,
+        80
+      ],
+      "geometry": "rect",
+      "text": "Sondeo: ¿qué no debe ingresar?",
+      "textPreview": "Sondeo: ¿qué no debe ingresar?",
+      "resolvedFontSize": 39,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 39,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Sondeo: ¿qué no debe ingresar?"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Sondeo: ¿qué no debe ingresar?",
+          "resolvedTextStyle": {
+            "fontSize": 39,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Sondeo: ¿qué no debe ingresar?",
+              "fontSize": 39,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1k3qho7y",
+      "id": "3",
+      "bbox": [
+        76,
+        210,
+        150,
+        6
+      ],
+      "geometry": "rect",
+      "fillColor": "#6FB98F",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mlc7atoj",
+      "id": "4",
+      "name": "body",
+      "bbox": [
+        76,
+        250,
+        1100,
+        300
+      ],
+      "geometry": "rect",
+      "text": "A. Objetivo A2 ficticio\nB. Texto sintético\nC. Grabación de estudiante\nD. Contexto ocupacional general",
+      "textPreview": "A. Objetivo A2 ficticio | B. Texto sintético | C. Grabación de estudiante | D. Contexto ocupacional general",
+      "resolvedFontSize": 33,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 33,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "A. Objetivo A2 ficticio"
+          },
+          {
+            "index": 2,
+            "text": "B. Texto sintético"
+          },
+          {
+            "index": 3,
+            "text": "C. Grabación de estudiante"
+          },
+          {
+            "index": 4,
+            "text": "D. Contexto ocupacional general"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "A. Objetivo A2 ficticio",
+          "resolvedTextStyle": {
+            "fontSize": 33,
+            "color": "#FFFFFF",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "A. Objetivo A2 ficticio",
+              "fontSize": 33,
+              "color": "#FFFFFF",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "B. Texto sintético",
+          "resolvedTextStyle": {
+            "fontSize": 33,
+            "color": "#FFFFFF",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "B. Texto sintético",
+              "fontSize": 33,
+              "color": "#FFFFFF",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "C. Grabación de estudiante",
+          "resolvedTextStyle": {
+            "fontSize": 33,
+            "color": "#FFFFFF",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "C. Grabación de estudiante",
+              "fontSize": 33,
+              "color": "#FFFFFF",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "D. Contexto ocupacional general",
+          "resolvedTextStyle": {
+            "fontSize": 33,
+            "color": "#FFFFFF",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "D. Contexto ocupacional general",
+              "fontSize": 33,
+              "color": "#FFFFFF",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nml8jep4",
+      "id": "5",
+      "name": "footer",
+      "bbox": [
+        76,
+        660,
+        1050,
+        24
+      ],
+      "geometry": "rect",
+      "text": "INA · Team Up 2 Level Up · 6 octubre 2026",
+      "textPreview": "INA · Team Up 2 Level Up · 6 octubre 2026",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 13,
+        "typeface": "+mn-lt",
+        "color": "#C8D4DA",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "INA · Team Up 2 Level Up · 6 octubre 2026"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "INA · Team Up 2 Level Up · 6 octubre 2026",
+          "resolvedTextStyle": {
+            "fontSize": 13,
+            "color": "#C8D4DA",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "INA · Team Up 2 Level Up · 6 octubre 2026",
+              "fontSize": 13,
+              "color": "#C8D4DA",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/onupcj6p",
+      "id": "6",
+      "name": "number",
+      "bbox": [
+        1170,
+        655,
+        40,
+        28
+      ],
+      "geometry": "rect",
+      "text": "08",
+      "textPreview": "08",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "color": "#6FB98F",
+        "bold": true,
+        "alignment": "right",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "08"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "08",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "color": "#6FB98F",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "08",
+              "fontSize": 14,
+              "color": "#6FB98F",
+              "bold": true,
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}
