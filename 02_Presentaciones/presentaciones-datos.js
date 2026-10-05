@@ -170,6 +170,159 @@
       ]
     },
 
+    bloque2: {
+      code: "P2.2 · Bloque 2",
+      title: "Usos no convencionales de la IA",
+      accent: "purple",
+      slides: [
+        {
+          title: "Usos no convencionales de la IA",
+          tone: "dark",
+          accent: "purple",
+          html: `<p class="eyebrow">Bloque 2 · 10:00 a 11:30</p><h1 class="hero-statement">Anticipar, diferenciar y practicar.<br><span class="accent-text">Sin delegar el juicio docente.</span></h1><p class="hero-subtitle">Tres ciclos para convertir salidas de IA en decisiones pedagógicas observables.</p>`,
+          notes: `<p>Presente el bloque como una ampliación del método del taller. La novedad no está en una lista de herramientas: está en usar la IA para preparar retroalimentación diferenciada, anticipar fallas de una tarea y sostener una práctica escrita con límites.</p>`,
+          source: methodologySource,
+          sourcesDetail: `<p>Objetivo, horario y tres ciclos definidos en el ${methodologySource}.</p>`
+        },
+        {
+          title: "Tres usos, una misma responsabilidad",
+          accent: "purple",
+          html: `<div><p class="slide-kicker">Mapa del bloque</p><h2 class="slide-title wide">La IA propone posibilidades; la persona docente selecciona, prueba y corrige</h2><div class="metric-grid"><div class="metric"><span class="metric-number">2.1</span><b>Diferenciar</b><span>Retroalimentación A2, B1 y apoyo de baja confianza.</span></div><div class="metric"><span class="metric-number">2.2</span><b>Anticipar</b><span>Errores probables, señales tempranas y microrremedios.</span></div><div class="metric"><span class="metric-number">2.3</span><b>Practicar</b><span>Chatbot escrito con nivel, ritmo y corrección controlados.</span></div></div></div>`,
+          notes: `<p>Explique que los tres usos comparten el mismo ciclo: definir una tarea, generar una salida, buscar un incumplimiento y adaptar. Evite presentar la predicción del modelo como diagnóstico del grupo.</p>`,
+          source: "PR-02, PR-03 y PR-04 · materiales del taller",
+          sourcesDetail: `<p>Las tres prácticas y sus productos están definidos en las consignas P3.1 y en el documento metodológico.</p>`
+        },
+        {
+          title: "Regla de datos para todo el bloque",
+          accent: "amber",
+          html: `<div class="split"><div><p class="slide-kicker">Antes de comenzar</p><h2 class="slide-title wide">Trabaje con muestras sintéticas y descripciones generales</h2><p class="lead">No ingrese nombres, cédulas, calificaciones, expedientes, conversaciones ni combinaciones que identifiquen a una persona estudiante.</p></div><div class="stack"><div class="statement-card"><strong>Recrear</strong><p>Conserve el patrón pedagógico sin copiar el caso real.</p></div><div class="statement-card"><strong>Minimizar</strong><p>Incluya solo lo necesario para la tarea.</p></div><div class="statement-card"><strong>Revisar</strong><p>Compruebe nivel, exactitud, tono y consecuencia.</p></div></div></div>`,
+          notes: `<p>Las muestras del portal ya son ficticias. Si alguien propone usar una producción real, detenga el proceso y convierta primero el patrón en una muestra sintética.</p>`,
+          source: methodologySource,
+          sourcesDetail: `<p>${privacyNote}</p><p>Las consignas PR-02, PR-03 y PR-04 incorporan reglas específicas de protección de datos.</p>`
+        },
+        {
+          title: "Cada ciclo ocupa veinticinco minutos",
+          accent: "navy",
+          html: `<div><p class="slide-kicker">Ritmo común</p><h2 class="slide-title wide">Ver, hacer, guardar y devolver</h2><div class="flow"><div class="flow-step">5 min<br>modelo</div><div class="flow-step">3 min<br>consigna</div><div class="flow-step">12 min<br>práctica</div><div class="flow-step">3 min<br>guardar</div><div class="flow-step">2 min<br>devolución</div></div><p class="lead">El producto queda en el cuaderno local de cada participante.</p></div>`,
+          notes: `<p>Mantenga visibles el temporizador y el Plan B. La demostración debe ser breve: la evidencia principal surge cuando cada persona prueba y corrige una salida.</p>`,
+          source: methodologySource,
+          sourcesDetail: `<p>Estructura de ciclo y microentregable definidos en el ${methodologySource}.</p>`
+        },
+        {
+          title: "PR-02 comienza con un patrón, no con una nota",
+          accent: "green",
+          html: `<div class="split"><div><p class="slide-kicker">Ciclo 2.1 · Seguimiento</p><h2 class="slide-title wide">Seleccione dos errores recurrentes en una muestra sintética</h2><p class="lead">Priorice por objetivo enseñado y efecto comunicativo. No intente corregir todo.</p></div><div class="prompt-example">Muestra: <em>You must send us photos.</em><br><br>Patrón observable: tono demasiado directo.<br>Objetivo: solicitud profesional en servicio al cliente.</div></div>`,
+          notes: `<p>Abra MS-04 o una muestra equivalente. Modele cómo separar evidencia textual, interpretación y prioridad. Una forma correcta puede seguir siendo inadecuada para el contexto.</p>`,
+          source: "P3.3 Muestras sintéticas; P3.6 Banco de retroalimentación",
+          sourcesDetail: `<p>Ejemplo tomado de MS-04 y de la clave docente. Todo el material es sintético y contiene errores deliberados.</p>`
+        },
+        {
+          title: "Diferenciar no es simplificar todo",
+          html: `<div><p class="slide-kicker">Un patrón · tres apoyos</p><h2 class="slide-title wide">Cambie la acción esperada, el metalenguaje y la cantidad de apoyo</h2><table class="matrix"><thead><tr><th>Destinatario</th><th>Retroalimentación</th><th>Próxima acción</th></tr></thead><tbody><tr><td>A2</td><td><em>Change You must to Please send us.</em></td><td>Reescribir una solicitud</td></tr><tr><td>B1</td><td>Reconozca el problema y después formule una solicitud cortés.</td><td>Revisar tono y secuencia</td></tr><tr><td>Baja confianza</td><td>Conserve la acción y suavice solo el inicio.</td><td>Modificar un fragmento</td></tr></tbody></table></div>`,
+          notes: `<p>Aclare que baja confianza no equivale a nivel bajo. Es una condición de apoyo. La persona docente decide si la diferenciación mantiene el objetivo y evita etiquetas sobre capacidad.</p>`,
+          source: "P3.6 Banco de retroalimentación diferenciada · patrón 8",
+          sourcesDetail: `<p>El banco propone comentarios A2, B1, de baja confianza y microrremedios para ocho patrones frecuentes.</p>`
+        },
+        {
+          title: "La salida genérica oculta el próximo paso",
+          accent: "amber",
+          html: `<div class="split equal"><div class="statement-card"><strong>No sirve todavía</strong><p>“Excellent job. Improve your grammar and vocabulary.”</p><small>Elogio sin evidencia, prioridad ni acción.</small></div><div class="statement-card"><strong>Sí orienta</strong><p>“Use <em>inconvenience</em> for the problem and <em>understanding</em> when you thank the customer. Correct those two phrases.”</p><small>Patrón, evidencia y nuevo intento.</small></div></div>`,
+          notes: `<p>Pida al grupo que identifique qué puede hacer la persona estudiante con cada comentario. La segunda versión sigue necesitando revisión docente de exactitud y nivel.</p>`,
+          source: "P3.5 Salida de respaldo PR-02",
+          sourcesDetail: `<p>Comparación basada en la salida aceptable y la salida deliberadamente defectuosa de PR-02.</p>`
+        },
+        {
+          title: "PR-02 Retroalimentación diferenciada",
+          accent: "purple",
+          html: `<div><p class="slide-kicker">Práctica guiada · 12 minutos</p><h2 class="slide-title wide">Dos patrones, tres apoyos y una microrremediación</h2><div class="metric-grid"><div class="metric"><span class="metric-number">2</span><b>Errores recurrentes</b><span>Elegidos por prioridad pedagógica.</span></div><div class="metric"><span class="metric-number">3</span><b>Versiones</b><span>A2, B1 y baja confianza.</span></div><div class="metric"><span class="metric-number">5</span><b>Minutos</b><span>Microrremedio breve por patrón.</span></div></div><p class="lead">Guarde también un comentario genérico que tuvo que corregir.</p></div>`,
+          notes: `<p>Asigne una muestra sintética y active el temporizador. Pida revisar nivel, precisión y tono. Quien no tenga acceso trabaja con la salida pregenerada.</p>`,
+          source: "P3.1 Consigna PR-02; P3.3; P3.5; P3.6",
+          sourcesDetail: `<p>Producto y Plan B definidos en los materiales de práctica del taller.</p>`
+        },
+        {
+          title: "El premortem didáctico cambia la pregunta",
+          accent: "navy",
+          html: `<div class="split"><div><p class="slide-kicker">Ciclo 2.2 · Apoyo anticipatorio</p><h2 class="slide-title wide">Imagine que la tarea falló: ¿qué se observaría?</h2><p class="lead">Anticipe errores de la tarea, no déficits de las personas.</p></div><div class="evidence-card"><span class="evidence-label">Secuencia de control</span><p>Error observable → hipótesis → señal temprana → microrremedio → alternativa sin internet.</p><small>Una hipótesis no es un diagnóstico.</small></div></div>`,
+          notes: `<p>Defina el premortem como preparación, no como predicción cierta. Describa la tarea, el nivel y el contexto general antes de pedir posibilidades.</p>`,
+          source: "P3.1 Consigna PR-03; P3.5 Salida de respaldo PR-03",
+          sourcesDetail: `<p>La estructura del análisis anticipatorio y su límite se establecen en los materiales PR-03.</p>`
+        },
+        {
+          title: "De la falla posible a un remedio breve",
+          accent: "green",
+          html: `<div><p class="slide-kicker">Ejemplo · Confirmar una reserva A2</p><h2 class="slide-title wide">Cada posibilidad debe producir una señal y una intervención comprobable</h2><table class="matrix"><thead><tr><th>Error observable</th><th>Señal temprana</th><th>Microrremedio</th></tr></thead><tbody><tr><td>No confirma la fecha</td><td>Omite mes o día</td><td>Reconstruir tres fechas</td></tr><tr><td>Formula dos preguntas juntas</td><td>El cliente responde solo una</td><td>Separar y practicar preguntas</td></tr><tr><td>Inventa una política</td><td>Promete algo no suministrado</td><td>Practicar cómo declarar límites</td></tr></tbody></table></div>`,
+          notes: `<p>La causa puede formularse como hipótesis, pero no es necesaria para actuar. Priorice primero el error con mayor impacto comunicativo y el remedio que pueda aplicarse antes de la tarea.</p>`,
+          source: "P3.5 Salida de respaldo PR-03 · CO-02",
+          sourcesDetail: `<p>Extracto del ejemplo aceptable para una reserva hotelera por teléfono, nivel A2 y grupo con niveles mezclados.</p>`
+        },
+        {
+          title: "Hipótesis no significa estereotipo",
+          accent: "amber",
+          html: `<div class="risk-band"><div><b>Evite</b><p>“El estudiantado adulto siempre tiene mala pronunciación.”</p></div><div><b>Reformule</b><p>“Puede omitir la confirmación de fecha si concentra la atención en el vocabulario.”</p></div><div><b>Compruebe</b><p>“Observe si menciona día y mes antes de cerrar.”</p></div></div><p class="lead">La intervención se activa por evidencia de la tarea, no por una etiqueta del grupo.</p>`,
+          notes: `<p>Detenga cualquier generalización sobre edad, origen, motivación o capacidad. Una descripción general del grupo no autoriza perfiles individuales ni conclusiones causales.</p>`,
+          source: "P3.5 Salida deliberadamente defectuosa PR-03",
+          sourcesDetail: `<p>Los materiales del taller contrastan errores observables con estereotipos presentados incorrectamente como hechos.</p>`
+        },
+        {
+          title: "PR-03 Anticipe errores y microrremedios",
+          accent: "purple",
+          html: `<div><p class="slide-kicker">Práctica guiada · 12 minutos</p><h2 class="slide-title wide">Cinco fallas posibles antes de impartir la tarea</h2><div class="decision-grid"><div class="decision"><b>Describa</b><span>Tarea, nivel y contexto general.</span></div><div class="decision"><b>Anticipe</b><span>Cinco errores observables.</span></div><div class="decision"><b>Remedie</b><span>Una acción de cinco minutos por error.</span></div><div class="decision"><b>Depure</b><span>Una suposición injustificada.</span></div><div class="decision"><b>Adapte</b><span>Una opción sin internet.</span></div></div></div>`,
+          notes: `<p>Use CO-02, CO-07 o CO-10. Antes de guardar, pida marcar expresamente cuál afirmación es hipótesis y cuál señal permitiría comprobarla.</p>`,
+          source: "P3.1 Consigna PR-03; P3.4 Casos ocupacionales; P3.5",
+          sourcesDetail: `<p>Casos sugeridos y producto de la práctica definidos en los materiales del taller.</p>`
+        },
+        {
+          title: "Un chatbot de práctica es un contrato de interacción",
+          accent: "navy",
+          html: `<div><p class="slide-kicker">Ventana 2.3 · Práctica escrita</p><h2 class="slide-title wide">Defina qué hace, cómo responde y dónde se detiene</h2><div class="decision-grid"><div class="decision"><b>Rol</b><span>Interlocutor y objetivo.</span></div><div class="decision"><b>Nivel</b><span>Léxico, gramática y longitud.</span></div><div class="decision"><b>Ritmo</b><span>Una pregunta y espera por turno.</span></div><div class="decision"><b>Corrección</b><span>Cuándo, cuánto y con qué apoyo.</span></div><div class="decision"><b>Límites</b><span>Datos, invenciones, cambio de papel y cierre.</span></div></div></div>`,
+          notes: `<p>No es necesario crear un asistente personalizado. Un bloque de instrucciones completo en una conversación nueva permite probar el diseño. Las interfaces y condiciones de las cuentas pueden cambiar.</p>`,
+          source: "P3.7 Chatbot de práctica escrita",
+          sourcesDetail: `<p>La plantilla reutilizable P3.7 define rol, situación, nivel, ritmo, corrección, límites, control de nivel y cierre.</p>`
+        },
+        {
+          title: "Dos turnos revelan más que una promesa",
+          accent: "green",
+          html: `<div><p class="slide-kicker">Prueba de esfuerzo</p><h2 class="slide-title wide">Compruebe nivel, espera y política de corrección</h2><table class="matrix"><thead><tr><th>Entrada de prueba</th><th>Debe hacer</th><th>Incumplimiento visible</th></tr></thead><tbody><tr><td><em>Your room no is ready…</em></td><td>Mantener papel, una pregunta y como máximo una pista</td><td>Corregir todo o completar ambas voces</td></tr><tr><td><em>No sé cómo decir…</em></td><td>Dar apoyo breve, pedir intento en inglés y esperar</td><td>Traducir todo o continuar por la persona</td></tr></tbody></table></div>`,
+          notes: `<p>Ejecute exactamente dos pruebas. Registre una instrucción que el asistente incumplió y cambie el bloque original; no intente corregir el comportamiento solo con mensajes posteriores.</p>`,
+          source: "P3.7 · Guion de prueba de dos turnos",
+          sourcesDetail: `<p>Entradas, comportamiento esperado y señales de incumplimiento provienen del guion P3.7.</p>`
+        },
+        {
+          title: "Cinco fallas típicas del chatbot",
+          accent: "amber",
+          html: `<div><p class="slide-kicker">Ajuste del bloque original</p><h2 class="slide-title wide">Convierta cada falla en una regla observable</h2><table class="matrix"><thead><tr><th>Falla</th><th>Ajuste</th></tr></thead><tbody><tr><td>Sale del nivel</td><td>Limite longitud, léxico y gramática.</td></tr><tr><td>Corrige demasiado</td><td>Máximo un aspecto y solo bajo una condición.</td></tr><tr><td>Responde en español</td><td>Defina una pista y exija nuevo intento.</td></tr><tr><td>Elogia todo</td><td>Prohíba elogio automático; pida evidencia.</td></tr><tr><td>Olvida el papel</td><td>Ordene esperar y fije un cierre.</td></tr></tbody></table></div>`,
+          notes: `<p>No suponga que una instrucción perfecta elimina toda falla. La estabilidad se comprueba con entradas variadas. El producto del taller documenta un incumplimiento real y un ajuste.</p>`,
+          source: "P3.7 · Cinco fallas típicas y su ajuste",
+          sourcesDetail: `<p>Resumen directo de la matriz de fallas y ajustes del material P3.7.</p>`
+        },
+        {
+          title: "PR-04 Configure y pruebe el chatbot",
+          accent: "purple",
+          html: `<div><p class="slide-kicker">Práctica guiada · 12 minutos</p><h2 class="slide-title wide">Un bloque de instrucciones, dos turnos y un ajuste</h2><div class="metric-grid"><div class="metric"><span class="metric-number">1</span><b>Contrato</b><span>Rol, nivel, ritmo, corrección y límites.</span></div><div class="metric"><span class="metric-number">2</span><b>Turnos de prueba</b><span>Nivel y respuesta ante español.</span></div><div class="metric"><span class="metric-number">1</span><b>Incumplimiento</b><span>Registrado con el ajuste aplicado.</span></div></div><p class="lead">Haga la prueba usted mismo; no use conversaciones reales de estudiantes.</p></div>`,
+          notes: `<p>Use CO-01, CO-02, CO-06 o CO-08. Quien no tenga acceso analiza la salida de respaldo y reescribe una regla que habría evitado la falla.</p>`,
+          source: "P3.1 Consigna PR-04; P3.4; P3.5; P3.7",
+          sourcesDetail: `<p>Producto, casos sugeridos, plantilla y Plan B definidos en los materiales del taller.</p>`
+        },
+        {
+          title: "Qué se delega y qué no",
+          tone: "dark",
+          accent: "amber",
+          html: `<p class="eyebrow">Cierre · 7 minutos</p><h2 class="hero-statement">Delegue borradores.<br><span class="accent-text">Conserve las decisiones.</span></h2><div class="comparison-grid" style="margin-top:32px"><div class="comparison"><b>Sí puede apoyar</b><span>Variantes, patrones posibles, pistas, simulaciones y formatos.</span></div><div class="comparison"><b>No se delega</b><span>Diagnóstico, prioridad pedagógica, calificación final, protección de datos y efecto sobre una persona.</span></div></div>`,
+          notes: `<p>Recupere un hallazgo de cada práctica. Pida nombrar una salida que mejoró después de revisarla y una decisión que permaneció bajo responsabilidad docente.</p>`,
+          source: methodologySource,
+          sourcesDetail: `<p>El cierre y la separación entre apoyo de IA y responsabilidad docente provienen del ${methodologySource}.</p>`
+        },
+        {
+          title: "Decisiones para adaptar antes de facilitar",
+          accent: "purple",
+          html: `<div><p class="slide-kicker">Preparación del Bloque 2</p><h2 class="slide-title wide">Qué necesito de la persona facilitadora</h2><div class="decision-grid"><div class="decision"><b>Ejemplo propio</b><span>Un patrón de retroalimentación que considere prioritario.</span></div><div class="decision"><b>Tarea meta</b><span>La actividad para el premortem didáctico.</span></div><div class="decision"><b>Contexto</b><span>El caso ocupacional para el chatbot escrito.</span></div><div class="decision"><b>Criterio</b><span>Qué no aceptará en nivel, tono y corrección.</span></div><div class="decision"><b>Plan B</b><span>Qué salida pregenerada proyectará si falla el acceso.</span></div></div></div>`,
+          notes: `<p>Esta lámina responde al requisito de adaptación. Antes de la sesión, la persona facilitadora debe elegir ejemplos y criterios; no es necesario cambiar la arquitectura de las prácticas.</p>`,
+          source: "P2.2 · Requisito de adaptación de la presentación base",
+          sourcesDetail: `<p>Lista de decisiones derivada del encargo P2.2 y de los productos PR-02, PR-03 y PR-04.</p>`
+        }
+      ]
+    },
+
     bloque3: {
       code: "P2.3 · Bloque 3",
       title: "Modalidad educativa",

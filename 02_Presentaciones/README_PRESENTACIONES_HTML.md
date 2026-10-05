@@ -2,11 +2,12 @@
 
 ## Archivos
 
-- `INA_F2-P2.1_Bloque1_PanoramaMetodo_v2.html`: 20 láminas para el Bloque 1.
-- `INA_F2-P2.3_Bloque3_ModalidadEducativa_v2.html`: 15 láminas para el Bloque 3.
-- `INA_F2-P2.4_Bloque4_IALocal_v2.html`: 11 láminas para el Bloque 4.
+- `INA_F2-P2.1_Bloque1_PanoramaMetodo_v2.html`: 18 láminas para el Bloque 1.
+- `INA_F2-P2.2_Bloque2_UsosNoConvencionales_v2.html`: 18 láminas para el Bloque 2.
+- `INA_F2-P2.3_Bloque3_ModalidadEducativa_v2.html`: 14 láminas para el Bloque 3.
+- `INA_F2-P2.4_Bloque4_IALocal_v2.html`: 10 láminas para el Bloque 4.
 - `presentaciones.css`: sistema visual compartido en formato 16:9.
-- `presentaciones-datos.js`: contenido, notas y fuentes de las tres presentaciones.
+- `presentaciones-datos.js`: contenido, notas y fuentes de las cuatro presentaciones.
 - `presentaciones.js`: navegación, progreso, notas, fuentes, vista general e impresión.
 
 Los archivos también funcionan de manera independiente, pero ya están integrados al portal mediante `herramientas.html#slides`. La portada `index.html` ofrece accesos directos en el hero y en el directorio de herramientas.
@@ -49,11 +50,11 @@ Las presentaciones evitan afirmar que:
 
 ## Estado de integración
 
-Estado actual: presentaciones HTML creadas, verificadas e integradas localmente al visor del portal.
+Estado actual: cuatro presentaciones HTML creadas, verificadas e integradas localmente al visor del portal.
 
-- Bloques disponibles: 1, 3 y 4 (46 láminas en total).
-- Bloque 2: mantiene un marcador informativo hasta recibir la versión final de Hannia León Fuentes.
+- Bloques disponibles: 1, 2, 3 y 4 (60 láminas en total).
+- Bloque 2: presentación base completa con PR-02, PR-03, PR-04, notas, fuentes y decisiones de adaptación para la persona facilitadora.
 - Acceso general: `index.html` → “Presentaciones HTML” o `herramientas.html#slides`.
 - Acceso independiente: botón “Abrir en pestaña”, que conserva la lámina activa.
-- Fuente del visor: `presentaciones-datos.js`; no se usan las carpetas de capturas PNG para proyectar los tres bloques integrados.
+- Fuente del visor: `presentaciones-datos.js`; no se usan las carpetas de capturas PNG para proyectar los cuatro bloques integrados.
 - Estado de publicación: cambio local; no se realizó despliegue ni modificación remota.

@@ -2,9 +2,8 @@
 ## Proyecto: *Team Up 2 Level Up: Inteligencia Artificial en la Enseñanza del Inglés Técnico*
 ### Instituto Nacional de Aprendizaje (INA) · Núcleo Comercio y Servicios · Subsector de Idiomas
 **Fecha de la Jornada Oficial:** 6 de octubre de 2026  
-**Facilitadores Académicos:**  
-- **Agustín Gómez Meléndez** (UNED / UCR) · [ORCID: 0000-0002-7886-0740](https://orcid.org/0000-0002-7886-0740)  
-- **Hannia León Fuentes** (UCR / PROTEA)  
+**Facilitación académica integral:** **Agustín Gómez Meléndez** (UNED / UCR) · [ORCID: 0000-0002-7886-0740](https://orcid.org/0000-0002-7886-0740)
+**Asesoría académica:** **Hannia León Fuentes** (UCR / PROTEA)
 **Versión del Sistema:** 2.5 (Modular Multi-Página · Design System Lovable/MagicSchool · RAG 41 Docs · SVG Roadmap · Ley 8968)  
 **Licencia de Obra:** Creative Commons Atribución 4.0 Internacional ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/))  
 **Documento Generado:** 28 de septiembre de 2026 (19:35 UTC-6)  
@@ -20,7 +19,7 @@ Este archivo constituye el **núcleo de control maestro, bitácora de desarrollo
 flowchart TD
     subgraph Portal["Ecosistema Digital Team Up 2 Level Up"]
         Index["index.html\n(Portal Central & Taller en Vivo)"]
-        Presentaciones["02_Presentaciones/*.html\n(46 láminas HTML 16:9)"]
+        Presentaciones["02_Presentaciones/*.html\n(60 láminas HTML 16:9)"]
         Cronograma["img/ruta-pedagogica-cronograma.svg\n(Lienzo Vectorial de la Jornada)"]
         Herramientas["herramientas.html\n(Suite de Productividad Docente)"]
         Biblioteca["biblioteca.html\n(Centro RAG 41 PDFs & Ley 8968)"]
@@ -46,15 +45,15 @@ flowchart TD
 ## 🏛️ 2. Arquitectura de la Solución (Multi-Page Architecture)
 
 ### 2.1 Justificación del Desacoplamiento Arquitectónico
-Originalmente, el portal operaba como una SPA (*Single Page Application*) monolítica de más de 115,000 bytes. Al concentrar el Asistente de Prompts de 5 componentes, el Probador de Rúbricas analíticas (0-16 pts), los 8 casos ocupacionales técnicos, el visor de presentaciones (46 láminas HTML verificadas en los bloques 1, 3 y 4, más la estructura pendiente del Bloque 2), 41 fichas documentales del corpus RAG, las 7 prácticas activas conducidas y la normativa de gobernanza, se generaba una **fatiga visual y cognitiva severa** en docentes con baja o mediana alfabetización digital.
+Originalmente, el portal operaba como una SPA (*Single Page Application*) monolítica de más de 115,000 bytes. Al concentrar el Asistente de Prompts de 5 componentes, el Probador de Rúbricas analíticas (0-16 pts), los 8 casos ocupacionales técnicos, el visor de presentaciones (60 láminas HTML verificadas en los cuatro bloques), 41 fichas documentales del corpus RAG, las 7 prácticas activas conducidas y la normativa de gobernanza, se generaba una **fatiga visual y cognitiva severa** en docentes con baja o mediana alfabetización digital.
 
 La versión 2.5 resolvió este problema adoptando una **arquitectura multi-página modular y desacoplada** inspirada en los estándares de **Lovable Cohort** y **MagicSchool.ai**:
 
 | Archivo | Rol en el Ecosistema | Componentes Principales | Enlace |
 | :--- | :--- | :--- | :--- |
 | **`index.html`** | Portal Principal, Hub de Inicio y Taller en Vivo | Hero Lovable con métricas flotantes, Directorio MagicSchool de 7 tarjetas, cronograma, selector de las 7 prácticas, temporizadores, cuaderno local acumulativo, avisos para Teams y Plan B modal. | [index.html](index.html) |
-| **`herramientas.html`** | Suite Pedagógica de Productividad | Segmented Control Pills con 4 herramientas: 1) Asistente de Prompts con 5 componentes (`#builder`), 2) Probador de Rúbricas 0-16 pts (`#rubric`), 3) Banco de Casos Ocupacionales (`#cases`), 4) Visor de Presentaciones HTML (`#slides`) con pantalla completa, enlace independiente, notas y navegación sincronizada. | [herramientas.html](herramientas.html) |
-| **`02_Presentaciones/*.html`** | Presentaciones proyectables | Bloques 1, 3 y 4 en HTML 16:9 (20, 15 y 11 láminas), con notas, fuentes, vista general, navegación táctil/teclado e impresión. El Bloque 2 conserva un marcador explícito hasta recibir su presentación final. | Acceso desde `herramientas.html#slides` o apertura independiente. |
+| **`herramientas.html`** | Suite Pedagógica de Productividad | Segmented Control Pills con 4 herramientas: 1) Asistente de Prompts con 5 componentes (`#builder`), 2) Probador de Rúbricas con modalidad cuantitativa 0-16 y modalidad cualitativa sin nota (`#rubric`), 3) Banco de Casos Ocupacionales (`#cases`), 4) Visor de Presentaciones HTML (`#slides`) con pantalla completa, enlace independiente, notas y navegación sincronizada. | [herramientas.html](herramientas.html) |
+| **`02_Presentaciones/*.html`** | Presentaciones proyectables | Bloques 1 a 4 en HTML 16:9 (18, 18, 14 y 10 láminas), con notas, fuentes, vista general, navegación táctil/teclado e impresión. | Acceso desde `herramientas.html#slides` o apertura independiente. |
 | **`biblioteca.html`** | Centro de Evidencia Científica & RAG | Segmented Control Pills con 3 módulos: 1) Corpus RAG de 41 PDFs con buscador reactivo por facetas (`#documents`), 2) Evidencia empírica (`#evidence`), 3) Marco de Gobernanza Ley 8968 y Compromiso (`#closing`). | [biblioteca.html](biblioteca.html) |
 | **`simulador.html`** | Entorno Práctico de Interacción | Chatbot interactivo de práctica escrita y tutoría socrática para recepcionistas de hotel (A2), con andamiaje lingüístico, manejo de español y modo de voz. | [simulador.html](simulador.html) |
 | **`glosario.html`** | Diccionario Terminológico Amigable | 18 términos esenciales de IA explicados mediante analogías cotidianas del aula y buscador en tiempo real. | [glosario.html](glosario.html) |
@@ -72,7 +71,7 @@ El portal implementa un sistema visual moderno, limpio y con abundante espacio n
 - **Azul Marino Medio:** `#003D66` (Degradados de cabecera y tarjetas activas).
 - **Verde Esmeralda Éxito:** `#059669` / `#10B981` (Insignias de prácticas, rúbricas completadas, acentos activos).
 - **Ámbar / Oro Advertencia:** `#D97706` / `#F59E0B` (Alertas de Plan B, microrremedios, avisos de privacidad).
-- **Púrpura / Índigo Facilitación:** `#7C3AED` / `#4F46E5` (Etiquetado del Bloque 2 de Hannia León y modo facilitador).
+- **Púrpura / Índigo Facilitación:** `#7C3AED` / `#4F46E5` (Etiquetado temático del Bloque 2 y modo facilitador).
 - **Gris Superficie:** `#F8FAFC` / `#FFFFFF` (Fondos de página, elevaciones sutiles sin saturar la retina).
 
 ### 3.2 Componentes UI Emblemáticos
@@ -141,9 +140,9 @@ Para evitar salidas genéricas, complacientes o desalineadas al nivel del estudi
 ```mermaid
 graph TD
     PR1["PR-01: Quejas Hotel A2<br>(Bloque 1 · AGM · 12 min)"]
-    PR2["PR-02: Feedback Diferenciado A2/B1<br>(Bloque 2 · HL · 12 min)"]
-    PR3["PR-03: Anticipación de Errores<br>(Bloque 2 · HL · 12 min)"]
-    PR4["PR-04: Chatbot Tutor Escrito<br>(Bloque 2 · HL · 12 min)"]
+    PR2["PR-02: Feedback Diferenciado A2/B1<br>(Bloque 2 · AGM · 12 min)"]
+    PR3["PR-03: Anticipación de Errores<br>(Bloque 2 · AGM · 12 min)"]
+    PR4["PR-04: Chatbot Tutor Escrito<br>(Bloque 2 · AGM · 12 min)"]
     PR5["PR-05: Rúbrica & Esfuerzo 0-16 pts<br>(Bloque 3 · AGM · 12 min)"]
     PR6["PR-06: Práctica Oral por Voz 70/30<br>(Bloque 3 · AGM · 12 min)"]
     PR7["PR-07: Gestión IA Local & Ley 8968<br>(Bloque 4 · AGM · 12 min)"]
@@ -157,19 +156,19 @@ graph TD
    - *Verificación:* Comprobar que el modelo entrega exactamente un guion de 4 turnos, lista de 5 frases formales y criterio observable en A2.
    - *Plan B:* Salida pregenerada en archivo de texto para trabajo sin red.
 
-2. **PR-02 (Bloque 2 · HL · 12 min):**
+2. **PR-02 (Bloque 2 · AGM · 12 min):**
    - *Título:* Retroalimentación formativa y diferenciada ante muestras sintéticas.
    - *Caso de Prueba:* Correo sintético con errores reales (*"Dear sir, I write to complain because room dirty..."*).
    - *Verificación:* Contrastar la devolución generada para A2 frente a B1; verificar que contenga 1 microrremedio de 5 minutos y cero elogios complacientes.
    - *Plan B:* Salida precalibrada con contraste formal y matriz de errores.
 
-3. **PR-03 (Bloque 2 · HL · 12 min):**
+3. **PR-03 (Bloque 2 · AGM · 12 min):**
    - *Título:* Anticipación de errores comunicativos frecuentes y microrremedios.
    - *Caso de Prueba:* Servicio al cliente telefónico de soporte técnico en A2.
    - *Verificación:* Lista de 5 errores esperados, causa lingüística y remedio de 3 minutos antes de la simulación.
    - *Plan B:* Catálogo impreso con 5 errores típicos del aprendiz hispanohablante.
 
-4. **PR-04 (Bloque 2 · HL · 12 min):**
+4. **PR-04 (Bloque 2 · AGM · 12 min):**
    - *Título:* Configuración y prueba de chatbot de práctica escrita.
    - *Caso de Prueba:* Toma de reserva hotelera por mensajería instantánea.
    - *Verificación:* Regla socrática de 1 pregunta por turno, límite de oraciones cortas y reconducción al inglés ante el uso de español.
@@ -230,6 +229,8 @@ El centro documental en [biblioteca.html](biblioteca.html) integra 41 documentos
 | :---: | :---: | :--- | :--- | :--- |
 | **D-01** | 28/09/2026 | Sobrecarga cognitiva y saturación visual en la SPA monolítica original (115 KB). | Desacoplar la solución en páginas independientes (`index.html`, `herramientas.html`, `biblioteca.html`, `simulador.html`, `glosario.html`). | Navegación ligera, páginas especializadas de menos de 35 KB cada una, carga instantánea. |
 | **D-11** | 30/09/2026 | El ecosistema completo necesitaba una orientación amigable para personas que ingresan sin conocer su arquitectura. | Crear `tutorial.html` con flujo pedagógico, mapa SVG, recorrido interactivo y rutas por necesidad; ofrecer su acceso permanente en el muelle flotante junto a idioma y accesibilidad para no sobrecargar el menú principal. | Una persona puede comprender el sitio, elegir una ruta y llegar al recurso correspondiente desde un único servicio de orientación. |
+| **D-12** | 01/10/2026 | La organización utiliza evaluación cualitativa, aunque el probador existente presenta una escala sumativa de 0-16. | Conservar la modalidad cuantitativa y añadir una modalidad cualitativa basada en niveles de logro, perfil por criterio y retroalimentación narrativa sin nota. | El probador admite ambos enfoques sobre la misma evidencia sin sustituir ni mezclar sus resultados. |
+| **D-13** | 01/10/2026 | La organización confirmó que la jornada se desarrolla de 8:00 a. m. a 3:00 p. m. | Mostrar el horario completo en la cabecera y expresarlo de forma explícita en la descripción y el cronograma vectorial. | El horario institucional queda visible y consistente en el portal y en el SVG descargable. |
 | **D-02** | 28/09/2026 | Solapamiento de elementos fijos (*sticky headers*) que tapaban el contenido al hacer scroll. | Implementación de `scroll-padding-top` y `scroll-margin-top` en `html`, y conversión de `#live-focus-banner` de `sticky` a `relative`. | Cero solapamientos; el usuario siempre visualiza el encabezado completo de la práctica. |
 | **D-03** | 28/09/2026 | Falta de modernidad y sensación de interfaz anticuada. | Creación del sistema de diseño `modern-portal.css` inspirado en Lovable Cohort y MagicSchool.ai. | Estética profesional y atractiva, tipografía limpia, paleta corporativa INA y elevaciones sutiles. |
 | **D-04** | 28/09/2026 | Excepción JavaScript en `index.html` (`TypeError: Cannot set properties of null` en `pb-role`), que bloqueaba los clics en el stepper y botones de Plan B. | Incorporación de Cláusulas de Guarda (`Guard Clauses`) en `prompt-builder.js`, `rubric-tester.js` y `slide-viewer.js`, y aislamiento de submódulos en bloques `try-catch`. | Estabilidad total; el stepper y los modales responden de inmediato sin importar qué scripts se incluyan. |

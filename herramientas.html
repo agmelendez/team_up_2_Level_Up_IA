@@ -171,7 +171,7 @@
           <span>⚡ 1. Asistente de Prompts</span>
         </button>
         <button class="dedicated-subtab-btn" data-tool-tab="rubric">
-          <span>📋 2. Probador de Rúbricas (0-16 pts)</span>
+          <span>📋 2. Probador de Rúbricas</span>
         </button>
         <button class="dedicated-subtab-btn" data-tool-tab="cases">
           <span>💼 3. Casos Ocupacionales INA</span>
@@ -211,7 +211,7 @@
                 <option value="diff_feedback">4. Retroalimentación diferenciada (Muestra escrita)</option>
                 <option value="custom_chatbot">5. Configurar Chatbot simulador (Recepción)</option>
                 <option value="voice_oral_simulation">6. [Bloques 1 y 3] Simulación Oral con IA de Voz (A2/B1)</option>
-                <option value="socratic_scaffolding">7. [Bloque 2 HL] Andamiaje Socrático sin dar la respuesta</option>
+                <option value="socratic_scaffolding">7. [Bloque 2 AGM] Andamiaje Socrático sin dar la respuesta</option>
                 <option value="explainable_feedback">8. [Bloque 3 AGM] Retroalimentación Lingüística Explicable (XAI)</option>
               </select>
             </div>
@@ -231,7 +231,7 @@
               <button class="wizard-chip-btn" data-target-input="pb-role" data-value="Actúe como un cliente extranjero que interactúa con un estudiante de recepción para practicar conversación.">💬 Cliente para Práctica</button>
               <button class="wizard-chip-btn" data-target-input="pb-role" data-value="Actúe como especialista en evaluación formativa y corrección constructiva de errores en inglés técnico.">📝 Evaluador Formativo</button>
               <button class="wizard-chip-btn" data-target-input="pb-role" data-value="Actúe como interlocutor angloparlante para una práctica oral conversacional en vivo por voz con un estudiante técnico de hotelería/servicios del INA.">🎙️ Interlocutor de Voz (NYU 2026)</button>
-              <button class="wizard-chip-btn" data-target-input="pb-role" data-value="Actúe como tutor pedagógico socrático de inglés ocupacional para formación técnica profesional.">🪜 Tutor Socrático (HL)</button>
+              <button class="wizard-chip-btn" data-target-input="pb-role" data-value="Actúe como tutor pedagógico socrático de inglés ocupacional para formación técnica profesional.">🪜 Tutor Socrático</button>
             </div>
             <textarea id="pb-role" style="margin-top:0.35rem;"></textarea>
           </div>
@@ -326,11 +326,22 @@
       <div class="section-header-row">
         <div class="section-title-group">
           <h2>📋 Probador de Rúbricas Analíticas (PR-05 / P3.8)</h2>
-          <div class="section-subtitle">Haga clic en las celdas para evaluar las muestras de estudiantes. Observe cómo la puntuación se calcula al instante.</div>
+          <div class="section-subtitle">Evalúe las mismas muestras mediante puntuación cuantitativa o mediante un perfil cualitativo con retroalimentación narrativa.</div>
         </div>
       </div>
 
       <div class="rubric-evaluator-container">
+        <div class="evaluation-mode-selector" role="group" aria-labelledby="evaluation-mode-title">
+          <div>
+            <strong id="evaluation-mode-title">Modalidad de evaluación</strong>
+            <span id="evaluation-mode-help">Seleccione cómo desea interpretar la misma evidencia.</span>
+          </div>
+          <div class="evaluation-mode-buttons">
+            <button type="button" class="evaluation-mode-btn active" data-evaluation-mode="quantitative" aria-pressed="true">🔢 Cuantitativa (0–16)</button>
+            <button type="button" class="evaluation-mode-btn" data-evaluation-mode="qualitative" aria-pressed="false">📝 Cualitativa</button>
+          </div>
+        </div>
+
         <!-- Banner de Instrucciones Paso a Paso -->
         <div class="rubric-instructions-banner">
           <h4>💡 ¿Cómo funciona esta prueba? (Guía en 3 Pasos)</h4>
@@ -341,11 +352,11 @@
             </div>
             <div class="rubric-step-item">
               <strong>2️⃣ Paso 2: Evalúe los 4 criterios</strong>
-              <span>Haga clic en la casilla de nivel que corresponda (1 a 4 pts) en cada una de las 4 filas.</span>
+              <span id="rubric-step-two-copy">Haga clic en la casilla de nivel que corresponda (1 a 4 pts) en cada una de las 4 filas.</span>
             </div>
             <div class="rubric-step-item">
               <strong>3️⃣ Paso 3: Vea el resultado y compare</strong>
-              <span>Al completar las 4 filas, el sistema mostrará su calificación y la comparará con el dictamen de los facilitadores.</span>
+              <span id="rubric-step-three-copy">Al completar las 4 filas, el sistema mostrará su calificación y la comparará con el dictamen del facilitador.</span>
             </div>
           </div>
         </div>
@@ -381,10 +392,10 @@
           <thead>
             <tr>
               <th style="width:22%;">Criterio Pedagógico</th>
-              <th style="width:19.5%;">4 · Cumple con solidez (4 pts)</th>
-              <th style="width:19.5%;">3 · Cumple (3 pts)</th>
-              <th style="width:19.5%;">2 · Cumple parcialmente (2 pts)</th>
-              <th style="width:19.5%;">1 · No cumple (1 pt)</th>
+              <th id="rubric-level-4" style="width:19.5%;">4 · Cumple con solidez (4 pts)</th>
+              <th id="rubric-level-3" style="width:19.5%;">3 · Cumple (3 pts)</th>
+              <th id="rubric-level-2" style="width:19.5%;">2 · Cumple parcialmente (2 pts)</th>
+              <th id="rubric-level-1" style="width:19.5%;">1 · No cumple (1 pt)</th>
             </tr>
           </thead>
           <tbody>
@@ -444,7 +455,7 @@
             </div>
           </div>
           <div style="text-align:right;margin-left:1.5rem;">
-            <span style="font-size:0.75rem;color:#cbd5e1;text-transform:uppercase;display:block;margin-bottom:0.25rem;">Puntaje Acumulado:</span>
+            <span id="rubric-result-label" style="font-size:0.75rem;color:#cbd5e1;text-transform:uppercase;display:block;margin-bottom:0.25rem;">Puntaje Acumulado:</span>
             <div id="rubric-total-score" class="score-badge">0 / 16</div>
           </div>
         </div>
@@ -490,7 +501,7 @@
         <div class="slide-deck-header">
           <div class="block-deck-selector">
             <button class="deck-select-btn active" data-deck="block1" aria-pressed="true">Bloque 1: Panorama & Método (AGM)</button>
-            <button class="deck-select-btn" data-deck="block2" aria-pressed="false">Bloque 2: Usos No Convencionales (HL)</button>
+            <button class="deck-select-btn" data-deck="block2" aria-pressed="false">Bloque 2: Usos No Convencionales (AGM)</button>
             <button class="deck-select-btn" data-deck="block3" aria-pressed="false">Bloque 3: Modalidad Educativa (AGM)</button>
             <button class="deck-select-btn" data-deck="block4" aria-pressed="false">Bloque 4: Gestión de IA Local (AGM)</button>
           </div>
@@ -581,10 +592,10 @@
             </ul>
           </div>
           <div class="footer-col">
-            <h5>Facilitación</h5>
+            <h5>Equipo académico</h5>
             <ul>
               <li><a href="https://orcid.org/0000-0002-7886-0740" target="_blank" rel="noopener">Agustín Gómez Meléndez (UNED/UCR)</a></li>
-              <li><span>Hannia León Fuentes (UCR/PROTEA)</span></li>
+              <li><span>Hannia León Fuentes · Asesoría académica (UCR/PROTEA)</span></li>
               <li><a href="Bibliografia/MANUAL_USO_LLM_CORPUS_PDF_V5.md" target="_blank">Manual de Inteligencia PDF V5.1</a></li>
             </ul>
           </div>
@@ -598,7 +609,7 @@
           <strong>Nota sobre el Uso de Inteligencia Artificial en el Desarrollo del Sitio y Contenidos</strong>
         </div>
         <p>
-          Este entorno web interactivo, su arquitectura técnica, el diseño instruccional de la ruta pedagógica y la estructuración de las 7 prácticas y materiales de apoyo fueron desarrollados mediante <strong>co-diseño y asistencia de modelos avanzados de Inteligencia Artificial generativa</strong>, bajo la dirección, autoría intelectual, validación metodológica y curaduría crítica continua de los facilitadores <strong>Agustín Gómez Meléndez</strong> y <strong>Hannia León Fuentes</strong>. Todos los casos, consignas y datos pedagógicos cumplen estrictamente con la normativa costarricense de gobernanza y protección de datos personales (Ley N° 8968).
+          Este entorno web interactivo, su arquitectura técnica, el diseño instruccional de la ruta pedagógica y la estructuración de las 7 prácticas y materiales de apoyo fueron desarrollados mediante <strong>co-diseño y asistencia de modelos avanzados de Inteligencia Artificial generativa</strong>, bajo la dirección, facilitación, autoría intelectual, validación metodológica y curaduría crítica continua de <strong>Agustín Gómez Meléndez</strong>, con asesoría académica de <strong>Hannia León Fuentes</strong>. Todos los casos, consignas y datos pedagógicos cumplen estrictamente con la normativa costarricense de gobernanza y protección de datos personales (Ley N° 8968).
         </p>
       </div>
 
@@ -627,13 +638,13 @@
 
   <!-- Scripts -->
   <script src="js/timer.js"></script>
-  <script src="js/prompt-builder.js"></script>
-  <script src="js/rubric-tester.js"></script>
-  <script src="02_Presentaciones/presentaciones-datos.js"></script>
-  <script src="js/slide-viewer.js"></script>
-  <script src="js/tutor-mode.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/a11y-translate.js"></script>
+  <script src="js/prompt-builder.js?v=20261005"></script>
+  <script src="js/rubric-tester.js?v=20261005"></script>
+  <script src="02_Presentaciones/presentaciones-datos.js?v=20261005"></script>
+  <script src="js/slide-viewer.js?v=20261005"></script>
+  <script src="js/tutor-mode.js?v=20261005"></script>
+  <script src="js/app.js?v=20261005"></script>
+  <script src="js/a11y-translate.js?v=20261005"></script>
 
   <script>
     function switchToolTab(tabId) {

@@ -74,9 +74,12 @@ centros de contacto, comercio). Alfabetización digital heterogénea; muchas per
 han usado IA generativa de forma sistemática.
 
 Facilitación:
-- Hannia León Fuentes (Universidad de Costa Rica, PROTEA), bloque de la mañana, se retira a las 12:00.
 - Agustín Gómez Meléndez (UNED, Vicerrectoría de Investigación - OMiPYME; UCR - CIOdD),
-  investigador en gobernanza de IA, tecnologías educativas y políticas públicas.
+  responsable del 100% de la jornada e investigador en gobernanza de IA, tecnologías educativas
+  y políticas públicas.
+
+Asesoría académica:
+- Hannia León Fuentes (Universidad de Costa Rica, PROTEA).
 
 Perfiles institucionales confirmados:
 - Hannia León Fuentes es magíster en Ciencias de la Educación con énfasis en Administración
@@ -96,7 +99,7 @@ Estructura de la jornada:
 - 8:30-9:00 receso y ventana técnica.
 - 9:00-10:00 Bloque 1 (AGM): panorama y método; demostración del modo de voz de ChatGPT,
   Claude y Gemini aplicado a la enseñanza de lenguas; ciclo de práctica 1.
-- 10:00-11:30 Bloque 2 (HL): usos no convencionales de la IA en la enseñanza de inglés, en
+- 10:00-11:30 Bloque 2 (AGM): usos no convencionales de la IA en la enseñanza de inglés, en
   tres ventanas de práctica: (2.1) seguimiento y retroalimentación al aprendizaje; (2.2) apoyo anticipatorio
   ante errores frecuentes del estudiantado y desafíos de la docencia; (2.3) construcción de
   chatbots personalizados para práctica escrita.
@@ -342,11 +345,11 @@ asociado. Cada lámina debe responder a la pregunta "qué hace con esto una pers
 mañana a las 8 de la mañana".
 ```
 
-## P2.2 Presentación base del Bloque 2, para Hannia León Fuentes — **C**
+## P2.2 Presentación base del Bloque 2, facilitada por Agustín Gómez Meléndez — **C**
 
 ```
 Diseña una presentación base de 90 minutos para el Bloque 2, "Usos no convencionales de la IA
-en la enseñanza de inglés", que la profesora Hannia León Fuentes adaptará y hará suya.
+en la enseñanza de inglés", que Agustín Gómez Meléndez facilitará con apoyo de la asesoría académica.
 
 Introducción de 8 minutos y tres ventanas de práctica organizadas como ciclos de 25 minutos:
 2.1 Seguimiento y retroalimentación al aprendizaje: banco de retroalimentación diferenciada
@@ -363,9 +366,8 @@ Cierre de 7 minutos sobre qué se delega y qué no puede delegarse.
 Mismo formato de entrega que la presentación anterior: lámina por lámina, con texto exacto,
 apoyo visual, notas del orador y minuto de inicio.
 
-Además: marca con [ADAPTAR: HL] toda lámina donde la profesora deba insertar sus propios
-ejemplos, su experiencia o su criterio, en lugar de contenido genérico. Y agrega al final una
-página de "qué necesito de usted" con la lista de decisiones que solo ella puede tomar.
+Además: agrega al final una página de preparación con la lista de decisiones que la persona
+facilitadora debe cerrar antes de impartir el bloque.
 ```
 
 ## P2.3 Presentación del Bloque 3 — **C**
@@ -1016,7 +1018,7 @@ No reescribas silenciosamente: deja trazabilidad de cada corrección propuesta.
 | P1.4 | Kit del participante | 1 | ☐ |
 | P1.5 | Formulario único de la jornada | 1 | ☐ |
 | P2.1 | Presentación Bloque 1 | 2 | ☐ |
-| P2.2 | Presentación base Bloque 2 para HL | 2 | ☐ |
+| P2.2 | Presentación base Bloque 2 para AGM | 2 | ☐ |
 | P2.3 | Presentación Bloque 3 | 2 | ☐ |
 | P2.4 | Presentación Bloque 4 | 2 | ☐ |
 | P2.5 | Láminas de servicio | 2 | ☐ |

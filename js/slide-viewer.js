@@ -1,7 +1,7 @@
 /**
  * TALLER INA · Visor Integrado de Presentaciones HTML
- * Integra los bloques 1, 3 y 4 como documentos HTML 16:9, conserva el
- * encuadre del portal y deja el Bloque 2 identificado como material pendiente.
+ * Integra los cuatro bloques como documentos HTML 16:9 y conserva el
+ * encuadre, la navegación y las notas del portal.
  */
 
 const SlideViewerModule = (() => {
@@ -13,15 +13,10 @@ const SlideViewerModule = (() => {
       src: '02_Presentaciones/INA_F2-P2.1_Bloque1_PanoramaMetodo_v2.html'
     },
     block2: {
-      name: 'Bloque 2 · Usos No Convencionales (HL)',
-      facilitator: 'Hannia León Fuentes (PROTEA - UCR)',
-      totalSlides: 3,
-      isPlaceholder: true,
-      notes: [
-        '<p><strong>Ciclo 2.1:</strong> seguimiento y retroalimentación diferenciada (A2 frente a B1) usando muestras sintéticas.</p>',
-        '<p><strong>Ciclo 2.2:</strong> apoyo anticipatorio ante errores frecuentes del estudiantado y desafíos de aula.</p>',
-        '<p><strong>Ventana 2.3 (PR-04):</strong> construcción y prueba escrita de chatbots personalizados con reglas de límite lingüístico.</p>'
-      ]
+      dataKey: 'bloque2',
+      name: 'Bloque 2 · Usos No Convencionales (AGM)',
+      facilitator: 'Agustín Gómez Meléndez',
+      src: '02_Presentaciones/INA_F2-P2.2_Bloque2_UsosNoConvencionales_v2.html'
     },
     block3: {
       dataKey: 'bloque3',
@@ -135,9 +130,9 @@ const SlideViewerModule = (() => {
         placeholder.hidden = false;
         placeholder.innerHTML = `
           <div class="placeholder-slide-content">
-            <span class="meta-pill placeholder-facilitator">Facilitación: Hannia León Fuentes (PROTEA-UCR)</span>
+            <span class="meta-pill placeholder-facilitator">Facilitación: Agustín Gómez Meléndez</span>
             <h3>Bloque 2 · Usos no convencionales de la IA</h3>
-            <p>Este bloque conserva su estructura metodológica de tres ciclos. La presentación HTML final permanece pendiente de entrega por la facilitadora.</p>
+            <p>Este bloque conserva su estructura metodológica de tres ciclos.</p>
             <div class="placeholder-agenda">
               <strong>Contenido previsto:</strong>
               <span>Ciclo 2.1 · Retroalimentación diferenciada con muestras sintéticas.</span>

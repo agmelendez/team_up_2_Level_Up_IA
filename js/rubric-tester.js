@@ -1,6 +1,7 @@
 /**
  * TALLER INA · Probador Interactivo de Rúbrica y Muestras Sintéticas (rubric-tester.js)
- * Permite a los docentes ensayar la rúbrica analítica de 4 criterios (1-16 pts) sobre muestras A y B.
+ * Permite ensayar la rúbrica analítica en modalidad cuantitativa (1-16 pts)
+ * o cualitativa (niveles de logro y retroalimentación narrativa).
  * Comienza 100% en blanco para que el participante evalúe paso a paso.
  */
 
@@ -53,8 +54,21 @@ Respuesta de la IA (Con sesgo de complacencia):
   };
 
   let currentSampleKey = 'sampleA';
+  let evaluationMode = 'quantitative';
   // Comienza 100% en blanco (null)
   let userScores = { c1: null, c2: null, c3: null, c4: null };
+  const qualitativeLevels = {
+    4: 'Cumple con solidez',
+    3: 'Cumple',
+    2: 'Cumple parcialmente',
+    1: 'Aún no cumple'
+  };
+  const criterionNames = {
+    c1: 'Cumplimiento comunicativo',
+    c2: 'Organización y cohesión',
+    c3: 'Control lingüístico',
+    c4: 'Adecuación profesional'
+  };
 
   function setSample(sampleKey) {
     if (!samples[sampleKey]) return;
@@ -115,7 +129,9 @@ Respuesta de la IA (Con sesgo de complacencia):
     const badge = document.getElementById(`badge-crit-${criterionId}`);
     if (badge) {
       badge.className = 'criterion-status-badge done';
-      badge.innerHTML = `✓ ${userScores[criterionId]} pts`;
+        badge.textContent = evaluationMode === 'qualitative'
+          ? `✓ ${qualitativeLevels[userScores[criterionId]]}`
+          : `✓ ${userScores[criterionId]} pts`;
     }
 
     updateSummaryDisplay();
@@ -129,9 +145,7 @@ Respuesta de la IA (Con sesgo de complacencia):
     const analysisBox = document.getElementById('rubric-expert-analysis');
     const progressText = document.getElementById('rubric-progress-text');
 
-    if (scoreDisplay) {
-      scoreDisplay.textContent = `${currentSum} / 16`;
-    }
+    if (scoreDisplay) scoreDisplay.textContent = evaluationMode === 'qualitative' ? 'En proceso' : `${currentSum} / 16`;
 
     if (progressText) {
       progressText.textContent = `${totalSelected} de 4 criterios evaluados`;
@@ -142,6 +156,32 @@ Respuesta de la IA (Con sesgo de complacencia):
         analysisBox.innerHTML = `
           <div style="color:#fde68a;font-weight:600;">
             👉 <strong>Paso actual:</strong> Haga clic en una casilla de cada criterio en la tabla de abajo para calificar este correo (${totalSelected}/4 completados).
+          </div>
+        `;
+      } else if (evaluationMode === 'qualitative') {
+        const data = samples[currentSampleKey];
+        const profile = Object.keys(userScores).map(key =>
+          `<li><strong>${criterionNames[key]}:</strong> ${qualitativeLevels[userScores[key]]}</li>`
+        ).join('');
+        const referenceProfile = Object.keys(data.expectedBreakdown).map(key =>
+          `${criterionNames[key]}: ${qualitativeLevels[data.expectedBreakdown[key]]}`
+        ).join('; ');
+        const aligned = Object.keys(userScores).filter(key => userScores[key] === data.expectedBreakdown[key]).length;
+        const alignmentMessage = aligned === 4
+          ? 'La lectura cualitativa coincide con el perfil de referencia en todos los criterios.'
+          : aligned >= 2
+            ? 'La lectura cualitativa muestra coincidencias parciales; conviene revisar la evidencia de los criterios con diferente nivel.'
+            : 'La lectura cualitativa difiere del perfil de referencia; vuelva a los fragmentos observables antes de emitir el juicio.';
+
+        if (scoreDisplay) scoreDisplay.textContent = 'Perfil listo';
+        analysisBox.innerHTML = `
+          <div class="qualitative-result-card">
+            <div class="qualitative-result-heading">📝 <strong>Perfil cualitativo de desempeño</strong></div>
+            <ul class="qualitative-profile-list">${profile}</ul>
+            <p><strong>Lectura de calibración:</strong> ${alignmentMessage}</p>
+            <p><strong>Perfil orientativo de facilitación:</strong> ${referenceProfile}.</p>
+            <p><strong>Retroalimentación narrativa:</strong> ${data.analysis.replace(/\s*\([^)]*\/16\):?/, ':')}</p>
+            <p class="qualitative-note">Este perfil orienta la retroalimentación formativa y no asigna una nota.</p>
           </div>
         `;
       } else {
@@ -171,6 +211,44 @@ Respuesta de la IA (Con sesgo de complacencia):
     }
   }
 
+  function setEvaluationMode(mode) {
+    if (!['quantitative', 'qualitative'].includes(mode)) return;
+    evaluationMode = mode;
+
+    document.querySelectorAll('.evaluation-mode-btn').forEach(btn => {
+      const active = btn.dataset.evaluationMode === mode;
+      btn.classList.toggle('active', active);
+      btn.setAttribute('aria-pressed', String(active));
+    });
+
+    const qualitative = mode === 'qualitative';
+    const copy = {
+      stepTwo: qualitative
+        ? 'Seleccione el nivel de logro que mejor describa la evidencia observable en cada criterio.'
+        : 'Haga clic en la casilla de nivel que corresponda (1 a 4 pts) en cada una de las 4 filas.',
+      stepThree: qualitative
+        ? 'Al completar los 4 criterios, el sistema mostrará un perfil de desempeño y retroalimentación narrativa sin nota.'
+        : 'Al completar las 4 filas, el sistema mostrará su calificación y la comparará con el dictamen del facilitador.'
+    };
+    document.getElementById('rubric-step-two-copy').textContent = copy.stepTwo;
+    document.getElementById('rubric-step-three-copy').textContent = copy.stepThree;
+    document.getElementById('rubric-level-4').textContent = qualitative ? 'Cumple con solidez' : '4 · Cumple con solidez (4 pts)';
+    document.getElementById('rubric-level-3').textContent = qualitative ? 'Cumple' : '3 · Cumple (3 pts)';
+    document.getElementById('rubric-level-2').textContent = qualitative ? 'Cumple parcialmente' : '2 · Cumple parcialmente (2 pts)';
+    document.getElementById('rubric-level-1').textContent = qualitative ? 'Aún no cumple' : '1 · No cumple (1 pt)';
+    document.getElementById('rubric-result-label').textContent = qualitative ? 'Resultado cualitativo:' : 'Puntaje acumulado:';
+
+    Object.keys(userScores).forEach(criterionId => {
+      const badge = document.getElementById(`badge-crit-${criterionId}`);
+      if (badge && userScores[criterionId] !== null) {
+        badge.textContent = qualitative
+          ? `✓ ${qualitativeLevels[userScores[criterionId]]}`
+          : `✓ ${userScores[criterionId]} pts`;
+      }
+    });
+    updateSummaryDisplay();
+  }
+
   function init() {
     // Guard clause: solo inicializar si el probador de rúbricas existe en la página
     if (!document.getElementById('rubric-sample-text') && !document.querySelector('.rubric-cell')) return;
@@ -191,6 +269,10 @@ Respuesta de la IA (Con sesgo de complacencia):
           setScore(crit, score);
         }
       });
+    });
+
+    document.querySelectorAll('.evaluation-mode-btn').forEach(btn => {
+      btn.addEventListener('click', e => setEvaluationMode(e.currentTarget.dataset.evaluationMode));
     });
 
     // Botón de limpiar rúbrica

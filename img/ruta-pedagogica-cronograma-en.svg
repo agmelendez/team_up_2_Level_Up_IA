@@ -48,7 +48,7 @@
       Propuesta de Cronograma &amp; Ruta Pedagógica del Taller
     </text>
     <text x="25" y="82" fill="#cbd5e1" font-size="12.5" font-weight="500">
-      Team Up 2 Level Up: Inteligencia Artificial en la Enseñanza del Inglés Técnico · 08:00 a 15:00 (7 Horas)
+      Team Up 2 Level Up: AI in Technical English Teaching · 8:00 a.m. to 3:00 p.m. (7 hours)
     </text>
 
     <!-- Leyenda / Convenciones -->
@@ -60,9 +60,9 @@
       <circle cx="22" cy="36" r="6" fill="#2563eb" />
       <text x="34" y="40" fill="#ffffff" font-size="11" font-weight="600">Agustín Gómez (AGM)</text>
 
-      <!-- Círculo HL -->
+      <!-- Academic advisory -->
       <circle cx="170" cy="36" r="6" fill="#7c3aed" />
-      <text x="182" y="40" fill="#ffffff" font-size="11" font-weight="600">Hannia León (HL)</text>
+      <text x="182" y="40" fill="#ffffff" font-size="11" font-weight="600">Hannia León (advisor)</text>
 
       <!-- Badge Práctica -->
       <rect x="295" y="29" width="75" height="16" rx="8" fill="#059669" />
@@ -93,9 +93,9 @@
     <text x="205" y="22" fill="#64748b" font-size="10" font-weight="700" text-anchor="end">30 min</text>
 
     <!-- Título y Facilitador -->
-    <text x="12" y="55" fill="#0f172a" font-size="13" font-weight="800">1. Opening & Framing</text>
+    <text x="12" y="55" fill="#0f172a" font-size="13" font-weight="800">1. Opening &amp; Framing</text>
     <rect x="12" y="63" width="80" height="16" rx="8" fill="#dbeafe" />
-    <text x="52" y="75" fill="#1e40af" font-size="9" font-weight="800" text-anchor="middle">AGM & HL</text>
+    <text x="52" y="75" fill="#1e40af" font-size="9" font-weight="800" text-anchor="middle">AGM</text>
 
     <!-- Detalles -->
     <text x="12" y="96" fill="#334155" font-size="10.5" font-weight="500">• INA institutional welcome.</text>
@@ -105,7 +105,7 @@
 
     <!-- Badge inferior -->
     <rect x="12" y="152" width="191" height="16" rx="4" fill="#f8fafc" stroke="#e2e8f0" />
-    <text x="107" y="164" fill="#475569" font-size="9" font-weight="700" text-anchor="middle">Initial Poll & Methodology</text>
+    <text x="107" y="164" fill="#475569" font-size="9" font-weight="700" text-anchor="middle">Initial Poll &amp; Methodology</text>
   </g>
 
   <!-- MOMENTO 2: Receso Técnico (08:30 - 09:00) -->
@@ -116,11 +116,11 @@
     <text x="57" y="22" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">08:30 – 09:00</text>
     <text x="205" y="22" fill="#64748b" font-size="10" font-weight="700" text-anchor="end">30 min</text>
 
-    <text x="12" y="55" fill="#0f172a" font-size="13" font-weight="800">2. Tech Break & Support</text>
+    <text x="12" y="55" fill="#0f172a" font-size="13" font-weight="800">2. Tech Break &amp; Support</text>
     <rect x="12" y="63" width="95" height="16" rx="8" fill="#f1f5f9" />
     <text x="59" y="75" fill="#475569" font-size="9" font-weight="800" text-anchor="middle">Support Desk</text>
 
-    <text x="12" y="96" fill="#334155" font-size="10.5" font-weight="500">• Coffee & morning break.</text>
+    <text x="12" y="96" fill="#334155" font-size="10.5" font-weight="500">• Coffee &amp; morning break.</text>
     <text x="12" y="112" fill="#334155" font-size="10.5" font-weight="500">• Connectivity validation.</text>
     <text x="12" y="128" fill="#334155" font-size="10.5" font-weight="500">• AI accounts setup.</text>
     <text x="12" y="144" fill="#15803d" font-size="10.5" font-weight="600">• Plan B backup verification.</text>
@@ -137,7 +137,7 @@
     <text x="57" y="22" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">09:00 – 10:00</text>
     <text x="215" y="22" fill="#1e40af" font-size="10" font-weight="800" text-anchor="end">60 min</text>
 
-    <text x="12" y="55" fill="#0f172a" font-size="13" font-weight="800">3. Block 1: Panorama & Voice</text>
+    <text x="12" y="55" fill="#0f172a" font-size="13" font-weight="800">3. Block 1: Panorama &amp; Voice</text>
     <rect x="12" y="63" width="135" height="16" rx="8" fill="#dbeafe" />
     <text x="79" y="75" fill="#1e40af" font-size="9" font-weight="800" text-anchor="middle">Agustín Gómez (AGM)</text>
 
@@ -160,7 +160,7 @@
 
     <text x="12" y="55" fill="#0f172a" font-size="13" font-weight="800">4. Block 2: Non-Conventional Uses</text>
     <rect x="12" y="63" width="145" height="16" rx="8" fill="#ede9fe" />
-    <text x="84" y="75" fill="#6d28d9" font-size="9" font-weight="800" text-anchor="middle">Hannia León Fuentes (HL)</text>
+    <text x="84" y="75" fill="#6d28d9" font-size="9" font-weight="800" text-anchor="middle">Agustín Gómez (AGM)</text>
 
     <text x="12" y="96" fill="#334155" font-size="10.5" font-weight="500">• Formative feedback A2 vs B1.</text>
     <text x="12" y="112" fill="#334155" font-size="10.5" font-weight="500">• Classroom mistake anticipation.</text>
@@ -179,17 +179,17 @@
     <text x="57" y="22" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">11:30 – 12:00</text>
     <text x="185" y="22" fill="#0369a1" font-size="10" font-weight="700" text-anchor="end">30 min</text>
 
-    <text x="12" y="55" fill="#0f172a" font-size="13" font-weight="800">5. Plenary & Q&A</text>
+    <text x="12" y="55" fill="#0f172a" font-size="13" font-weight="800">5. Plenary &amp; Q&amp;A</text>
     <rect x="12" y="63" width="80" height="16" rx="8" fill="#e0f2fe" />
-    <text x="52" y="75" fill="#0369a1" font-size="9" font-weight="800" text-anchor="middle">AGM & HL</text>
+    <text x="52" y="75" fill="#0369a1" font-size="9" font-weight="800" text-anchor="middle">AGM</text>
 
     <text x="12" y="96" fill="#334155" font-size="10.5" font-weight="500">• Live teachers’ questions.</text>
     <text x="12" y="112" fill="#334155" font-size="10.5" font-weight="500">• On-screen prompt calibration.</text>
     <text x="12" y="128" fill="#334155" font-size="10.5" font-weight="500">• Micro-deliverables review.</text>
-    <text x="12" y="144" fill="#15803d" font-size="10.5" font-weight="600">• Morning debrief & recap.</text>
+    <text x="12" y="144" fill="#15803d" font-size="10.5" font-weight="600">• Morning debrief &amp; recap.</text>
 
     <rect x="12" y="152" width="171" height="16" rx="4" fill="#f8fafc" stroke="#e2e8f0" />
-    <text x="97" y="164" fill="#475569" font-size="9" font-weight="700" text-anchor="middle">Synthesis & Feedback</text>
+    <text x="97" y="164" fill="#475569" font-size="9" font-weight="700" text-anchor="middle">Synthesis &amp; Feedback</text>
   </g>
 
   <!-- ================= PAUSA MERIDIANA: ALMUERZO ================= -->
@@ -221,11 +221,11 @@
     <text x="59" y="22" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">13:00 – 14:00</text>
     <text x="348" y="22" fill="#1e40af" font-size="10" font-weight="800" text-anchor="end">60 min</text>
 
-    <text x="14" y="55" fill="#0f172a" font-size="14" font-weight="800">6. Block 3: Educational Mode, Rubrics & Voice</text>
+    <text x="14" y="55" fill="#0f172a" font-size="14" font-weight="800">6. Block 3: Educational Mode, Rubrics &amp; Voice</text>
     <rect x="14" y="63" width="145" height="16" rx="8" fill="#dbeafe" />
     <text x="86" y="75" fill="#1e40af" font-size="9" font-weight="800" text-anchor="middle">Agustín Gómez Meléndez</text>
 
-    <text x="14" y="96" fill="#334155" font-size="11" font-weight="500">• ChatGPT & Claude in educational mode (no spoon-feeding).</text>
+    <text x="14" y="96" fill="#334155" font-size="11" font-weight="500">• ChatGPT &amp; Claude in educational mode (no spoon-feeding).</text>
     <text x="14" y="114" fill="#334155" font-size="11" font-weight="500">• 4-criteria rubric stress-test (0-16 pts).</text>
     <text x="14" y="132" fill="#334155" font-size="11" font-weight="500">• Voice interaction: 70/30 apprentice talk ratio.</text>
 
@@ -247,7 +247,7 @@
     <text x="59" y="22" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">14:00 – 14:30</text>
     <text x="348" y="22" fill="#065f46" font-size="10" font-weight="800" text-anchor="end">30 min</text>
 
-    <text x="14" y="55" fill="#0f172a" font-size="14" font-weight="800">7. Block 4: Governance & Local AI Deployment</text>
+    <text x="14" y="55" fill="#0f172a" font-size="14" font-weight="800">7. Block 4: Governance &amp; Local AI Deployment</text>
     <rect x="14" y="63" width="145" height="16" rx="8" fill="#d1fae5" />
     <text x="86" y="75" fill="#065f46" font-size="9" font-weight="800" text-anchor="middle">Agustín Gómez Meléndez</text>
 
@@ -257,7 +257,7 @@
 
     <!-- Badge PR-07 -->
     <rect x="14" y="146" width="332" height="24" rx="6" fill="#059669" />
-    <text x="180" y="162" fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle">🔒 PR-07: Datasheet & Local AI (12 min)</text>
+    <text x="180" y="162" fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle">🔒 PR-07: Datasheet &amp; Local AI (12 min)</text>
   </g>
 
   <!-- MOMENTO 8: Cierre, Evaluación & Compromiso a 30 Días (14:30 - 15:00) -->
@@ -268,17 +268,17 @@
     <text x="59" y="22" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">14:30 – 15:00</text>
     <text x="358" y="22" fill="#92400e" font-size="10" font-weight="800" text-anchor="end">30 min</text>
 
-    <text x="14" y="55" fill="#0f172a" font-size="14" font-weight="800">8. Official Closing & 30-Day Commitment</text>
+    <text x="14" y="55" fill="#0f172a" font-size="14" font-weight="800">8. Official Closing &amp; 30-Day Commitment</text>
     <rect x="14" y="63" width="155" height="16" rx="8" fill="#fef3c7" />
-    <text x="91" y="75" fill="#92400e" font-size="9" font-weight="800" text-anchor="middle">Agustín Gómez & Hannia León</text>
+    <text x="91" y="75" fill="#92400e" font-size="9" font-weight="800" text-anchor="middle">Agustín Gómez (AGM)</text>
 
     <text x="14" y="96" fill="#334155" font-size="11" font-weight="500">• Save work in the local workshop notebook.</text>
     <text x="14" y="114" fill="#334155" font-size="11" font-weight="500">• 30-day classroom teacher pledge definition.</text>
-    <text x="14" y="132" fill="#334155" font-size="11" font-weight="500">• Satisfaction survey & INA certificate delivery.</text>
+    <text x="14" y="132" fill="#334155" font-size="11" font-weight="500">• Satisfaction survey &amp; INA certificate delivery.</text>
 
     <!-- Badge Compromiso -->
     <rect x="14" y="146" width="342" height="24" rx="6" fill="#d97706" />
-    <text x="185" y="162" fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle">💾 Local notebook & Teacher Commitment</text>
+    <text x="185" y="162" fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle">💾 Local notebook &amp; Teacher Commitment</text>
   </g>
 
   <!-- ================= BARRA INFERIOR: CICLO METODOLÓGICO DE 25 MIN ================= -->

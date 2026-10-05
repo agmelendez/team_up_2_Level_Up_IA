@@ -1,6 +1,6 @@
 /**
  * TALLER INA · Lógica de Modo Facilitador (tutor-mode.js)
- * Maneja el cockpit interactivo para Agustín Gómez y Hannia León Fuentes,
+ * Maneja el cockpit interactivo para Agustín Gómez Meléndez,
  * avisos de broadcast copiables para Teams y alternador de vistas.
  */
 
@@ -52,7 +52,7 @@ const TutorModule = (() => {
       document.body.classList.add('tutor-active');
       document.getElementById('btn-mode-tutor')?.classList.add('active');
       document.getElementById('btn-mode-student')?.classList.remove('active');
-      App.showToast('🟣 Modo Facilitador activado (Cockpit para Agustín & Hannia)');
+      App.showToast('🟣 Modo Facilitador activado (Agustín Gómez Meléndez)');
     } else {
       document.body.classList.remove('tutor-active');
       document.getElementById('btn-mode-tutor')?.classList.remove('active');
@@ -73,8 +73,7 @@ const TutorModule = (() => {
       }
     });
 
-    const name = facilitatorId === 'agm' ? 'Agustín Gómez Meléndez' : 'Hannia León Fuentes';
-    App.showToast(`Facilitador activo seleccionado: ${name}`);
+    App.showToast('Facilitador activo: Agustín Gómez Meléndez');
   }
 
   function renderBroadcastMessages() {

@@ -105,8 +105,13 @@
     // Sección Cronograma y Ruta Pedagógica
     '🗺️ RUTA PEDAGÓGICA VISUAL': '🗺️ VISUAL PEDAGOGICAL ROADMAP',
     'Propuesta de Cronograma de la Jornada': 'Workshop Schedule Proposal',
-    'Consulte cada momento del taller (08:00 a 15:00), los facilitadores responsables, los bloques temáticos y las 7 prácticas activas.':
-      'Explore each workshop block (08:00 to 15:00), lead facilitators, thematic areas, and all 7 active hands-on practices.',
+    'Consulte cada momento del taller (8:00 a. m. a 3:00 p. m.), el facilitador responsable, los bloques temáticos y las 7 prácticas activas.':
+      'Explore each workshop block (8:00 a.m. to 3:00 p.m.), the lead facilitator, thematic areas, and all 7 active hands-on practices.',
+    'Evaluación cuantitativa y cualitativa': 'Quantitative and qualitative assessment',
+    'Modalidad de evaluación': 'Assessment mode',
+    'Seleccione cómo desea interpretar la misma evidencia.': 'Choose how you want to interpret the same evidence.',
+    '🔢 Cuantitativa (0–16)': '🔢 Quantitative (0–16)',
+    '📝 Cualitativa': '📝 Qualitative',
     '📱 En celular o tableta, deslice horizontalmente para ver el cronograma completo ↔️':
       '📱 On mobile or tablet, swipe horizontally to view the full schedule ↔️',
     'Ver Cronograma Visual': 'View Visual Schedule',
@@ -117,6 +122,7 @@
       'Transparency Note on the Use of Artificial Intelligence for Site and Content Development',
     'Navegación': 'Navigation',
     'Facilitación': 'Facilitation',
+    'Equipo académico': 'Academic team',
     'Protección de Datos Garantizada · Cumplimiento estricto Ley 8968':
       'Guaranteed Data Protection · Strict Compliance with Law 8968'
   };
@@ -129,11 +135,11 @@
     'JORNADA TÉCNICA · 6 OCTUBRE': 'TECHNICAL WORKSHOP · OCTOBER 6',
     'Propuesta de Cronograma & Ruta Pedagógica del Taller': 'Workshop Schedule Proposal & Pedagogical Roadmap',
     'Propuesta de Cronograma &amp; Ruta Pedagógica del Taller': 'Workshop Schedule Proposal & Pedagogical Roadmap',
-    'Team Up 2 Level Up: Inteligencia Artificial en la Enseñanza del Inglés Técnico · 08:00 a 15:00 (7 Horas)':
-      'Team Up 2 Level Up: AI in Technical English Teaching · 08:00 to 15:00 (7 Hours)',
+    'Team Up 2 Level Up: Inteligencia Artificial en la Enseñanza del Inglés Técnico · 8:00 a. m. a 3:00 p. m. (7 horas)':
+      'Team Up 2 Level Up: AI in Technical English Teaching · 8:00 a.m. to 3:00 p.m. (7 hours)',
     'CONVENCIONES DEL TALLER:': 'WORKSHOP CONVENTIONS:',
     'Agustín Gómez (AGM)': 'Agustín Gómez (AGM)',
-    'Hannia León (HL)': 'Hannia León (HL)',
+    'Hannia León (asesoría)': 'Hannia León (academic advisor)',
     'PR-01 a 07': 'PR-01 to 07',
 
     // Kicker Mañana
@@ -143,8 +149,6 @@
     // Bloque 1
     '1. Apertura & Encuadre': '1. Opening & Framing',
     '1. Apertura &amp; Encuadre': '1. Opening & Framing',
-    'AGM & HL': 'AGM & HL',
-    'AGM &amp; HL': 'AGM & HL',
     '• Bienvenida institucional INA.': '• INA institutional welcome.',
     '• Sondeo de nivel de uso real.': '• Real classroom usage poll.',
     '• Contrato de confidencialidad.': '• Confidentiality agreement.',
@@ -173,7 +177,7 @@
 
     // Bloque 4
     '4. Bloque 2: No Convencionales': '4. Block 2: Non-Conventional Uses',
-    'Hannia León Fuentes (HL)': 'Hannia León Fuentes (HL)',
+    'Agustín Gómez (AGM)': 'Agustín Gómez (AGM)',
     '• Chatbot tutor con límite estricto.': '• Strict boundary tutor chatbot.',
     '• Anticipación de errores de aula.': '• Classroom mistake anticipation.',
     '• Adaptaciones lingüísticas para LESCO, Portugués y Francés.': '• Linguistic adaptations (LESCO, Portuguese, French).',
@@ -182,8 +186,6 @@
     // Bloque 5
     '5. Plenaria & Q&A': '5. Plenary & Q&A',
     '5. Plenaria &amp; Q&amp;A': '5. Plenary & Q&A',
-    'Agustín Gómez & Hannia León': 'Agustín Gómez & Hannia León',
-    'Agustín Gómez &amp; Hannia León': 'Agustín Gómez & Hannia León',
     '• Preguntas docentes en vivo.': '• Live teachers’ questions.',
     '• Balance de la mañana.': '• Morning debrief & recap.',
     '• Calibración en pantalla.': '• On-screen prompt calibration.',

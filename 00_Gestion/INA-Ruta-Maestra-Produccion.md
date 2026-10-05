@@ -15,8 +15,8 @@
 4. Los 10 minutos restantes del Bloque 3 se distribuyen en reingreso, comparación funcional,
    síntesis y transición.
 5. El programa DOCX se ajustará después de validar los contenidos y presentaciones.
-6. Los materiales para Hannia León Fuentes se producirán al final como base editable y marcarán `[ADAPTAR: HL]`
-   donde corresponda su criterio, experiencia o ejemplos propios.
+6. El Bloque 2 será facilitado por Agustín Gómez Meléndez; Hannia León Fuentes participa
+   como asesora académica.
 7. Los datos técnicos que cambian con frecuencia conservarán `[VERIFICAR SEPTIEMBRE]` hasta
    la revisión factual programada.
 
@@ -172,7 +172,7 @@ P1.3 se redactará como borrador operativo y se actualizará en septiembre con f
 | P1.4 | Kit del participante | P3.1, P3.2, P3.4, P6.2 | Pendiente | Dos archivos coordinados |
 | P1.5 | Cuaderno local acumulativo | P3.1 | Implementado | Un registro por práctica; autoguardado y descarga Markdown |
 | P2.1 | Presentación Bloque 1 | P3, P4.1, P4.3 | PPTX v1 completo | 18 láminas; notas y QA visual aprobados |
-| P2.2 | Presentación Bloque 2 | P3.3, P3.6, P3.7 | Pospuesto | Se producirá al final para HL |
+| P2.2 | Presentación Bloque 2 | P3.3, P3.6, P3.7 | Completado | Presentación HTML integrada; facilitación AGM |
 | P2.3 | Presentación Bloque 3 | P3.2, P3.8, P4.1 | PPTX v1 completo | 14 láminas; notas y QA visual aprobados |
 | P2.4 | Presentación Bloque 4 | P3.5, P4.2, P5 | PPTX v1.1 completo | Gestión de LLM locales; 10 láminas y QA aprobados |
 | P2.5 | Láminas de servicio | P3.1, P7.2 | Pendiente | Tamaño legible desde teléfono |
@@ -195,7 +195,7 @@ P1.3 se redactará como borrador operativo y se actualizará en septiembre con f
 
 No se publicará el paquete sin resolver estos puntos:
 
-- confirmación de los contenidos propios del Bloque 2 por Hannia León Fuentes; la biografía ya está incorporada;
+- confirmación final de los ejemplos del Bloque 2 por Agustín Gómez Meléndez; la asesoría académica de Hannia León Fuentes ya está reconocida;
 - definición institucional del responsable, plazo de conservación y canal de derechos para
   el aviso de privacidad;
 - decisión sobre comparación agregada o pareada de entrada y salida;

@@ -48,7 +48,7 @@
       Propuesta de Cronograma &amp; Ruta Pedagógica del Taller
     </text>
     <text x="25" y="82" fill="#cbd5e1" font-size="12.5" font-weight="500">
-      Team Up 2 Level Up: Inteligencia Artificial en la Enseñanza del Inglés Técnico · 08:00 a 15:00 (7 Horas)
+      Team Up 2 Level Up: Inteligencia Artificial en la Enseñanza del Inglés Técnico · 8:00 a. m. a 3:00 p. m. (7 horas)
     </text>
 
     <!-- Leyenda / Convenciones -->
@@ -60,9 +60,9 @@
       <circle cx="22" cy="36" r="6" fill="#2563eb" />
       <text x="34" y="40" fill="#ffffff" font-size="11" font-weight="600">Agustín Gómez (AGM)</text>
 
-      <!-- Círculo HL -->
+      <!-- Asesoría académica -->
       <circle cx="170" cy="36" r="6" fill="#7c3aed" />
-      <text x="182" y="40" fill="#ffffff" font-size="11" font-weight="600">Hannia León (HL)</text>
+      <text x="182" y="40" fill="#ffffff" font-size="11" font-weight="600">Hannia León (asesoría)</text>
 
       <!-- Badge Práctica -->
       <rect x="295" y="29" width="75" height="16" rx="8" fill="#059669" />
@@ -95,7 +95,7 @@
     <!-- Título y Facilitador -->
     <text x="12" y="55" fill="#0f172a" font-size="13" font-weight="800">1. Apertura &amp; Encuadre</text>
     <rect x="12" y="63" width="80" height="16" rx="8" fill="#dbeafe" />
-    <text x="52" y="75" fill="#1e40af" font-size="9" font-weight="800" text-anchor="middle">AGM &amp; HL</text>
+    <text x="52" y="75" fill="#1e40af" font-size="9" font-weight="800" text-anchor="middle">AGM</text>
 
     <!-- Detalles -->
     <text x="12" y="96" fill="#334155" font-size="10.5" font-weight="500">• Bienvenida institucional INA.</text>
@@ -160,7 +160,7 @@
 
     <text x="12" y="55" fill="#0f172a" font-size="13" font-weight="800">4. Bloque 2: No Convencionales</text>
     <rect x="12" y="63" width="145" height="16" rx="8" fill="#ede9fe" />
-    <text x="84" y="75" fill="#6d28d9" font-size="9" font-weight="800" text-anchor="middle">Hannia León Fuentes (HL)</text>
+    <text x="84" y="75" fill="#6d28d9" font-size="9" font-weight="800" text-anchor="middle">Agustín Gómez (AGM)</text>
 
     <text x="12" y="96" fill="#334155" font-size="10.5" font-weight="500">• Retroalimentación A2 vs B1.</text>
     <text x="12" y="112" fill="#334155" font-size="10.5" font-weight="500">• Anticipación de errores de aula.</text>
@@ -181,7 +181,7 @@
 
     <text x="12" y="55" fill="#0f172a" font-size="13" font-weight="800">5. Plenaria &amp; Q&amp;A</text>
     <rect x="12" y="63" width="80" height="16" rx="8" fill="#e0f2fe" />
-    <text x="52" y="75" fill="#0369a1" font-size="9" font-weight="800" text-anchor="middle">AGM &amp; HL</text>
+    <text x="52" y="75" fill="#0369a1" font-size="9" font-weight="800" text-anchor="middle">AGM</text>
 
     <text x="12" y="96" fill="#334155" font-size="10.5" font-weight="500">• Preguntas docentes en vivo.</text>
     <text x="12" y="112" fill="#334155" font-size="10.5" font-weight="500">• Calibración en pantalla.</text>
@@ -270,7 +270,7 @@
 
     <text x="14" y="55" fill="#0f172a" font-size="14" font-weight="800">8. Cierre Oficial &amp; Compromiso a 30 Días</text>
     <rect x="14" y="63" width="155" height="16" rx="8" fill="#fef3c7" />
-    <text x="91" y="75" fill="#92400e" font-size="9" font-weight="800" text-anchor="middle">Agustín Gómez &amp; Hannia León</text>
+    <text x="91" y="75" fill="#92400e" font-size="9" font-weight="800" text-anchor="middle">Agustín Gómez (AGM)</text>
 
     <text x="14" y="96" fill="#334155" font-size="11" font-weight="500">• Guardado en el cuaderno local del taller.</text>
     <text x="14" y="114" fill="#334155" font-size="11" font-weight="500">• Definición del Compromiso Docente a 30 días de aula.</text>

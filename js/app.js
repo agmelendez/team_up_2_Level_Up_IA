@@ -258,9 +258,9 @@ const App = (() => {
     const detailsText = document.getElementById('practice-details-summary');
     const practiceSummary = {
       'PR-01': 'Bloque 1 · Facilitador: Agustín Gómez Meléndez · Recepción de quejas en hotel (Oral A2)',
-      'PR-02': 'Bloque 2 · Facilitadora: Hannia León Fuentes · Retroalimentación diferenciada A2 vs B1',
-      'PR-03': 'Bloque 2 · Facilitadora: Hannia León Fuentes · Anticipar errores y microrremedios',
-      'PR-04': 'Bloque 2 · Facilitadora: Hannia León Fuentes · Chatbot tutor de práctica escrita',
+      'PR-02': 'Bloque 2 · Facilitador: Agustín Gómez Meléndez · Retroalimentación diferenciada A2 vs B1',
+      'PR-03': 'Bloque 2 · Facilitador: Agustín Gómez Meléndez · Anticipar errores y microrremedios',
+      'PR-04': 'Bloque 2 · Facilitador: Agustín Gómez Meléndez · Chatbot tutor de práctica escrita',
       'PR-05': 'Bloque 3 · Facilitador: Agustín Gómez Meléndez · Rúbrica de 4 criterios y prueba de esfuerzo',
       'PR-06': 'Bloque 3 · Facilitador: Agustín Gómez Meléndez · Secuencia didáctica de 45 min y modo voz',
       'PR-07': 'Bloque 4 · Facilitador: Agustín Gómez Meléndez · Gestión y despliegue de IA local'
@@ -308,18 +308,18 @@ const App = (() => {
   function updateLiveFocusBanner(practiceCode) {
     const titles = {
       'PR-01': 'Bloque 1 (AGM) · Práctica 1: Recepción de quejas en hotel (A2 Oral)',
-      'PR-02': 'Bloque 2 (HL) · Práctica 2: Retroalimentación diferenciada (Escrita)',
-      'PR-03': 'Bloque 2 (HL) · Práctica 3: Anticipar errores y microrremedios',
-      'PR-04': 'Bloque 2 (HL) · Práctica 4: Configurar chatbot de práctica escrita',
+      'PR-02': 'Bloque 2 (AGM) · Práctica 2: Retroalimentación diferenciada (Escrita)',
+      'PR-03': 'Bloque 2 (AGM) · Práctica 3: Anticipar errores y microrremedios',
+      'PR-04': 'Bloque 2 (AGM) · Práctica 4: Configurar chatbot de práctica escrita',
       'PR-05': 'Bloque 3 (AGM) · Práctica 5: Rúbrica y prueba de esfuerzo',
       'PR-06': 'Bloque 3 (AGM) · Práctica 6: Secuencia didáctica de 45 minutos',
       'PR-07': 'Bloque 4 (AGM) · Práctica 7: Gestión y despliegue de IA local'
     };
     const facilitators = {
       'PR-01': 'Agustín Gómez Meléndez',
-      'PR-02': 'Hannia León Fuentes',
-      'PR-03': 'Hannia León Fuentes',
-      'PR-04': 'Hannia León Fuentes',
+      'PR-02': 'Agustín Gómez Meléndez',
+      'PR-03': 'Agustín Gómez Meléndez',
+      'PR-04': 'Agustín Gómez Meléndez',
       'PR-05': 'Agustín Gómez Meléndez',
       'PR-06': 'Agustín Gómez Meléndez',
       'PR-07': 'Agustín Gómez Meléndez'
@@ -567,7 +567,7 @@ const App = (() => {
         "category": "alfabetizacion",
         "categoryLabel": "Alfabetización & Trabajo",
         "pages": 34,
-        "block": "Bloque 2 (HL) · Usos No Convencionales",
+        "block": "Bloque 2 (AGM) · Usos No Convencionales",
         "takeaway": "Define las 3 competencias esenciales: comprensión del funcionamiento de los LLMs, uso reflexivo para andamiar el aprendizaje y evaluación crítica de sesgos.",
         "promptIdea": "“Diseña una actividad de 10 minutos para que estudiantes de inglés A2 identifiquen una respuesta de IA que parece correcta pero no responde la pregunta.”"
     },
@@ -622,7 +622,7 @@ const App = (() => {
         "category": "evaluacion",
         "categoryLabel": "Evaluación & Evidencia",
         "pages": 16,
-        "block": "Bloque 2 (HL) · Andamiaje",
+        "block": "Bloque 2 (AGM) · Andamiaje",
         "takeaway": "Modelos de progresión curricular que muestran cómo graduar la dificultad de los ejercicios con IA desde niveles iniciales hasta la especialización técnica.",
         "promptIdea": "“Diseña una secuencia de 3 niveles para enseñar vocabulario de hotelería en inglés: A1 (reconocimiento), A2 (formulación con apoyo) y B1 (resolución de quejas).”"
     },
@@ -688,7 +688,7 @@ const App = (() => {
         "category": "alfabetizacion",
         "categoryLabel": "Alfabetización & Trabajo",
         "pages": 31,
-        "block": "Bloque 2 (HL) · Alfabetización Docente",
+        "block": "Bloque 2 (AGM) · Alfabetización Docente",
         "takeaway": "Estándar normativo 2026 que define las competencias observables para evaluar la solvencia crítica de un profesional de la educación frente a sistemas de IA.",
         "promptIdea": "“Crea una rúbrica breve de 3 niveles para evaluar la capacidad de un estudiante de contrastar una salida de IA contra una fuente confiable.”"
     },
@@ -754,7 +754,7 @@ const App = (() => {
         "category": "evaluacion",
         "categoryLabel": "Evaluación & Evidencia",
         "pages": 86,
-        "block": "Bloque 2 (HL) · Usos No Convencionales",
+        "block": "Bloque 2 (AGM) · Usos No Convencionales",
         "takeaway": "Bases pedagógicas para seleccionar herramientas de acuerdo con los niveles del MCER (A1, A2, B1) y no dejarse llevar por la novedad tecnológica efímera.",
         "promptIdea": "“¿Cuáles son los 3 criterios pedagógicos que distinguen una buena actividad asistida por IA de un simple ejercicio de rellenar espacios vacíos?”"
     },
@@ -798,7 +798,7 @@ const App = (() => {
         "category": "pedagogia",
         "categoryLabel": "Pedagogía & Voz",
         "pages": 23,
-        "block": "Bloque 2 (HL) · Hannia León Fuentes",
+        "block": "Bloque 2 (AGM) · Agustín Gómez Meléndez",
         "takeaway": "Fichas prácticas listas para aplicar: cómo crear chatbots pedagógicos, planificar clases de 45 minutos con IA y diseñar rúbricas transparentes de evaluación formativa.",
         "promptIdea": "“Configura un chatbot de práctica escrita en Poe o ChatGPT que actúe como un cliente exigente pero cortés en inglés A2.”"
     },
@@ -842,7 +842,7 @@ const App = (() => {
         "category": "pedagogia",
         "categoryLabel": "Pedagogía & Voz",
         "pages": 94,
-        "block": "Bloque 2 (HL) · Usos No Convencionales",
+        "block": "Bloque 2 (AGM) · Usos No Convencionales",
         "takeaway": "Manual de 94 páginas sobre cómo transformar la docencia: tareas auténticas, co-diseño con IA y evaluación centrada en el proceso en vez de únicamente el producto final.",
         "promptIdea": "“¿Cómo transformar una tarea tradicional de redactar un ensayo en una práctica auténtica de resolución de un problema laboral en inglés?”"
     },
@@ -963,7 +963,7 @@ const App = (() => {
         "category": "alfabetizacion",
         "categoryLabel": "Alfabetización & Trabajo",
         "pages": 22,
-        "block": "Bloque 2 (HL) · Hannia León Fuentes",
+        "block": "Bloque 2 (AGM) · Agustín Gómez Meléndez",
         "takeaway": "Metodología psicométrica rigurosa para evaluar si los trabajadores técnicos poseen competencias reales de uso crítico de IA, aplicable a la formación del INA.",
         "promptIdea": "“Adapta una escala de 5 preguntas tipo Likert para que los docentes del INA autoevalúen su nivel de confianza al integrar IA en sus lecciones.”"
     },

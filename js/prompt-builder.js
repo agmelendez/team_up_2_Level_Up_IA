@@ -55,7 +55,7 @@ const PromptBuilderModule = (() => {
       restrictions: 'Tolere pausas de pensamiento de hasta 5 segundos sin interrumpir al estudiante. NO dé respuestas complacientes vacías ("Awesome!"). Si el estudiante comete un error que afecta la comprensión, repita la frase con una reformulación natural ("Did you mean...?"). Al finalizar el cuarto turno, señale 1 fortaleza observable y 1 recomendación de pronunciación o vocabulario.'
     },
     socratic_scaffolding: {
-      name: '7. [Bloque 2 HL] Andamiaje Socrático sin dar la respuesta (A1/A2)',
+      name: '7. [Bloque 2 AGM] Andamiaje Socrático sin dar la respuesta (A1/A2)',
       role: 'Actúe como tutor pedagógico socrático de inglés ocupacional para formación técnica profesional.',
       level: 'A1-A2 · Expresión escrita y razonamiento lingüístico',
       context: 'Estudiantes del INA aprendiendo a redactar un correo formal de confirmación de reserva o aviso de avería.',
