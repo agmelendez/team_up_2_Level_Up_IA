@@ -84,6 +84,41 @@ const LocalNotebookModule = (() => {
     setStatus('Copia Markdown descargada en su computadora.');
   }
 
+  function prepareEntry(practiceCode, prompt = '') {
+    if (!PRACTICES.includes(practiceCode)) return;
+    showPractice(practiceCode);
+    const textarea = document.getElementById('notebook-entry');
+    if (!textarea) return;
+    const current = textarea.value.trim();
+    const isBlankTemplate = !current || current === TEMPLATE.trim();
+    if (isBlankTemplate && prompt) {
+      textarea.value = `## Instrucción utilizada\n\n${prompt}\n\n## Respuesta de la IA (cópiela y péguela aquí)\n\n\n## Hallazgo crítico\n\n\n## Próximo ajuste\n\n`;
+    }
+    saveActiveEntry(true);
+    document.getElementById('participant-notebook')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    window.setTimeout(() => textarea.focus(), 450);
+    setStatus(`${practiceCode} preparado. Pegue aquí la respuesta de la IA externa.`);
+  }
+
+  function printNotebook() {
+    saveActiveEntry();
+    const printContent = document.getElementById('notebook-print-content');
+    if (printContent) {
+      printContent.replaceChildren();
+      PRACTICES.forEach((code) => {
+        const section = document.createElement('section');
+        const title = document.createElement('h4');
+        const content = document.createElement('pre');
+        title.textContent = code;
+        content.textContent = state.entries[code] || TEMPLATE;
+        section.append(title, content);
+        printContent.appendChild(section);
+      });
+    }
+    document.body.classList.add('print-notebook-only');
+    window.print();
+  }
+
   function clearActiveEntry() {
     if (!window.confirm(`¿Desea borrar únicamente el registro de ${activePractice}?`)) return;
     state.entries[activePractice] = TEMPLATE;
@@ -98,14 +133,16 @@ const LocalNotebookModule = (() => {
     textarea.addEventListener('input', scheduleSave);
     document.getElementById('btn-notebook-save')?.addEventListener('click', () => saveActiveEntry(true));
     document.getElementById('btn-notebook-download')?.addEventListener('click', downloadMarkdown);
+    document.getElementById('btn-notebook-print')?.addEventListener('click', printNotebook);
     document.getElementById('btn-notebook-clear')?.addEventListener('click', clearActiveEntry);
     document.addEventListener('ina:practice-changed', (event) => showPractice(event.detail?.practiceCode));
     window.addEventListener('beforeunload', () => saveActiveEntry());
+    window.addEventListener('afterprint', () => document.body.classList.remove('print-notebook-only'));
     const selected = document.getElementById('practice-select-dropdown')?.value || 'PR-01';
     showPractice(selected);
   }
 
-  return { init, showPractice, downloadMarkdown };
+  return { init, showPractice, downloadMarkdown, prepareEntry, printNotebook };
 })();
 
 document.addEventListener('DOMContentLoaded', LocalNotebookModule.init);

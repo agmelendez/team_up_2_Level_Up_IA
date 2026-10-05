@@ -1230,6 +1230,38 @@ const App = (() => {
       });
     });
 
+    // Cierre visible del flujo: conservar el trabajo en el cuaderno local.
+    document.querySelectorAll('.practice-card').forEach(card => {
+      const code = card.dataset.practiceCode;
+      const prompt = card.querySelector('.btn-copy-prompt-direct')?.dataset.prompt || '';
+      const actionGrid = card.querySelector('.action-steps-grid');
+      if (!code || !actionGrid || card.querySelector('.practice-save-panel')) return;
+      const panel = document.createElement('div');
+      panel.className = 'practice-save-panel';
+      panel.innerHTML = `
+        <div class="practice-save-message">
+          <strong>💾 Al terminar en la IA, conserve su trabajo</strong>
+          <span>ChatGPT, Claude y Gemini se abren fuera de este portal. Recuerde copiar la respuesta obtenida y pegarla en su cuaderno antes de continuar.</span>
+        </div>
+        <button type="button" class="btn-primary btn-save-to-notebook" data-practice="${code}">
+          Guardar esta actividad en mi cuaderno
+        </button>`;
+      actionGrid.insertAdjacentElement('afterend', panel);
+      panel.querySelector('.btn-save-to-notebook')?.addEventListener('click', () => {
+        if (typeof LocalNotebookModule !== 'undefined') {
+          LocalNotebookModule.prepareEntry(code, prompt);
+          showToast(`${code} preparado en el cuaderno. Pegue la respuesta de la IA.`);
+        }
+      });
+    });
+
+    // Recordatorio al salir hacia una IA externa; el portal no puede leer su respuesta.
+    document.querySelectorAll('.btn-ai-link').forEach(link => {
+      link.addEventListener('click', () => {
+        showToast('Recuerde volver y pegar la respuesta de la IA en su cuaderno local.');
+      });
+    });
+
     // Filtros de la Biblioteca de Evidencia 2026
     document.querySelectorAll('.library-filter-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {

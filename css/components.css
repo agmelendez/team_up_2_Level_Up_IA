@@ -555,6 +555,12 @@
 .notebook-status { color:#475569; font-size:.86rem; }
 .notebook-buttons { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:.55rem; }
 .notebook-clear { color:#991b1b; border-color:#fecaca; }
+.notebook-external-alert { padding:.75rem .9rem; border-left:4px solid #d97706; border-radius:8px; background:#fffbeb; color:#78350f!important; }
+.notebook-print-content { display:none; }
+.practice-save-panel { display:flex; align-items:center; justify-content:space-between; gap:1rem; margin:0 0 1.25rem; padding:1rem 1.1rem; border:2px solid #86efac; border-radius:12px; background:#f0fdf4; }
+.practice-save-message { display:flex; flex-direction:column; gap:.25rem; color:#14532d; }
+.practice-save-message span { color:#166534; font-size:.9rem; line-height:1.45; }
+.btn-save-to-notebook { flex:0 0 auto; }
 .bubble-text { white-space:pre-line; }
 .skip-link { position:fixed; left:1rem; top:-5rem; z-index:9999; padding:.7rem 1rem; background:#fff; color:#172554; border:2px solid #2563eb; border-radius:8px; }
 .skip-link:focus { top:1rem; }
@@ -563,6 +569,7 @@
   .notebook-heading, .notebook-actions { flex-direction:column; }
   .notebook-practice-label { white-space:normal; }
   .notebook-buttons { justify-content:flex-start; width:100%; }
+  .practice-save-panel { align-items:stretch; flex-direction:column; }
 }
 
 .timer-controls {
@@ -2466,10 +2473,10 @@
   color: var(--ina-blue-900);
 }
 
-/* 3. Rejilla de los 3 Pasos de Acción */
+/* Flujo principal de dos pasos y contingencia opcional */
 .action-steps-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   margin: 1.25rem 0;
 }
@@ -2502,7 +2509,14 @@
 .action-step-card.step-planb {
   background: #fffbeb;
   border-color: #fde68a;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
 }
+
+.action-step-card.step-planb h4 { margin-right:.5rem; }
+.action-step-card.step-planb .btn-step-action { width:auto; min-width:220px; }
 
 .step-card-badge {
   font-size: 0.7rem;

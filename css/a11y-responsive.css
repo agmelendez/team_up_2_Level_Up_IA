@@ -902,6 +902,17 @@ body {
     grid-template-columns: 1fr !important;
   }
 
+  .action-step-card.step-planb {
+    display: flex;
+    grid-column: auto;
+    align-items: stretch;
+  }
+
+  .action-step-card.step-planb .btn-step-action {
+    width: 100%;
+    min-width: 0;
+  }
+
   .simulator-layout {
     grid-template-columns: 1fr !important;
   }

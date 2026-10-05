@@ -3,6 +3,26 @@
    ========================================================================== */
 
 @media print {
+  body.print-notebook-only > * { display:none!important; }
+  body.print-notebook-only .app-shell,
+  body.print-notebook-only .app-main,
+  body.print-notebook-only #tab-live,
+  body.print-notebook-only #seccion-practica,
+  body.print-notebook-only .participant-notebook { display:block!important; }
+  body.print-notebook-only .app-sidebar,
+  body.print-notebook-only .workshop-live-focus,
+  body.print-notebook-only .practice-droplist-wrapper,
+  body.print-notebook-only .timer-widget,
+  body.print-notebook-only .practices-grid,
+  body.print-notebook-only .notebook-entry,
+  body.print-notebook-only .notebook-actions,
+  body.print-notebook-only .notebook-external-alert { display:none!important; }
+  body.print-notebook-only .participant-notebook { border:0!important; box-shadow:none!important; padding:0!important; }
+  body.print-notebook-only .notebook-print-content { display:block!important; }
+  body.print-notebook-only .notebook-print-content section { page-break-inside:avoid; margin:0 0 1.25rem; }
+  body.print-notebook-only .notebook-print-content h4 { border-bottom:2px solid #333; padding-bottom:.25rem; }
+  body.print-notebook-only .notebook-print-content pre { white-space:pre-wrap; font:10.5pt/1.45 system-ui,sans-serif; }
+
   body {
     background-color: #ffffff !important;
     color: #000000 !important;

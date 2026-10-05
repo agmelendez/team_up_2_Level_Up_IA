@@ -7,11 +7,11 @@
   <meta name="description" content="Portal interactivo oficial del Taller Técnico: Inteligencia Artificial en la Enseñanza del Inglés Técnico. Núcleo Comercio y Servicios, Subsector de Idiomas, INA Costa Rica.">
 
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/components.css?v=20261005b">
   <link rel="stylesheet" href="css/tutor-mode.css">
   <link rel="stylesheet" href="css/modern-portal.css">
-  <link rel="stylesheet" href="css/a11y-responsive.css">
-  <link rel="stylesheet" href="css/print.css" media="print">
+  <link rel="stylesheet" href="css/a11y-responsive.css?v=20261005b">
+  <link rel="stylesheet" href="css/print.css?v=20261005b" media="print">
 
   <!-- Metadatos de Licencia Creative Commons (CC-BY 4.0) -->
   <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
@@ -876,15 +876,18 @@
             <span class="notebook-kicker">💾 TRABAJO PERSONAL · SIN ENVÍOS</span>
             <h3 id="participant-notebook-title">Mi cuaderno local del taller</h3>
             <p>Sus notas quedan en este navegador y dispositivo. No se suben a ninguna plataforma. Descargue una copia antes de cerrar o cambiar de computadora.</p>
+            <p class="notebook-external-alert" role="note"><strong>Importante:</strong> el portal no puede traer automáticamente las respuestas de ChatGPT, Claude o Gemini. Cuando termine una actividad, copie la respuesta en esa plataforma, regrese aquí y péguela en el cuaderno.</p>
           </div>
           <span id="notebook-practice-label" class="notebook-practice-label">PR-01 · registro personal</span>
         </div>
         <label for="notebook-entry" class="notebook-label">Producto y reflexión de la práctica activa</label>
         <textarea id="notebook-entry" class="notebook-entry" rows="13" spellcheck="true"></textarea>
+        <div id="notebook-print-content" class="notebook-print-content" aria-hidden="true"></div>
         <div class="notebook-actions">
           <span id="notebook-save-status" class="notebook-status" aria-live="polite">Listo para escribir.</span>
           <div class="notebook-buttons">
             <button id="btn-notebook-save" class="btn-secondary" type="button">Guardar ahora</button>
+            <button id="btn-notebook-print" class="btn-secondary" type="button">Imprimir / Guardar PDF</button>
             <button id="btn-notebook-download" class="btn-primary" type="button">Descargar cuaderno (.md)</button>
             <button id="btn-notebook-clear" class="btn-secondary notebook-clear" type="button">Borrar esta práctica</button>
           </div>
@@ -902,7 +905,7 @@
             </div>
             <span class="practice-duration-pill">⏱️ 12 min</span>
           </div>
-          <!-- 3 Pasos de Acción Inmediata (Claridad Cognitiva) -->
+          <!-- Flujo principal de dos pasos y contingencia opcional -->
           <div class="action-steps-grid">
             <div class="action-step-card step-copy">
               <span class="step-card-badge">Paso 1 · Copiar</span>
@@ -922,7 +925,7 @@
               </div>
             </div>
             <div class="action-step-card step-planb">
-              <span class="step-card-badge">Paso 3 · Plan B</span>
+              <span class="step-card-badge">Contingencia · Solo si la necesita</span>
               <h4>¿Falla la red o la IA?</h4>
               <p>Use la salida pregenerada de respaldo para continuar sin atrasarse:</p>
               <button class="btn-step-action btn-plan-b" data-practice="PR-01">🛡️ Ver Salida Plan B</button>
@@ -930,7 +933,7 @@
           </div>
           <!-- Acordeón Desplegable con Consigna Completa y Microentregable -->
           <details class="friendly-disclosure">
-            <summary>🔍 Ver detalles pedagógicos, pasos completos y microentregable</summary>
+            <summary>🔍 Ver detalles pedagógicos y producto para el cuaderno</summary>
             <div style="margin-top:0.75rem;">
 <div class="practice-card-body">
             <ol class="practice-steps-list">
@@ -940,7 +943,7 @@
               <li><span class="step-num">4</span> Genere la salida, marque un defecto crítico y mejore la instrucción.</li>
             </ol>
             <div class="deliverable-box">
-              <strong>📦 Microentregable a depositar:</strong>
+              <strong>💾 Producto para guardar en su cuaderno:</strong>
               <p>Instrucción final calibrada, fragmento corregido y hallazgo crítico principal.</p>
             </div>
             <div class="privacy-notice-badge">
@@ -967,7 +970,7 @@
             </div>
             <span class="practice-duration-pill">⏱️ 12 min</span>
           </div>
-          <!-- 3 Pasos de Acción Inmediata (Claridad Cognitiva) -->
+          <!-- Flujo principal de dos pasos y contingencia opcional -->
           <div class="action-steps-grid">
             <div class="action-step-card step-copy">
               <span class="step-card-badge">Paso 1 · Copiar</span>
@@ -987,7 +990,7 @@
               </div>
             </div>
             <div class="action-step-card step-planb">
-              <span class="step-card-badge">Paso 3 · Plan B</span>
+              <span class="step-card-badge">Contingencia · Solo si la necesita</span>
               <h4>¿Falla la red o la IA?</h4>
               <p>Use la salida pregenerada de respaldo para continuar sin atrasarse:</p>
               <button class="btn-step-action btn-plan-b" data-practice="PR-02">🛡️ Ver Salida Plan B</button>
@@ -995,7 +998,7 @@
           </div>
           <!-- Acordeón Desplegable con Consigna Completa y Microentregable -->
           <details class="friendly-disclosure">
-            <summary>🔍 Ver detalles pedagógicos, pasos completos y microentregable</summary>
+            <summary>🔍 Ver detalles pedagógicos y producto para el cuaderno</summary>
             <div style="margin-top:0.75rem;">
 <div class="practice-card-body">
             <ol class="practice-steps-list">
@@ -1005,7 +1008,7 @@
               <li><span class="step-num">4</span> Elimine todo elogio vacío y verifique que la corrección sea comprensible.</li>
             </ol>
             <div class="deliverable-box">
-              <strong>📦 Microentregable a depositar:</strong>
+              <strong>💾 Producto para guardar en su cuaderno:</strong>
               <p>Dos comentarios diferenciados, frase modelo y el elogio vacío que eliminó.</p>
             </div>
             <div class="privacy-notice-badge">
@@ -1032,7 +1035,7 @@
             </div>
             <span class="practice-duration-pill">⏱️ 12 min</span>
           </div>
-          <!-- 3 Pasos de Acción Inmediata (Claridad Cognitiva) -->
+          <!-- Flujo principal de dos pasos y contingencia opcional -->
           <div class="action-steps-grid">
             <div class="action-step-card step-copy">
               <span class="step-card-badge">Paso 1 · Copiar</span>
@@ -1052,7 +1055,7 @@
               </div>
             </div>
             <div class="action-step-card step-planb">
-              <span class="step-card-badge">Paso 3 · Plan B</span>
+              <span class="step-card-badge">Contingencia · Solo si la necesita</span>
               <h4>¿Falla la red o la IA?</h4>
               <p>Use la salida pregenerada de respaldo para continuar sin atrasarse:</p>
               <button class="btn-step-action btn-plan-b" data-practice="PR-03">🛡️ Ver Salida Plan B</button>
@@ -1060,7 +1063,7 @@
           </div>
           <!-- Acordeón Desplegable con Consigna Completa y Microentregable -->
           <details class="friendly-disclosure">
-            <summary>🔍 Ver detalles pedagógicos, pasos completos y microentregable</summary>
+            <summary>🔍 Ver detalles pedagógicos y producto para el cuaderno</summary>
             <div style="margin-top:0.75rem;">
 <div class="practice-card-body">
             <ol class="practice-steps-list">
@@ -1070,7 +1073,7 @@
               <li><span class="step-num">4</span> Elimine una suposición injustificada de la IA y adapte un remedio.</li>
             </ol>
             <div class="deliverable-box">
-              <strong>📦 Microentregable a depositar:</strong>
+              <strong>💾 Producto para guardar en su cuaderno:</strong>
               <p>Cinco errores anticipados, cinco microrremedios y la suposición que corrigió.</p>
             </div>
             <div class="privacy-notice-badge">
@@ -1097,7 +1100,7 @@
             </div>
             <span class="practice-duration-pill">⏱️ 12 min</span>
           </div>
-          <!-- 3 Pasos de Acción Inmediata (Claridad Cognitiva) -->
+          <!-- Flujo principal de dos pasos y contingencia opcional -->
           <div class="action-steps-grid">
             <div class="action-step-card step-copy">
               <span class="step-card-badge">Paso 1 · Copiar</span>
@@ -1117,7 +1120,7 @@
               </div>
             </div>
             <div class="action-step-card step-planb">
-              <span class="step-card-badge">Paso 3 · Plan B</span>
+              <span class="step-card-badge">Contingencia · Solo si la necesita</span>
               <h4>¿Falla la red o la IA?</h4>
               <p>Use la salida pregenerada de respaldo para continuar sin atrasarse:</p>
               <button class="btn-step-action btn-plan-b" data-practice="PR-04">🛡️ Ver Salida Plan B</button>
@@ -1125,7 +1128,7 @@
           </div>
           <!-- Acordeón Desplegable con Consigna Completa y Microentregable -->
           <details class="friendly-disclosure">
-            <summary>🔍 Ver detalles pedagógicos, pasos completos y microentregable</summary>
+            <summary>🔍 Ver detalles pedagógicos y producto para el cuaderno</summary>
             <div style="margin-top:0.75rem;">
 <div class="practice-card-body">
             <ol class="practice-steps-list">
@@ -1135,7 +1138,7 @@
               <li><span class="step-num">4</span> Pruebe dos turnos escritos usted mismo y ajuste una regla que el asistente incumpla.</li>
             </ol>
             <div class="deliverable-box">
-              <strong>📦 Microentregable a depositar:</strong>
+              <strong>💾 Producto para guardar en su cuaderno:</strong>
               <p>Bloque de instrucciones, dos turnos escritos de prueba, incumplimiento y ajuste realizado.</p>
             </div>
             <div class="privacy-notice-badge">
@@ -1162,7 +1165,7 @@
             </div>
             <span class="practice-duration-pill">⏱️ 12 min</span>
           </div>
-          <!-- 3 Pasos de Acción Inmediata (Claridad Cognitiva) -->
+          <!-- Flujo principal de dos pasos y contingencia opcional -->
           <div class="action-steps-grid">
             <div class="action-step-card step-copy">
               <span class="step-card-badge">Paso 1 · Copiar</span>
@@ -1182,7 +1185,7 @@
               </div>
             </div>
             <div class="action-step-card step-planb">
-              <span class="step-card-badge">Paso 3 · Plan B</span>
+              <span class="step-card-badge">Contingencia · Solo si la necesita</span>
               <h4>¿Falla la red o la IA?</h4>
               <p>Use la salida pregenerada de respaldo para continuar sin atrasarse:</p>
               <button class="btn-step-action btn-plan-b" data-practice="PR-05">🛡️ Ver Salida Plan B</button>
@@ -1190,7 +1193,7 @@
           </div>
           <!-- Acordeón Desplegable con Consigna Completa y Microentregable -->
           <details class="friendly-disclosure">
-            <summary>🔍 Ver detalles pedagógicos, pasos completos y microentregable</summary>
+            <summary>🔍 Ver detalles pedagógicos y producto para el cuaderno</summary>
             <div style="margin-top:0.75rem;">
 <div class="practice-card-body">
             <ol class="practice-steps-list">
@@ -1200,7 +1203,7 @@
               <li><span class="step-num">4</span> Aplique la rúbrica a dos muestras sintéticas y corrija un criterio vago.</li>
             </ol>
             <div class="deliverable-box">
-              <strong>📦 Microentregable a depositar:</strong>
+              <strong>💾 Producto para guardar en su cuaderno:</strong>
               <p>Secuencia didáctica, rúbrica, dos puntuaciones obtenidas y criterio corregido.</p>
             </div>
             <div class="privacy-notice-badge">
@@ -1227,7 +1230,7 @@
             </div>
             <span class="practice-duration-pill">⏱️ 12 min</span>
           </div>
-          <!-- 3 Pasos de Acción Inmediata (Claridad Cognitiva) -->
+          <!-- Flujo principal de dos pasos y contingencia opcional -->
           <div class="action-steps-grid">
             <div class="action-step-card step-copy">
               <span class="step-card-badge">Paso 1 · Copiar</span>
@@ -1247,7 +1250,7 @@
               </div>
             </div>
             <div class="action-step-card step-planb">
-              <span class="step-card-badge">Paso 3 · Plan B</span>
+              <span class="step-card-badge">Contingencia · Solo si la necesita</span>
               <h4>¿Falla la red o la IA?</h4>
               <p>Use la salida pregenerada de respaldo para continuar sin atrasarse:</p>
               <button class="btn-step-action btn-plan-b" data-practice="PR-06">🛡️ Ver Salida Plan B</button>
@@ -1255,7 +1258,7 @@
           </div>
           <!-- Acordeón Desplegable con Consigna Completa y Microentregable -->
           <details class="friendly-disclosure">
-            <summary>🔍 Ver detalles pedagógicos, pasos completos y microentregable</summary>
+            <summary>🔍 Ver detalles pedagógicos y producto para el cuaderno</summary>
             <div style="margin-top:0.75rem;">
 <div class="practice-card-body">
             <ol class="practice-steps-list">
@@ -1265,7 +1268,7 @@
               <li><span class="step-num">4</span> Solicite una prioridad de mejora y compruebe si se apoya en evidencia audible o transcrita.</li>
             </ol>
             <div class="deliverable-box">
-              <strong>📦 Microentregable a depositar:</strong>
+              <strong>💾 Producto para guardar en su cuaderno:</strong>
               <p>Instrucción utilizada, observaciones sobre participación, turnos, nivel y retroalimentación, más un ajuste propuesto.</p>
             </div>
             <div class="privacy-notice-badge">
@@ -1292,7 +1295,7 @@
             </div>
             <span class="practice-duration-pill">⏱️ 12 min</span>
           </div>
-          <!-- 3 Pasos de Acción Inmediata (Claridad Cognitiva) -->
+          <!-- Flujo principal de dos pasos y contingencia opcional -->
           <div class="action-steps-grid">
             <div class="action-step-card step-copy">
               <span class="step-card-badge">Paso 1 · Copiar</span>
@@ -1312,7 +1315,7 @@
               </div>
             </div>
             <div class="action-step-card step-planb">
-              <span class="step-card-badge">Paso 3 · Plan B</span>
+              <span class="step-card-badge">Contingencia · Solo si la necesita</span>
               <h4>¿Falla la red o la IA?</h4>
               <p>Use la salida pregenerada de respaldo para continuar sin atrasarse:</p>
               <button class="btn-step-action btn-plan-b" data-practice="PR-07">🛡️ Ver Salida Plan B</button>
@@ -1320,7 +1323,7 @@
           </div>
           <!-- Acordeón Desplegable con Consigna Completa y Microentregable -->
           <details class="friendly-disclosure">
-            <summary>🔍 Ver detalles pedagógicos, pasos completos y microentregable</summary>
+            <summary>🔍 Ver detalles pedagógicos y producto para el cuaderno</summary>
             <div style="margin-top:0.75rem;">
 <div class="practice-card-body">
             <ol class="practice-steps-list">
@@ -1330,7 +1333,7 @@
               <li><span class="step-num">4</span> Compare resultados y decida si conserva, sustituye o descarta el modelo local.</li>
             </ol>
             <div class="deliverable-box">
-              <strong>📦 Microentregable a depositar:</strong>
+              <strong>💾 Producto para guardar en su cuaderno:</strong>
               <p>Ficha del modelo, ambas salidas, diferencia principal y decisión docente.</p>
             </div>
             <div class="privacy-notice-badge">
@@ -1439,8 +1442,8 @@
   <!-- Scripts JavaScript -->
   <script src="js/timer.js"></script>
   <script src="js/tutor-mode.js?v=20261005"></script>
-  <script src="js/local-notebook.js"></script>
-  <script src="js/app.js?v=20261005"></script>
+  <script src="js/local-notebook.js?v=20261005b"></script>
+  <script src="js/app.js?v=20261005b"></script>
   <script src="js/a11y-translate.js?v=20261005"></script>
 </body>
 </html>
