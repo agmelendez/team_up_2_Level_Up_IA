@@ -254,7 +254,8 @@
       highlightLinks: false,
       highlightHeadings: false,
       bigCursor: false,
-      reduceMotion: false
+      reduceMotion: false,
+      screenReaderMode: false
     },
 
     init: function () {
@@ -321,15 +322,61 @@
         document.body.classList.toggle('a11y-big-cursor', active);
       } else if (key === 'reduceMotion') {
         document.body.classList.toggle('a11y-reduce-motion', active);
+      } else if (key === 'screenReaderMode') {
+        document.body.classList.toggle('a11y-screen-reader-mode', active);
+        document.documentElement.setAttribute('data-screen-reader-mode', active ? 'true' : 'false');
+        this.announce(active
+          ? 'Modo lector de pantalla activado. La navegación y los cambios de estado se anunciarán con mayor detalle.'
+          : 'Modo lector de pantalla desactivado.');
       }
+    },
+
+    announce: function (message) {
+      let region = document.getElementById('a11y-live-announcer');
+      if (!region) {
+        region = document.createElement('div');
+        region.id = 'a11y-live-announcer';
+        region.className = 'visually-hidden';
+        region.setAttribute('role', 'status');
+        region.setAttribute('aria-live', 'polite');
+        region.setAttribute('aria-atomic', 'true');
+        document.body.appendChild(region);
+      }
+      region.textContent = '';
+      window.setTimeout(() => { region.textContent = message; }, 40);
+    },
+
+    enhanceScreenReaderNavigation: function () {
+      const main = document.getElementById('main-content') || document.querySelector('main');
+      if (main && !main.hasAttribute('tabindex')) main.setAttribute('tabindex', '-1');
+
+      document.querySelectorAll('.skip-link[href^="#"]').forEach(link => {
+        link.addEventListener('click', () => {
+          const target = document.querySelector(link.getAttribute('href'));
+          window.setTimeout(() => target?.focus?.(), 0);
+        });
+      });
+
+      const currentFile = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+      document.querySelectorAll('nav a[href]').forEach(link => {
+        const href = (link.getAttribute('href') || '').split('#')[0].toLowerCase();
+        if (href && href === currentFile) link.setAttribute('aria-current', 'page');
+      });
+
+      document.querySelectorAll('button[title]:not([aria-label]), a[title]:not([aria-label])').forEach(control => {
+        control.setAttribute('aria-label', control.getAttribute('title'));
+      });
+      document.querySelectorAll('img:not([alt])').forEach(img => img.setAttribute('alt', ''));
+      this.announce(`Página cargada: ${document.title}.`);
     },
 
     applyAll: function () {
       this.setContrast(this.state.contrast);
       this.setFontSize(this.state.fontSize);
-      ['dyslexicFont', 'highlightLinks', 'highlightHeadings', 'bigCursor', 'reduceMotion'].forEach(k => {
+      ['dyslexicFont', 'highlightLinks', 'highlightHeadings', 'bigCursor', 'reduceMotion', 'screenReaderMode'].forEach(k => {
         this.applyOption(k);
       });
+      this.enhanceScreenReaderNavigation();
       this.updateUI();
     },
 
@@ -341,7 +388,8 @@
         highlightLinks: false,
         highlightHeadings: false,
         bigCursor: false,
-        reduceMotion: false
+        reduceMotion: false,
+        screenReaderMode: false
       };
       this.applyAll();
       this.savePreferences();
@@ -359,11 +407,14 @@
       });
 
       // Interruptores
-      ['dyslexicFont', 'highlightLinks', 'highlightHeadings', 'bigCursor', 'reduceMotion'].forEach(k => {
+      ['dyslexicFont', 'highlightLinks', 'highlightHeadings', 'bigCursor', 'reduceMotion', 'screenReaderMode'].forEach(k => {
         const switchBtn = document.querySelector(`[data-a11y-toggle="${k}"]`);
         if (switchBtn) {
           switchBtn.classList.toggle('active', !!this.state[k]);
           switchBtn.setAttribute('aria-checked', this.state[k] ? 'true' : 'false');
+          if (k === 'screenReaderMode') {
+            switchBtn.setAttribute('aria-label', `${this.state[k] ? 'Desactivar' : 'Activar'} modo lector de pantalla`);
+          }
         }
       });
     },
@@ -474,18 +525,30 @@
 
       if (!menuBtn || !drawer) return;
 
+      drawer.setAttribute('aria-hidden', 'true');
+      drawer.inert = true;
+      backdrop?.setAttribute('aria-hidden', 'true');
+
       const openDrawer = () => {
         drawer.classList.add('open');
         backdrop?.classList.add('open');
+        drawer.setAttribute('aria-hidden', 'false');
+        drawer.inert = false;
+        backdrop?.setAttribute('aria-hidden', 'false');
         menuBtn.setAttribute('aria-expanded', 'true');
         document.body.style.overflow = 'hidden';
+        closeBtn?.focus();
       };
 
       const closeDrawer = () => {
         drawer.classList.remove('open');
         backdrop?.classList.remove('open');
+        drawer.setAttribute('aria-hidden', 'true');
+        drawer.inert = true;
+        backdrop?.setAttribute('aria-hidden', 'true');
         menuBtn.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
+        menuBtn.focus();
       };
 
       menuBtn.addEventListener('click', (e) => {

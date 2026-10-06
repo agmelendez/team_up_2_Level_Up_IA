@@ -68,7 +68,7 @@ Modalidad: virtual por Microsoft Teams, formato de seminario en línea con prác
 simultánea. NO hay salas de trabajo en grupo.
 
 Participantes: personas docentes de las 9 Unidades Regionales del INA.
-246 imparten inglés, 4 LESCO, 2 portugués y 2 francés. Enseñan a población adulta en
+246 imparten inglés, 4 Lengua de Señas Costarricense (LESCO), 2 portugués y 2 francés. Enseñan a población adulta en
 formación técnica y ocupacional (turismo, atención al cliente, servicios empresariales,
 centros de contacto, comercio). Alfabetización digital heterogénea; muchas personas nunca
 han usado IA generativa de forma sistemática.
@@ -712,7 +712,7 @@ suposiciones erróneas sobre el perfil del estudiantado adulto en formación té
 
 # Fase 5. Adaptaciones lingüísticas
 
-## P5.1 Adaptación a LESCO — **C**
+## P5.1 Adaptación a la Lengua de Señas Costarricense (LESCO) — **C**
 
 ```
 Produce el material de adaptación para las 4 personas docentes de LESCO que participan en la
