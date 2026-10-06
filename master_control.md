@@ -76,7 +76,7 @@ El portal implementa un sistema visual moderno, limpio y con abundante espacio n
 
 ### 3.2 Componentes UI Emblemáticos
 1. **Glassmorphism Navbar (`.modern-navbar`):** Barra fija superior con `backdrop-filter: blur(12px)`, logotipo institucional y enlaces tipo píldora interactiva con recuentos numéricos (`nav-pill-badge`).
-2. **Hero de Cohorte Lovable (`.hero-cohort-section`):** Cabecera espaciosa con badge animado, tipografía con gradiente azul/esmeralda y cuadrícula de 4 estadísticas flotantes (`254 Participantes`, `41 Documentos RAG`, `7 Prácticas en Vivo`, `100% Ley 8968`).
+2. **Hero de Cohorte Lovable (`.hero-cohort-section`):** Cabecera espaciosa con badge animado, tipografía con gradiente azul/esmeralda y cuadrícula de 3 estadísticas flotantes (`41 Documentos RAG`, `7 Prácticas en Vivo`, `100% Ley 8968`).
 3. **Directorio MagicSchool (`.tools-directory-section`):** Cuadrícula ergonómica de 7 tarjetas con iconos temáticos circulares, etiquetas de categoría y acciones de enlace directo hacia submódulos, incluido `herramientas.html#slides`.
 4. **Selector Horizontal de Prácticas (`.practice-stepper-container`):** Stepper horizontal de 7 píldoras que asegura el principio pedagógico fundamental: **mostrar una sola práctica activa a la vez** para eliminar la sobrecarga cognitiva.
 5. **Caja de Vista Previa de Orden (`.prompt-box-preview`):** Recuadro con tipografía monoespaciada que muestra el texto íntegro y editable del prompt de cada práctica en el Paso 1.

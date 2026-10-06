@@ -67,7 +67,7 @@ Recesos: 8:30-9:00 a. m. y almuerzo de 12:00 m. d. a 1:00 p. m.
 Modalidad: virtual por Microsoft Teams, formato de seminario en línea con práctica
 simultánea. NO hay salas de trabajo en grupo.
 
-Participantes: 254 personas docentes de las 9 Unidades Regionales del INA.
+Participantes: personas docentes de las 9 Unidades Regionales del INA.
 246 imparten inglés, 4 LESCO, 2 portugués y 2 francés. Enseñan a población adulta en
 formación técnica y ocupacional (turismo, atención al cliente, servicios empresariales,
 centros de contacto, comercio). Alfabetización digital heterogénea; muchas personas nunca
@@ -203,7 +203,7 @@ de privacidad. Propón una prueba piloto cronometrada con 5 a 8 personas antes d
 ## P1.2 Serie de tres correos institucionales — **C**
 
 ```
-Redacta tres correos que el INA enviará a las 254 personas docentes. Firma institucional del
+Redacta tres correos que el INA enviará a las personas docentes. Firma institucional del
 INA, no de la facilitación.
 
 Correo 1 (22 de septiembre): invitación a responder la encuesta diagnóstica. Explica para qué
@@ -315,7 +315,7 @@ a sus autores.
 
 ```
 Diseña la presentación del Bloque 1, "Panorama y método", 60 minutos, a cargo de Agustín
-Gómez Meléndez, ante 254 docentes de idiomas con cámaras cerradas.
+Gómez Meléndez, ante docentes de idiomas con cámaras cerradas.
 
 Distribución del tiempo: 18 minutos de encuadre conceptual, 15 de demostración del modo de voz
 de ChatGPT, Claude y Gemini, 2 de transición, y un ciclo estándar de 25 minutos: 8 de
@@ -633,7 +633,7 @@ Produce el material de rúbrica integrado en el ciclo 3.1.
 
 ```
 Escribe el guion minuto a minuto de la demostración de modo de voz del Bloque 1, 15 minutos,
-con ChatGPT, Claude y Gemini, ante 254 personas con cámaras cerradas.
+con ChatGPT, Claude y Gemini, ante personas con cámaras cerradas.
 
 Tres demostraciones de 4 minutos, una por herramienta, con un uso didáctico distinto en cada
 una: conversación guiada por nivel, retroalimentación de pronunciación y simulación de una
@@ -854,7 +854,7 @@ no en medio del texto.
 ## P7.3 Banco de respuestas a preguntas previsibles — **C**
 
 ```
-Anticipa las 25 preguntas más probables de 254 docentes de idiomas en esta jornada y redacta
+Anticipa las 25 preguntas más probables de docentes de idiomas en esta jornada y redacta
 una respuesta de 60 a 90 palabras para cada una, utilizable tal cual en el Q&A.
 
 Cubre al menos estas familias: integridad académica y detección de uso de IA por parte del

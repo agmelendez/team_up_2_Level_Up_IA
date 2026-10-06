@@ -27,7 +27,7 @@ Si ambos archivos presentan información distinta, la discrepancia debe anotarse
 
 ## Resumen funcional de la línea base
 
-El proyecto es un ecosistema web multipágina que apoya una jornada virtual para 254 personas docentes. La metodología combina demostraciones conducidas, siete prácticas individuales, registros en un cuaderno local, devolución pública y planes de contingencia. No se contemplan salas simultáneas de trabajo ni la entrega de productos individuales a una plataforma.
+El proyecto es un ecosistema web multipágina que apoya una jornada virtual para personas docentes. La metodología combina demostraciones conducidas, siete prácticas individuales, registros en un cuaderno local, devolución pública y planes de contingencia. No se contemplan salas simultáneas de trabajo ni la entrega de productos individuales a una plataforma.
 
 ### Componentes principales
 
@@ -174,7 +174,7 @@ Copiar una fila en la tabla anterior y completar todos sus campos. Cuando el cam
 
 | ID | Fecha | Componente | Descripción | Impacto | Acción tomada | Estado |
 | --- | --- | --- | --- | --- | --- | --- |
-| INC-2026-09-29-01 | 29/09/2026 | Coherencia de contenidos | El control maestro mencionaba `300+ Participantes`, mientras el documento metodológico establece una población de 254 personas docentes. | La interfaz mostraba una cifra distinta de la población oficial del taller. | Se actualizó la interfaz y el control maestro a 254. | Resuelto |
+| INC-2026-09-29-01 | 29/09/2026 | Coherencia de contenidos | El control maestro y la interfaz mostraban cifras de participantes que no debían publicarse. | La interfaz exhibía una cifra de población del taller. | Se retiró la cifra de participantes de la interfaz y de los materiales activos. | Resuelto |
 | INC-2026-09-29-02 | 29/09/2026 | Evidencia de la biblioteca | El control maestro incluye afirmaciones sobre un componente PISA de inglés para Costa Rica y un estudio NYU Stern 2026. Estas afirmaciones requieren confirmación directa en las fuentes antes de presentarse como hechos públicos. | Riesgo de sobreafirmación en contenido pedagógico o público. | Se registra para auditoría de fuentes; no se modifica contenido en esta etapa. | Pendiente |
 | INC-2026-09-29-03 | 29/09/2026 | Herramientas de la jornada | El documento metodológico indica que disponibilidad, compatibilidad, límites y condiciones de las plataformas deben verificarse nuevamente antes del taller. | Riesgo operativo por cambios recientes en aplicaciones, planes gratuitos o compatibilidad de dispositivos. | Programar comprobación final antes del 6 de octubre. | Pendiente |
 | INC-2026-09-29-04 | 29/09/2026 | Corpus RAG | El inventario procesado contiene identificadores internos repetidos para tres pares de archivos distintos. | Las consultas que dependan solo del identificador interno pueden mezclar documentos o dificultar la trazabilidad. | Para las presentaciones se verificaron también nombre del archivo, sección y página, y se evitaron afirmaciones dependientes de esos pares ambiguos. Se recomienda corregir el corpus antes de una nueva indexación. | Pendiente |
