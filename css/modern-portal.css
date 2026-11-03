@@ -1378,3 +1378,16 @@ body {
 #pr-01, #selector-practicas {
   scroll-margin-top: 7rem;
 }
+
+.footer-brand-info .footer-academic-credit {
+  margin-top: 1rem;
+}
+
+.footer-academic-credit img {
+  display: block;
+  width: min(100%, 20rem);
+  height: auto;
+  padding: 0.5rem;
+  background: #fff;
+  border-radius: 0.25rem;
+}
