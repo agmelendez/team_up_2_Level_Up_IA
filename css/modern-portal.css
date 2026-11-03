@@ -1374,3 +1374,7 @@ body {
   width: 100%;
   height: auto;
 }
+
+#pr-01, #selector-practicas {
+  scroll-margin-top: 7rem;
+}

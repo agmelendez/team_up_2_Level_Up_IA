@@ -235,6 +235,9 @@ const App = (() => {
   function selectPractice(practiceCode) {
     if (!practiceCode) return;
     currentPracticeCode = practiceCode;
+    if (practiceCode !== 'PR-01' && window.location.hash === '#pr-01') {
+      history.pushState(null, '', '#selector-practicas');
+    }
 
     // 1. Sincronizar droplist desplegable
     const selectEl = document.getElementById('practice-select-dropdown');
@@ -1290,6 +1293,23 @@ const App = (() => {
 
     // Renderizar casos iniciales
     renderOccupationalCases('all');
+
+    const firstPractice = document.getElementById('pr-01');
+    function openFirstPractice() {
+      if (window.location.hash !== '#pr-01') return;
+      jumpToLivePractice('PR-01');
+      firstPractice.focus({ preventScroll: true });
+    }
+    if (firstPractice) {
+      window.addEventListener('hashchange', openFirstPractice);
+      document.querySelectorAll('a[href="#pr-01"]').forEach(link => {
+        link.addEventListener('click', openFirstPractice);
+      });
+      if (window.location.hash === '#pr-01') {
+        openFirstPractice();
+        return;
+      }
+    }
 
     // Inicializar stepper en PR-01
     selectPractice('PR-01');
