@@ -1371,7 +1371,8 @@ body {
   width: min(100%, 26rem);
   height: auto;
   padding: 0.5rem;
-  background: #fff;
+  /* La firma suministrada es la variante blanca. */
+  background: var(--ina-navy-900);
   border-radius: 0.25rem;
 }
 

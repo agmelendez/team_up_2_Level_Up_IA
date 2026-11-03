@@ -1069,11 +1069,6 @@ body {
   }
 }
 
-/* Conservar una superficie legible detrás de la firma institucional. */
-body.a11y-high-contrast .footer-academic-credit img {
-  background-color: #fff !important;
-}
-
 body.a11y-dark-mode .hero-cohort-section {
   background-color: #112236;
 }
