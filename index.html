@@ -864,6 +864,18 @@
         </details>
         <label for="notebook-entry" class="notebook-label">Producto y reflexión de la práctica activa</label>
         <textarea id="notebook-entry" class="notebook-entry" rows="13" spellcheck="true"></textarea>
+        <details class="notebook-files">
+          <summary>Adjuntos y respaldo del portafolio</summary>
+          <p>Use archivos ficticios o propios. Se guardan en este navegador. Formatos: PDF, TXT, Markdown, PNG y JPEG. Límite total: 512 KiB.</p>
+          <label for="notebook-attach">Agregar archivo a la práctica activa</label>
+          <input id="notebook-attach" type="file" accept=".pdf,.txt,.md,.png,.jpg,.jpeg">
+          <ul id="notebook-attachments"></ul>
+          <button id="notebook-backup" class="btn-secondary" type="button">Exportar respaldo completo</button>
+          <p>Al importar, se conservan las notas existentes y se agregan los archivos que aún no están guardados.</p>
+          <label for="notebook-restore">Importar respaldo JSON</label>
+          <input id="notebook-restore" type="file" accept=".json,application/json">
+          <p id="notebook-file-status" role="status"></p>
+        </details>
         <div id="notebook-print-content" class="notebook-print-content" aria-hidden="true"></div>
         <div class="notebook-actions">
           <span id="notebook-save-status" class="notebook-status" aria-live="polite">Listo para escribir.</span>

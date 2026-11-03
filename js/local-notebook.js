@@ -17,15 +17,19 @@ const LocalNotebookModule = (() => {
 ## Próximo ajuste
 
 `;
+  const MAX_FILE_BYTES = 512 * 1024;
+  const MAX_BACKUP_BYTES = 2 * 1024 * 1024;
+  const MAX_FILES = 20;
+  const FILE_NAME = /^[^/\\\x00-\x1f]{1,160}\.(?:pdf|txt|md|png|jpe?g)$/i;
   let activePractice = 'PR-01';
   let hasActiveEntry = false;
   let saveTimer = null;
-  let state = { entries: {}, updatedAt: null };
+  let state = { entries: {}, attachments: [], updatedAt: null };
 
   function loadState() {
     try {
       const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
-      if (saved?.entries && typeof saved.entries === 'object') state = saved;
+      if (saved?.entries && typeof saved.entries === 'object') state = { ...state, ...saved };
     } catch (error) {
       console.warn('No fue posible recuperar el cuaderno local.', error);
     }
@@ -46,7 +50,7 @@ const LocalNotebookModule = (() => {
     if (!index) return;
     for (const button of index.querySelectorAll('button')) {
       const code = button.dataset.practice;
-      button.textContent = `${code} · ${hasEvidence(code) ? 'Con evidencia' : 'Sin evidencia'}`;
+      button.textContent = `${code} · ${(hasEvidence(code) || state.attachments.some(file => file.practice === code)) ? 'Con evidencia' : 'Sin evidencia'}`;
     }
   }
 
@@ -73,6 +77,7 @@ const LocalNotebookModule = (() => {
     if (label) label.textContent = `${practiceCode} · registro personal`;
     if (textarea) textarea.value = state.entries[practiceCode] || TEMPLATE;
     hasActiveEntry = true;
+    renderAttachments();
     setStatus('Listo para escribir. Se guarda automáticamente en este navegador.');
   }
 
@@ -82,20 +87,153 @@ const LocalNotebookModule = (() => {
     saveTimer = window.setTimeout(() => saveActiveEntry(), 400);
   }
 
+  function downloadBlob(blob, name) {
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = name;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+
+  function fileStatus(message) {
+    document.getElementById('notebook-file-status').textContent = message;
+  }
+
+  function commitPortfolio(entries, attachments) {
+    const next = { ...state, entries, attachments, updatedAt: new Date().toISOString() };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+    state = next;
+    document.getElementById('notebook-entry').value = entries[activePractice] ?? TEMPLATE;
+    renderAttachments();
+    renderIndex();
+  }
+
+  function checkedAttachments(files) {
+    if (!Array.isArray(files) || files.length > MAX_FILES) throw new Error('Máximo de 20 adjuntos.');
+    let total = 0;
+    const unique = [];
+    for (const file of files) {
+      if (!file || !PRACTICES.includes(file.practice) || typeof file.name !== 'string' ||
+          !FILE_NAME.test(file.name) || typeof file.data !== 'string' ||
+          file.data.length > Math.ceil(MAX_FILE_BYTES / 3) * 4) {
+        throw new Error('El respaldo contiene un adjunto inválido.');
+      }
+      const bytes = atob(file.data).length;
+      if (unique.some(item => item.practice === file.practice && item.name === file.name && item.data === file.data)) continue;
+      total += bytes;
+      if (total > MAX_FILE_BYTES) throw new Error('Los adjuntos exceden el límite total de 512 KiB.');
+      unique.push({ practice: file.practice, name: file.name, data: file.data });
+    }
+    return unique;
+  }
+
+  function currentEntries() {
+    return { ...state.entries, [activePractice]: document.getElementById('notebook-entry').value };
+  }
+
+  function renderAttachments() {
+    const list = document.getElementById('notebook-attachments');
+    if (!list) return;
+    list.replaceChildren();
+    for (const file of state.attachments.filter(item => item.practice === activePractice)) {
+      const item = document.createElement('li');
+      const download = document.createElement('button');
+      download.type = 'button';
+      download.className = 'btn-secondary';
+      download.textContent = `Descargar ${file.name}`;
+      download.addEventListener('click', () => {
+        const bytes = Uint8Array.from(atob(file.data), char => char.charCodeAt(0));
+        downloadBlob(new Blob([bytes], { type: 'application/octet-stream' }), file.name);
+      });
+      const remove = document.createElement('button');
+      remove.type = 'button';
+      remove.className = 'btn-secondary';
+      remove.textContent = 'Quitar adjunto';
+      remove.setAttribute('aria-label', `Quitar adjunto ${file.name}`);
+      remove.addEventListener('click', () => {
+        if (!window.confirm(`¿Quitar ${file.name} de ${file.practice}?`)) return;
+        try {
+          commitPortfolio(currentEntries(), state.attachments.filter(item => item !== file));
+          fileStatus('Adjunto quitado.');
+        } catch {
+          fileStatus('No se pudo quitar el archivo. Se conservó el portafolio.');
+        }
+      });
+      item.append(download, remove);
+      list.append(item);
+    }
+  }
+
+  async function attachFile(input) {
+    const file = input.files[0];
+    const practice = activePractice;
+    if (!file) return;
+    try {
+      if (!FILE_NAME.test(file.name) || file.size > MAX_FILE_BYTES) {
+        throw new Error('Seleccione un archivo permitido de hasta 512 KiB.');
+      }
+      const bytes = new Uint8Array(await file.arrayBuffer());
+      const data = btoa(Array.from(bytes, byte => String.fromCharCode(byte)).join(''));
+      const attachments = checkedAttachments([...state.attachments, { practice, name: file.name, data }]);
+      commitPortfolio(currentEntries(), attachments);
+      fileStatus(`Adjunto disponible en ${practice}.`);
+    } catch (error) {
+      fileStatus(`No se pudo agregar el adjunto. ${error.message}`);
+    } finally {
+      input.value = '';
+    }
+  }
+
+  function exportPortfolio() {
+    const entries = currentEntries();
+    const backup = new Blob([JSON.stringify({ format: 'ina-levelup-portfolio', version: 1, entries, attachments: state.attachments })], { type: 'application/json' });
+    if (backup.size > MAX_BACKUP_BYTES) {
+      fileStatus('El respaldo supera 2 MiB. Reduzca el contenido o descargue las notas y adjuntos por separado.');
+      return;
+    }
+    downloadBlob(backup, 'portafolio-levelup.json');
+    fileStatus('Respaldo listo para guardar.');
+  }
+
+  async function restorePortfolio(input) {
+    const file = input.files[0];
+    if (!file) return;
+    try {
+      if (file.size > MAX_BACKUP_BYTES) throw new Error('El archivo supera 2 MiB.');
+      const backup = JSON.parse(await file.text());
+      if (backup?.format !== 'ina-levelup-portfolio' || backup.version !== 1 ||
+          !backup.entries || typeof backup.entries !== 'object' || Array.isArray(backup.entries)) {
+        throw new Error('Formato o versión de respaldo inválidos.');
+      }
+      const entries = currentEntries();
+      let conflicts = 0;
+      for (const [code, note] of Object.entries(backup.entries)) {
+        if (!PRACTICES.includes(code) || typeof note !== 'string') throw new Error('El respaldo contiene una nota inválida.');
+        const existing = entries[code]?.trim();
+        if (!existing || existing === TEMPLATE.trim()) entries[code] = note;
+        else if (note.trim() && note.trim() !== TEMPLATE.trim() && note !== entries[code]) conflicts++;
+      }
+      const imported = checkedAttachments(backup.attachments);
+      const attachments = checkedAttachments([...state.attachments, ...imported]);
+      commitPortfolio(entries, attachments);
+      fileStatus(`Respaldo importado. Notas existentes conservadas ante conflicto: ${conflicts}.`);
+    } catch (error) {
+      fileStatus(`No se importó el respaldo. ${error.message}`);
+    } finally {
+      input.value = '';
+    }
+  }
+
   function downloadMarkdown() {
     saveActiveEntry();
     const date = new Date().toLocaleString('es-CR');
     const sections = PRACTICES.map((code) => `# ${code}\n\n${state.entries[code] || TEMPLATE}`).join('\n\n---\n\n');
     const content = `# Mi cuaderno local · Team Up 2 Level Up\n\nDescargado: ${date}\n\nEste archivo pertenece a la persona participante y no fue enviado a ninguna plataforma.\n\n${sections}\n`;
     const blob = new Blob([content], { type: 'text/markdown;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = `cuaderno-local-INA-${new Date().toISOString().slice(0, 10)}.md`;
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-    URL.revokeObjectURL(url);
+    downloadBlob(blob, `cuaderno-local-INA-${new Date().toISOString().slice(0, 10)}.md`);
     setStatus('Copia Markdown descargada en su computadora.');
   }
 
@@ -161,6 +299,9 @@ const LocalNotebookModule = (() => {
       }
       renderIndex();
     }
+    document.getElementById('notebook-attach')?.addEventListener('change', event => attachFile(event.currentTarget));
+    document.getElementById('notebook-backup')?.addEventListener('click', exportPortfolio);
+    document.getElementById('notebook-restore')?.addEventListener('change', event => restorePortfolio(event.currentTarget));
     textarea.addEventListener('input', scheduleSave);
     document.getElementById('btn-notebook-save')?.addEventListener('click', () => saveActiveEntry(true));
     document.getElementById('btn-notebook-download')?.addEventListener('click', downloadMarkdown);
