@@ -25,7 +25,7 @@ const LocalNotebookModule = (() => {
   function loadState() {
     try {
       const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
-      if (saved && typeof saved.entries === 'object') state = saved;
+      if (saved?.entries && typeof saved.entries === 'object') state = saved;
     } catch (error) {
       console.warn('No fue posible recuperar el cuaderno local.', error);
     }
@@ -36,11 +36,26 @@ const LocalNotebookModule = (() => {
     if (status) status.textContent = message;
   }
 
+  function hasEvidence(code) {
+    const note = state.entries[code];
+    return typeof note === 'string' && note.trim() !== '' && note.trim() !== TEMPLATE.trim();
+  }
+
+  function renderIndex() {
+    const index = document.getElementById('notebook-index');
+    if (!index) return;
+    for (const button of index.querySelectorAll('button')) {
+      const code = button.dataset.practice;
+      button.textContent = `${code} · ${hasEvidence(code) ? 'Con evidencia' : 'Sin evidencia'}`;
+    }
+  }
+
   function saveActiveEntry(showConfirmation = false) {
     const textarea = document.getElementById('notebook-entry');
     if (!textarea) return;
     state.entries[activePractice] = textarea.value;
     state.updatedAt = new Date().toISOString();
+    renderIndex();
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
       setStatus(showConfirmation ? 'Guardado en este navegador.' : 'Cambios guardados automáticamente.');
@@ -121,15 +136,31 @@ const LocalNotebookModule = (() => {
 
   function clearActiveEntry() {
     if (!window.confirm(`¿Desea borrar únicamente el registro de ${activePractice}?`)) return;
-    state.entries[activePractice] = TEMPLATE;
+    document.getElementById('notebook-entry').value = TEMPLATE;
     saveActiveEntry(true);
-    showPractice(activePractice);
   }
 
   function init() {
     const textarea = document.getElementById('notebook-entry');
     if (!textarea) return;
     loadState();
+    const index = document.getElementById('notebook-index');
+    if (index) {
+      for (const code of PRACTICES) {
+        const item = document.createElement('li');
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'btn-secondary';
+        button.dataset.practice = code;
+        button.addEventListener('click', () => {
+          App.selectPractice(code);
+          textarea.focus();
+        });
+        item.append(button);
+        index.append(item);
+      }
+      renderIndex();
+    }
     textarea.addEventListener('input', scheduleSave);
     document.getElementById('btn-notebook-save')?.addEventListener('click', () => saveActiveEntry(true));
     document.getElementById('btn-notebook-download')?.addEventListener('click', downloadMarkdown);
