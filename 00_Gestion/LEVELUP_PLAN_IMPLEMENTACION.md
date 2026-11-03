@@ -1,7 +1,7 @@
 # Plan de implementación incremental de Team Up 2 Level Up
 
 **Fecha** · 3 de noviembre de 2026  
-**Estado** · E00 documentada en local. Integración Git pendiente. E01–E08 pendientes.  
+**Estado** · E00 y E01 completadas en Git local. E02–E08 pendientes.
 **Unidad de estimación PERT** · Tokens por sesión de trabajo. **Registro de tiempo** · Horas-persona (h-p), por separado.  
 **Repositorio** · [agmelendez/team_up_2_Level_Up_IA](https://github.com/agmelendez/team_up_2_Level_Up_IA)  
 **Línea base local observada** · Rama `main`, commit `f7f74c0a8440f0e8156d2f50d1af44f0e0b4e152`. La referencia local `origin/main` coincide con ese commit. El SHA remoto se verificó durante E00 mediante una consulta de solo lectura.  
@@ -213,8 +213,8 @@ Por cada ejecución, registrar ID de prueba, commit, entorno, resultado, fecha y
 
 | Etapa | Estado | Rama local | SHA de etapa | SHA acumulado | M h-p | Real h-p | Evidencia o bloqueo |
 |---|---|---|---|---|---:|---:|---|
-| E00 | Documentada en local | — | — | — | 5 | — | [Línea base y pruebas](LEVELUP_E00_LINEA_BASE.md). S00.1 PERT 15 000 tokens, consumo no medido. |
-| E01 | Pendiente | — | — | — | 7 | — | — |
+| E00 | Integrada en local | `levelup/implementacion` | `63eb624` | `63eb624` | 5 | — | [Línea base y pruebas](LEVELUP_E00_LINEA_BASE.md). S00.1 PERT 15 000 tokens, consumo no medido. |
+| E01 | Integrada en local | `feat/e01-portada` | Commit E01 | Commit E01 | 7 | — | S01.1 · 17 000 tokens PERT, consumo no medido. T01 y prueba focalizada de T04 pasan. |
 | E02 | Pendiente | — | — | — | 9 | — | — |
 | E03 | Pendiente | — | — | — | 8 | — | — |
 | E04 | Pendiente | — | — | — | 10 | — | — |
@@ -238,3 +238,11 @@ Decisiones y desviaciones:
 SHA de etapa / SHA acumulado:
 Forma de reversión y verificación posterior:
 ~~~
+
+### E01 Registro de validación local
+
+- R01 y R02. Portada con una explicación breve, una acción principal y una ruta de tres pasos. El directorio conserva acceso a herramientas, presentaciones y biblioteca. El cronograma sigue accesible en la navegación.
+- T01. En el navegador integrado, «Empiece aquí» abrió la sección de prácticas y el Plan B de PR-01 abrió correctamente. El enlace de la portada al tutorial y el regreso del tutorial a prácticas funcionaron.
+- T04 focalizada. Se activó el enlace principal con Enter. Con un viewport solicitado de 360 × 800 px, el enlace quedó dentro del área visible y abrió la sección de prácticas. Queda pendiente la comprobación global al 200 %.
+- H00-03. Se retiró la métrica del 100 % de la portada inicial. Las afirmaciones del pie institucional quedan fuera de E01.
+- Traspaso a E02. El enlace principal aún lleva a la sección general. La activación directa de PR-01 y la precedencia sobre la selección previa corresponden a E02.
