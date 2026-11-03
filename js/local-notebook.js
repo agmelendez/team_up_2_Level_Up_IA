@@ -29,7 +29,9 @@ const LocalNotebookModule = (() => {
   function loadState() {
     try {
       const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
-      if (saved?.entries && typeof saved.entries === 'object') state = { ...state, ...saved };
+      if (saved?.entries && typeof saved.entries === 'object') {
+        state = { ...state, ...saved, attachments: Array.isArray(saved.attachments) ? saved.attachments : [] };
+      }
     } catch (error) {
       console.warn('No fue posible recuperar el cuaderno local.', error);
     }

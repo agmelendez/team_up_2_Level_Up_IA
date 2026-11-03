@@ -1,7 +1,7 @@
 # Plan de implementación incremental de Team Up 2 Level Up
 
 **Fecha** · 3 de noviembre de 2026  
-**Estado** · E00 y E01 completadas en Git local. E02–E08 pendientes.
+**Estado** · E00–E08 implementadas en Git local. Versión candidata para revisión. Consultar las verificaciones pendientes en el registro E08.
 **Unidad de estimación PERT** · Tokens por sesión de trabajo. **Registro de tiempo** · Horas-persona (h-p), por separado.  
 **Repositorio** · [agmelendez/team_up_2_Level_Up_IA](https://github.com/agmelendez/team_up_2_Level_Up_IA)  
 **Línea base local observada** · Rama `main`, commit `f7f74c0a8440f0e8156d2f50d1af44f0e0b4e152`. La referencia local `origin/main` coincide con ese commit. El SHA remoto se verificó durante E00 mediante una consulta de solo lectura.  
@@ -34,7 +34,7 @@ Mejorar la primera visita, el ingreso a la práctica, la comprensión de instruc
 3. **Implementar y comprobar localmente.** Ejecutar `python3 -m http.server 8765 --bind 127.0.0.1` desde la raíz Git. Usar datos ficticios y el mismo protocolo, host y puerto para las pruebas de persistencia. Registrar entorno, resultados y evidencias.
 4. **Cerrar cada etapa con su propio commit.** Revisar el diff, guardar el cambio con el ID de etapa e incorporarlo a la rama acumulativa conservando los commits. Registrar el SHA y repetir la prueba de humo antes de iniciar la etapa siguiente. Ante una regresión, corregir o revertir localmente. Para el portafolio, preservar el esquema legado y los respaldos al revertir.
 5. **Registrar desvíos en la bitácora local.** Documentar hallazgo, impacto, dependencia y presupuesto del saldo. Conservar la estimación inicial y referenciar el commit de corrección cuando corresponda.
-6. **Actualizar GitHub una vez, al cierre de E08.** Con la implementación completa y las pruebas acumuladas aprobadas, consultar el SHA actual de `origin/main`. Si avanzó, incorporar los cambios remotos localmente y repetir las pruebas antes de transferir la versión. Revisar el diff acumulado y el contenido de todos los commits que se enviarán. Actualizar `main` con el historial incremental, sin forzar la escritura. Si la rama requiere revisión, abrir un único PR final y verificar el SHA que quedó en `main` después de integrarlo. Registrar el SHA final y la fecha. La publicación web se gestiona por separado.
+6. **Actualizar GitHub una vez, al cierre de E08.** Con la implementación completa y las pruebas acumuladas aprobadas, consultar el SHA actual de `origin/main`. Si avanzó, incorporar los cambios remotos localmente y repetir las pruebas antes de transferir la versión. Revisar el diff acumulado y el contenido de todos los commits que se enviarán. Esperar la indicación explícita de Agustín para actualizar GitHub. Después, actualizar `main` con el historial incremental, sin forzar la escritura. Si la rama requiere revisión, abrir un único PR final y verificar el SHA que quedó en `main` después de integrarlo. Registrar el SHA final y la fecha. La publicación web se gestiona por separado.
 
 **Roles propuestos para asignar en E00** · responsable técnico para implementar y registrar, revisor pedagógico para PR-01–PR-07, referente de marca para E05 y mantenedor para integrar o revertir. Una persona puede asumir varios roles. Registrar la persona asignada y quién validó cada entrega.
 
@@ -215,13 +215,13 @@ Por cada ejecución, registrar ID de prueba, commit, entorno, resultado, fecha y
 |---|---|---|---|---|---:|---:|---|
 | E00 | Integrada en local | `levelup/implementacion` | `63eb624` | `63eb624` | 5 | — | [Línea base y pruebas](LEVELUP_E00_LINEA_BASE.md). S00.1 PERT 15 000 tokens, consumo no medido. |
 | E01 | Integrada en local | `feat/e01-portada` | Commit E01 | Commit E01 | 7 | — | S01.1 · 17 000 tokens PERT, consumo no medido. T01 y prueba focalizada de T04 pasan. |
-| E02 | Pendiente | — | — | — | 9 | — | — |
-| E03 | Pendiente | — | — | — | 8 | — | — |
-| E04 | Pendiente | — | — | — | 10 | — | — |
-| E05 | Pendiente | — | — | — | 13 | — | Confirmar edición de guía y tratamiento de las marcas |
-| E06 | Pendiente | — | — | — | 12 | — | — |
-| E07 | Pendiente | — | — | — | 20 | — | Definir formatos, cuotas y restauración |
-| E08 | Pendiente | — | — | — | 7 | — | Definir alojamiento si corresponde |
+| E02 | Implementada en local | `levelup/implementacion` | `ed10b37` | `ed10b37` | 9 | — | S02.1 · Acceso directo y selector. |
+| E03 | Implementada en local | `levelup/implementacion` | `205ad65` | `205ad65` | 8 | — | S03.1 · Seis términos con ejemplos. |
+| E04 | Implementada en local | `levelup/implementacion` | `fbc2949` | `fbc2949` | 10 | — | S04.1–S04.2 · Guías PR-05 a PR-07. |
+| E05 | Implementada en local | `levelup/implementacion` | `0bb60e5` | `0bb60e5` | 13 | — | S05.1–S05.2 · Firma incorporada. Validación institucional pendiente. |
+| E06 | Implementada en local | `levelup/implementacion` | `76759cd` | `76759cd` | 12 | — | S06.1 · Índice y borrado selectivo. |
+| E07 | Implementada en local | `levelup/implementacion` | `d637b4d` | `d637b4d` | 20 | — | S07.1–S07.2 · Adjuntos y respaldo. |
+| E08 | Implementada en local | `levelup/implementacion` | Commit E08 | Commit E08 | 7 | — | S08.1 · Candidato local para revisión. |
 
 **Formato para registrar una actividad**
 
@@ -246,3 +246,14 @@ Forma de reversión y verificación posterior:
 - T04 focalizada. Se activó el enlace principal con Enter. Con un viewport solicitado de 360 × 800 px, el enlace quedó dentro del área visible y abrió la sección de prácticas. Queda pendiente la comprobación global al 200 %.
 - H00-03. Se retiró la métrica del 100 % de la portada inicial. Las afirmaciones del pie institucional quedan fuera de E01.
 - Traspaso a E02. El enlace principal aún lleva a la sección general. La activación directa de PR-01 y la precedencia sobre la selección previa corresponden a E02.
+
+### E08 Registro de revisión acumulada
+
+- **R01 y R02** · La portada y el tutorial presentan tres pasos. E01 verificó teclado, recorrido de regreso y vista móvil de 360 px.
+- **R03** · El enlace principal y el tutorial apuntan a `#pr-01`. El selector tiene su propio acceso y la navegación del cronograma conserva el enlace a la sección general. La revisión de HTML confirmó la existencia de los destinos. El navegador mostró la versión acumulada, pero la sesión dejó de aceptar acciones antes de terminar la prueba de cambio de práctica, recarga y Atrás.
+- **R04 y R05** · Se añadieron los seis términos con ejemplos y las guías desplegables de PR-05, PR-06 y PR-07. Pendiente ejecutar en navegador las tres guías y comprobar sus dependencias externas. PR-06 exige voz para evaluar pausas y PR-07 un modelo local para verificar la comparación.
+- **R06** · La prueba aislada en JavaScriptCore confirmó recuperación de notas legadas, borrado selectivo, adjunto, generación de respaldo, restauración sobre almacenamiento vacío, rechazo de un archivo inválido, conservación de datos ante un fallo de cuota, generación Markdown e invocación de impresión. Queda verificar descarga, selector de archivos y diálogo de impresión en navegador. Se usó el almacenamiento existente para realizar la restauración con una sola escritura y mantener las notas compatibles con E06. Límite compartido de 512 KiB y 20 adjuntos. Respaldo JSON versionado de hasta 2 MiB. Se conservan notas existentes en conflicto y se deduplican adjuntos idénticos de la misma práctica.
+- **R07** · Ficha preliminar de marca. Se usa el SVG compuesto suministrado `ciodd-ucr-logo.svg`, con proporción 477 × 65, fondo blanco y texto alternativo, en el pie de las seis páginas. El identificador del INA permanece en cabecera. La ubicación como crédito académico es una decisión provisional. Confirmar con la contraparte la jerarquía INA/UCR–CIOdD, el área de reserva, tamaño mínimo y lineamiento vigente antes de publicar. La carpeta completa de referencia queda fuera de Git.
+- **R08** · Se conservaron commits separados para E02–E08 en la rama acumulativa local. GitHub espera indicación de Agustín.
+- **Control técnico** · Las seis páginas y los activos principales respondieron HTTP 200 bajo un subdirectorio de prueba. Las referencias locales, los fragmentos declarados y los IDs se revisaron en las seis páginas. La revisión dinámica de pestañas, modo facilitador, idioma, desconexión explícita y zoom al 200 % sigue pendiente.
+- **Sesiones y consumo** · Se conservan los presupuestos PERT por unidad de trabajo de E02–E08. La ejecución se realizó en un turno acumulado y no hay medición real por sesión. Estado de consumo: no medido.
