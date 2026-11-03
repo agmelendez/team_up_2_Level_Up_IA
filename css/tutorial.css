@@ -12,7 +12,7 @@
   padding: 2.5rem;
   border-radius: 24px;
   color: #fff;
-  background: linear-gradient(135deg, #002b49 0%, #074f70 58%, #047857 100%);
+  background: var(--ucr-blue);
   box-shadow: var(--shadow-xl);
   overflow: hidden;
 }
@@ -23,7 +23,7 @@
   margin-bottom: 1rem;
   border: 1px solid rgba(255,255,255,.35);
   border-radius: 999px;
-  color: #d1fae5;
+  color: #fff;
   font-size: .78rem;
   font-weight: 800;
   letter-spacing: .07em;
@@ -38,7 +38,7 @@
   line-height: 1.05;
 }
 
-.tutorial-hero p { color: #e2e8f0; font-size: 1.05rem; }
+.tutorial-hero p { color: #fff; font-size: 1.05rem; }
 .tutorial-hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.4rem; }
 .tutorial-hero-actions a { justify-content: center; }
 

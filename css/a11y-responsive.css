@@ -43,7 +43,7 @@
   flex-shrink: 0 !important;
 }
 
-.brand-logo-badge {
+.brand-institution-badge {
   background: linear-gradient(135deg, #002B49 0%, #004d73 100%) !important;
   color: #ffffff !important;
   font-weight: 800 !important;
@@ -948,7 +948,7 @@ body {
     font-size: 0.72rem !important;
   }
 
-  .brand-logo-badge {
+  .brand-institution-badge {
     padding: 0.25rem 0.5rem !important;
     font-size: 0.72rem !important;
   }
@@ -1067,4 +1067,25 @@ body {
     flex-direction: column !important;
     gap: 1.5rem !important;
   }
+}
+
+/* Conservar una superficie legible detrás de la firma institucional. */
+body.a11y-high-contrast .footer-academic-credit img {
+  background-color: #fff !important;
+}
+
+body.a11y-dark-mode .hero-cohort-section {
+  background-color: #112236;
+}
+
+body.a11y-dark-mode .hero-pill-badge {
+  background-color: #112236;
+  border-color: #8ed8f8;
+}
+
+body.a11y-dark-mode .modern-footer p,
+body.a11y-dark-mode .modern-footer span,
+body.a11y-dark-mode .modern-footer li,
+body.a11y-dark-mode .modern-footer h4 {
+  color: #fff !important;
 }

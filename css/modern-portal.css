@@ -1,17 +1,21 @@
 /* ==========================================================================
    PORTAL INA · TEAM UP 2 LEVEL UP (2026)
    Sistema de Diseño Moderno (Inspirado en Lovable Cohort & MagicSchool AI)
-   Paleta Institucional INA: Azul Marino #002B49, Verde Esmeralda #059669, Ámbar #d97706
+   Paleta web UCR aplicada al portal del taller
    ========================================================================== */
 
 :root {
-  /* Paleta INA */
+  /* Identidad web UCR. Los nombres anteriores conservan sus referencias. */
+  --ucr-blue: #005da4;
+  --ucr-sky: #00c0f3;
+  --ucr-white: #ffffff;
+  --ucr-footer: #666666;
   --ina-navy-950: #051626;
-  --ina-navy-900: #002B49;
-  --ina-navy-800: #003D66;
-  --ina-navy-700: #00528A;
-  --ina-navy-100: #e0edff;
-  --ina-navy-50: #f0f6ff;
+  --ina-navy-900: #00375f;
+  --ina-navy-800: #004b84;
+  --ina-navy-700: var(--ucr-blue);
+  --ina-navy-100: #cceffb;
+  --ina-navy-50: #ebf9fe;
 
   --ina-green-700: #047857;
   --ina-green-600: #059669;
@@ -28,17 +32,17 @@
   --ina-purple-100: #ede9fe;
 
   /* Superficies y Neutros */
-  --bg-page: #f8fafc;
+  --bg-page: #e6e6e6;
   --bg-card: #ffffff;
   --bg-subtle: #f1f5f9;
 
   --text-primary: #0f172a;
   --text-secondary: #334155;
-  --text-muted: #64748b;
+  --text-muted: #475569;
   --text-inverse: #ffffff;
 
   --border-light: #e2e8f0;
-  --border-focus: #2563eb;
+  --border-focus: var(--ucr-blue);
 
   /* Sombras Modernas */
   --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
@@ -66,7 +70,7 @@
 }
 
 html {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: var(--text-primary);
@@ -91,9 +95,8 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: var(--ucr-white);
+  border-top: 4px solid var(--ucr-sky);
   border-bottom: 1px solid var(--border-light);
   box-shadow: 0 2px 8px rgba(0, 43, 73, 0.04);
   height: var(--header-h);
@@ -120,7 +123,7 @@ body {
   color: inherit;
 }
 
-.brand-logo-badge {
+.brand-institution-badge {
   background: var(--ina-navy-900);
   color: #ffffff;
   font-weight: 800;
@@ -227,33 +230,11 @@ body {
    2. HERO BANNER DE IMPACTO (Estilo Lovable Cohort)
    ========================================================================== */
 .hero-cohort-section {
-  background: linear-gradient(180deg, #ffffff 0%, var(--bg-page) 100%);
+  background: var(--ucr-white);
   border-bottom: 1px solid var(--border-light);
   padding: 3.5rem 1.5rem 2.75rem 1.5rem;
   position: relative;
   overflow: hidden;
-}
-
-.hero-cohort-section::before {
-  content: '';
-  position: absolute;
-  top: -150px;
-  right: -100px;
-  width: 450px;
-  height: 450px;
-  background: radial-gradient(circle, rgba(5, 150, 105, 0.1) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.hero-cohort-section::after {
-  content: '';
-  position: absolute;
-  top: -100px;
-  left: -80px;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(0, 43, 73, 0.08) 0%, transparent 70%);
-  pointer-events: none;
 }
 
 .hero-cohort-container {
@@ -271,9 +252,9 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--ina-green-50);
-  border: 1px solid var(--ina-green-100);
-  color: var(--ina-green-700);
+  background: var(--ina-navy-50);
+  border: 1px solid var(--ina-navy-100);
+  color: var(--ina-navy-900);
   font-size: 0.82rem;
   font-weight: 700;
   padding: 0.35rem 0.95rem;
@@ -293,9 +274,7 @@ body {
 }
 
 .hero-headline .text-gradient {
-  background: linear-gradient(135deg, var(--ina-navy-900) 0%, var(--ina-green-600) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--ucr-blue);
 }
 
 .hero-description {
@@ -582,7 +561,7 @@ body {
 }
 
 .live-pulse-card {
-  background: linear-gradient(135deg, #002B49 0%, #004b7a 100%);
+  background: linear-gradient(135deg, #00375f 0%, #004b7a 100%);
   color: #ffffff;
   border-radius: var(--radius-lg);
   padding: 1.25rem 1.75rem;
@@ -1120,11 +1099,11 @@ body {
    7. FOOTER MODERNO
    ========================================================================== */
 .modern-footer {
-  background: var(--ina-navy-950);
+  background: var(--ucr-footer);
   color: #ffffff;
   padding: 3rem 1.5rem 2rem 1.5rem;
   margin-top: auto;
-  border-top: 3px solid var(--ina-green-500);
+  border-top: 3px solid var(--ucr-sky);
 }
 
 .footer-container-box {
@@ -1152,7 +1131,7 @@ body {
 
 .footer-brand-info p {
   font-size: 0.85rem;
-  color: #94a3b8;
+  color: var(--ucr-white);
   max-width: 450px;
   line-height: 1.5;
 }
@@ -1168,7 +1147,7 @@ body {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--ina-green-500);
+  color: var(--ucr-white);
   margin-bottom: 0.75rem;
 }
 
@@ -1180,7 +1159,7 @@ body {
 }
 
 .footer-col a {
-  color: #cbd5e1;
+  color: var(--ucr-white);
   text-decoration: none;
   font-size: 0.85rem;
   transition: color 150ms ease;
@@ -1199,25 +1178,24 @@ body {
   padding-top: 1.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 0.78rem;
-  color: #64748b;
+  color: var(--ucr-white);
 }
 
 /* Tarjeta de Nota de Uso de IA en el Footer */
 .ai-usage-disclosure-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: var(--radius-lg);
   padding: 1.25rem 1.6rem;
   margin: 1.25rem 0 0.5rem 0;
-  color: #e2e8f0;
-  backdrop-filter: blur(8px);
+  color: var(--ucr-white);
 }
 
 .ai-disclosure-header {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  color: #38bdf8;
+  color: var(--ucr-white);
   font-size: 0.96rem;
   font-weight: 800;
   margin-bottom: 0.5rem;
@@ -1232,7 +1210,7 @@ body {
   margin: 0;
   font-size: 0.86rem;
   line-height: 1.6;
-  color: #cbd5e1;
+  color: var(--ucr-white);
 }
 
 .ai-usage-disclosure-card strong {
@@ -1265,7 +1243,7 @@ body {
 
 /* Vista previa del prompt en Paso 1 */
 .prompt-box-preview {
-  background: #f8fafc;
+  background: #e6e6e6;
   border: 1px solid #cbd5e1;
   border-left: 4px solid var(--ina-blue-600);
   border-radius: 6px;
@@ -1320,7 +1298,7 @@ body {
 .roadmap-title-area h3 {
   font-size: 1.65rem;
   font-weight: 800;
-  color: var(--ina-navy-900, #002B49);
+  color: var(--ina-navy-900, #00375f);
   margin: 0.35rem 0 0.25rem 0;
   letter-spacing: -0.02em;
 }
@@ -1341,7 +1319,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: #f8fafc;
+  background: #e6e6e6;
   color: #334155;
   border: 1px solid #cbd5e1;
   padding: 0.5rem 1rem;
@@ -1353,9 +1331,9 @@ body {
 }
 
 .btn-download-svg:hover {
-  background: #002B49;
+  background: #00375f;
   color: #ffffff;
-  border-color: #002B49;
+  border-color: #00375f;
 }
 
 .svg-diagram-scroll-wrapper {
@@ -1363,7 +1341,7 @@ body {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   border-radius: 12px;
-  background: #f8fafc;
+  background: #e6e6e6;
   border: 1px solid #e2e8f0;
   padding: 0.5rem;
 }
@@ -1383,11 +1361,39 @@ body {
   margin-top: 1rem;
 }
 
+.footer-academic-credit a {
+  display: inline-block;
+  max-width: 100%;
+}
+
 .footer-academic-credit img {
   display: block;
-  width: min(100%, 20rem);
+  width: min(100%, 26rem);
   height: auto;
   padding: 0.5rem;
   background: #fff;
   border-radius: 0.25rem;
+}
+
+
+.hero-quick-start a {
+  color: var(--ucr-blue);
+  text-decoration: underline;
+}
+
+body.a11y-dark-mode .hero-headline .text-gradient,
+body.a11y-dark-mode .hero-quick-start a {
+  color: #8ed8f8;
+}
+
+:where(.modern-navbar, .hero-cohort-section, .modern-footer) a:focus-visible,
+:where(.modern-navbar, .hero-cohort-section, .modern-footer) button:focus-visible {
+  outline: 2px solid var(--ina-navy-900);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px var(--ucr-white);
+}
+
+.modern-footer a:focus-visible {
+  outline-color: var(--ucr-white);
+  box-shadow: none;
 }
