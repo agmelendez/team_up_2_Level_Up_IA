@@ -5,16 +5,16 @@
 const LocalNotebookModule = (() => {
   const STORAGE_KEY = 'ina_workshop_notebook_v1';
   const PRACTICES = ['PR-01', 'PR-02', 'PR-03', 'PR-04', 'PR-05', 'PR-06', 'PR-07'];
-  const TEMPLATE = `## Mi instrucción o configuración final
+  const TEMPLATE = `## 1. ¿Qué hice en esta actividad? (Mi instrucción o prueba realizada)
 
 
-## Evidencia o fragmento que revisé
+## 2. ¿Qué respuesta me dio la IA y qué revisé? (Cópiela y péguela aquí)
 
 
-## Hallazgo crítico
+## 3. ¿Qué aprendí hoy? (Un acierto y un error o límite que detecté)
 
 
-## Próximo ajuste
+## 4. ¿Cómo lo aplicaré o ajustaré en mi próxima clase del INA?
 
 `;
   const MAX_FILE_BYTES = 512 * 1024;
@@ -247,7 +247,7 @@ const LocalNotebookModule = (() => {
     const current = textarea.value.trim();
     const isBlankTemplate = !current || current === TEMPLATE.trim();
     if (isBlankTemplate && prompt) {
-      textarea.value = `## Instrucción utilizada\n\n${prompt}\n\n## Respuesta de la IA (cópiela y péguela aquí)\n\n\n## Hallazgo crítico\n\n\n## Próximo ajuste\n\n`;
+      textarea.value = `## 1. ¿Qué hice en esta actividad? (Instrucción que utilicé)\n\n${prompt}\n\n## 2. ¿Qué respuesta me dio la IA y qué revisé? (Cópiela y péguela aquí)\n\n\n## 3. ¿Qué aprendí hoy? (Un acierto y un error o límite que detecté)\n\n\n## 4. ¿Cómo lo aplicaré o ajustaré en mi próxima clase del INA?\n\n`;
     }
     saveActiveEntry(true);
     document.getElementById('participant-notebook')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -301,6 +301,23 @@ const LocalNotebookModule = (() => {
       }
       renderIndex();
     }
+    document.querySelectorAll('.btn-notebook-prompt').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const promptHeading = e.currentTarget.dataset.promptHeading;
+        if (!promptHeading) return;
+        const val = textarea.value;
+        const idx = val.indexOf(promptHeading);
+        textarea.focus();
+        if (idx !== -1) {
+          const cursorPos = idx + promptHeading.length + 1;
+          textarea.setSelectionRange(cursorPos, cursorPos);
+        } else {
+          textarea.value = `${val.trimEnd()}\n\n${promptHeading}\n\n`;
+          textarea.setSelectionRange(textarea.value.length, textarea.value.length);
+          scheduleSave();
+        }
+      });
+    });
     document.getElementById('notebook-attach')?.addEventListener('change', event => attachFile(event.currentTarget));
     document.getElementById('notebook-backup')?.addEventListener('click', exportPortfolio);
     document.getElementById('notebook-restore')?.addEventListener('change', event => restorePortfolio(event.currentTarget));

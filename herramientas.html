@@ -38,13 +38,16 @@
           <span>⚡</span> Herramientas IA <span class="nav-pill-badge">4</span>
         </a>
         <a href="biblioteca.html" class="nav-pill-link">
-          <span>📚</span> Biblioteca & RAG <span class="nav-pill-badge">41</span>
+          <span>📚</span> Biblioteca & Fuentes <span class="nav-pill-badge">41</span>
         </a>
         <a href="simulador.html" class="nav-pill-link">
           <span>💬</span> Simulador
         </a>
         <a href="glosario.html" class="nav-pill-link">
           <span>📖</span> Glosario
+        </a>
+        <a href="tutorial.html" class="nav-pill-link">
+          <span>🧭</span> Ruta Inicial
         </a>
       </nav>
 
@@ -165,8 +168,8 @@
       <h2 class="hero-headline" style="font-size:2.35rem;margin-bottom:0.75rem;">
         Herramientas Pedagógicas de <span class="text-gradient">Inteligencia Artificial</span>
       </h2>
-      <p class="hero-description" style="max-width:720px;margin-bottom:1.5rem;">
-        Cuatro módulos interactivos diseñados para calibrar instrucciones con los 5 componentes, auditar rúbricas analíticas, aplicar casos laborales reales del INA y proyectar presentaciones oficiales.
+      <p class="hero-description" style="max-width:760px;margin-bottom:1.5rem;">
+        Cuatro herramientas prácticas pensadas para acompañarle paso a paso: armar instrucciones claras (prompts) entendiendo para qué sirve cada decisión, probar tablas de evaluación (rúbricas), explorar situaciones laborales del INA y proyectar las presentaciones del taller.
       </p>
 
       <!-- Selector de Sub-Herramientas (Segmented Control Pills) -->
@@ -197,10 +200,52 @@
     <div id="subpane-builder" class="subtab-pane active" data-parent-zone="tools">
       <div class="section-header-row">
         <div class="section-title-group">
-          <h2>⚡ Asistente Guiado de Prompts (5 Pasos Sencillos)</h2>
-          <div class="section-subtitle">Haga clic en las opciones sugeridas o escriba las suyas. El sistema armará el prompt perfecto automáticamente.</div>
+          <h2>⚡ Asistente Guiado de Instrucciones (5 Pasos Sencillos)</h2>
+          <div class="section-subtitle">Haga clic en las opciones sugeridas o escriba las suyas. A continuación verá un ejemplo completo de principio a fin y cómo cambia el resultado según cada elección.</div>
         </div>
       </div>
+
+      <!-- Ejemplo completo de principio a fin -->
+      <section class="worked-example-card" aria-labelledby="builder-worked-example-title">
+        <div class="worked-example-header">
+          <h4 id="builder-worked-example-title">🔍 Ejemplo completo de principio a fin: ¿Para qué sirve cada una de las 5 decisiones?</h4>
+          <span class="meta-pill highlight">Caso: Recepción de hotel en inglés A2</span>
+        </div>
+        <p style="font-size:0.88rem;color:var(--text-muted);margin:0 0 0.85rem 0;">
+          Cuando usted pide a la IA solo <em>"deme un diálogo de hotel"</em>, la herramienta adivina y suele entregar un texto largo y difícil. Vea cómo cada una de las 5 elecciones transforma el resultado:
+        </p>
+        <div class="everyday-intro-grid" style="margin-bottom:0.85rem;">
+          <div class="everyday-intro-item">
+            <strong>1. Rol + 2. Nivel de idioma</strong>
+            • <strong>Qué elegimos:</strong> Diseñador de actividades + Nivel A2.<br>
+            • <strong>Cómo cambia el resultado:</strong> En lugar de usar inglés complejo de películas, la IA usa frases cortas y cotidianas que una persona estudiante básica sí comprende.
+          </div>
+          <div class="everyday-intro-item">
+            <strong>3. Contexto laboral INA + 4. Formato</strong>
+            • <strong>Qué elegimos:</strong> Recepción en Costa Rica + Guion de 4 turnos con espacios en blanco.<br>
+            • <strong>Cómo cambia el resultado:</strong> La IA sitúa el ejercicio en un hotel local y entrega una estructura ordenada lista para practicar en parejas.
+          </div>
+          <div class="everyday-intro-item">
+            <strong>5. Límites y restricciones</strong>
+            • <strong>Qué elegimos:</strong> Máximo 12 palabras por frase, 12 minutos y no resolver la parte del estudiante.<br>
+            • <strong>Cómo cambia el resultado:</strong> Evita que la IA haga la tarea por el alumno y garantiza que el ejercicio quepa en su lección.
+          </div>
+        </div>
+        <div class="worked-example-columns">
+          <div class="worked-col col-error">
+            <strong>❌ Sin los 5 pasos (pedido suelto)</strong>
+            <em>"Haz un diálogo de queja en un hotel"</em> → La IA genera 20 líneas de nivel avanzado (C1) con todo resuelto; el estudiante solo lee sin pensar.
+          </div>
+          <div class="worked-col col-good">
+            <strong>✅ Con los 5 pasos (pedido guiado)</strong>
+            La IA entrega: 1 objetivo claro, 4 turnos cortos en inglés A2, 5 frases de apoyo y deja en blanco las respuestas del recepcionista para que el alumno practique.
+          </div>
+          <div class="worked-col col-fix">
+            <strong>💡 Pruébelo ahora mismo</strong>
+            El ejemplo 1 (<em>Recepción de quejas en hotel</em>) ya está cargado abajo. Haga clic en cualquier botón gris de los pasos 1 al 5 y mire a la derecha cómo cambia el texto al instante.
+          </div>
+        </div>
+      </section>
 
       <div class="prompt-builder-container">
         <!-- Formulario con Chips Rápidos -->
@@ -230,6 +275,7 @@
               <span>Paso 1: ¿Qué rol debe cumplir la IA?</span>
               <span class="component-badge">1 / 5</span>
             </label>
+            <div class="step-why-note"><strong>¿Para qué sirve esta decisión?</strong> Le indica a la IA cómo comportarse: si usted elige <em>"Cliente para práctica"</em>, la IA conversará con el alumno; si elige <em>"Diseñador de actividades"</em>, creará material para usted como docente.</div>
             <div class="wizard-chips-group">
               <button class="wizard-chip-btn active" data-target-input="pb-role" data-value="Actúe como diseñador de actividades de inglés para fines ocupacionales. Su objetivo es crear una práctica comunicativa para servicio al cliente.">🎯 Diseñador de Actividades</button>
               <button class="wizard-chip-btn" data-target-input="pb-role" data-value="Actúe como un cliente extranjero que interactúa con un estudiante de recepción para practicar conversación.">💬 Cliente para Práctica</button>
@@ -246,6 +292,7 @@
               <span>Paso 2: ¿Qué <span class="interactive-term" data-tooltip="Marco Común Europeo de Referencia para las Lenguas: La escala oficial internacional (A1 Principiante, A2 Básico, B1 Intermedio, B2 Avanzado).">nivel de idioma</span> y destreza tienen sus estudiantes?</span>
               <span class="component-badge">2 / 5</span>
             </label>
+            <div class="step-why-note"><strong>¿Para qué sirve esta decisión?</strong> Ajusta la dificultad de las palabras y frases. Si elige <em>A1 o A2</em>, la IA usará vocabulario básico y oraciones simples; si elige <em>B1</em>, incluirá situaciones laborales más detalladas.</div>
             <div class="wizard-chips-group">
               <button class="wizard-chip-btn active" data-target-input="pb-level" data-value="Inglés A2 · Interacción oral (listening & speaking)">A2 (Básico)</button>
               <button class="wizard-chip-btn" data-target-input="pb-level" data-value="Inglés A1 · Expresiones elementales y saludos">A1 (Inicial)</button>
@@ -263,6 +310,7 @@
               <span>Paso 3: ¿En qué área laboral o situación del INA se aplicará?</span>
               <span class="component-badge">3 / 5</span>
             </label>
+            <div class="step-why-note"><strong>¿Para qué sirve esta decisión?</strong> Conecta el ejercicio con el trabajo real que estudian sus aprendices (hotelería, tienda o centro de llamadas), evitando ejemplos genéricos que no les sirven en su oficio.</div>
             <div class="wizard-chips-group">
               <button class="wizard-chip-btn active" data-target-input="pb-context" data-value="Personas adultas del INA en formación para servicio al cliente en turismo y hotelería en Costa Rica.">🏨 Turismo y Hotelería</button>
               <button class="wizard-chip-btn" data-target-input="pb-context" data-value="Grupo de personas adultas en formación para comercio, ventas y atención en tiendas.">🛍️ Comercio y Ventas</button>
@@ -277,6 +325,7 @@
               <span>Paso 4: ¿Qué formato exacto debe entregar la IA?</span>
               <span class="component-badge">4 / 5</span>
             </label>
+            <div class="step-why-note"><strong>¿Para qué sirve esta decisión?</strong> Define la forma del material (un guion corto de 4 turnos, una tabla de corrección o una rúbrica) para que usted pueda copiarlo y usarlo de inmediato sin perder tiempo dándole formato.</div>
             <div class="wizard-chips-group">
               <button class="wizard-chip-btn active" data-target-input="pb-format" data-value="Entregue exactamente: (1) objetivo observable, (2) preparación de 2 minutos, (3) guion incompleto de 4 turnos, (4) 5 expresiones útiles, (5) 2 preguntas de verificación.">Guion de 4 turnos + Frases</button>
               <button class="wizard-chip-btn" data-target-input="pb-format" data-value="Hable con pronunciación clara y natural. Emita exactamente 1 o 2 oraciones por turno (máximo 16 palabras). Mantenga un diálogo de 4 turnos en total y luego entregue un cierre formativo breve en español.">🎙️ Diálogo Oral 4 Turnos</button>
@@ -292,6 +341,7 @@
               <span>Paso 5: ¿Qué límites de tiempo y reglas debe respetar?</span>
               <span class="component-badge">5 / 5</span>
             </label>
+            <div class="step-why-note"><strong>¿Para qué sirve esta decisión?</strong> Pone las reglas de control: evita que la IA escriba párrafos larguísimos, que invente datos falsos o que le resuelva toda la tarea al estudiante.</div>
             <div class="wizard-chips-group">
               <button class="wizard-chip-btn active" data-target-input="pb-restrictions" data-value="Actividad total de 12 minutos; oraciones de hasta 12 palabras; presente simple y pasado simple; no inventar políticas reales ni resolver las respuestas del estudiante.">12 min · Oraciones cortas</button>
               <button class="wizard-chip-btn" data-target-input="pb-restrictions" data-value="Tolere pausas de pensamiento de hasta 5 segundos sin cortar. NO dé respuestas complacientes vacías ('Awesome!'). Al final, señale 1 acierto y 1 recomendación.">⏱️ Tolerar Pausas de Voz</button>

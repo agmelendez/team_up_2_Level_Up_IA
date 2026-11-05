@@ -44,13 +44,16 @@
           <span>⚡</span> Herramientas IA <span class="nav-pill-badge">4</span>
         </a>
         <a href="biblioteca.html" class="nav-pill-link">
-          <span>📚</span> Biblioteca & RAG <span class="nav-pill-badge">41</span>
+          <span>📚</span> Biblioteca & Fuentes <span class="nav-pill-badge">41</span>
         </a>
         <a href="simulador.html" class="nav-pill-link">
           <span>💬</span> Simulador
         </a>
         <a href="glosario.html" class="nav-pill-link">
           <span>📖</span> Glosario
+        </a>
+        <a href="tutorial.html" class="nav-pill-link">
+          <span>🧭</span> Ruta Inicial
         </a>
       </nav>
 
@@ -192,19 +195,66 @@
       </h2>
 
       <p class="hero-description">
-        Practique cómo usar la IA para preparar actividades de inglés técnico, revisar sus respuestas y guardar lo aprendido en su cuaderno.
+        Un espacio práctico y en lenguaje sencillo para que usted use la Inteligencia Artificial como asistente de apoyo en sus clases de inglés del INA: preparar diálogos laborales, dar retroalimentación útil a sus estudiantes y ahorrar tiempo sin perder su criterio docente.
       </p>
 
-      <a href="#pr-01" class="btn-hero-primary">Empiece aquí</a>
+      <!-- Explicación inicial con lenguaje cotidiano -->
+      <div class="everyday-intro-box" aria-label="Qué aprenderá y cómo utilizará la IA en sus clases">
+        <div class="everyday-intro-header">
+          <span aria-hidden="true" style="font-size:1.35rem;">💡</span>
+          <h3>En palabras sencillas: ¿qué aprenderá hoy y cómo le servirá en el aula?</h3>
+        </div>
+        <div class="everyday-intro-grid">
+          <div class="everyday-intro-item">
+            <strong>1. Pedir materiales a la medida de su grupo</strong>
+            Aprenderá a darle indicaciones claras a la IA (en vez de frases sueltas) para que cree diálogos cortos, lecturas y ejercicios ajustados al nivel real de sus estudiantes (A1, A2 o B1) y a su especialidad en el INA.
+          </div>
+          <div class="everyday-intro-item">
+            <strong>2. Revisar y corregir sin que la IA haga la tarea</strong>
+            Verá cómo usar la IA para detectar errores frecuentes, dar pistas paso a paso y acompañar al estudiante a mejorar su inglés, evitando que la herramienta simplemente le regale la respuesta hecha.
+          </div>
+          <div class="everyday-intro-item">
+            <strong>3. Traducción de términos que verá en el taller</strong>
+            • <strong>Prompt (Instrucción):</strong> el pedido claro que usted escribe a la IA.<br>
+            • <strong>Rúbrica analítica:</strong> tabla sencilla para evaluar paso a paso.<br>
+            • <strong>Biblioteca con fuentes (RAG):</strong> buscador que responde usando documentos reales verificados.
+          </div>
+        </div>
+      </div>
 
-      <div class="hero-quick-start">
-        <h3>Si es su primera visita</h3>
-        <ol>
-          <li>Abra la primera práctica y lea la consigna.</li>
-          <li>Pruebe la instrucción y revise la respuesta. Use el Plan B si lo necesita.</li>
-          <li>Guarde un hallazgo y su próximo ajuste en el cuaderno.</li>
-        </ol>
-        <a href="#selector-practicas">Ver las siete prácticas</a> · <a href="tutorial.html#rapido-title">Ver la guía de primera visita</a>
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;">
+        <a href="#pr-01" class="btn-hero-primary">🚀 Empezar en la Práctica 1</a>
+        <a href="glosario.html" class="btn-hero-secondary">📖 Ver Glosario en Español Sencillo</a>
+      </div>
+
+      <!-- Ruta de Aprendizaje Destacada para Principiantes -->
+      <div class="beginner-route-banner" aria-label="Ruta recomendada para principiantes">
+        <div class="beginner-route-top">
+          <h3><span>🧭</span> Ruta recomendada si es su primera vez (Paso a Paso)</h3>
+          <span class="beginner-route-note">Acceso libre a todos los recursos en cualquier momento</span>
+        </div>
+        <div class="beginner-route-steps">
+          <a href="glosario.html" class="beginner-step-card">
+            <span class="beginner-step-num">Paso 1 · 3 min</span>
+            <strong>Conozca lo básico</strong>
+            <span>Repase los términos clave en español sencillo con ejemplos de aula.</span>
+          </a>
+          <a href="#pr-01" class="beginner-step-card">
+            <span class="beginner-step-num">Paso 2 · A su ritmo</span>
+            <strong>Haga la Práctica 1</strong>
+            <span>Mire el ejemplo resuelto, copie la instrucción lista y pruébela (o use el Plan B).</span>
+          </a>
+          <a href="herramientas.html#builder" class="beginner-step-card">
+            <span class="beginner-step-num">Paso 3 · Guiado</span>
+            <strong>Arme su instrucción</strong>
+            <span>Use el Constructor paso a paso entendiendo qué cambia con cada botón.</span>
+          </a>
+          <a href="#participant-notebook" class="beginner-step-card">
+            <span class="beginner-step-num">Paso 4 · Conservar</span>
+            <strong>Anote qué aprendió</strong>
+            <span>Responda las preguntas guía en su cuaderno local y descargue su copia.</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -224,8 +274,8 @@
           <div class="tool-icon-circle amber">⚡</div>
           <div class="tool-card-body">
             <div class="tool-pill-tag amber">Pedagogía Activa</div>
-            <h4>Constructor de Prompts</h4>
-            <p>Estructure instrucciones profesionales con los 5 componentes: Rol, Tarea, Contexto Ocupacional, Restricciones y Formato.</p>
+            <h4>Constructor de Instrucciones (Prompts)</h4>
+            <p>Arme pedidos claros para la IA paso a paso con un ejemplo completo explicado de principio a fin: Rol, Nivel, Contexto INA, Formato y Límites.</p>
             <div class="tool-card-action">Abrir Asistente ↗</div>
           </div>
         </a>
@@ -235,9 +285,9 @@
           <div class="tool-icon-circle blue">📋</div>
           <div class="tool-card-body">
             <div class="tool-pill-tag blue">Evaluación cuantitativa y cualitativa</div>
-            <h4>Probador de Rúbricas</h4>
-            <p>Audite muestras orales y escritas con criterios analíticos rigurosos: Cumplimiento de Tarea, Precisión, Léxico y Mecánica.</p>
-            <div class="tool-card-action">Auditar Muestra ↗</div>
+            <h4>Probador de Tablas de Evaluación (Rúbricas)</h4>
+            <p>Practique cómo evaluar respuestas orales y escritas de ejemplo y detecte cuándo la IA felicita al estudiante sin corregir sus errores.</p>
+            <div class="tool-card-action">Probar Evaluación ↗</div>
           </div>
         </a>
 
@@ -246,8 +296,8 @@
           <div class="tool-icon-circle green">💼</div>
           <div class="tool-card-body">
             <div class="tool-pill-tag green">8 Áreas Técnicas</div>
-            <h4>Casos Ocupacionales INA</h4>
-            <p>Banco de casos reales: Hotelería, Contact Centers, Mecánica, Gastronomía, Ciberseguridad, Logística, Turismo y Software.</p>
+            <h4>Casos Laborales del INA</h4>
+            <p>Ejemplos listos para usar en clase: Hotelería, Centros de Contacto, Comercio, Turismo, LESCO, Portugués y Francés.</p>
             <div class="tool-card-action">Explorar Casos ↗</div>
           </div>
         </a>
@@ -256,10 +306,10 @@
         <a href="biblioteca.html#documents" class="magic-tool-card">
           <div class="tool-icon-circle indigo">📚</div>
           <div class="tool-card-body">
-            <div class="tool-pill-tag indigo">Investigación 2024-2026</div>
-            <h4>Biblioteca RAG (41 PDFs)</h4>
-            <p>Búsqueda en tiempo real del corpus científico: Pedagogía, Evaluación, Gobernanza, Prompts e Inteligencia Artificial.</p>
-            <div class="tool-card-action">Consultar Corpus ↗</div>
+            <div class="tool-pill-tag indigo">Fuentes Verificadas 2024-2026</div>
+            <h4>Biblioteca de Consulta (41 Documentos)</h4>
+            <p>Consulte estudios y guías oficiales sobre enseñanza de idiomas e IA con ideas prácticas listas para llevar a su clase.</p>
+            <div class="tool-card-action">Consultar Biblioteca ↗</div>
           </div>
         </a>
 
@@ -307,7 +357,7 @@
       <div class="roadmap-header-row">
         <div class="roadmap-title-area">
           <span class="sub-badge" style="background:#dbeafe;color:#1e40af;border:1px solid #bfdbfe;">🗺️ RUTA PEDAGÓGICA VISUAL</span>
-          <h3>Propuesta de Cronograma de la Jornada</h3>
+          <h3>Propuesta de Cronograma de la Jornada (Tiempos Flexibles)</h3>
           <p>Consulte cada momento del taller (8:00 a. m. a 3:00 p. m.), el facilitador responsable, los bloques temáticos y las 7 prácticas activas.</p>
         </div>
         <div class="roadmap-actions-row">
@@ -317,6 +367,14 @@
           <a href="img/ruta-pedagogica-cronograma.svg" download="Cronograma_INA_IA_Ingles_2026.svg" class="btn-download-svg" title="Descargar diagrama en formato vectorial SVG">
             📥 Descargar SVG
           </a>
+        </div>
+      </div>
+
+      <!-- Nota de Tiempos Flexibles -->
+      <div class="flexible-time-callout" role="note">
+        <span aria-hidden="true" style="font-size:1.35rem;">⏱️</span>
+        <div>
+          <strong>Tiempos flexibles y respeto a su propio ritmo:</strong> Los 12 minutos por práctica son una referencia orientativa. Si usted está aprendiendo a ingresar a ChatGPT, copiar instrucciones y revisar respuestas con calma, puede tomarse <strong>15, 20 o 25 minutos</strong>, o bien utilizar el botón naranja de <strong>Salida de Respaldo (Plan B)</strong> para analizar el ejemplo listo sin ninguna presión de reloj.
         </div>
       </div>
 
@@ -635,15 +693,15 @@
     <!-- Flecha 1 -->
     <path d="M290,82 L305,82" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)" />
 
-    <!-- Fase 2: Práctica en IA (12 min) -->
+    <!-- Fase 2: Práctica en IA (12-20 min flexibles) -->
     <g transform="translate(315, 50)">
       <rect width="260" height="65" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="2" />
       <circle cx="24" cy="22" r="12" fill="#dcfce7" />
       <text x="24" y="26" fill="#166534" font-size="11" font-weight="800" text-anchor="middle">2</text>
-      <text x="46" y="20" fill="#14532d" font-size="12" font-weight="800">Práctica Individual</text>
-      <rect x="46" y="28" width="65" height="15" rx="4" fill="#15803d" />
-      <text x="78" y="39" fill="#ffffff" font-size="9" font-weight="800" text-anchor="middle">12 MIN</text>
-      <text x="12" y="54" fill="#166534" font-size="10">Trabajo individual en ChatGPT, Claude o Gemini.</text>
+      <text x="46" y="20" fill="#14532d" font-size="12" font-weight="800">Práctica a su Ritmo</text>
+      <rect x="46" y="28" width="95" height="15" rx="4" fill="#15803d" />
+      <text x="93" y="39" fill="#ffffff" font-size="9" font-weight="800" text-anchor="middle">12-20 MIN FLEX</text>
+      <text x="12" y="54" fill="#166534" font-size="10">En ChatGPT/Claude o con ejemplo Plan B.</text>
     </g>
 
     <!-- Flecha 2 -->
@@ -832,11 +890,17 @@
         </div>
       </div>
 
-      <!-- Cronómetro Interactivo Individual -->
+      <!-- Cronómetro Interactivo Individual (Tiempo Flexible) -->
       <div class="timer-widget">
         <div class="timer-info">
-          <h4>⏱️ Cronómetro de Práctica Individual</h4>
-          <p>Utilice este cronómetro durante los 12 minutos de trabajo individual en ChatGPT, Claude o Gemini.</p>
+          <h4>⏱️ Cronómetro de Práctica Individual (Tiempo Flexible)</h4>
+          <p>El tiempo es una guía flexible, no una carrera. Si necesita abrir su cuenta de IA, copiar con calma y leer la respuesta, elija 20 o 25 minutos o trabaje sin reloj.</p>
+          <div class="timer-pace-selector" role="group" aria-label="Elegir duración del cronómetro">
+            <span class="timer-pace-label">Ajustar a mi ritmo:</span>
+            <button type="button" class="btn-timer-preset active" data-minutes="12">12 min (Estándar)</button>
+            <button type="button" class="btn-timer-preset" data-minutes="20">20 min (Con calma)</button>
+            <button type="button" class="btn-timer-preset" data-minutes="25">25 min (Paso a paso)</button>
+          </div>
         </div>
         <div class="timer-display-group">
           <div id="practice-timer-display" class="timer-display" role="timer" aria-live="polite">12:00</div>
@@ -848,21 +912,55 @@
         </div>
       </div>
 
+      <!-- Ejemplo Resuelto general para orientar antes de hacer las prácticas -->
+      <section class="worked-example-card" aria-labelledby="worked-example-main-title">
+        <div class="worked-example-header">
+          <h4 id="worked-example-main-title">✅ Ejemplo resuelto paso a paso: ¿Qué buscar cuando la IA le responde?</h4>
+          <span class="meta-pill highlight">Guía para todas las prácticas</span>
+        </div>
+        <p style="font-size:0.88rem;color:var(--text-muted);margin:0 0 0.85rem 0;">
+          No necesita experiencia técnica previa. En cada actividad usted solo debe copiar la instrucción azul, ver qué responde la IA y compararla con estas tres columnas:
+        </p>
+        <div class="worked-example-columns">
+          <div class="worked-col col-good">
+            <strong>1. Respuesta adecuada de la IA</strong>
+            Entrega un diálogo corto de 4 turnos en inglés A2 con frases sencillas (ej. <em>"Good morning. How can I help you?"</em>) y deja espacio para que el estudiante complete su parte.
+          </div>
+          <div class="worked-col col-error">
+            <strong>2. Error común que comete la IA</strong>
+            Escribe un texto larguísimo de 18 líneas con inglés avanzado (C1), inventa políticas del hotel o le da todas las respuestas resueltas al estudiante.
+          </div>
+          <div class="worked-col col-fix">
+            <strong>3. ¿Cómo corregirlo en 1 frase?</strong>
+            Escríbale debajo a la IA: <em>"Por favor acórtalo a solo 4 turnos de máximo 12 palabras por frase, en nivel A2, y deja en blanco las respuestas del recepcionista."</em>
+          </div>
+        </div>
+      </section>
+
       <section class="participant-notebook" id="participant-notebook" aria-labelledby="participant-notebook-title">
         <div class="notebook-heading">
           <div>
             <span class="notebook-kicker">💾 TRABAJO PERSONAL · SIN ENVÍOS</span>
-            <h3 id="participant-notebook-title">Mi cuaderno local del taller</h3>
-            <p>Sus notas quedan en este navegador y dispositivo. No se suben a ninguna plataforma. Descargue una copia antes de cerrar o cambiar de computadora.</p>
+            <h3 id="participant-notebook-title">Mi cuaderno local de trabajo y reflexión</h3>
+            <p>Sus notas quedan guardadas en este navegador. No se suben a ninguna plataforma. Conteste las preguntas guía para conservar su aprendizaje y descargue una copia al terminar.</p>
             <p class="notebook-external-alert" role="note"><strong>Importante:</strong> el portal no puede traer automáticamente las respuestas de ChatGPT, Claude o Gemini. Cuando termine una actividad, copie la respuesta en esa plataforma, regrese aquí y péguela en el cuaderno.</p>
           </div>
           <span id="notebook-practice-label" class="notebook-practice-label">PR-01 · registro personal</span>
+        </div>
+        <div class="notebook-guided-questions" role="region" aria-label="Preguntas guía para reflexionar">
+          <p>✍️ Preguntas guía para contestar en su cuaderno (haga clic en cualquiera para ir a esa pregunta):</p>
+          <div class="notebook-questions-chips">
+            <button type="button" class="btn-notebook-prompt" data-prompt-heading="## 1. ¿Qué hice en esta actividad?">1. ¿Qué hice?</button>
+            <button type="button" class="btn-notebook-prompt" data-prompt-heading="## 2. ¿Qué respuesta me dio la IA y qué revisé?">2. ¿Qué revisé de la IA?</button>
+            <button type="button" class="btn-notebook-prompt" data-prompt-heading="## 3. ¿Qué aprendí hoy?">3. ¿Qué aprendí?</button>
+            <button type="button" class="btn-notebook-prompt" data-prompt-heading="## 4. ¿Cómo lo aplicaré o ajustaré en mi próxima clase del INA?">4. ¿Cómo lo aplicaré en clase?</button>
+          </div>
         </div>
         <details>
           <summary>Ver mis evidencias por práctica</summary>
           <ul id="notebook-index"></ul>
         </details>
-        <label for="notebook-entry" class="notebook-label">Producto y reflexión de la práctica activa</label>
+        <label for="notebook-entry" class="notebook-label">Mis respuestas y reflexión de la práctica activa (¿Qué hice?, ¿Qué aprendí?, ¿Cómo lo aplicaré?)</label>
         <textarea id="notebook-entry" class="notebook-entry" rows="13" spellcheck="true"></textarea>
         <details class="notebook-files">
           <summary>Adjuntos y respaldo del portafolio</summary>

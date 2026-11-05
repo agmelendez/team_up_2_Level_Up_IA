@@ -135,13 +135,16 @@
           <span>⚡</span> Herramientas IA <span class="nav-pill-badge">4</span>
         </a>
         <a href="biblioteca.html" class="nav-pill-link">
-          <span>📚</span> Biblioteca & RAG <span class="nav-pill-badge">41</span>
+          <span>📚</span> Biblioteca & Fuentes <span class="nav-pill-badge">41</span>
         </a>
         <a href="simulador.html" class="nav-pill-link">
           <span>💬</span> Simulador
         </a>
         <a href="glosario.html" class="nav-pill-link active">
           <span>📖</span> Glosario
+        </a>
+        <a href="tutorial.html" class="nav-pill-link">
+          <span>🧭</span> Ruta Inicial
         </a>
       </nav>
 
@@ -278,202 +281,214 @@
         <input type="search" id="glossary-search" aria-label="Buscar en el glosario" placeholder="Escriba un término (ej: prompt, alucinación, voz, local, muestra)...">
       </div>
 
-      <!-- Cuadrícula de Tarjetas de Glosario -->
+      <!-- Cuadrícula de Tarjetas de Glosario (Priorizando el término en español con ejemplo práctico) -->
       <div class="glossary-grid" id="glossary-cards">
 
-        <!-- 1. Prompt -->
-        <article class="glossary-card" data-term="prompt instruccion orden mensaje">
-          <h3 class="term-title">💬 Prompt (Instrucción)</h3>
-          <div class="term-simple-def">Es el mensaje o instrucción clara que usted le da a la IA.</div>
+        <!-- 1. Instrucción o Pedido a la IA (Prompt) -->
+        <article class="glossary-card" data-term="instruccion pedido prompt orden mensaje">
+          <h3 class="term-title">💬 Instrucción o Pedido a la IA <small style="font-size:0.78rem;color:var(--text-muted);font-weight:600;">(Prompt)</small></h3>
+          <div class="term-simple-def">Es la indicación clara que usted le escribe a la IA para pedirle una actividad.</div>
           <p>
-            No se trata de "adivinar palabras mágicas", sino de darle a la herramienta un rol, un objetivo y los límites exactos de lo que debe hacer (como asignarle una tarea a un asistente nuevo).
+            No hace falta usar palabras técnicas: basta con decirle qué papel debe tomar, para qué nivel de idioma y qué ejercicio necesita (como darle indicaciones a un asistente nuevo).
           </p>
           <div class="term-analogy">
-            💡 <strong>Ejemplo cotidiano:</strong> En lugar de pedirle solo <em>"deme una actividad"</em>, usted le indica: <em>"Actúe como profesor de inglés A2 y cree un ejercicio de 12 minutos para practicar reservaciones de hotel"</em>.
+            💡 <strong>Ejemplo en el aula:</strong> En lugar de pedirle solo <em>"deme una actividad"</em>, usted le escribe: <em>"Actúe como profesor de inglés A2 y cree un diálogo corto de 4 turnos para practicar reservaciones de hotel en el INA"</em>.
           </div>
         </article>
 
-        <!-- 2. Alucinación -->
-        <article class="glossary-card" data-term="alucinacion error inventar falsedad">
-          <h3 class="term-title">🎭 Alucinación (Cuando la IA inventa)</h3>
-          <div class="term-simple-def">Ocurre cuando la IA inventa datos falsos con total seguridad.</div>
+        <!-- 2. Invención de Datos (Alucinación) -->
+        <article class="glossary-card" data-term="invencion datos alucinacion error inventar falsedad">
+          <h3 class="term-title">🎭 Invención de Datos por la IA <small style="font-size:0.78rem;color:var(--text-muted);font-weight:600;">(Alucinación)</small></h3>
+          <div class="term-simple-def">Ocurre cuando la IA inventa datos, reglas o referencias falsas con total seguridad.</div>
           <p>
-            La IA no "sabe" la verdad; genera palabras que suenan lógicas. Si usted le pide un artículo que no existe o una ley ficticia, la IA puede inventarla sonando muy convincente.
+            La IA no "sabe" la verdad; junta palabras que suenan convincentes. Si usted le pide una ley o estadística que no conoce, puede inventarla sin avisar.
           </p>
           <div class="term-analogy">
-            💡 <strong>Regla de oro:</strong> Nunca acepte datos técnicos, leyes o cifras de la IA sin verificar la fuente original con su criterio docente.
+            💡 <strong>Ejemplo en el aula:</strong> Si le pide a la IA "el reglamento interno de un hotel de Guanacaste", inventará horarios y multas ficticias. Por eso usted siempre revisa el texto antes de llevarlo a clase.
           </div>
         </article>
 
-        <!-- 3. Muestra Sintética -->
-        <article class="glossary-card" data-term="muestra sintetica datos proteccion privacidad">
-          <h3 class="term-title">🔒 Muestra Sintética</h3>
-          <div class="term-simple-def">Es un texto o ejemplo 100% inventado para practicar en el taller.</div>
+        <!-- 3. Ejemplo Ficticio de Práctica (Muestra Sintética) -->
+        <article class="glossary-card" data-term="ejemplo ficticio muestra sintetica datos proteccion privacidad">
+          <h3 class="term-title">🔒 Ejemplo Ficticio de Práctica <small style="font-size:0.78rem;color:var(--text-muted);font-weight:600;">(Muestra Sintética)</small></h3>
+          <div class="term-simple-def">Es un correo o diálogo 100% inventado para practicar sin usar trabajos reales de estudiantes.</div>
           <p>
-            Para proteger la privacidad de las personas estudiantes (según la Ley 8968 de Costa Rica), nunca subimos exámenes reales ni nombres de alumnos. Usamos textos ficticios con errores simulados.
+            Para proteger la privacidad estudiantil (Ley 8968 de Costa Rica), nunca subimos tareas reales ni nombres de alumnos a la IA. Usamos textos ficticios con errores típicos de clase.
           </p>
           <div class="term-analogy">
-            💡 <strong>Beneficio:</strong> Podemos ensayar correcciones y rúbricas sin poner en riesgo ningún dato personal.
+            💡 <strong>Ejemplo en el aula:</strong> Usted mismo escribe una frase con un error frecuente (<em>"The room dirty and shower no work"</em>) y se la pega a la IA para que le ayude a preparar ejercicios de corrección.
           </div>
         </article>
 
-        <!-- 4. Nivel de Idioma (A1, A2, B1...) -->
+        <!-- 4. Nivel de Dominio del Idioma (A1, A2, B1, B2) -->
         <article class="glossary-card" data-term="nivel idioma mcer niveles a1 a2 b1 b2 marco europeo">
-          <h3 class="term-title">📏 Nivel de Dominio del Idioma (A1, A2, B1, B2)</h3>
-          <div class="term-simple-def">Conocido técnicamente como <strong>MCER</strong> (Marco Común Europeo de Referencia para las Lenguas).</div>
+          <h3 class="term-title">📏 Nivel de Dominio del Idioma <small style="font-size:0.78rem;color:var(--text-muted);font-weight:600;">(A1, A2, B1, B2 · MCER)</small></h3>
+          <div class="term-simple-def">La escala internacional que indica qué tan básico o intermedio es el inglés del grupo.</div>
           <p>
-            Es el termómetro estándar internacional que mide lo que una persona es capaz de hacer en un idioma: desde saludos y frases elementales (A1/A2) hasta desenvolverse con soltura en puestos laborales de turismo o servicio (B1/B2).
+            Permite graduar lo que una persona es capaz de comunicar: desde saludos y frases elementales (A1/A2) hasta atender quejas o llamadas laborales con mayor soltura (B1/B2).
           </p>
           <div class="term-analogy">
-            💡 <strong>En el prompt:</strong> Decirle el nivel exacto (ej: <em>Inglés A2</em>) a la IA evita que use vocabulario universitario con estudiantes que apenas inician.
+            💡 <strong>Ejemplo en el aula:</strong> Indicarle a la IA <em>"use únicamente vocabulario de nivel A2 y frases de máximo 12 palabras"</em> evita que genere textos difíciles que frustren al grupo.
           </div>
         </article>
 
-        <!-- 5. Modo de Voz -->
-        <article class="glossary-card" data-term="modo voz audio conversacion hablar pronunciacion">
-          <h3 class="term-title">🎙️ Modo de Voz</h3>
-          <div class="term-simple-def">Conversar con la IA hablando por micrófono en lugar de escribir.</div>
+        <!-- 5. Conversación Hablada por Micrófono (Modo de Voz) -->
+        <article class="glossary-card" data-term="conversacion hablada modo voz audio hablar pronunciacion">
+          <h3 class="term-title">🎙️ Conversación Hablada por Micrófono <small style="font-size:0.78rem;color:var(--text-muted);font-weight:600;">(Modo de Voz)</small></h3>
+          <div class="term-simple-def">Hablar en voz alta con la IA usando el micrófono del celular o computadora.</div>
           <p>
-            Permite que la herramienta hable con acento natural y escuche las respuestas del estudiante en tiempo real, actuando como un turista o cliente de prueba para perder el miedo a hablar.
+            Permite que la herramienta actúe como un turista o cliente extranjero y escuche al estudiante en tiempo real, ayudándole a soltar la lengua y perder el temor a hablar en inglés.
           </p>
           <div class="term-analogy">
-            💡 <strong>Cuidado:</strong> La IA tiende a felicitar demasiado. Es vital pedirle que señale errores específicos observables.
+            💡 <strong>Ejemplo en el aula:</strong> El estudiante presiona el ícono de micrófono y practica durante 3 minutos cómo cambiar la fecha de un tour como si atendiera el mostrador de un hotel.
           </div>
         </article>
 
-        <!-- 6. IA Local -->
+        <!-- 6. IA Instalada sin Internet (IA Local) -->
         <article class="glossary-card" data-term="ia local sin internet modo avion privacidad dispositivo">
-          <h3 class="term-title">💻 IA Local (Sin Internet)</h3>
-          <div class="term-simple-def">Programas de IA que corren dentro de su computadora o celular.</div>
+          <h3 class="term-title">💻 IA Instalada sin Internet <small style="font-size:0.78rem;color:var(--text-muted);font-weight:600;">(IA Local / Modo Avión)</small></h3>
+          <div class="term-simple-def">Programas de IA que funcionan dentro de su propia computadora sin conexión a internet.</div>
           <p>
-            Herramientas como Google AI Edge o Liquid Apollo funcionan incluso en "modo avión", sin gastar datos y sin enviar nada a servidores externos.
+            A diferencia de las páginas web en la nube, estos programas corren en su equipo en "modo avión", sin gastar datos y sin enviar información hacia afuera.
           </p>
           <div class="term-analogy">
-            💡 <strong>Ideal para el INA:</strong> Permite realizar actividades en aulas o centros donde la señal de internet sea inestable.
+            💡 <strong>Ejemplo en el aula:</strong> Si en su centro regional del INA falla la señal de internet, un programa local le permite seguir generando diálogos básicos A1-A2 desde su portátil.
           </div>
         </article>
 
-        <!-- 7. Los 5 Componentes -->
-        <article class="glossary-card" data-term="cinco componentes estructura rol objetivo restricciones">
-          <h3 class="term-title">⭐ Los 5 Componentes de la Instrucción</h3>
-          <div class="term-simple-def">La receta obligatoria para una buena instrucción docente.</div>
+        <!-- 7. Los 5 Pasos de una Buena Instrucción -->
+        <article class="glossary-card" data-term="cinco pasos componentes estructura rol objetivo restricciones">
+          <h3 class="term-title">⭐ Los 5 Pasos de una Buena Instrucción</h3>
+          <div class="term-simple-def">La lista sencilla para que la IA le entregue exactamente el material que usted necesita.</div>
           <p>
-            1. <strong>Rol:</strong> ¿Quién es la IA?<br>
-            2. <strong>Nivel de Idioma:</strong> ¿Para qué nivel enseña (A1, A2, B1)?<br>
-            3. <strong>Contexto:</strong> ¿En qué trabajo se usa?<br>
-            4. <strong>Formato:</strong> ¿Cómo debe entregarlo?<br>
-            5. <strong>Restricciones:</strong> ¿Qué límites tiene de tiempo y palabras?
+            1. <strong>Rol:</strong> ¿Qué papel asume la IA?<br>
+            2. <strong>Nivel:</strong> ¿A1, A2 o B1?<br>
+            3. <strong>Contexto INA:</strong> ¿En qué oficio o trabajo se usa?<br>
+            4. <strong>Formato:</strong> ¿Guion, tabla o lista de frases?<br>
+            5. <strong>Límites:</strong> ¿Cuántas palabras y cuánto tiempo?
           </p>
           <div class="term-analogy">
-            💡 <strong>Resultado:</strong> Materiales que puede usar directamente en clase sin tener que reescribirlos.
+            💡 <strong>Ejemplo en el aula:</strong> Al incluir estos 5 datos, usted obtiene en el primer intento una práctica de 12 minutos lista para imprimir o proyectar.
           </div>
         </article>
 
-        <!-- 8. Prueba de Esfuerzo de una Rúbrica -->
-        <article class="glossary-card" data-term="prueba esfuerzo rubrica evaluacion criterios">
-          <h3 class="term-title">🧪 Prueba de Esfuerzo de Rúbricas</h3>
-          <div class="term-simple-def">Probar una rúbrica con un trabajo bueno y uno malo para ver si sirve.</div>
+        <!-- 8. Tabla de Evaluación Paso a Paso y su Comprobación -->
+        <article class="glossary-card" data-term="tabla evaluacion rubrica analitica prueba esfuerzo criterios">
+          <h3 class="term-title">🧪 Tabla de Evaluación y su Comprobación <small style="font-size:0.78rem;color:var(--text-muted);font-weight:600;">(Rúbrica Analítica)</small></h3>
+          <div class="term-simple-def">Tabla con criterios claros que probamos antes con un ejemplo bueno y otro con errores.</div>
           <p>
-            Si la rúbrica le da la misma nota a un estudiante excelente y a uno que no cumplió, la rúbrica está fallando. La prueba de esfuerzo asegura que los criterios sean justos y claros.
+            Si una tabla de evaluación le da el mismo puntaje a una respuesta completa y a una incompleta, hay que ajustar sus descripciones antes de usarla en clase.
           </p>
           <div class="term-analogy">
-            💡 <strong>En el taller:</strong> Evaluaremos las Muestras A, B y C para calibrar nuestra escala de 1 a 16 puntos.
+            💡 <strong>Ejemplo en el aula:</strong> En lugar de poner un criterio vago como <em>"Buena gramática"</em>, escribimos algo observable: <em>"Usa expresiones de cortesía (Could you / Would you) y propone una solución al cliente"</em>.
           </div>
         </article>
 
-        <!-- 9. AI Literacy Docente -->
-        <article class="glossary-card" data-term="ai literacy alfabetizacion competencias docentes marco unesco pas 2500">
-          <h3 class="term-title">🧭 AI Literacy Docente (Alfabetización en IA)</h3>
-          <div class="term-simple-def">Saber cuándo, cómo y por qué usar (o no usar) la IA en el aula técnica.</div>
+        <!-- 9. Criterio Docente para Usar la IA -->
+        <article class="glossary-card" data-term="criterio docente alfabetizacion ai literacy competencias marco unesco">
+          <h3 class="term-title">🧭 Criterio Docente para Usar la IA <small style="font-size:0.78rem;color:var(--text-muted);font-weight:600;">(Alfabetización en IA)</small></h3>
+          <div class="term-simple-def">Saber cuándo, cómo y para qué conviene usar (o no usar) la IA en su curso.</div>
           <p>
-            No significa aprender programación, sino desarrollar tres capacidades: entender qué hace la herramienta, guiar al estudiantado en su uso ético y saber evaluar si el resultado tiene valor pedagógico o es una respuesta hueca (según el estándar británico DS:PAS 2500-4 2026).
+            No requiere saber programación: consiste en comprender qué hace bien la herramienta, dónde suele equivocarse y cómo guiar a sus estudiantes para que no dependan de ella.
           </p>
           <div class="term-analogy">
-            💡 <strong>En el INA:</strong> Ayuda a que el docente lidere la tecnología en vez de que la tecnología imponga las actividades.
+            💡 <strong>Ejemplo en el aula:</strong> Usted usa la IA durante 5 minutos para generar tarjetas de situaciones de hotel, y dedica los siguientes 30 minutos a que sus estudiantes conversen cara a cara sin pantallas.
           </div>
         </article>
 
-        <!-- 10. Sycophancy (Complacencia Acrítica) -->
-        <article class="glossary-card" data-term="sycophancy complacencia adulacion falso elogio sesgo error">
-          <h3 class="term-title">🍯 Complacencia Acrítica (Sycophancy)</h3>
-          <div class="term-simple-def">Cuando la IA adula al estudiante ("¡Excelente!") ignorando sus errores.</div>
+        <!-- 10. Elogio Vacío sin Corrección -->
+        <article class="glossary-card" data-term="elogio vacio complacencia acritica sycophancy adulacion falso elogio">
+          <h3 class="term-title">🍯 Elogio Vacío de la IA <small style="font-size:0.78rem;color:var(--text-muted);font-weight:600;">(Complacencia Acrítica / Sycophancy)</small></h3>
+          <div class="term-simple-def">Cuando la IA felicita todo (<em>"¡Excelente inglés!"</em>) aunque la respuesta tenga errores graves.</div>
           <p>
-            Los modelos comerciales están programados para ser amables. Si un estudiante escribe inglés quebrado o desalineado del puesto de trabajo, la IA a menudo le dice: <em>"Great job! Your English is amazing!"</em>. Esto es peligroso porque fosiliza el error.
+            Las herramientas comerciales están programadas para caer bien y ser amables. Si no les ponemos reglas, aplauden cualquier texto del estudiante y esconden los errores que necesita corregir.
           </p>
           <div class="term-analogy">
-            💡 <strong>Cómo frenarlo:</strong> En el prompt se debe exigir: <em>"Prohibido el elogio genérico vacío. Toda observación debe señalar la evidencia y ofrecer un modelo corregido."</em>
+            💡 <strong>Ejemplo en el aula:</strong> Un alumno escribe <em>"Room no good, wait"</em> y la IA le responde <em>"Great job!"</em>. Para evitarlo, agréguele en su instrucción: <em>"No incluya elogios genéricos; señale 2 errores concretos y dé una frase modelo"</em>.
           </div>
         </article>
 
-        <!-- 11. Capa de Autenticidad Continua -->
-        <article class="glossary-card" data-term="capa autenticidad oral voz evaluacion trampa nyu stern 2026">
-          <h3 class="term-title">🎙️ Capa de Autenticidad Continua</h3>
-          <div class="term-simple-def">Micro-entrevistas orales con IA de voz para defender lo aprendido.</div>
+        <!-- 11. Verificación Oral Breve -->
+        <article class="glossary-card" data-term="verificacion oral breve capa autenticidad voz evaluacion nyu stern">
+          <h3 class="term-title">🎙️ Verificación Oral Breve <small style="font-size:0.78rem;color:var(--text-muted);font-weight:600;">(Capa de Autenticidad)</small></h3>
+          <div class="term-simple-def">Conversación corta de 3 minutos para comprobar que el estudiante comprende lo que entregó por escrito.</div>
           <p>
-            Estudios de 2026 (NYU Stern) demostraron que los ensayos escritos para el hogar ya no miden aprendizaje auténtico porque la IA redacta textos impecables. La solución en idiomas es la evaluación oral en tiempo real: 3 minutos donde el estudiante dialoga con la IA de voz sobre lo que redactó.
+            Como hoy cualquier persona puede generar una tarea escrita perfecta en casa con ayuda de la IA, una breve pregunta hablada en clase permite confirmar qué aprendió realmente el estudiante.
           </p>
           <div class="term-analogy">
-            💡 <strong>Ventaja pedagógica:</strong> Elimina la cacería de brujas con detectores de plagio y pone el foco en lo que el estudiante realmente sabe comunicar.
+            💡 <strong>Ejemplo en el aula:</strong> Después de entregar un correo de confirmación de reserva, el estudiante explica oralmente en 2 minutos qué pasos siguió para atender al huésped.
           </div>
         </article>
 
-        <!-- 12. Human-in-the-Loop -->
-        <article class="glossary-card" data-term="human in the loop docente bucle juicio decision evaluador">
-          <h3 class="term-title">👤 Docente en el Bucle (Human-in-the-Loop)</h3>
-          <div class="term-simple-def">La IA transcribe y sugiere; la persona docente valida y decide.</div>
+        <!-- 12. Supervisión y Decisión Docente -->
+        <article class="glossary-card" data-term="supervision decision docente human in the loop bucle juicio evaluador">
+          <h3 class="term-title">👤 Supervisión y Decisión Docente <small style="font-size:0.78rem;color:var(--text-muted);font-weight:600;">(Human-in-the-Loop)</small></h3>
+          <div class="term-simple-def">La IA sugiere borradores o ideas, pero la persona docente siempre revisa, corrige y toma la decisión final.</div>
           <p>
-            Ninguna calificación ni sanción puede delegarse ciegamente a un algoritmo. La IA puede generar borradores de rúbricas o pre-evaluar turnos orales, pero el criterio profesional del formador del INA es quien otorga validez oficial.
+            Ninguna calificación ni orientación pedagógica se deja en manos automáticas del programa. El conocimiento de su grupo y la valoración justa dependen siempre de usted como docente del INA.
           </p>
           <div class="term-analogy">
-            💡 <strong>El lema del taller:</strong> <em>"La Inteligencia Artificial propone, usted decide."</em>
+            💡 <strong>Ejemplo en el aula:</strong> La IA sugiere tres observaciones sobre un diálogo, pero usted descarta una que es demasiado avanzada para A1 y conserva solo la que el estudiante puede aplicar hoy.
           </div>
         </article>
 
-        <!-- 13. Modelos de Voz Full-Duplex -->
-        <article class="glossary-card" data-term="full duplex voz latencia conversacion pausada turn taking">
-          <h3 class="term-title">🗣️ Voz Full-Duplex y Pausas de Pensamiento</h3>
-          <div class="term-simple-def">Hablar con la IA de manera fluida, pudiendo interrumpir y tomar pausas.</div>
+        <!-- 13. Conversación Fluida con Espera de Pausas -->
+        <article class="glossary-card" data-term="conversacion fluida pausas full duplex voz latencia turn taking">
+          <h3 class="term-title">🗣️ Conversación Fluida con Espera de Pausas <small style="font-size:0.78rem;color:var(--text-muted);font-weight:600;">(Voz Full-Dúplex)</small></h3>
+          <div class="term-simple-def">Capacidad de hablar con la IA de forma natural, permitiendo silencios mientras el estudiante piensa su respuesta.</div>
           <p>
-            Los modelos de voz avanzados (como GPT-4o Voice y Gemini Live) no esperan que usted termine de hablar como un walkie-talkie. Pueden manejar silencios de 3 a 5 segundos mientras el estudiante piensa la palabra en inglés, sin cortar la llamada.
+            Cuando una persona aprende inglés A1 o A2, suele hacer pausas de varios segundos para recordar una palabra. Por eso le indicamos a la IA que espere con paciencia sin interrumpir.
           </p>
           <div class="term-analogy">
-            💡 <strong>En la práctica:</strong> Reduce la ansiedad del estudiante que está en niveles A1 o A2 y necesita segundos para formular su turno.
+            💡 <strong>Ejemplo en el aula:</strong> El estudiante dice <em>"Good morning… the room is…"</em> (hace una pausa de 4 segundos) <em>"…on the second floor"</em>, y la IA espera en silencio hasta que termina la idea.
           </div>
         </article>
 
-        <!-- 14. Inteligencia Artificial Explicable (XAI) -->
-        <article class="glossary-card" data-term="xai explicable retroalimentacion evidencia transparencia">
-          <h3 class="term-title">🔍 IA Explicable en Educación (XAI)</h3>
-          <div class="term-simple-def">Correcciones transparentes que explican el "porqué" de cada observación.</div>
+        <!-- 14. Corrección con Explicación del Porqué -->
+        <article class="glossary-card" data-term="correccion explicacion porque xai explicable retroalimentacion transparencia">
+          <h3 class="term-title">🔍 Corrección con Explicación del Porqué <small style="font-size:0.78rem;color:var(--text-muted);font-weight:600;">(IA Explicable / XAI)</small></h3>
+          <div class="term-simple-def">Pedirle a la IA que no solo corrija una frase, sino que explique con sencillez por qué se dice así.</div>
           <p>
-            No basta con que la herramienta señale: <em>"Esto está mal, cámbielo por X"</em>. El enfoque explicable exige que la IA detalle la causa gramatical o comunicativa del error y su impacto en la atención al cliente, facilitando un aprendizaje reflexivo.
+            Si la herramienta solo entrega el texto corregido, el estudiante copia sin aprender. Cuando le explica la razón en dos líneas y le da un ejemplo, la corrección se vuelve formativa.
           </p>
           <div class="term-analogy">
-            💡 <strong>En el aula:</strong> Transforma la corrección mecánica en una micro-lección pedagógica de 2 minutos.
+            💡 <strong>Ejemplo en el aula:</strong> En vez de solo cambiar <em>"I have 20 years"</em> por <em>"I am 20 years old"</em>, explica que en inglés la edad se expresa con el verbo <em>to be</em> y propone completar dos frases similares.
           </div>
         </article>
 
-        <!-- 15. Andamiaje Socrático -->
-        <article class="glossary-card" data-term="andamiaje socratico preguntas guia tutoria hannia leon">
-          <h3 class="term-title">🪜 Andamiaje Socrático (Scaffolding)</h3>
-          <div class="term-simple-def">Hacer preguntas guía para que el estudiante descubra la respuesta.</div>
+        <!-- 15. Guía con Preguntas y Pistas -->
+        <article class="glossary-card" data-term="guia preguntas pistas andamiaje socratico scaffolding tutoria">
+          <h3 class="term-title">🪜 Guía con Preguntas y Pistas <small style="font-size:0.78rem;color:var(--text-muted);font-weight:600;">(Andamiaje Socrático)</small></h3>
+          <div class="term-simple-def">Configurar la IA para que ayude con preguntas paso a paso en vez de darle la respuesta hecha al estudiante.</div>
           <p>
-            Técnica del Bloque 2, facilitado por Agustín Gómez Meléndez. En vez de pedirle a la IA que traduzca o redacte una tarea, se le instruye para que actúe como tutor socrático que hace preguntas orientadoras paso a paso, acompañando el proceso cognitivo del estudiante.
+            Así como un buen docente orienta con pistas para que la persona alumna descubra cómo expresarse, podemos ordenarle a la IA que haga una pregunta a la vez y espere la respuesta.
           </p>
           <div class="term-analogy">
-            💡 <strong>Ejemplo:</strong> La IA pregunta: <em>"¿Cómo saludarías formalmente a un huésped antes de las 12:00 m.d.?"</em>, esperando que el estudiante responda <em>"Good morning"</em>.
+            💡 <strong>Ejemplo en el aula:</strong> Si al estudiante le falta cortesía al escribir <em>"Give me your passport"</em>, la IA le pregunta: <em>"¿Qué palabra como 'Could you' o 'please' agregarías para sonar más amable en recepción?"</em>.
           </div>
         </article>
 
-        <!-- 16. Soberanía de Datos y Ley 8968 -->
-        <article class="glossary-card" data-term="soberania datos ley 8968 costa rica privacidad proteccion">
-          <h3 class="term-title">🛡️ Soberanía de Datos y Ley 8968</h3>
-          <div class="term-simple-def">Cuidado legal absoluto de la información confidencial de estudiantes y del INA.</div>
+        <!-- 16. Consulta Basada en Documentos Reales -->
+        <article class="glossary-card" data-term="consulta documentos reales fuentes rag biblioteca evidencia">
+          <h3 class="term-title">📚 Consulta Basada en Documentos Reales <small style="font-size:0.78rem;color:var(--text-muted);font-weight:600;">(RAG)</small></h3>
+          <div class="term-simple-def">Hacer que la IA responda apoyándose únicamente en documentos confiables que nosotros le damos.</div>
           <p>
-            En cumplimiento de la Ley N° 8968 de Costa Rica, está terminantemente prohibido ingresar nombres completos, cédulas, expedientes o notas reales en plataformas de IA comerciales abiertas en la nube, ya que esas empresas pueden usar esos datos para entrenar sus modelos.
+            En lugar de responder de memoria e inventar datos, el sistema busca primero el fragmento exacto dentro de los documentos verificados de la biblioteca y usted puede comprobar la página original.
           </p>
           <div class="term-analogy">
-            💡 <strong>Solución técnica:</strong> Usar muestras sintéticas en la nube o modelos de IA locales (offline) para datos institucionales.
+            💡 <strong>Ejemplo en el aula:</strong> Es como responder un ejercicio con el manual oficial abierto sobre el escritorio, en lugar de tratar de adivinar de memoria.
+          </div>
+        </article>
+
+        <!-- 17. Protección de Datos Estudiantiles (Ley 8968) -->
+        <article class="glossary-card" data-term="proteccion datos estudiantiles soberania ley 8968 costa rica privacidad">
+          <h3 class="term-title">🛡️ Protección de Datos Estudiantiles <small style="font-size:0.78rem;color:var(--text-muted);font-weight:600;">(Ley 8968 Costa Rica)</small></h3>
+          <div class="term-simple-def">Regla de oro del taller: cuidar siempre la información personal de nuestras personas estudiantes.</div>
+          <p>
+            De acuerdo con la Ley N° 8968 de Costa Rica, nunca debemos escribir nombres completos, números de cédula, teléfonos, calificaciones ni subir grabaciones de voz de alumnos en herramientas públicas de internet.
+          </p>
+          <div class="term-analogy">
+            💡 <strong>Ejemplo en el aula:</strong> Si quiere revisar cómo mejorar una redacción, cambie cualquier nombre o dato personal por un caso ficticio como <em>"Estudiante A en práctica de hotel"</em>.
           </div>
         </article>
 

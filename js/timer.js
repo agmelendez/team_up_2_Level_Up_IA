@@ -215,7 +215,24 @@ const TimerModule = (() => {
     // Eventos Práctica
     document.getElementById('btn-practice-start')?.addEventListener('click', () => startPracticeTimer());
     document.getElementById('btn-practice-pause')?.addEventListener('click', pausePracticeTimer);
-    document.getElementById('btn-practice-reset')?.addEventListener('click', () => resetPracticeTimer());
+    document.getElementById('btn-practice-reset')?.addEventListener('click', () => {
+      const activePreset = document.querySelector('.btn-timer-preset.active');
+      const mins = activePreset ? parseInt(activePreset.dataset.minutes, 10) : 12;
+      resetPracticeTimer(mins);
+    });
+    document.querySelectorAll('.btn-timer-preset').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        document.querySelectorAll('.btn-timer-preset').forEach((b) => b.classList.remove('active'));
+        e.currentTarget.classList.add('active');
+        const mins = parseInt(e.currentTarget.dataset.minutes, 10) || 12;
+        resetPracticeTimer(mins);
+        const startBtn = document.getElementById('btn-practice-start');
+        if (startBtn) startBtn.textContent = `▶ Iniciar ${mins} min`;
+        if (typeof App !== 'undefined' && App.showToast) {
+          App.showToast(`⏱️ Tiempo ajustado a ${mins} minutos.`);
+        }
+      });
+    });
 
     // Eventos Ciclo Tutor
     document.getElementById('btn-cycle-start')?.addEventListener('click', startCycleTimer);

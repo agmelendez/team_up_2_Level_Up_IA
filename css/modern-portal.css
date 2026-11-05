@@ -1398,3 +1398,322 @@ body.a11y-dark-mode .hero-quick-start a {
   outline-color: var(--ucr-white);
   box-shadow: none;
 }
+
+/* ==========================================================================
+   8. COMPONENTES DE ACCESIBILIDAD COGNITIVA Y GUÍA PARA PRINCIPIANTES
+   ========================================================================== */
+
+/* Tarjeta de explicación inicial en lenguaje cotidiano */
+.everyday-intro-box {
+  width: 100%;
+  max-width: 960px;
+  background: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  border-radius: var(--radius-lg);
+  padding: 1.35rem 1.5rem;
+  margin: 0.25rem 0 1.5rem 0;
+  text-align: left;
+  box-shadow: var(--shadow-sm);
+}
+
+.everyday-intro-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.9rem;
+}
+
+.everyday-intro-header h3 {
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: var(--ina-navy-900);
+  margin: 0;
+}
+
+.everyday-intro-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9rem;
+}
+
+.everyday-intro-item {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1rem;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.everyday-intro-item strong {
+  display: block;
+  color: var(--ina-navy-900);
+  font-size: 0.92rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Banda de Ruta Recomendada para Principiantes */
+.beginner-route-banner {
+  width: 100%;
+  max-width: 960px;
+  background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+  border: 2px solid #6ee7b7;
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  margin-top: 1.25rem;
+  text-align: left;
+  box-shadow: var(--shadow-sm);
+}
+
+.beginner-route-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.beginner-route-top h3 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #065f46;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.beginner-route-note {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #047857;
+  background: #d1fae5;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+.beginner-route-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.beginner-step-card {
+  background: #ffffff;
+  border: 1px solid #a7f3d0;
+  border-radius: var(--radius-md);
+  padding: 0.8rem 0.9rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  transition: transform 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
+}
+
+.beginner-step-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: #059669;
+}
+
+.beginner-step-num {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #047857;
+  letter-spacing: 0.04em;
+}
+
+.beginner-step-card strong {
+  font-size: 0.9rem;
+  color: var(--ina-navy-900);
+}
+
+.beginner-step-card span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+/* Aviso de Tiempos Flexibles */
+.flexible-time-callout {
+  background: #eff6ff;
+  border: 1.5px solid #93c5fd;
+  border-left: 5px solid #2563eb;
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  color: #1e3a8a;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.flexible-time-callout strong {
+  color: #1e40af;
+}
+
+/* Selector de ritmo en el cronómetro individual */
+.timer-pace-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.timer-pace-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.btn-timer-preset {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: var(--text-secondary);
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+
+.btn-timer-preset:hover {
+  border-color: var(--ina-navy-700);
+  color: var(--ina-navy-900);
+}
+
+.btn-timer-preset.active {
+  background: var(--ina-navy-900);
+  border-color: var(--ina-navy-900);
+  color: #ffffff;
+}
+
+/* Ejemplo Resuelto (Respuesta adecuada, Error común y Corrección) */
+.worked-example-card {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.worked-example-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.worked-example-header h4 {
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: var(--ina-navy-900);
+  margin: 0;
+}
+
+.worked-example-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+}
+
+.worked-col {
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.worked-col strong {
+  display: block;
+  font-size: 0.86rem;
+  margin-bottom: 0.35rem;
+}
+
+.worked-col.col-good {
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  color: #14532d;
+}
+
+.worked-col.col-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #7f1d1d;
+}
+
+.worked-col.col-fix {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1e3a8a;
+}
+
+/* Botones de preguntas guía en el cuaderno local */
+.notebook-guided-questions {
+  background: #f8fafc;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+  margin: 0.75rem 0;
+}
+
+.notebook-guided-questions p {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ina-navy-900);
+  margin: 0 0 0.5rem 0;
+}
+
+.notebook-questions-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.btn-notebook-prompt {
+  background: #ffffff;
+  border: 1px solid #93c5fd;
+  color: #1e40af;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+
+.btn-notebook-prompt:hover {
+  background: #1e40af;
+  color: #ffffff;
+}
+
+/* Explicación de cada decisión en Constructor de Prompts */
+.step-why-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  background: #f8fafc;
+  border-left: 3px solid var(--ucr-blue);
+  padding: 0.35rem 0.65rem;
+  margin: 0.25rem 0 0.45rem 0;
+  border-radius: 0 6px 6px 0;
+}
+
+@media (max-width: 900px) {
+  .everyday-intro-grid,
+  .beginner-route-steps,
+  .worked-example-columns {
+    grid-template-columns: 1fr;
+  }
+}
+

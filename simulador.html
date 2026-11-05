@@ -171,13 +171,16 @@
           <span>⚡</span> Herramientas IA <span class="nav-pill-badge">4</span>
         </a>
         <a href="biblioteca.html" class="nav-pill-link">
-          <span>📚</span> Biblioteca & RAG <span class="nav-pill-badge">41</span>
+          <span>📚</span> Biblioteca & Fuentes <span class="nav-pill-badge">41</span>
         </a>
         <a href="simulador.html" class="nav-pill-link active">
           <span>💬</span> Simulador
         </a>
         <a href="glosario.html" class="nav-pill-link">
           <span>📖</span> Glosario
+        </a>
+        <a href="tutorial.html" class="nav-pill-link">
+          <span>🧭</span> Ruta Inicial
         </a>
       </nav>
 
@@ -305,6 +308,53 @@
 
   <!-- Contenedor Principal -->
   <main id="main-content" class="main-layout">
+    <!-- Demostración breve paso a paso para usuarios principiantes -->
+    <section class="worked-example-card" aria-labelledby="sim-demo-title" style="max-width:1200px;margin:0 auto 1.5rem auto;">
+      <div class="worked-example-header">
+        <h4 id="sim-demo-title">🧭 Demostración breve para principiantes: ¿Cómo usar este simulador en 4 pasos?</h4>
+        <span class="meta-pill highlight">Tiempo estimado: 3 minutos</span>
+      </div>
+      <div class="beginner-route-steps" style="margin-bottom:0.9rem;">
+        <div class="beginner-step-card">
+          <span class="beginner-step-num">Paso 1 · Iniciar</span>
+          <strong>Lea el primer mensaje</strong>
+          <span>El cliente simulado (Mr. Davis) ya inició la conversación en el cuadro blanco pidiendo ayuda con su habitación.</span>
+        </div>
+        <div class="beginner-step-card">
+          <span class="beginner-step-num">Paso 2 · Responder</span>
+          <strong>Elija o escriba en inglés</strong>
+          <span>Haga clic en cualquiera de las <em>"Respuestas de apoyo sugeridas"</em> debajo del chat (o escriba su propia frase) y presione <strong>Enviar</strong>.</span>
+        </div>
+        <div class="beginner-step-card">
+          <span class="beginner-step-num">Paso 3 · Revisar errores</span>
+          <strong>Pruebe qué pasa si se equivoca</strong>
+          <span>Haga clic en el botón rosado <em>"[Probar respuesta en español]"</em> para ver cómo la IA le da una pista amable sin hacerle la tarea.</span>
+        </div>
+        <div class="beginner-step-card">
+          <span class="beginner-step-num">Paso 4 · Retroalimentación</span>
+          <strong>Aproveche el resumen final</strong>
+          <span>Al completar los turnos (o al copiar el prompt a la derecha para ChatGPT), revise el logro alcanzado y la recomendación para sus clases.</span>
+        </div>
+      </div>
+      <details class="friendly-disclosure" style="margin-top:0.25rem;">
+        <summary>👀 Ver un ejemplo de turno resuelto antes de escribir</summary>
+        <div class="worked-example-columns" style="margin-top:0.75rem;">
+          <div class="worked-col col-good">
+            <strong>🤖 Cliente (Mr. Davis):</strong>
+            <em>"Hello! My room is not ready yet. Could you please help me?"</em>
+          </div>
+          <div class="worked-col col-fix">
+            <strong>👤 Su respuesta (Recepcionista):</strong>
+            <em>"Good morning Mr. Davis. I am sorry for the delay. The room will be ready in 30 minutes."</em>
+          </div>
+          <div class="worked-col col-good">
+            <strong>💡 Nota pedagógica que verá:</strong>
+            El simulador muestra un recuadro amarillo debajo de cada turno explicando qué regla didáctica está aplicando la IA.
+          </div>
+        </div>
+      </details>
+    </section>
+
     <div class="simulator-layout">
 
       <!-- Ventana de Chat Interactivo -->

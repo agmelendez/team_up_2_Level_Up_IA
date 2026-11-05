@@ -129,6 +129,13 @@ const App = (() => {
       badOutput: `**Salida defectuosa de ejemplo:** "Good job, your English is great! Try to fix your grammar mistakes and send it again." (Elogio vacío sin orientación observable).`,
       criticalFinding: 'El comentario defectuoso no indica dónde está el error ni ofrece un modelo de corrección accionable.'
     },
+    'PR-03': {
+      title: 'Respaldo PR-03 · Anticipar Errores y Microrremedios',
+      promptUsed: 'Para una clase de inglés laboral del INA en servicio al cliente (Nivel MCER A2), anticipa los 5 errores comunicativos más probables que cometerán los estudiantes al atender una queja telefónica...',
+      goodOutput: `**1. Error esperado:** "Wait a moment, I go check."\n• **Causa:** Traducción literal del español sin fórmula de cortesía telefónica.\n• **Microrremedio (3 min):** Practicar en parejas la sustitución por "Could you hold on a moment while I check, please?".\n\n**2. Error esperado:** "The room have a problem."\n• **Causa:** Concordancia de tercera persona singular en presente simple.\n• **Microrremedio (3 min):** Tres tarjetas rápidas con "The room has / The reservation has / The system has".\n\n**3. Error esperado:** "Is not my fault."\n• **Causa:** Tono defensivo en atención al cliente.\n• **Microrremedio (3 min):** Reemplazar expresiones defensivas por disculpas empáticas: "I apologize for the inconvenience. Let me help you."`,
+      badOutput: `**Salida defectuosa:** Lista teórica de errores de nivel C1 (subjuntivo e inversión condicional) sin ejemplos de servicio al cliente ni actividades breves de corrección.`,
+      criticalFinding: 'La salida defectuosa no se ajusta al nivel A2 ni al contexto de atención telefónica del INA, y carece de microrremedios prácticos.'
+    },
     'PR-04': {
       title: 'Respaldo PR-04 · Chatbot de Práctica Escrita',
       promptUsed: 'Actúe como cliente de un hotel. Intercambie mensajes escritos con un estudiante A2 que atiende el mostrador...',
@@ -142,6 +149,13 @@ const App = (() => {
       goodOutput: `**Evaluación Muestra A (16/16):** Cumplimiento 4, Organización 4, Control Lingüístico 4, Adecuación Profesional 4.\n\n**Evaluación Muestra B (8/16):** Cumplimiento 2 (deja solución incierta), Organización 2 (orden confuso), Control Lingüístico 2 (errores de concordancia), Adecuación 2 (tono defensivo y culpa al cliente).\n\n**Prueba de esfuerzo superada:** La rúbrica discrimina claramente entre un desempeño profesional B1 y uno con vacíos críticos.`,
       badOutput: `**Salida defectuosa:** Rúbrica con criterios vagos como "Buena gramática (1-4)" donde ambas muestras reciben 3 puntos porque el evaluador no tiene descriptores observables.`,
       criticalFinding: 'Los descriptores deben basarse en evidencias textuales observables y no en adjetivos subjetivos como "bueno", "regular" o "malo".'
+    },
+    'PR-06': {
+      title: 'Respaldo PR-06 · Práctica Oral y Auditoría de Límites',
+      promptUsed: 'Modo de voz activo: Actúa como un turista estadounidense en un hotel boutique en Guanacaste solicitando asistencia en recepción para cambiar una reserva de tour...',
+      goodOutput: `**Turno 1 (Turista IA):** "Good morning! I have a tour reservation for tomorrow, but I need to change the day. Can you help me?" (19 palabras, pausa de espera respetada).\n\n**Turno 2 (Recepcionista):** "Good morning! Yes, of course. Which day do you prefer for your tour?"\n\n**Turno 3 (Turista IA):** "Could we move it to Friday morning? We are two adults."\n\n**Retroalimentación formativa al cierre:**\n• **Acierto observable:** Saludó con cortesía y preguntó directamente por la nueva fecha.\n• **Prioridad de mejora:** Confirmar el nombre del huésped o número de habitación antes de realizar el cambio.`,
+      badOutput: `**Salida defectuosa:** La IA habla durante 45 segundos seguidos, interrumpe cuando el estudiante hace una pausa de 2 segundos para pensar y al final dice: "Awesome! Your English is 100% native!" sin señalar qué mejorar.`,
+      criticalFinding: 'Sin límite de 1-2 oraciones por turno y tolerancia a pausas, la IA acapara el tiempo de habla y cae en elogios vacíos.'
     },
     'PR-07': {
       title: 'Respaldo PR-07 · Gestión de Modelo Local',
